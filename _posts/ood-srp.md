@@ -1,0 +1,78 @@
+---
+title: 面向对象设计-单一职责原则(SRP)
+date: 2016-04-07 23:55
+author: xujiaji
+thumbnail: http://upload-images.jianshu.io/upload_images/1552955-f8fcbe790d7f8cd1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
+tags:
+    - Java
+    - 面向对象设计
+---
+
+![只有佛自己才应该担负起公布玄妙秘密的职责](http://upload-images.jianshu.io/upload_images/1552955-f8fcbe790d7f8cd1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+主目录：[一个面向对象设计(OOD)的学习思路设计](http://www.jianshu.com/p/fab09d064846)
+
+
+![SRP.png](http://upload-images.jianshu.io/upload_images/1552955-0fc1b3477d1f956e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+## 何为SRP？
+- 全称：单一职责原则(Single Responsibility Principle)
+- 定义:该原则规定每个类都应该只有一个单一的功能，并且该功能应该由这个类完全封装起来
+
+## 何为职责(R)?
+>既然是单一“职责”，那么职责即为被规定的因素。
+
+- 概括："功能(职责)"为改变的原因，一个类或者模块应该有且只有一个改变的原因。
+
+- 如下图农活责任所示，耕菜地和耕水田即为牛和耕地机的职责，即为这个对象存在的原因（下面将来讨论这个关系图）。
+
+
+![农活责任](http://upload-images.jianshu.io/upload_images/1552955-aae094029d977f3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+## 为何要提倡SRP？
+> 其思想简单，但却难以掌握。就是一个模块，一个类只能干一件事情。
+
+看上图农活责任，晃眼一看我们会决定这是对的！但仔细一分析农活接口其中包含的耕菜地和耕水田两个责任。
+
+- 牛耕水田，但它耕不动菜地，只能调用耕水田的接口，因此耕菜地的接口对于牛来说就是多余的。但耕地机即能耕菜地，也能耕水田。这就像是牛本来是耕田的，我们却说它还能去耕菜地，耕地机能做的事情，老牛表示无能为力！
+
+- 这样违反了SRP，导致了严重的问题。因为我们给牛保留了一个多余而不会完成的责任，这让我们每次提到牛不仅说它能耕水田还能耕菜地。这让我们对牛的描述更加的复杂而没有准确性。程序也时这样，当没用的责任增加，就会让相应的类都变得臃肿腐臭。当我们要添加牛要耕后要吃草，耕地机耕地后要加油时，继续往农活接口中添加，这样使得农活什么都能干，使得后期修改维护等难度太大。
+- 如果不分离责任，在不断变化和添加的需求面前，责任之间耦合度强导致我们的程序更加的脆弱。
+## 比如说？（实际举例说明）
+- 例子一
+![农活责任(改).png](http://upload-images.jianshu.io/upload_images/1552955-75ef45d419f1dce5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+如上图将两个责任分离，牛实现耕水田的时候，不会知道也不会去在意耕菜地，分离了责任，该做的才做，不做的不用管。
+
+- 例子二（来自敏捷软件开发第8章）[^foot]
+```
+//调制解调器
+interface Modem {
+    void dial(String pno);//拨号
+    void hangup();//挂断
+    void send(char c);//发送消息
+    void recv();//接收消息
+}
+```
+>这个接口中显示了两个职责，一个是连接管理，一个是数据通信。dial和hangup函数进行调制解调器的连接处理，而send和recv函数进行数据的通信。
+
+这两个责任应该被分开吗？这决定于应用程序以何种方式变化。如果应用程序的变化会影响连接函数的部署，那么这个设计就具有僵化性的臭味。因为调用send和recv的类必须要重新编译连接处理函数，部署的次数常常会超过我们希望的次数。在这种情况下，这两个职责应该被分离。如图下图所示，这样避免了客户应用程序和这两个职责耦合在一起。
+
+![分离的Modem接口](http://upload-images.jianshu.io/upload_images/1552955-9b698d76a5b9cabe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+|注意|
+|:-:|
+|另一方面，如果应用程序的变化方式总是会导致两个职责同时变化，那么就不必分离他们，分离后会导致不必要的复杂性。|
+|此外还有个推论：变化的曲线是仅当变化实际发生时才具有真正的意义。如果没有征兆，那么去应用SRP，或者其他原则都是不明智的。|
+
+## 结论总结
+- SRP为最简单的原则，也是最难运用好的原则
+- 软件设计真正要做的其实就是发现责任并把那些责任分离
+- 其他原则都将能追溯到SRP
+- 大道至简，只有不断在代码中运用才能真正体会其中的奥妙
+
+
+## 参考文章
+[1]《敏捷软件开发：原则、模式与实践》第8章 单一职责原则
+[2][维基百科](https://zh.wikipedia.org/wiki/%E5%8D%95%E4%B8%80%E5%8A%9F%E8%83%BD%E5%8E%9F%E5%88%99)
+[3][我是怎样向妻子解释OOD的](http://www.oschina.net/translate/how-i-explained-ood-to-my-wife?lang=chs&page=1#)
+
+[^foot]:结尾
