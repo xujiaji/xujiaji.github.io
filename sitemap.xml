@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/12/12/android-bug-list/</loc>
+    
+    <lastmod>2017-12-12T09:26:17.482Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/12/12/git-notes/</loc>
+    
+    <lastmod>2017-12-12T09:24:11.117Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/12/12/linux-notes/</loc>
+    
+    <lastmod>2017-12-12T04:41:30.606Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/04/23/ood-lsp/</loc>
     
     <lastmod>2017-12-11T13:49:59.300Z</lastmod>
