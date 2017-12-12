@@ -2,7 +2,7 @@
 title: Android开发中的bug清单
 date: 2017-12-12 15:34:41
 author: xujiaji
-thumbnail: image/android-bug-list.jpg
+thumbnail: image/android-bug-list.png
 tags:
     - android
     - bug
