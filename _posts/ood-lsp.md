@@ -1,6 +1,7 @@
 ---
 title: 面向对象设计-里氏替换原则(LSP)
 date: 2016.04.23 11:02
+author: xujiaji
 thumbnail: http://upload-images.jianshu.io/upload_images/1552955-214b1eec4a45c991.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
 tags:
     - Java

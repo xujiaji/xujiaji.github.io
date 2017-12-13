@@ -1,6 +1,7 @@
 ---
 title: 面向对象设计-接口隔离(ISP)
 date: 2016-05-07 10:12
+author: xujiaji
 thumbnail: http://upload-images.jianshu.io/upload_images/1552955-d848981d7298dcbf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
 tags:
     - Java
