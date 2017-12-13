@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/05/07/ood-isp/</loc>
+    
+    <lastmod>2017-12-13T10:56:57.747Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/04/23/ood-lsp/</loc>
+    
+    <lastmod>2017-12-13T10:56:53.248Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/12/12/git-notes/</loc>
     
     <lastmod>2017-12-12T09:40:01.873Z</lastmod>
@@ -19,13 +33,6 @@
     <loc>http://yoursite.com/2017/12/12/linux-notes/</loc>
     
     <lastmod>2017-12-12T04:41:30.606Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/04/23/ood-lsp/</loc>
-    
-    <lastmod>2017-12-11T13:49:59.300Z</lastmod>
     
   </url>
   
