@@ -2,15 +2,12 @@
 title: 面向对象设计-接口隔离(ISP)
 date: 2016-05-07 10:12
 author: xujiaji
-thumbnail: http://upload-images.jianshu.io/upload_images/1552955-d848981d7298dcbf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
+thumbnail: image/ood/isp-home.png
 tags:
     - Java
     - 面向对象设计
 ---
-
-![ISP](http://upload-images.jianshu.io/upload_images/1552955-d848981d7298dcbf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-> 主目录：[一个面向对象设计(OOD)的学习思路设计](http://www.jianshu.com/p/fab09d064846)
+![ISP](image/ood/isp-home.png)
 
 引入：
 
@@ -20,7 +17,11 @@ tags:
 `新手机：`所以在平常时候，我这几个按钮就可以满足大部分需要了。
 `老手机：`真是一代比一代强咯！
 
-![ISP.png](http://upload-images.jianshu.io/upload_images/1552955-35de7a2e696c454b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+---
+
+> ISP
+
+![ISP.png](image/ood/isp.png)
 
 ## 1.何为ISP？
  - 全称：接口隔离原则（Interface Segregation Principle）
@@ -28,11 +29,11 @@ tags:
 
 ## 2.如何理解ISP？
  - 比如`图2-1.违反了ISP`中的鸵鸟类不应该被迫依赖于不使用的飞翔方法
- ![2-1.违反了ISP](http://upload-images.jianshu.io/upload_images/1552955-940cb2ab5b7872da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+ ![2-1.违反了ISP](image/ood/isp-no.png)
 
 - 现在将`2-1.满足ISP`的例子中的`接口鸟`进行拆分，能飞的`鸟类麻雀`实现`接口飞鸟`，不能飞的`鸟类鸵鸟`实现`接口鸟`，如下`图2-2`所示。
 
-![2-2.满足ISP.png](http://upload-images.jianshu.io/upload_images/1552955-cbecfee325c2175a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![2-2.满足ISP.png](image/ood/isp-yes.png)
 
 - 可能到这里大家有个疑惑：接口变多了！对！就是接口变多了。不是上面还举例了手机的例子吗？阐明了减少接口的好处。
  - 其实我们减少并不是接口，而是接口中的抽象方法。
@@ -60,14 +61,14 @@ tags:
  - `TransferTransaction`转账
 
 2. 每一个子类交易都有一个界面，因此要依赖于UI，调用的不同方法，如：DepositTransaction会调用UI类中的RequestDepositAmount()方法，当前ATM结果如下`图4-2-1.ATM操作解构`所示。
- ![4-2-1.ATM操作解构](http://upload-images.jianshu.io/upload_images/1552955-20c0565932dc5e43.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+ ![4-2-1.ATM操作解构](image/ood/isp-atm.png)
  - 这样做是ISP告诉我们应当避免的情形
  - 每个操作使用的UI方法，其他的操作都不会使用
  - 当每次`Transaction`子类的改动都会迫使对UI进行改动，从而影响到了其他所有`Transaction`子类及其他所有依赖于UI接口的类。
  - 当要增加一个支付煤气费的交易时，为了处理该操作想要显示的特定消息，就需要在UI中加入新的方法。糟糕的是，由于`Transaction`的子类全部依赖于UI接口，所以它们都需要重新编译。
 
 3. 因此现在有一个办法，将UI接口分解成像`DepositUI`、`WithdrawalUI`以及`TransferUI`这样的单独接口，可以避免这种不合适的耦合，最终的UI接口可以去多重继承这些单独的接口。`图5-3-1.分离的ATM接口`和之后的代码展示了这个模型。
- ![5-3-1.分离的ATM接口](http://upload-images.jianshu.io/upload_images/1552955-43c35e5ce6f818a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+ ![5-3-1.分离的ATM接口](image/ood/isp-atm-yes.png)
 
  > 定义交易接口
 
