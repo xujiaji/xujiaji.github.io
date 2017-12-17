@@ -2,17 +2,17 @@
 title: 面向对象设计-单一职责原则(SRP)
 date: 2016-04-07 23:55
 author: xujiaji
-thumbnail: http://upload-images.jianshu.io/upload_images/1552955-f8fcbe790d7f8cd1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
+thumbnail: image/ood/srp-home.png
 tags:
     - Java
     - 面向对象设计
 ---
 
-![只有佛自己才应该担负起公布玄妙秘密的职责](http://upload-images.jianshu.io/upload_images/1552955-f8fcbe790d7f8cd1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-主目录：[一个面向对象设计(OOD)的学习思路设计](http://www.jianshu.com/p/fab09d064846)
+![只有佛自己才应该担负起公布玄妙秘密的职责](image/ood/srp-home.png)
 
+>SRP
 
-![SRP.png](http://upload-images.jianshu.io/upload_images/1552955-0fc1b3477d1f956e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![SRP.png](image/ood/srp.png)
 ## 何为SRP？
 - 全称：单一职责原则(Single Responsibility Principle)
 - 定义:该原则规定每个类都应该只有一个单一的功能，并且该功能应该由这个类完全封装起来
@@ -24,8 +24,9 @@ tags:
 
 - 如下图农活责任所示，耕菜地和耕水田即为牛和耕地机的职责，即为这个对象存在的原因（下面将来讨论这个关系图）。
 
+>农活责任
 
-![农活责任](http://upload-images.jianshu.io/upload_images/1552955-aae094029d977f3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![农活责任](image/ood/srp-nong-huo.png)
 
 ## 为何要提倡SRP？
 > 其思想简单，但却难以掌握。就是一个模块，一个类只能干一件事情。
@@ -38,7 +39,9 @@ tags:
 - 如果不分离责任，在不断变化和添加的需求面前，责任之间耦合度强导致我们的程序更加的脆弱。
 ## 比如说？（实际举例说明）
 - 例子一
-![农活责任(改).png](http://upload-images.jianshu.io/upload_images/1552955-75ef45d419f1dce5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>农活责任(改)
+
+![农活责任(改).png](image/ood/srp-nong-huo-gai.png)
 
 如上图将两个责任分离，牛实现耕水田的时候，不会知道也不会去在意耕菜地，分离了责任，该做的才做，不做的不用管。
 
@@ -55,8 +58,9 @@ interface Modem {
 >这个接口中显示了两个职责，一个是连接管理，一个是数据通信。dial和hangup函数进行调制解调器的连接处理，而send和recv函数进行数据的通信。
 
 这两个责任应该被分开吗？这决定于应用程序以何种方式变化。如果应用程序的变化会影响连接函数的部署，那么这个设计就具有僵化性的臭味。因为调用send和recv的类必须要重新编译连接处理函数，部署的次数常常会超过我们希望的次数。在这种情况下，这两个职责应该被分离。如图下图所示，这样避免了客户应用程序和这两个职责耦合在一起。
+> 分离的Modem接口
 
-![分离的Modem接口](http://upload-images.jianshu.io/upload_images/1552955-9b698d76a5b9cabe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![分离的Modem接口](image/ood/srp-fen-li.png)
 
 |注意|
 |:-:|
@@ -74,5 +78,3 @@ interface Modem {
 [1]《敏捷软件开发：原则、模式与实践》第8章 单一职责原则
 [2][维基百科](https://zh.wikipedia.org/wiki/%E5%8D%95%E4%B8%80%E5%8A%9F%E8%83%BD%E5%8E%9F%E5%88%99)
 [3][我是怎样向妻子解释OOD的](http://www.oschina.net/translate/how-i-explained-ood-to-my-wife?lang=chs&page=1#)
-
-[^foot]:结尾
