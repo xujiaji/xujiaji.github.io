@@ -2,16 +2,17 @@
 title: 面向对象设计-开闭原则(OCP)
 date: 2016-04-12 08:43
 author: xujiaji
-thumbnail: http://upload-images.jianshu.io/upload_images/1552955-75dbeefc5b02750c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
+thumbnail: image/ood/ocp-home.jpg
 tags:
     - Java
     - 面向对象设计
 ---
 
-![楼层建的更高！走的更远！](http://upload-images.jianshu.io/upload_images/1552955-75dbeefc5b02750c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-主目录：[一个面向对象设计(OOD)的学习思路设计](http://www.jianshu.com/p/fab09d064846)
+![楼层建的更高！走的更远！](image/ood/ocp-home.jpg)
 
-![OCP.png](http://upload-images.jianshu.io/upload_images/1552955-0cb6f8191b2737c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> OCP
+
+![OCP.png](image/ood/ocp.png)
 ## 啥是OCP？
 - 全称：开闭原则(Open-Closed Principle)[^foot2]
 - 定义：软件实体（类、模块、函数等等）应该是可以扩展的
@@ -21,7 +22,7 @@ tags:
 
 对于某个模块的功能是可以进行扩展的。当需求改变，我们只需对其进行扩展即可满足于新的需求。
 
-比如说：“砖”，我们不需要改变它的形态与结构，就可以根据需求来建高楼、建围墙、建厕所、建这样建那样(๑乛乛๑)。 - - 所以可以认为“砖”对于扩展的需求是开放的。又比如说电脑主板对于cpu、内存等是可扩展的。 
+比如说：“砖”，我们不需要改变它的形态与结构，就可以根据需求来建高楼、建围墙、建厕所、建这样建那样(๑乛乛๑)。 - - 所以可以认为“砖”对于扩展的需求是开放的。又比如说电脑主板对于cpu、内存等是可扩展的。
 
 >关(C)：对于更改是封闭的
 
@@ -34,18 +35,18 @@ tags:
 其实在上面大家因该已经明白一些了，“开放”是为了更好的扩展，适应更多的相应需求。“关闭”是为了降低耦合，降低了维护难度和制作成本。两者可以说本是互为一体，而又被分开说成两样。因为关闭时得留出口开放本就是处理的一个模块同时进行。
 
 > 在许多方面，OCP的面向对象的核心所在
-> 注意： 
+> 注意：
 - 我们因该对频繁出现的变化进行封闭开放处理也就是进行抽象
 - 拒绝不成熟的抽象和抽象本身一样重要
 
 ## 比如说？(实际例子)
 
- - 违反OCP
-![既不开放又不封闭.png](http://upload-images.jianshu.io/upload_images/1552955-d7cbc0df8b002c01.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+ - 违反OCP,既不开放又不封闭
+![既不开放又不封闭.png](image/ood/ocp-no.png)
 
  上图展示了一个没有遵循OCP的设计例子，电灯类和电源类是两个具体的类。要让电灯发光，需要电源这个属性。如果此时要将电灯接在另一个电源上面，就必须更换成另一个电源的属性（将电灯连线与另一个电源）。
- - 遵循OCP
-![既开放又封闭.png](http://upload-images.jianshu.io/upload_images/1552955-075510555b25af7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+ - 遵循OCP,既开放又封闭
+![既开放又封闭.png](image/ood/ocp-yes.png)
 
  上图展示了一个解决上面问题的OCP设计，灯座是一个拥有抽象成员的接口（比如说与电源的连线）。电灯类使用这个抽象类（有插座的成员属性），而电灯的对象使用的是灯座接口的实现类电源。如果我们需要将电灯接到另一个电源，只需要接到另一插座。如果要更换电源，那么将插座接到另一个电源。这样双方的改变，被插座接口隔离而不会影响到具体的类。（我理解为隔离了变化的扩散）
 
