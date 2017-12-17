@@ -49,6 +49,7 @@ $ git merge work
 
 ## git pull和本地冲突
 > 冲突log
+
 ``` sh
 $ git pull
 remote: Counting objects: 24, done.
@@ -65,6 +66,7 @@ Updating a98e719..3b64c8a
 ```
 
 > 1、用 `git stash`本地暂时保存起来
+
 ``` sh
 $ git stash
 Saved working directory and index state WIP on master: a98e719 update scripts
@@ -73,7 +75,8 @@ Saved working directory and index state WIP on master: a98e719 update scripts
 > 2、pull
 
 > 3、还原`git stash pop stash@{0}`
-```
+
+``` sh
 $ git stash pop stash@{0}
 Auto-merging _config.yml
 On branch master
