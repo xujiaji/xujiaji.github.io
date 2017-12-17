@@ -46,3 +46,36 @@ $ git push origin 1.1.2
 ```
 $ git merge work
 ```
+
+## git pull和本地冲突
+> 冲突log
+``` sh
+$ git pull
+remote: Counting objects: 24, done.
+remote: Compressing objects: 100% (17/17), done.
+remote: Total 24 (delta 7), reused 23 (delta 6), pack-reused 0
+Unpacking objects: 100% (24/24), done.
+From https://github.com/elmorec/hexo-theme-inside
+   a98e719..3b64c8a  master     -> origin/master
+error: Your local changes to the following files would be overwritten by merge:
+        _config.yml
+Please commit your changes or stash them before you merge.
+Aborting
+Updating a98e719..3b64c8a
+```
+
+> 1、用 `git stash`本地暂时保存起来
+``` sh
+$ git stash
+Saved working directory and index state WIP on master: a98e719 update scripts
+```
+
+> 2、pull
+
+> 3、还原`git stash pop stash@{0}`
+```
+$ git stash pop stash@{0}
+Auto-merging _config.yml
+On branch master
+Your branch is up-to-date with 'origin/master'.
+```
