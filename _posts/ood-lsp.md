@@ -2,17 +2,15 @@
 title: 面向对象设计-里氏替换原则(LSP)
 date: 2016.04.23 11:02
 author: xujiaji
-thumbnail: http://upload-images.jianshu.io/upload_images/1552955-214b1eec4a45c991.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
+thumbnail: image/ood/lsp-home.jpg
 tags:
     - Java
     - 面向对象设计
 ---
 
-![探索神秘未知](http://upload-images.jianshu.io/upload_images/1552955-214b1eec4a45c991.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![探索神秘未知](image/ood/lsp-home.jpg)
 
-> 主目录：[一个面向对象设计(OOD)的学习思路设计](http://www.jianshu.com/p/fab09d064846)
-
-引子：
+引：
 > 有一只小麻雀在大平原上，飞呀飞～。飞累了，看见前方一个大鸟...
 `小麻雀：`大鸟兄你好，本鸟叫麻雀！请问您怎么称呼？
 `大鸵鸟：`原来是麻雀小弟呀！本鸟叫鸵鸟！
@@ -24,17 +22,22 @@ tags:
 
 
 ----
+> LSP
 
-![LSP.png](http://upload-images.jianshu.io/upload_images/1552955-d1c7423eabc9ec9a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![LSP.png](image/ood/lsp.png)
 
 ## 1. 何为LSP？
 - 全称：里氏替换原则（Liskov Substitution principle）
 - 定义：`派生类（子类）`对象能够替换其`基类（超类）`对象被使用[^foot1]
  - Barbara Liskov对LSP定义是这么说的：若对每个类型`S`的对象`q1`，都存在一个类型`T`的对象`q2`，使得在所有对`T`编写的程序`P`中，用`q1`替换`q2`后，程序`P`行为功能不变，则`S`是`T`的子类型。
  听着有些绕，我将它画一个类图便于理解：
+ > LSP定义理解dsf
+ 在类P中将T的对象q2，换成S的对象q1行为功能不变
+ 则S继承T，得如图所示的关系
+
 ![LSP定义理解dsf
 在类P中将T的对象q2，换成S的对象q1行为功能不变
-则S继承T，得如图所示的关系](http://upload-images.jianshu.io/upload_images/1552955-dce323ccc6ad7d19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+则S继承T，得如图所示的关系](image/ood/lsp1.png)
 
 
 ## 2. 何为L？何为S？
@@ -48,7 +51,7 @@ tags:
 
 - 来张违反LSP的类图
 
-![违反LSP.png](http://upload-images.jianshu.io/upload_images/1552955-2abece71be1dde9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![违反LSP.png](image/ood/lsp-no.png)
 
 - 分析
  - 现在我说天上飞着一只鸟。。。
@@ -71,7 +74,7 @@ tags:
  */
 class Bird{
     public static final int IS_OSTRICH = 1;//是鸵鸟
-    public static final int IS_SPARROW = 2;//是麻雀 
+    public static final int IS_SPARROW = 2;//是麻雀
     public int isType;
     public Bird(int isType) {
         this.isType = isType;
