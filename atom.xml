@@ -81,9 +81,19 @@
     <link href="http://yoursite.com/2017/12/12/linux-notes/"/>
     <id>http://yoursite.com/2017/12/12/linux-notes/</id>
     <published>2017-12-12T04:25:29.000Z</published>
-    <updated>2017-12-12T04:41:30.606Z</updated>
+    <updated>2017-12-18T01:02:27.822Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>每次开机弹出软件崩溃反馈<br>解决：删除崩溃日志</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo rm /var/crash/*</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;每次开机弹出软件崩溃反馈&lt;br&gt;解决：删除崩溃日志&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;lin
+      
     
     </summary>
     
