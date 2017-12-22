@@ -8,8 +8,6 @@ tags:
     - 面向对象设计
 ---
 
-![楼层建的更高！走的更远！](image/ood/ocp-home.jpg)
-
 > OCP
 
 ![OCP.png](image/ood/ocp.png)

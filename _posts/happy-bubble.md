@@ -8,8 +8,6 @@ tags:
     - library
 ---
 
-![bubble](image/happy-bubble/img5.png)
-
 |||
 |-|-|
 |[![GitHub release](https://img.shields.io/badge/Download-demo--apk-brightgreen.svg)](https://github.com/xujiaji/HappyBubble/releases)|[![GitHub release](https://img.shields.io/badge/bintray-1.0.1-brightgreen.svg)](https://bintray.com/xujiaji/maven/happy-bubble/1.0.1)|

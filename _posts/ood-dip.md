@@ -8,8 +8,6 @@ tags:
     - 面向对象设计
 ---
 
-![Dependency inversion principle](image/ood/dip-home.png)
-
 # 简介
 ![DIP.png](image/ood/dip.png)
 

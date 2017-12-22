@@ -7,7 +7,6 @@ tags:
     - Java
     - 面向对象设计
 ---
-![ISP](image/ood/isp-home.png)
 
 引入：
 

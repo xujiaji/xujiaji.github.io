@@ -10,8 +10,6 @@ tags:
 > 我们寻找的，也只不过是内心世界的片刻安宁，
 以及，那样一场盛大的清欢。
 
-![hoem](image/android-ui-event/home.jpg)
-
 ## 聊聊UI事件传递
 
 ![Android UI事件传递.png](image/android-ui-event/ui-event.png)

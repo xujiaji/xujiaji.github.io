@@ -8,8 +8,6 @@ tags:
     - 面向对象设计
 ---
 
-![只有佛自己才应该担负起公布玄妙秘密的职责](image/ood/srp-home.png)
-
 >SRP
 
 ![SRP.png](image/ood/srp.png)
