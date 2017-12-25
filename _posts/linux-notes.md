@@ -55,7 +55,10 @@ gnome-desktop-item-edit ~/桌面/ --create-new
 > 由于我创建启动器遇到下面的错误，必须在当前目录才能运行XMind，否则就有下面的错误提示对话框出现。
 
 ``` sh
-The configuration area at '/./configuration' could not be created.  Please choose a writable location using the '-configuration' command line option.
+The configuration area at '/./configuration'
+could not be created.
+Please choose a writable location
+using the '-configuration' command line option.
 ```
 
 > 解决：写一个命令脚步，先跳转到`~/xmind/XMind_amd64/`目录再执行`XMind`运行软件，脚步如下：
