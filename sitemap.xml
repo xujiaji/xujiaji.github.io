@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/12/12/linux-notes/</loc>
+    
+    <lastmod>2017-12-25T08:20:03.703Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/04/07/ood-srp/</loc>
     
     <lastmod>2017-12-22T15:31:05.036Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>http://yoursite.com/2017/12/16/happy-bubble/</loc>
     
     <lastmod>2017-12-22T15:30:44.691Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/12/12/linux-notes/</loc>
-    
-    <lastmod>2017-12-20T14:02:54.647Z</lastmod>
     
   </url>
   
