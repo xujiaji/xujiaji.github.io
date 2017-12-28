@@ -2,12 +2,13 @@
 title: VIM爬坡到半山腰的总结
 date: 2016-11-30 09:43
 author: xujiaji
-thumbnail: image/vim-1/banner.png
+thumbnail: image/vim-1/home.png
 tags:
     - linux
     - vim
     - 笔记
 ---
+![banner](image/vim-1/banner.png)
 
 ## 简介
 将Linux Mint做为我的主系统后，来来回回到处撞墙。慢慢的到现在不仅习惯了Linux下的娱乐和开发，居然还渐渐的顺手顺眼起来，对于Linux生存有了保障的我现在对Linux下的`VIM`开始好奇了。
