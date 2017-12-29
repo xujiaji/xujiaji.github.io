@@ -70,7 +70,7 @@ using the '-configuration' command line option.
 cd ~/xmind/XMind_amd64
 ./XMind
 ```
-> 下面时启动器`xmind.desktop`
+> 下面是启动器`xmind.desktop`
 
 ``` sh
 #!/usr/bin/env xdg-open
@@ -83,4 +83,10 @@ Name[zh_CN]=xmind
 Exec=/home/soul/xmind/XMind_amd64/start.sh
 Name=xmind
 Icon=/home/soul/xmind/icon.png
+```
+
+## 更新hosts文件后让文件生效
+```
+sudo apt-get install nscd
+sudo /etc/init.d/nscd restart
 ```
