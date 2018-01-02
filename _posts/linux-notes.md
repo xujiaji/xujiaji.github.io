@@ -90,3 +90,34 @@ Icon=/home/soul/xmind/icon.png
 sudo apt-get install nscd
 sudo /etc/init.d/nscd restart
 ```
+
+## 使用Samba让Linux与Windows共享文件夹
+### 安装samba
+``` sh
+$ sudo apt-get install samba
+```
+### 创建共享目录
+``` sh
+$ mkdir /home/soul/文档/ShareFiles
+$ sudo chmod /home/soul/文档/ShareFiles
+```
+### 修改samba配置文件
+打开文件
+``` sh
+$ sudo vim /etc/samba/smb.conf
+```
+末尾添加如下内容
+``` sh
+[share]  
+   comment = my share directory  
+   path = /home/soul/文档/ShareFiles
+   browseable = yes  
+   writable = yes
+```
+### 启动samba服务器
+``` sh
+$ sudo /etc/init.d/samba restart
+```
+### windows中打开
+- 打开windows文件管理器，顶部输入``\\linux ip\share`
+- 账号密码为linux账户的账户密码
