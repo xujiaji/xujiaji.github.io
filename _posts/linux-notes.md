@@ -121,3 +121,51 @@ $ sudo /etc/init.d/samba restart
 ### windows中打开
 - 打开windows文件管理器，顶部输入``\\linux ip\share`
 - 账号密码为linux账户的账户密码
+
+## 清理系统
+### 删除一些不必要的资源
+``` sh
+$ sudo apt-get autoclean
+$ sudo apt-get autoremove
+```
+
+### 删除旧内核
+> 查看当前使用的内核信息：`uname -a`
+
+```
+$ uname -a
+Linux boomake-pc 4.10.0-42-generic #46~16.04.1-Ubuntu SMP Mon Dec 4 15:57:59 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+```
+> 查看已存在的内核：`dpkg --get-selections| grep linux`
+
+``` sh
+$ dpkg --get-selections| grep linux
+console-setup-linux				install
+libselinux1:amd64				install
+libselinux1:i386				install
+linux-base					install
+linux-firmware					install
+linux-generic-hwe-16.04				install
+linux-headers-4.10.0-40				install
+linux-headers-4.10.0-40-generic			install
+linux-headers-4.10.0-42				install
+linux-headers-4.10.0-42-generic			install
+linux-headers-generic-hwe-16.04			install
+linux-image-4.10.0-40-generic			install
+linux-image-4.10.0-42-generic			install
+linux-image-extra-4.10.0-40-generic		install
+linux-image-extra-4.10.0-42-generic		install
+linux-image-generic-hwe-16.04			install
+linux-libc-dev:amd64				install
+linux-libc-dev:i386				install
+linux-sound-base				install
+linuxbrew-wrapper				install
+pptp-linux					install
+syslinux					install
+syslinux-common					install
+syslinux-legacy					install
+util-linux					install
+```
+> 删除：`sudo apt-get purge`
+
+> 更新一下启动引导：`sudo update-grub`或者`sudo update-grub2`
