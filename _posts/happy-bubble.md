@@ -17,9 +17,9 @@ tags:
 气泡布局的形状可以改变，如四角弧度、气泡颜色、箭头大小和阴影。
 
 气泡Dialog可以根据被点击的view的位置来确定自己展示的位置。
-# 更新
-- 1.1.0<br>①Dialog交互事件传递到Activity达到不在不关闭Dialog的情况下做其他Activity的操作。<br>②添加自动根据被点击View距离屏幕边缘的距离确定Dialog的位置。<br>③新增“autoPosition”和“setThroughEvent”方法，请参考“BubbleDialog方法参考表”
-![](https://user-gold-cdn.xitu.io/2018/1/7/160ce5c5510a49ac?w=400&h=709&f=gif&s=2282317)
+## 更新
+- 1.1.0:<br>①Dialog交互事件传递到Activity达到不在不关闭Dialog的情况下做其他Activity的操作。<br>②添加自动根据被点击View距离屏幕边缘的距离确定Dialog的位置。<br>③新增“autoPosition”和“setThroughEvent”方法，请参考“BubbleDialog方法参考表”
+![1.1.0.gif](display/1.1.0.gif)
 
 - 1.0.3:继续优化了点击在气泡之外才会被dismiss；修复了Dialog周围会有部分点击无法dismiss；
 
@@ -28,7 +28,7 @@ tags:
 ## 如何开始?
 在你模块中的build.gradle添加上HappyBubble依赖
 ```
-compile 'com.github.xujiaji:happy-bubble:1.0.1'
+compile 'com.github.xujiaji:happy-bubble:1.1.0'
 ```
 
 ## 如何使用 HappyBubble-BubbleDialog?
@@ -46,6 +46,8 @@ compile 'com.github.xujiaji:happy-bubble:1.0.1'
 |setTransParentBackground|-|背景透明|
 |softShowUp|-|当气泡dialog中有EditText时，软键盘弹出会遮挡EditText时，dialog随软键盘上移。|
 |show|-|显示|
+|autoPosition|boolean|是否开启自动确定位置功能，开启后，“setPosition”功能失效|
+|setThroughEvent|boolean, boolean|第一个参数isThroughEvent设置是否穿透Dialog手势交互。<br>第二个参数cancelable 点击空白是否能取消Dialog，只有当"isThroughEvent = false"时才有效|
 
 ### 最简单的实现
 |||
