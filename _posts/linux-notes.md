@@ -174,3 +174,23 @@ util-linux					install
 > 删除：`sudo apt-get purge`
 
 > 更新一下启动引导：`sudo update-grub`或者`sudo update-grub2`
+
+## appstreamcli错误
+> `sudo-apt get update`时出现下面错误
+
+``` sh
+The AppStream system cache was updated, but some errors were detected, which might lead to missing metadata. Refer to the verbose log for more information.
+Reading package lists... Done
+E: Problem executing scripts APT::Update::Post-Invoke-Success 'if /usr/bin/test -w /var/cache/app-info -a -e /usr/bin/appstreamcli; then appstreamcli refresh-cache > /dev/null; fi'
+E: Sub-process returned an error code
+```
+> 解决
+
+``` sh
+$ sudo rm /usr/bin/appstreamcli
+cd /tmp && mkdir asfix
+cd asfix
+wget https://launchpad.net/ubuntu/+archive/primary/+files/appstream_0.9.4-1ubuntu1_amd64.deb
+wget https://launchpad.net/ubuntu/+archive/primary/+files/libappstream3_0.9.4-1ubuntu1_amd64.deb
+sudo dpkg -i *.deb
+```
