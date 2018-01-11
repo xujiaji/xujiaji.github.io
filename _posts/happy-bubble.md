@@ -19,7 +19,7 @@ tags:
 气泡Dialog可以根据被点击的view的位置来确定自己展示的位置。
 ## 更新
 - 1.1.0:<br>①Dialog交互事件传递到Activity达到不在不关闭Dialog的情况下做其他Activity的操作。<br>②添加自动根据被点击View距离屏幕边缘的距离确定Dialog的位置。<br>③新增“autoPosition”和“setThroughEvent”方法，请参考“BubbleDialog方法参考表”
-![1.1.0.gif](display/1.1.0.gif)
+![1.1.0.gif](image/happy-bubble/1.1.0.gif)
 
 - 1.0.3:继续优化了点击在气泡之外才会被dismiss；修复了Dialog周围会有部分点击无法dismiss；
 
