@@ -10,13 +10,20 @@ tags:
 
 |||
 |-|-|
-|[![GitHub release](https://img.shields.io/badge/Download-demo--apk-brightgreen.svg)](https://github.com/xujiaji/HappyBubble/releases)|[![GitHub release](https://img.shields.io/badge/bintray-1.0.1-brightgreen.svg)](https://bintray.com/xujiaji/maven/happy-bubble/1.0.1)|
+|[![GitHub release](https://img.shields.io/badge/Download-demo--apk-brightgreen.svg)](https://github.com/xujiaji/HappyBubble/releases)|[![GitHub release](https://img.shields.io/badge/bintray-1.1.0-brightgreen.svg)](https://bintray.com/xujiaji/maven/happy-bubble/1.1.0)|
 
 [Github](https://github.com/xujiaji/HappyBubble)
 
 气泡布局的形状可以改变，如四角弧度、气泡颜色、箭头大小和阴影。
 
 气泡Dialog可以根据被点击的view的位置来确定自己展示的位置。
+# 更新
+- 1.1.0<br>①Dialog交互事件传递到Activity达到不在不关闭Dialog的情况下做其他Activity的操作。<br>②添加自动根据被点击View距离屏幕边缘的距离确定Dialog的位置。<br>③新增“autoPosition”和“setThroughEvent”方法，请参考“BubbleDialog方法参考表”
+![](https://user-gold-cdn.xitu.io/2018/1/7/160ce5c5510a49ac?w=400&h=709&f=gif&s=2282317)
+
+- 1.0.3:继续优化了点击在气泡之外才会被dismiss；修复了Dialog周围会有部分点击无法dismiss；
+
+- 1.0.2:修复点击dialog边缘无法取消
 
 ## 如何开始?
 在你模块中的build.gradle添加上HappyBubble依赖
