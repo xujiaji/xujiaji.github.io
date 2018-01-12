@@ -90,3 +90,10 @@ Auto-merging _config.yml
 On branch master
 Your branch is up-to-date with 'origin/master'.
 ```
+
+## 克隆其他分支
+> 如下所示，只克隆source分支
+
+```
+$ git clone -b source git@github.com:xujiaji/xujiaji.github.io.git
+```
