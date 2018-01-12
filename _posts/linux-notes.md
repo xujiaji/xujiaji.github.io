@@ -116,7 +116,19 @@ $ sudo vim /etc/samba/smb.conf
    path = /home/soul/文档/ShareFiles
    browseable = yes  
    writable = yes
+   public = yes
+   valid users = xujiaji
 ```
+xujiaji是我当前linux的用户名，相应换成你的
+
+> 设置登录密码
+
+```
+sudo touch /etc/samba/smbpasswd
+sudo smbpasswd -a xujiaji
+```
+xujiaji换成上一步你设置的用户名
+
 > 启动samba服务器
 
 ``` sh
