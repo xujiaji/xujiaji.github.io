@@ -30,7 +30,7 @@ tags:
  ``` sh
    $ cd /usr/java
    $ sudo tar -zxvf /usr/java/jdk-7u79-linux-x64.tar.gz
-   $ sudo rm jdk-7u79-linux-x64.tar.gz 
+   $ sudo rm jdk-7u79-linux-x64.tar.gz
  ```
 
 ### ④配置jdk环境变量
@@ -67,15 +67,14 @@ unzip android-studio-ide-141.2456560-linux.zip
 > Genymotion被称为是速度最快的Android模拟器可不是盖的，手机也没有两，就打算安装一个模拟器。
 
 ### [Genymotion官网](https://www.genymotion.com/)
-注册一个号，登录了就能下载免费版本的虚拟机。[我下载版本的连接地址](http://files2.genymotion.com/genymotion/genymotion-2.6.0/genymotion-2.6.0-linux_x64.bin)
+[genymotion-2.11.0-linux_x64下载](https://www.genymotion.com/download-handler/?opt=ubu_first_64_download_link)
+[genymotion-2.6.0下载](http://files2.genymotion.com/genymotion/genymotion-2.6.0/genymotion-2.6.0-linux_x64.bin)
+
 ### 安装步骤
-根据这篇教程[Ubuntu下安装Genymotion安卓模拟器 Linux教程](http://www.lihuan.com.cn/2015/02/15/521.html)
-- 将genymotion-2.6.0-ubuntu15_x64.bin移动到用户目录`$ mv genymotion-2.6.0-ubuntu15_x64.bin /home/jiana`
 - 需要安装一个软件virtualbox才能使用Gecymotion,命令:`sudo apt-get install virtualbox`
-- 进入/home/jiana运行genymotion文件
+- 运行genymotion文件
 ``` sh
-$ cd /home/jiana/
-$ chmod +x genymotion-2.6.0-ubuntu15_x64.bin 
-$ ./genymotion-2.6.0-ubuntu15_x64.bin 
+$ chmod +x genymotion-2.11.0-linux_x64.bin
+$ ./genymotion-2.11.0-linux_x64.bin
 ```
 - 完成后进入该用户目录下的genymotion目录，双击运行genymotion。好了，接下来就可以下载genymotion虚拟机来体验快感了。
