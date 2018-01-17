@@ -206,3 +206,26 @@ wget https://launchpad.net/ubuntu/+archive/primary/+files/appstream_0.9.4-1ubunt
 wget https://launchpad.net/ubuntu/+archive/primary/+files/libappstream3_0.9.4-1ubuntu1_amd64.deb
 sudo dpkg -i *.deb
 ```
+
+## 安装截屏软件Shutter
+> 添加软件源
+
+``` sh
+$ sudo add-apt-repository ppa:shutter/ppa
+```
+> 更新源并安装
+
+``` sh
+$ sudo apt-get update
+$ sudo apt-get install shutter
+```
+> 设置快捷键
+
+系统设置 > 键盘 > 快捷键 > 自定义快捷键 > +
+
+|自定义快捷键||
+|-|-|
+|名称：|Shutter Select|
+|命令：|shutter -s|
+
+点击新添加条目的右侧新建快捷键，然后同时按住Ctrl+Alt+A，结束。
