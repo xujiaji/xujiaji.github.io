@@ -7,6 +7,18 @@ tags:
     - android
     - bug
 ---
+## java.lang.IllegalStateException: Fragment already added: DialogFragment
+- 解决地址：http://blog.csdn.net/kifile/article/details/47442899
+- 原因：点击过快DialogFragment消息队列还没有执行完
+- 解决办法：
+
+``` java
+getFragmentManager().executePendingTransactions();
+if (!mDialogFragment.isAdded())
+{
+    mDialogFragment.show(getFragmentManager(), "DialogFragment");
+}
+```
 
 ## java.lang.RuntimeException: Unable to get provider
 - 解决地址：https://stackoverflow.com/questions/37312103/unable-to-get-provider-com-google-firebase-provider-firebaseinitprovider
