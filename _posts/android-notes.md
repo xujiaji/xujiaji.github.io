@@ -8,6 +8,14 @@ tags:
     - 笔记
 ---
 
+## RecyclerView嵌套RecyclerView时，刷新内部RecyclerView会跳动
+原因：内部RecyclerView抢占了焦点
+
+解决：将内部RecyclerView的焦点设置为false
+``` java
+recyclerView.setFocusableInTouchMode(false);
+```
+
 ## adb之Wifi连接手机
 > 查看当前设备`adb devices`
 
