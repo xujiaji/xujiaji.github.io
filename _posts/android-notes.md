@@ -7,6 +7,28 @@ tags:
     - android
     - 笔记
 ---
+## 垂直RecyclerView嵌套垂直RecyclerView滑动时出现的卡顿
+原因：内部RecyclerView重复设置适配器导致的卡顿
+
+解决：判断内部RecyclerView是否设置过适配器，如果没有才设置
+
+``` java
+//内部RecyclerView的获取和处理问题的代码
+RecyclerView rvItem = helper.getView(R.id.rvItem);
+rvItem.setNestedScrollingEnabled(false);
+if(rvItem.getAdapter() == null)
+{
+    LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
+    layoutManager.setAutoMeasureEnabled(true);
+    rvItem.setLayoutManager(layoutManager);
+    rvItem.setAdapter(new OrderItemAdapter(item.getList()));
+}
+```
+
+##  ScrollView嵌套RecyclerView滑动滑动起来很吃力
+``` java
+recyclerView.setNestedScrollingEnabled(false);
+```
 
 ## RecyclerView嵌套RecyclerView时，刷新内部RecyclerView会跳动
 原因：内部RecyclerView抢占了焦点
