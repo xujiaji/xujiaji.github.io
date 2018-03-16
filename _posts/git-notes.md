@@ -3,6 +3,8 @@ title: Git笔记
 date: 2017-12-12 11:02:34
 author: xujiaji
 thumbnail: image/git-notes.png
+categories:
+ - 笔记
 tags:
     - git
     - 笔记

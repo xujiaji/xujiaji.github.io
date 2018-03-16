@@ -3,6 +3,8 @@ title: VIM爬坡到半山腰的总结
 date: 2016-11-30 09:43
 author: xujiaji
 thumbnail: image/vim-1/home.png
+categories:
+ - 笔记
 tags:
     - linux
     - vim

@@ -3,6 +3,8 @@ title: 面向对象设计-依赖倒置原则（DIP）
 date: 2016-05-29 12:08
 author: xujiaji
 thumbnail: image/ood/dip-home.png
+categories:
+ - 文章
 tags:
     - Java
     - 面向对象设计

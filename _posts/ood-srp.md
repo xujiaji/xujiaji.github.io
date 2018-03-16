@@ -3,6 +3,8 @@ title: 面向对象设计-单一职责原则(SRP)
 date: 2016-04-07 23:55
 author: xujiaji
 thumbnail: image/ood/srp-home.png
+categories:
+ - 文章
 tags:
     - Java
     - 面向对象设计

@@ -3,6 +3,8 @@ title: HappyBubble-气泡对话框（根据被点击View位置显示、可定制
 date: 2017-12-16 14:08:50
 author: xujiaji
 thumbnail: image/happy-bubble/img5.png
+categories:
+ - 文章
 tags:
     - android
     - library
