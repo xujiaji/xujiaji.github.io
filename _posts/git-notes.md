@@ -97,3 +97,8 @@ Your branch is up-to-date with 'origin/master'.
 ```
 $ git clone -b source git@github.com:xujiaji/xujiaji.github.io.git
 ```
+
+## 强制覆盖远程
+```
+git push -f
+```
