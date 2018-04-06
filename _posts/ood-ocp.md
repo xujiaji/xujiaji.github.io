@@ -2,7 +2,6 @@
 title: 面向对象设计-开闭原则(OCP)
 date: 2016-04-12 08:43
 author: xujiaji
-thumbnail: image/ood/ocp-home.jpg
 categories:
  - 文章
 tags:
