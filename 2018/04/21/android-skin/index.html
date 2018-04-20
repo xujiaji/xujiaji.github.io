@@ -1,0 +1,47 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Android 无缝换肤深入了解与使用 - 徐佳吉的博客</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2a2b33">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="translucent">
+<meta name="description" content="思路整体结构   方案及轮子 内部资源加载方案 通过在BaseActivity中setTheme 不好实时的刷新，需要重新创建页面 存在需要解决哪些Vew需要刷新的问题   自定义View MultipleTheme 通过自定义View配合setTheme后立即刷新资源。 需要替换所有需要换肤的view   自定义xml属性，Java中绑定view Colorful 首先通过在java代码中添加">
+<meta name="keywords" content="android,分析框架">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 无缝换肤深入了解与使用">
+<meta property="og:url" content="http://yoursite.com/2018/04/21/android-skin/index.html">
+<meta property="og:site_name" content="徐佳吉的博客">
+<meta property="og:description" content="思路整体结构   方案及轮子 内部资源加载方案 通过在BaseActivity中setTheme 不好实时的刷新，需要重新创建页面 存在需要解决哪些Vew需要刷新的问题   自定义View MultipleTheme 通过自定义View配合setTheme后立即刷新资源。 需要替换所有需要换肤的view   自定义xml属性，Java中绑定view Colorful 首先通过在java代码中添加">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/04/21/android-skin/image/android-skin/android-skin.svg">
+<meta property="og:image" content="http://yoursite.com/2018/04/21/android-skin/image/android-skin/换肤框架流程.svg">
+<meta property="og:image" content="http://yoursite.com/2018/04/21/android-skin/qudao.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/21/android-skin/image/android-skin/red.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/21/android-skin/image/android-skin/choose_build.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/21/android-skin/image/android-skin/guo_lv_@.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/21/android-skin/image/android-skin/dan_du_get_attr.png">
+<meta property="og:updated_time" content="2018-04-20T13:08:51.961Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 无缝换肤深入了解与使用">
+<meta name="twitter:description" content="思路整体结构   方案及轮子 内部资源加载方案 通过在BaseActivity中setTheme 不好实时的刷新，需要重新创建页面 存在需要解决哪些Vew需要刷新的问题   自定义View MultipleTheme 通过自定义View配合setTheme后立即刷新资源。 需要替换所有需要换肤的view   自定义xml属性，Java中绑定view Colorful 首先通过在java代码中添加">
+<meta name="twitter:image" content="http://yoursite.com/2018/04/21/android-skin/image/android-skin/android-skin.svg">
+<link rel="alternate" type="application/rss+xml" title="徐佳吉的博客" href="atom.xml">
+<link href="styles.cd463f241fa61513ce41.bundle.css" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117088783-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+  gtag('config', 'UA-117088783-1');
+</script>
+<script src="config.3e3c8e397f1d6735c586.js"></script>
+</head>
+<body>
+<is-root></is-root>
+<script src="inline.318b50c57b4eba3d437b.bundle.js"></script><script src="polyfills.364619ec5cf54423ac5b.bundle.js"></script><script src="main.853ffc4894ad62abb90d.bundle.js"></script>
+</body>
+</html>
