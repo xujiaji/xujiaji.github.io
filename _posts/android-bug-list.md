@@ -9,6 +9,22 @@ tags:
     - android
     - bug
 ---
+## Android Gradle plugin 3.0.0-alpha5 must not be applied to project
+- 解决地址：https://stackoverflow.com/questions/44857191/failed-to-apply-plugin-android-gradle-plugin-3-0-0-alpha5-must-not-be-applied-to
+- 原因：
+- 解决办法：
+
+> 在gradle.properties：
+
+```
+org.gradle.configureondemand=false
+```
+> 然后在终端窗口中停止守护进程
+
+```
+gradlew --stop
+```
+
 ## java.lang.IllegalStateException: Fragment already added: DialogFragment
 - 解决地址：http://blog.csdn.net/kifile/article/details/47442899
 - 原因：点击过快DialogFragment消息队列还没有执行完
