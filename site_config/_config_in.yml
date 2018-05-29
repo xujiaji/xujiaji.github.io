@@ -1,0 +1,67 @@
+# Sidebar menu
+menu:
+  home: /
+  about: /about
+
+# Routes for custom pages
+page:
+  - about
+  # Multi-level route example
+  # - awesome-stuff:
+  #   - chapter-1
+  #   - chapter-2
+
+# Profile
+profile:
+  # avatar: /avatar.jpg
+  # Email address will be used for showing gravatar(https://en.gravatar.com) avatar if `avatar` is not specified.
+  email: jiajixu@qq.com
+  bio: 以我的信念作笔！
+
+# Social media
+sns:
+  github: https://github.com/xujiaji
+  # twitter: https://twitter.com/yourname
+  # gplus: https://plus.google.com/u/0/xxx
+  weibo: https://weibo.com/jiajixu
+
+# Copyright
+copyright: ©2018
+
+# Disqus comments
+disqus:
+  shortname: xujiaji
+  # Set to true to auto load disqus, otherwise will display a button
+  autoload: true
+
+# Assets path
+# assets:
+  # prefix: 'https://cdn.example.com'
+  # suffix: '?m=webp&q=80'
+
+# Web App Manifest
+manifest:
+  short_name: xjjBlog
+  name: 徐佳吉的博客
+  start_url: /
+  theme_color: '#ffffcc'
+  background_color: '#ffffcc'
+  icons:
+    - src: image/icon-194x194.png
+      sizes: 194x194 512x512
+      type: image/png
+    - src: image/icon-144x144.png
+      sizes: 144x144
+      type: image/png
+
+### Pagination size
+# The amount of posts displayed on a single archive/tag/category page, default is `10`, set to `0` to disable pagination.
+archive:
+  per_page: 10
+tag:
+  per_page: 10
+category:
+  per_page: 10
+
+# Google analytics
+ga: UA-117088783-1
