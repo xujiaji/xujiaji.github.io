@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-22T00:31:44.918Z</updated>
+  <updated>2018-05-29T13:42:45.447Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python web 部署到ubuntu小记</title>
+    <link href="http://yoursite.com/2018/05/28/python_server_deploy/"/>
+    <id>http://yoursite.com/2018/05/28/python_server_deploy/</id>
+    <published>2018-05-28T07:54:30.000Z</published>
+    <updated>2018-05-29T13:42:45.447Z</updated>
+    
+    <content type="html"><![CDATA[<p>本篇文章主要是用来记录我将python后台部署到amazon ec2服务器的全过程，以及一些坑坑洼洼。希望对有需要的朋友提供帮助，并且往后也好快速回忆。我的学习地址:<a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014323392805925d5b69ddad514511bf0391fe2a0df2b0000" target="_blank" rel="noopener">廖雪峰 实战 Day15-部署Web App</a></p><h2 id="注册并创建Amazon-EC2实例"><a href="#注册并创建Amazon-EC2实例" class="headerlink" title="注册并创建Amazon EC2实例"></a>注册并创建Amazon EC2实例</h2><ol><li>首先需要创建一个账号，有12 个月的免费套餐访问权限。注册流程有点麻烦，需要添加信用卡，支付1美元来认证账号(•́へ•́╬)。然后验证码居然是打电话认证，电脑上会显示验证码，随后电话来了等她说完，手机输入验证码“#”结束。到此因该都注册成功了！</li><li>找到EC2启动实例，创建一个ubuntu的实例，默认创建就OK了。</li><li>创建结束会让你输入一个ssh密钥的名称，你输入一个邮箱之类的就行了，随后会帮你生成一个<code>.pem</code>的私密，下载下来放好咯！这玩意儿就相当于登录密码了。</li><li>编辑安全组，添加22端口和80端口的访问权限<ul><li>在EC2管理界面将你创建的实例拉拉到最右边有个叫安全组的栏目，点进去<img src="image\python-server-deploy\an_quan_zu1.png" alt="an_quan_zu1"></li><li>进去后点击入站-编辑<img src="image\python-server-deploy\an_quan_zu2.png" alt="an_quan_zu2"></li><li>创建SSH入站规则，绑定自己的IP地址，第3步选了后会自动获取你的ip地址。如下图<img src="image\python-server-deploy\an_quan_zu3.png" alt="an_quan_zu3"></li></ul></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本篇文章主要是用来记录我将python后台部署到amazon ec2服务器的全过程，以及一些坑坑洼洼。希望对有需要的朋友提供帮助，并且往后也好快速回忆。我的学习地址:&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/001431608955
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>Android 无缝换肤深入了解与使用</title>
@@ -115,15 +144,15 @@
     <link href="http://yoursite.com/2017/12/12/android-bug-list/"/>
     <id>http://yoursite.com/2017/12/12/android-bug-list/</id>
     <published>2017-12-12T07:34:41.000Z</published>
-    <updated>2018-03-16T15:35:18.705Z</updated>
+    <updated>2018-05-29T13:42:45.441Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="java-lang-IllegalStateException-Fragment-already-added-DialogFragment"><a href="#java-lang-IllegalStateException-Fragment-already-added-DialogFragment" class="headerlink" title="java.lang.IllegalStateException: Fragment already added: DialogFragment"></a>java.lang.IllegalStateException: Fragment already added: DialogFragment</h2><ul><li>解决地址：<a href="http://blog.csdn.net/kifile/article/details/47442899" target="_blank" rel="noopener">http://blog.csdn.net/kifile/article/details/47442899</a></li><li>原因：点击过快DialogFragment消息队列还没有执行完</li><li>解决办法：</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getFragmentManager().executePendingTransactions();</span><br><span class="line"><span class="keyword">if</span> (!mDialogFragment.isAdded())</span><br><span class="line">&#123;</span><br><span class="line">    mDialogFragment.show(getFragmentManager(), <span class="string">"DialogFragment"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="java-lang-RuntimeException-Unable-to-get-provider"><a href="#java-lang-RuntimeException-Unable-to-get-provider" class="headerlink" title="java.lang.RuntimeException: Unable to get provider"></a>java.lang.RuntimeException: Unable to get provider</h2><ul><li>解决地址：<a href="https://stackoverflow.com/questions/37312103/unable-to-get-provider-com-google-firebase-provider-firebaseinitprovider" target="_blank" rel="noopener">https://stackoverflow.com/questions/37312103/unable-to-get-provider-com-google-firebase-provider-firebaseinitprovider</a></li><li>原因：在SDK &lt;22的设备中遇到同样的问题，原因是MultiDex，MultiDex.install必须在attachBaseContext方法中</li><li>解决方法<br>自定义Application中添加如下：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YourApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">attachBaseContext</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.attachBaseContext(context);</span><br><span class="line">        MultiDex.install(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><p>build.gradle中添加如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile &apos;com.android.support:multidex:1.0.1&apos;</span><br></pre></td></tr></table></figure></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="Android-Gradle-plugin-3-0-0-alpha5-must-not-be-applied-to-project"><a href="#Android-Gradle-plugin-3-0-0-alpha5-must-not-be-applied-to-project" class="headerlink" title="Android Gradle plugin 3.0.0-alpha5 must not be applied to project"></a>Android Gradle plugin 3.0.0-alpha5 must not be applied to project</h2><ul><li>解决地址：<a href="https://stackoverflow.com/questions/44857191/failed-to-apply-plugin-android-gradle-plugin-3-0-0-alpha5-must-not-be-applied-to" target="_blank" rel="noopener">https://stackoverflow.com/questions/44857191/failed-to-apply-plugin-android-gradle-plugin-3-0-0-alpha5-must-not-be-applied-to</a></li><li>原因：</li><li>解决办法：</li></ul><blockquote><p>在gradle.properties：</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.gradle.configureondemand=false</span><br></pre></td></tr></table></figure><blockquote><p>然后在终端窗口中停止守护进程</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradlew --stop</span><br></pre></td></tr></table></figure><h2 id="java-lang-IllegalStateException-Fragment-already-added-DialogFragment"><a href="#java-lang-IllegalStateException-Fragment-already-added-DialogFragment" class="headerlink" title="java.lang.IllegalStateException: Fragment already added: DialogFragment"></a>java.lang.IllegalStateException: Fragment already added: DialogFragment</h2><ul><li>解决地址：<a href="http://blog.csdn.net/kifile/article/details/47442899" target="_blank" rel="noopener">http://blog.csdn.net/kifile/article/details/47442899</a></li><li>原因：点击过快DialogFragment消息队列还没有执行完</li><li>解决办法：</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getFragmentManager().executePendingTransactions();</span><br><span class="line"><span class="keyword">if</span> (!mDialogFragment.isAdded())</span><br><span class="line">&#123;</span><br><span class="line">    mDialogFragment.show(getFragmentManager(), <span class="string">"DialogFragment"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="java-lang-RuntimeException-Unable-to-get-provider"><a href="#java-lang-RuntimeException-Unable-to-get-provider" class="headerlink" title="java.lang.RuntimeException: Unable to get provider"></a>java.lang.RuntimeException: Unable to get provider</h2><ul><li>解决地址：<a href="https://stackoverflow.com/questions/37312103/unable-to-get-provider-com-google-firebase-provider-firebaseinitprovider" target="_blank" rel="noopener">https://stackoverflow.com/questions/37312103/unable-to-get-provider-com-google-firebase-provider-firebaseinitprovider</a></li><li>原因：在SDK &lt;22的设备中遇到同样的问题，原因是MultiDex，MultiDex.install必须在attachBaseContext方法中</li><li>解决方法<br>自定义Application中添加如下：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YourApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">attachBaseContext</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.attachBaseContext(context);</span><br><span class="line">        MultiDex.install(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><p>build.gradle中添加如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile &apos;com.android.support:multidex:1.0.1&apos;</span><br></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;java-lang-IllegalStateException-Fragment-already-added-DialogFragment&quot;&gt;&lt;a href=&quot;#java-lang-IllegalStateException-Fragment-already-ad
+        &lt;h2 id=&quot;Android-Gradle-plugin-3-0-0-alpha5-must-not-be-applied-to-project&quot;&gt;&lt;a href=&quot;#Android-Gradle-plugin-3-0-0-alpha5-must-not-be-applied-
       
     
     </summary>
@@ -160,9 +189,9 @@
       <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -215,9 +244,9 @@
       <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="vim" scheme="http://yoursite.com/tags/vim/"/>
     
