@@ -2,6 +2,7 @@
 title: Android 无缝换肤深入了解与使用
 date: 2018-4-21 09:03:41
 author: xujiaji
+thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/skin/skin_home.jpg
 categories:
  - 文章
 tags:
@@ -449,3 +450,16 @@ private Map<View, SkinItem> mSkinItemMap = new HashMap<>();
 1. 插件化开发，既然能这样获取资源，也能获取class文件
 2. 通过对view的拦截可以把某个控件整体替换掉。
 比如AppCompatActivity将TextView偷偷替换成了AppCompatTextView等等。
+
+
+---
+> 其他一些帮助信息：
+
+上面对应的代码片段都有对应路径哦！
+
+这篇文章的全部代码，测试项目位置：https://github.com/xujiaji/ThemeSkinning
+
+测试项目中的首页底部导航测试和修改位置：https://github.com/xujiaji/FlycoTabLayout
+
+下面这张Gif图片是测试项目运行的效果图：
+![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/skin/skin_run.gif)
