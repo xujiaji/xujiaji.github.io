@@ -13,7 +13,7 @@ tags:
 
 ## 聊聊UI事件传递
 
-![Android UI事件传递.png](image/android-ui-event/ui-event.png)
+![Android UI事件传递.png](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-ui-event/ui-event.png)
 
 ## 什么是UI事件？
 - 触摸屏幕中UI控件的那一刻即为事件发生
@@ -30,10 +30,10 @@ tags:
 ## 事件如何传递？
 > 自定义的父布局和子布局，用来观察事件的变化(View1和Button1为自定义View和自定义Button，默认以自定义View1举例
 
-![1](image/android-ui-event/1.png)
+![1](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-ui-event/1.png)
 
 上图简略关系如下：
-![布局简略关系.png](image/android-ui-event/2.png)
+![布局简略关系.png](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-ui-event/2.png)
 
 **×** 之前一直以为事件是从子布局开始传递到父布，因为以直观的角度我们先碰到的是子布局`得到错误的事件顺序：view1 --> ViewGroup2 --> ViewGroup1`
 
@@ -77,7 +77,7 @@ tags:
 
 > 没有拦截事件时
 
-![没有拦截事件时.png](image/android-ui-event/3.png)
+![没有拦截事件时.png](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-ui-event/3.png)
 
 ## 如何拦截？
 - 通过dispatchTouchEvent对事件进行拦截，**当返回值为`true`的时候拦截事件**
@@ -108,7 +108,7 @@ E/ViewGroup1: ------------------  dispatchTouchEvent = 1
 
 > 拦截ViewGroup1的所有事件
 
-![拦截ViewGroup1的所有事件.png](image/android-ui-event/4.png)
+![拦截ViewGroup1的所有事件.png](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-ui-event/4.png)
 
 ## 如何获取？
 - 通过onInterceptTouchEvent获取事件，**当返回值为`true`的时候获取事件**
@@ -144,7 +144,7 @@ E/MainActivity: ----------------  onTouchEvent = 1
 
 > 当ViewGroup2事件获取到了，但没有消费
 
-![当ViewGroup2事件获取到了，但没有消费.png](image/android-ui-event/5.png)
+![当ViewGroup2事件获取到了，但没有消费.png](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-ui-event/5.png)
 
 ## 如何消费？
 - 上边已经提到过，就是获取事件遗留下来一个问题：获取到了按下事件，为啥没继续获取到后续的事件？就是因为按下时onTouchEvent没有返回true，导致事件从新回到父布局，也就是没有消费事件。
@@ -191,11 +191,11 @@ E/MainActivity: ----------------  onTouchEvent = 1
 
 > 当消费ViewGroup2的按下DOWN事件时
 
-![当消费ViewGroup2的按下DOWN事件时.png](image/android-ui-event/6.png)
+![当消费ViewGroup2的按下DOWN事件时.png](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-ui-event/6.png)
 
 > 当ViewGroup2中onTouchEvent直接返回true时
 
-![当ViewGroup2中onTouchEvent直接返回true时.png](image/android-ui-event/7.png)
+![当ViewGroup2中onTouchEvent直接返回true时.png](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-ui-event/7.png)
 ## Button获取事件是怎么回事？
 - 现在将View1换成Button1，其他的恢复最初状态，先来看看触摸的log
 ``` java
@@ -233,7 +233,7 @@ E/Button1: ------------------  onTouchEvent = 1
 
 > Button获取触摸事件
 
-![Button获取触摸事件.png](image/android-ui-event/8.png)
+![Button获取触摸事件.png](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-ui-event/8.png)
 
 - 这一看，这不是和上面那张图`当ViewGroup2中onTouchEvent直接返回true时`的效果一样的吗？也就是说button默认就是直接获取了事件，没有让事件返回主布局中。
 
@@ -362,7 +362,7 @@ public class TouchListenerActivity extends Activity implements View.OnTouchListe
 ```
 
 
-![效果图](image/android-ui-event/9.png)
+![效果图](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-ui-event/9.png)
 
 |`状态`|`描述`|
 |:-:|:-:|

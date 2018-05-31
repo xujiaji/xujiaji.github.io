@@ -2,7 +2,7 @@
 title: Android开发笔记
 date: 2018-1-24 17:03:41
 author: xujiaji
-thumbnail: image/android-notes/banner.png
+thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-notes/banner.png
 categories:
  - 笔记
 tags:

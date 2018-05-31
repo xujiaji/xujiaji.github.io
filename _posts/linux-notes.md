@@ -2,7 +2,7 @@
 title: linux(Ubuntu)笔记
 date: 2017-12-12 12:25:29
 author: xujiaji
-thumbnail: image/linux-notes.jpg
+thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/linux-notes.jpg
 categories:
  - 笔记
 tags:
