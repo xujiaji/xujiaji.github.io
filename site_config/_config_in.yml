@@ -1,11 +1,13 @@
 # Sidebar menu
 menu:
   home: /
+  msg: /msg
   about: /about
-
+  
 # Routes for custom pages
 page:
   - about
+  - msg
   # Multi-level route example
   # - awesome-stuff:
   #   - chapter-1
