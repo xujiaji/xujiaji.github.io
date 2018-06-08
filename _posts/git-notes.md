@@ -10,6 +10,83 @@ tags:
     - 笔记
 ---
 
+## 初始化git仓库
+- 移动到需要初始化的目录
+``` sh
+$ git init
+```
+- 添加修改后的文件，或用“.”表示添加当前目录所有修改内容
+``` sh
+$ git add <文件>
+```
+- 提交修改了什么内容
+``` sh
+$ git commit -m "<内容>"
+```
+
+### 查看状态
+- 查看当前版本库的状态，如：修改了什么文件，是否有需要添加或者提交的文件
+``` sh
+$ git status
+```
+- 查看修改前后的不同之处（difference）
+``` sh
+$ git diff
+```
+- 查看工作区和版本库里HEAD指向的版本（最新版本）有什么区别
+```
+$ git diff HEAD -- <文件>
+```
+
+## 版本回退
+- 查看commit提交的日志，每个commit都有一串哈希值表示id
+``` sh
+$ git log
+```
+- 用一行信息来展示一次提交的信息（简化上面的展示）
+``` sh
+$ git log --pretty=oneline
+```
+- Git中，用`HEAD`表示当前版本，上个版本表示为`HEAD^`，上上版本就是`HEAD^^`...。也可直接指定，如往上100个版本：`HEAD~100`
+``` sh
+$ git reset --hard HEAD^
+HEAD is now at ebeb505 add distributed
+```
+- 如果窗口还没关闭，还可以后悔。`7a19`是commit id的SHA1值开头，他会自动根据开头这几个字符去找
+``` sh
+$ git reset --hard 7a19
+```
+- 如果窗口关闭，那么也能后悔。查看你的历史命令的记录
+``` sh
+$ git reflog
+```
+
+## 撤销修改
+- 如果还没有`git add`时想要撤销修改
+``` sh
+$ git checkout -- <文件>
+```
+- 如果`git add`了，想要撤销。先进行进行下面将文件从暂存区退回到工作区，然后在进行上面步骤。
+``` sh
+$ git reset HEAD <file>
+```
+
+## 删除文件
+- 当删除文件后，需要更新版本库时。最后还需要commit提交
+``` sh
+$ git add/rm <file>
+```
+
+## 远程仓库
+- 添加为本地仓库并联远程仓库
+``` sh
+$ git remote add origin xxx.git
+```
+- 推送到远程仓库，第一次推送加上`-u`会把本地master分支和远程master分支并联起来，以后推送或拉取可简化命令
+``` sh
+$ git push -u origin master
+```
+
 ## 设置用户信息
 ``` sh
 $ git config --global user.name "John Doe"
@@ -56,7 +133,51 @@ $ git push origin 1.1.2
 ```
 $ git merge work
 ```
+- 合并分支时，git可能会用Fast forward模式。但这个模式下删除分支后会丢失分支信息。如要禁用Fast forward模式可在merge时`--no-ff`生成一个新的commit
+``` sh
+git merge --no-ff -m "<commit内容>" <分支>
+```
+- 强制删除分支
+``` sh
+$ git branch -D <分支名>
+```
 
+## 解决冲突
+- 当`git merge`发生冲突的时候
+- 可先通过`git status`查看冲突的文件
+- Git用`<<<<<<<`，`=======`，`>>>>>>>`标记出不同分支的内容我们修改后保存。
+- 然后`git add`、`git commit -m`提交。
+- 查看分支合并图
+``` sh
+$ git log --graph
+$ git log --graph --pretty=oneline --abbrev-commit
+```
+
+## stash
+- 临时需要处理其他分支任务的时候，可以将当前分支没完成的工作储藏起来。
+``` sh
+$ git stash
+```
+- 查看当前分支储藏
+```
+$ git stash list
+stash@{0}: WIP on dev: 5e7a253 merge dev2 test
+```
+- 恢复储藏
+    + 1.用`git stash apply`恢复，恢复后，stash内容并不删除，需要用`git stash drop`删除。
+``` sh
+$ git stash list
+stash@{0}: WIP on dev: 5e7a253 merge dev2 test
+$ git stash apply stash@{0}
+$ git stash list
+stash@{0}: WIP on dev: 5e7a253 merge dev2 test
+$ git stash drop stash@{0}
+Dropped stash@{0} (78fffa0577da9beb962a341cf13d74d9cfa148c6)
+```
+    + 2.用`git stash pop`恢复的同时删去stash
+``` sh
+$ git stash pop
+```
 ## git pull和本地冲突
 > 冲突log
 
