@@ -82,9 +82,35 @@ $ git add/rm <file>
 ``` sh
 $ git remote add origin xxx.git
 ```
+- 删除已并联的远程库
+``` sh
+$ git remote rm origin
+```
+- 本地仓库并联多个远程仓库
+``` sh
+$ git remote rm origin
+$ git remote add github git@github.com:xxx/xxx.git
+$ git remote add gitee git@gitee.com:xxx/xxx.git
+$ git remote -v
+gitee    git@gitee.com:xxx/xxx.git (fetch)
+gitee    git@gitee.com:xxx/xxx.git (push)
+github    git@github.com:xxx/xxx.git (fetch)
+github    git@github.com:xxx/xxx.git (push)
+
+$ git push github master
+$ git push gitee master
+```
 - 推送到远程仓库，第一次推送加上`-u`会把本地master分支和远程master分支并联起来，以后推送或拉取可简化命令
 ``` sh
 $ git push -u origin master
+```
+- 查看远程仓库的名称，一般是origin，如果没有远程仓库则没有结果。
+``` sh
+$ git remote
+```
+- 查看更详细信息，如果没有推送权限则没有(push)标记的地址。
+``` sh
+$ git remote -v
 ```
 
 ## 设置用户信息
@@ -117,6 +143,18 @@ $ git checkout 1.1.2
 ```
 $ git branch -d 1.1.2
 ```
+- 把该分支上的所有本地提交推送到远程库（推送时，后面指定本地分支，这样git就会把该分支推送到远程库对应的远程分支上。）
+``` sh
+$ git push origin master
+```
+- 创建远程origin的dev分支到本地
+``` sh
+$ git checkout -b dev origin/dev
+```
+- 指定本地分支dev和远程origin/dev的链接
+``` sh
+$ git branch --set-upstream-to=origin/dev dev
+```
 - 推送本地分支到远程分支，远程分支不存在则创建
 ```
 $ git push origin 1.1.2:1.1.2
@@ -124,10 +162,6 @@ $ git push origin 1.1.2:1.1.2
 - 本地分支留空则是删除远程分支
 ```
 $ git push origin :1.1.2
-```
-- 本地分支推送到远程分支
-```
-$ git push origin 1.1.2
 ```
 - 合并work分支到当前分支
 ```
@@ -141,6 +175,42 @@ git merge --no-ff -m "<commit内容>" <分支>
 ``` sh
 $ git branch -D <分支名>
 ```
+## 标签
+- 创建标签，默认为`HEAD`，也可以指定一个commit id
+``` sh
+$ git tag <tagname>
+$ git tag <tagname> <commit id>
+```
+- 创建带有说明的标签
+``` sh
+$ git tag -a <tagname> -m "<说明>" <commit id>
+```
+- 查看所有标签 
+``` sh
+$ git tag
+```
+- 查看标签信息
+``` sh
+$ git show <tagname>
+```
+- 删除标签
+``` sh
+$ git tag -d <tagname>
+```
+- 推送某个标签到远程
+``` sh
+$ git push origin <tagname>
+```
+- 一次性推送全部尚未推送到远程的本地分支
+``` sh
+$ git push origin --tags
+```
+- 删除远程标签时，先删除本地，然后push，格式如下：
+``` sh
+$ git tag -d <tagname>
+$ git push origin :refs/tags/<tagname>
+```
+
 
 ## 解决冲突
 - 当`git merge`发生冲突的时候
@@ -225,3 +295,28 @@ $ git clone -b source git@github.com:xujiaji/xujiaji.github.io.git
 ```
 git push -f
 ```
+
+## 忽略特殊文件.gitignore
+- 忽略python编译产生的`.pyc`、`.pyo`、dist等文件或目录
+```
+# Python:
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+dist
+build
+```
+
+## 配置别名
+> --global是针对当前用户起作用，如果不加只对当前仓库起作用
+
+```
+$ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+$ git lg
+```
+
+- 配置文件位置：当前项目`.git/config`
+
+- 当前用户的Git配置文件，在用户主目录的`.gitconfig`，配置别名可修改这个文件，也可删除用命令重新配置。
