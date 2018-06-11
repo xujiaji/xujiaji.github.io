@@ -20,7 +20,7 @@ profile:
   # avatar: /avatar.jpg
   # Email address will be used for showing gravatar(https://en.gravatar.com) avatar if `avatar` is not specified.
   email: jiajixu@qq.com
-  bio: 有的人,在路上停了下来,想要歇息,可这一歇……或许就是尽头,如那只叫做桑相的蝴蝶。
+  bio: 很多人都说：我不知道我自己想要什么。其实这句话的真正含义是：我没有勇气面对和足够的努力去争取我想要的。
 
 # Social media
 sns:
@@ -46,6 +46,9 @@ disqus:
   shortname: xujiaji
   # Set to true to auto load disqus, otherwise will display a button
   autoload: true
+
+feed:
+  path: atom.xml
 
 # Assets path
 assets:
