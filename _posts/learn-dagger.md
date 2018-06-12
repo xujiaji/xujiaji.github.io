@@ -1714,7 +1714,7 @@ public class SubComponent
 
 想起来，我以前写了一个MVP框架[XMVP](https://github.com/xujiaji/XMVP)就是通过获取配置的泛型参数类型然后再通过反射去实例化的自动完成它们之间的依赖关系。也可以说是这就是依赖注入了吧！哈哈！有兴趣的朋友可以去看一看用一用非常简洁哦！(｀・ω・´)
 
-文章中所有代码的地址：https://github.com/xujiaji/DaggerTest
+文章中所有代码的地址：https://github.com/xujiaji/learn-android/tree/learn-dagger
 
 本文作者（欢迎关注）：[奏响曲](https://juejin.im/user/5829eafe2f301e0057799f1a)
 
