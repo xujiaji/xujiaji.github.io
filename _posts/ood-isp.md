@@ -3,7 +3,7 @@ title: 面向对象设计-接口隔离(ISP)
 date: 2016-05-07 10:12
 author: xujiaji
 categories:
- - 文章
+ - 设计模式
 tags:
     - Java
     - 面向对象设计

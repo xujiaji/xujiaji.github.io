@@ -3,7 +3,7 @@ title: Android-UI事件传递就是这么个事儿
 date: 2016-04-16 15:31
 author: xujiaji
 categories:
- - 文章
+ - Android
 tags:
     - android
     - view

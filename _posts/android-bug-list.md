@@ -4,7 +4,7 @@ date: 2017-12-12 15:34:41
 author: xujiaji
 thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-bug-list.png
 categories:
- - 笔记
+ - Android
 tags:
     - android
     - bug

@@ -4,7 +4,7 @@ date: 2017-12-12 12:25:29
 author: xujiaji
 thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/linux-notes.jpg
 categories:
- - 笔记
+ - Linux
 tags:
     - linux
     - 笔记

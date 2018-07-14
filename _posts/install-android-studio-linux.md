@@ -4,7 +4,7 @@ date: 2016-03-27 07:13
 author: xujiaji
 thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-studio.jpg
 categories:
- - 笔记
+ - Android
 tags:
     - Android
     - 工具

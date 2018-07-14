@@ -4,7 +4,7 @@ date: 2016-11-30 09:43
 author: xujiaji
 thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/vim-1/home.png
 categories:
- - 笔记
+ - Linux
 tags:
     - linux
     - vim

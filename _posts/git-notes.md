@@ -4,7 +4,7 @@ date: 2017-12-12 11:02:34
 author: xujiaji
 thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/git-notes.png
 categories:
- - 笔记
+ - 工具
 tags:
     - git
     - 笔记
@@ -185,7 +185,7 @@ $ git tag <tagname> <commit id>
 ``` sh
 $ git tag -a <tagname> -m "<说明>" <commit id>
 ```
-- 查看所有标签 
+- 查看所有标签
 ``` sh
 $ git tag
 ```

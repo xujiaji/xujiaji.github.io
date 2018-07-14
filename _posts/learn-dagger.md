@@ -4,7 +4,7 @@ date: 2018-06-27
 author: xujiaji
 thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-dagger/home.jpg
 categories:
- - 文章
+ - Android
 tags:
     - android
     - 分析框架

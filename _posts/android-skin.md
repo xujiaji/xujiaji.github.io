@@ -4,7 +4,7 @@ date: 2018-4-21 09:03:41
 author: xujiaji
 thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-skin/skin_home.jpg
 categories:
- - 文章
+ - Android
 tags:
     - android
     - 分析框架
@@ -76,7 +76,7 @@ https://github.com/xujiaji/ThemeSkinning
 ```
 
 
-> 创建皮肤apk的资源对象 
+> 创建皮肤apk的资源对象
 
 - 获取当前的app的Resources，主要是为了创建apk的Resources
 ``` java
@@ -317,7 +317,7 @@ class ViewProducer {
     }
 ```
 
-- `sClassPrefixList`的定义 
+- `sClassPrefixList`的定义
 
 ``` java
     private static final String[] sClassPrefixList = {

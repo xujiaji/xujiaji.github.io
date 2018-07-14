@@ -4,7 +4,7 @@ date: 2018-5-28 15:54:30
 author: xujiaji
 thumbnail:
 categories:
- - 笔记
+ - Python
 tags:
     - linux
     - python
@@ -13,7 +13,7 @@ dropcap: true
 ---
 
 本篇文章主要是用来记录我将python后台部署到amazon ec2服务器的全过程，以及一些坑坑洼洼。希望对有需要的朋友提供帮助，并且往后也好快速回忆。我的学习地址:[廖雪峰 实战 Day15-部署Web App](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014323392805925d5b69ddad514511bf0391fe2a0df2b0000)
-
+<!-- more -->
 
 
 ## 注册并创建Amazon EC2实例
