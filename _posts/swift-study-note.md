@@ -10,9 +10,9 @@ tags:
 ---
 
 记录一些swift的基本特性，以便使用的时候方便查阅。
+<!-- more -->
 
 学习地址：https://www.imooc.com/t/108955
-<!-- more -->
 
 ## 元组
 > 定义：可放入各种类型数据，元组长度自由
@@ -172,13 +172,13 @@ repeat {
 ```
 
 ## switch
-1. 注意switch case中不用写`break`， `case`后可以匹配多个值逗号隔开
-2. 不可以穷举（是否知道所有可能性），必须加上`default: `如果没有语句可以用`break`显示跳出或`()`表示空语句
-3. 可以用字符串，浮点数，布尔等swift基础数据结构
-4. `case`后面可以跟区间，如 `1 ..< 60`
-5. `case`还可以对元组进行判断，并且元组可以通过`_`进行忽略；元组中还可以用区间，如`case (-2...2, -2...2):`；还可以和元组解包一起用，如`case (let x, let y):`
-6. 语句结束后加上`fallthrough`关键字，可让条件向下判断
-7. `case`中用`where`可以加上条件判断进行限制
+**1.** 注意switch case中不用写`break`， `case`后可以匹配多个值逗号隔开
+**2.** 不可以穷举（是否知道所有可能性），必须加上`default: `如果没有语句可以用`break`显示跳出或`()`表示空语句
+**3.** 可以用字符串，浮点数，布尔等swift基础数据结构
+**4.** `case`后面可以跟区间，如 `1 ..< 60`
+**5.** `case`还可以对元组进行判断，并且元组可以通过`_`进行忽略；元组中还可以用区间，如`case (-2...2, -2...2):`；还可以和元组解包一起用，如`case (let x, let y):`
+**6.** 语句结束后加上`fallthrough`关键字，可让条件向下判断
+**7.** `case`中用`where`可以加上条件判断进行限制
 ``` swift
 let point = (3, 3)
 switch point {
@@ -191,7 +191,7 @@ case let(x, y):
     print("The point is (\(x), \(y)")
 }
 ```
-8. switch case还可以用if case 来简化代码
+**8.** switch case还可以用if case 来简化代码
 ``` swift
 let age = 19
 switch age {
@@ -212,7 +212,7 @@ if case 10...19 = age, age >= 18 {
 }
 
 ```
-9. `case`关键字还可以用于for
+**9.** `case`关键字还可以用于for
 ``` swift
 for i in 1...100 {
     if i % 3 == 0 {
@@ -262,72 +262,72 @@ func fun(money:Int, price: Int, capacity:Int, volume: Int) {
 ``` swift
 var str = "Hello, playground"
 ```
-1. 判断是否为空
+**1.** 判断是否为空
 ``` swift
 var emptyString = ""
 emptyString.isEmpty
 ```
-2. 插值
+**2.** 插值
 ``` swift
 let name = "xujiaji"
 let age = 24
 let height = 1.7
 let s = "My name is \(name). I'm \(age) years old. I'm \(height) meters tall."
 ```
-3. 循环字符串
+**3.** 循环字符串
 ``` swift
 for c in str {
     print(c)
 }
 ```
-4. 声明字符
+**4.** 声明字符
 ``` swift
 let mark: Character = "!"
 ```
-5. 拼接字符
+**5.** 拼接字符
 ``` swift
 str.append(mark)
 ```
-6. 字符串长度
+**6.** 字符串长度
 ``` swift
 str.count
 ```
-7. 得到字符串开头下标： `str.startIndex` ；得到末尾下标：`str.endIndex`
-8. 得到字符串前5个字符（`offsetBy`表示偏移量）
+**7.** 得到字符串开头下标： `str.startIndex` ；得到末尾下标：`str.endIndex`
+**8.** 得到字符串前5个字符（`offsetBy`表示偏移量）
 ``` swift
 str[str.index(str.startIndex, offsetBy: 5)]
 ```
-9. 得到字符串某下标的前一个字符或后一个字符
+**9.** 得到字符串某下标的前一个字符或后一个字符
 ``` swift
 let spaceIndex = str.index(str.startIndex, offsetBy: 6)
 str[str.index(before: spaceIndex)]
 str[str.index(after: spaceIndex)]
 ```
-10. 得到开始到`spaceIndex`下标之间的字符串
+**10.** 得到开始到`spaceIndex`下标之间的字符串
 ``` swift
 str[str.startIndex..<spaceIndex]
 ```
-11. 得到一个下标范围
+**11.** 得到一个下标范围
 ``` swift
 let  range = startIndex..<str.index(before: spaceIndex)
 ```
-12. 将上面范围替换成Hi
+**12.** 将上面范围替换成Hi
 ``` swift
 str.replaceSubrange(range, with: "Hi")
 ```
-13. 末尾插入问号
+**13.** 末尾插入问号
 ``` swift
 str.insert("?", at: str.endIndex)
 ```
-14. 移除对应下标的字符
+**14.** 移除对应下标的字符
 ``` swift
 str.remove(at: str.index(before: str.endIndex))
 ```
-15. 移除某个下标范围字符
+**15.** 移除某个下标范围字符
 ``` swift
 str.removeSubrange(str.index(str.endIndex, offsetBy:-2)..<str.endIndex)
 ```
-16. 大小写转换
+**16.** 大小写转换
 ``` swift
 // 转大写
 str.uppercased()
@@ -336,7 +336,7 @@ str.lowercased()
 // 首字大写
 str.capitalized
 ```
-17. 是否包含
+**17.** 是否包含
 ``` swift
 // 是否包含Hi
 str.contains("Hi")
@@ -345,7 +345,7 @@ str.hasPrefix("Hi")
 // 后缀是否是!!
 str.hasSuffix("!!")
 ```
-18. 格式化字符串
+**18.** 格式化字符串
 ``` swift
 // 结果： 0.33333...
 let ss0 = "one third is \(1.0/3.0)"
@@ -354,7 +354,7 @@ let ss1 = String(format: "one third is %.2f", 1.0/3.0)
 // 结果： 0.33
 let ss2 = NSString(format: "one third is %.2f", 1.0/3.0) as String
 ```
-19. 字符串截取
+**19.** 字符串截取
 ``` swift
 var ss3:NSString = "one third is 0.33"
 // 从下标4开始截取到最后
@@ -364,10 +364,10 @@ ss3.substring(to: 3)
 // 截取下标从4开始，截取5个长度
 ss3.substring(with: NSMakeRange(4, 5))
 ```
-20. String 和 NSString的区别
+**20.** String 和 NSString的区别
 > 有一个表情的时候String长度为1， NSString长度为2
 
-21. 去除前后多余无效字符
+**21.** 去除前后多余无效字符
 ``` swift
 let s6 = "   --- Hello -----    " as NSString
 // 去除前后空格和下划线
@@ -375,21 +375,21 @@ s6.trimmingCharacters(in: CharacterSet(charactersIn: " -"))
 ```
 
 ## Optional
-1. 定义可选型
+**1.** 定义可选型
 ``` swift
 var errorCode: Int? = 404
 errorCode = nil
 var imOptional: String? = nil
 ```
-2. 具体类型可以赋值给可选项型，但反过来可选型是不能赋值给具体类型的。
-3. 强制解包，但不能为`nil`否则会抛出异常
+**2.** 具体类型可以赋值给可选项型，但反过来可选型是不能赋值给具体类型的。
+**3.** 强制解包，但不能为`nil`否则会抛出异常
 ``` swift
 var errorCode: Int? = nil
 errorCode = 404
 // errorCode! 强制解包
 print("code", errorCode!)
 ```
-4. 加上`nil`判断
+**4.** 加上`nil`判断
 ``` swift
 // 第一种写法
 var errorCode: String? = nil
@@ -403,7 +403,7 @@ else {
 // 第二种写法（简化），用两个问号
 "The errorCode is \(errorCode ?? "no error")"
 ```
-5. 可选型解包
+**5.** 可选型解包
 ``` swift
 var errorCode: String? = "404"
 if let errorCode = errorCode {
@@ -424,7 +424,7 @@ if let errorCode = errorCode, let _ = errorMessage, errorCode == "404" {
     print("Page not found")
 }
 ```
-6. 可选型调用
+**6.** 可选型调用
 ``` swift
 var errorMessage: String? = "Not Found"
 // 普通判断调用
@@ -443,7 +443,7 @@ if let errorMessage = errorMessage?.uppercased() {
     errorMessage
 }
 ```
-6. 实际运用
+**6.** 实际运用
 ``` swift
 var ageInput: String = "16"
 var age = Int(ageInput) // 返回的是：Int?
@@ -451,7 +451,7 @@ if let age = Int(ageInput), age < 20 {
     print("You're a teenage")
 }
 ```
-7. 隐式可选类型，运用在能肯定的表示有值的情况下
+**7.** 隐式可选类型，运用在能肯定的表示有值的情况下
 ``` swift
 // 后面跟！表示是隐式可选类型
 var errorMessage: String! = nil
@@ -464,7 +464,7 @@ errorMessage = nil
 ```
 
 ## Array
-1. 空数组的定义
+**1.** 空数组的定义
 ``` swift
 // 有数据时的定义， 注意类型必须统一
 var numbers = [1, 2, 3, 4, 5]
@@ -482,7 +482,7 @@ var emptyArr4 = Array<Int>()
 var allZeros = Array<Int>(repeating: 0, count: 5) // [0, 0, 0, 0, 0]
 var allZeros2 = [Int](repeating: 0, count: 5) // [0, 0, 0, 0, 0]
 ```
-2. 数组查询基本使用方式
+**2.** 数组查询基本使用方式
 ``` swift
 var numbers = [1, 2, 3, 4, 5]
 var vowels = ["A", "E", "I", "O", "U"]
@@ -552,7 +552,7 @@ numbers == oneToFive // true
 var oneToFive2 = [1, 2, 4, 3, 5]
 numbers == oneToFive2 // false
 ```
-3. 数组插入值的基本操作
+**3.** 数组插入值的基本操作
 ``` swift
 var courses = ["A course", "B course", "C course"]
 
@@ -564,7 +564,7 @@ courses += ["E course"] //["A course", "B course", "C course", "D course", "E co
 // 根据位置插入元素
 courses.insert("a course", at: 1) //["A course", "a course", "B course", "C course", "D course", "E course"]
 ```
-4. 数组删除元素的基本操作
+**4.** 数组删除元素的基本操作
 ``` swift
 var courses = ["A course", "B course", "C course", "D course"]
 // 删除最后一个元素
@@ -577,7 +577,7 @@ courses.removeSubrange(0..<1) //["C course"]
 // 删除所有元素
 courses.removeAll()
 ```
-5. 修改元素的基本操作
+**5.** 修改元素的基本操作
 ``` swift
 var courses = ["A course", "B course", "C course", "D course"]
 // 修改下标为0的元素
@@ -593,11 +593,11 @@ courses[0...2] = ["A course"]
 courses // ["A course", "D course"]
 ```
 ## NSArray
-1. NSArray是一个类，Array是一个结构
-2. NSArray里可以放不同类型的元素，如：`var arr: NSArray = [1, "Hello", 3.0]`
+**1.** NSArray是一个类，Array是一个结构
+**2.** NSArray里可以放不同类型的元素，如：`var arr: NSArray = [1, "Hello", 3.0]`
 
 ## Dict
-1. 字典的初始化和查询的基本使用方式
+**1.** 字典的初始化和查询的基本使用方式
 ``` swift
 // 创建一个有数据的字典
 var dict = ["swift": "雨燕；快速", "python": "大蟒", "java":"爪哇岛", "groovy": "绝妙的；时髦的"]
@@ -644,7 +644,7 @@ let dict2 = [1: "A", 3: "C", 2: "B"]
 dict1 == dict2 // true
 
 ```
-2. 字典的修改和删除
+**2.** 字典的修改和删除
 ``` swift
 // let的字典不可修改
 var user = ["name": "xujiaji", "password": "123456", "occupation": "programmer"]
@@ -681,7 +681,7 @@ user.removeAll()
 ```
 
 ## Set
-1. 初始化和基本使用
+**1.** 初始化和基本使用
 ``` swift
 // 创建一个有数据的Set集合，和数组定义方式差不多，但是加上了类型申明
 var skillsOfA: Set<String> = ["swift", "OC"]
@@ -721,7 +721,7 @@ let setA: Set = [1, 2, 3]
 let setB: Set = [3, 2, 1, 1, 1, 1]
 setA == setB // true
 ```
-2. 元素的插入和删除
+**2.** 元素的插入和删除
 ``` swift
 var skillsOfA: Set<String> = ["swift", "OC"]
 var skillsOfB: Set<String> = ["HTML", "CSS", "Javacript"]
@@ -747,7 +747,7 @@ if let _ = skillsOfC.remove("HTML") {
     print("HTML is removed")
 }
 ```
-3. 集合之间的操作：并集、交集、减集、异或
+**3.** 集合之间的操作：并集、交集、减集、异或
 ``` swift
 var skillsOfA: Set<String> = ["swift", "OC"]
 var skillsOfB: Set<String> = ["HTML", "CSS", "Javacript", "Java"]
@@ -781,7 +781,7 @@ skillsOfA // {"OC", "swift", "Java"}
 // 可操作数组
 skillsOfA.union(["Java", "Android"])
 ```
-3. 集合中的子集，超集合相离的判断
+**4.** 集合中的子集，超集合相离的判断
 ``` swift
 var skillsOfA: Set<String> = ["swift", "OC"]
 var skillsOfB: Set<String> = ["HTML", "CSS", "Javacript", "Java"]
@@ -805,7 +805,7 @@ skillsOfA.isDisjoint(with: skillsOfC) // false
 
 ## Function
 ### 参数部分
-1. 方法的基本定义
+**1.** 方法的基本定义
 ``` swift
 //  函数的基本构建
 func sayHelloTo(name: String) -> String {
@@ -841,7 +841,7 @@ func printHello() {
 //func printHello() -> Void {
 //}
 ```
-2. 写一个得到数组中最大和最小值的方法
+**2.** 写一个得到数组中最大和最小值的方法
 ``` swift
 func findMaxAndMin(numbers: [Int]) -> (max: Int, min: Int)? {
     guard !numbers.isEmpty else {
@@ -865,7 +865,7 @@ if let result = findMaxAndMin(numbers: scores!) {
     print("The min value is \(result.min)")
 }
 ```
-3. 方法的外部参数名和内部参数名
+**3.** 方法的外部参数名和内部参数名
 ``` swift
 // 一般写法，内部参数名同时也是外部参数名
 func sayHelloTo(name: String, greeting: String) -> String {
@@ -891,7 +891,7 @@ func mutiply(_ num1: Int, _ num2: Int) -> Int {
 }
 mutiply(4, 2)
 ```
-4. 默认参数和可变参数
+**4.** 默认参数和可变参数
 ``` swift
 // 默认参数的使用
 func sayHello(to name: String = "Playground", withGreetingWord greeting: String = "Hello", punctuation: String = "!") -> String {
@@ -917,7 +917,7 @@ mean(1, 2, 3.4, 7.5)
 // print是一个非常好的有默认参数和可变参数的函数，可变参数不一定放在最后
 print("Hello", 1, 2, 3, separator: ",", terminator: ".") // "Hello,1,2,3."
 ```
-5. 常量参数、变量参数
+**5.** 常量参数、变量参数
 ``` swift
 // 函数的参数默认都是不可变的
 func toBinary(_ num: Int) -> String {
@@ -933,7 +933,7 @@ func toBinary(_ num: Int) -> String {
 
 toBinary(12) // "1100"
 ```
-6. inout
+**6.** inout
 ``` swift
 // var 参数是值传递，不能延续到函数体外面
 var x = 100
@@ -964,7 +964,7 @@ a
 b
 ```
 ### 类型部分
-1. 函数类型的基本概念
+**1.** 函数类型的基本概念
 ``` swift
 // 函数类型
 func add(_ a: Int, _ b: Int) -> Int {
@@ -986,7 +986,7 @@ let anotherSayHello1 = sayHello
 let anotherSayHello2: (String) -> () = sayHello
 let anotherSayHello3: (String) -> Void = sayHello
 ```
-2. 如何使用函数类型？
+**2.** 如何使用函数类型？
 ``` swift
 var arr: [Int] = []
 for _ in 0..<100 {
@@ -1018,7 +1018,7 @@ func near500(_ a: Int, _ b: Int) -> Bool {
 arr.sorted(by: near500)
 arr
 ```
-3. 定义函数类型参数
+**3.** 定义函数类型参数
 ``` swift
 func changeScores(_ scores: inout [Int], by changeScore: (Int)->Int) {
     for (i, score) in scores.enumerated() {
@@ -1041,7 +1041,7 @@ changeScores(&scores1, by: change1) // [60, 78, 88, 94, 99]
 var scores2 = [88, 101, 124, 137, 150]
 changeScores(&scores2, by: change2) // [91, 104, 127, 140, 153]
 ```
-4. 高阶函数map、filter、reduce
+**4.** 高阶函数map、filter、reduce
 ``` swift
 
 func change(num: Int) -> Int {
@@ -1075,7 +1075,7 @@ func concatenate(str: String, num: Int) -> String {
 }
 numbers.reduce("", concatenate) //"65 91 45 89 99 "
 ```
-5. 函数作为函数的返回类型
+**5.** 函数作为函数的返回类型
 ``` swift
 func tier1MailFee(weight: Int) -> Int {
     return 1 * weight
@@ -1098,7 +1098,7 @@ func feeByUnitPrice(price: Int, weight: Int) -> Int {
 feeByUnitPrice(price: 50, weight: 8)
 ```
 ## 闭包
-1. 基本使用方式
+**1.** 基本使用方式
 ``` swift
 var arr = [3, 2, 4, 5, 8]
 
@@ -1113,7 +1113,7 @@ arr.sort(by: { (a: Int, b: Int) -> Bool in
     return a >  b
 }) // [8, 5, 4, 3, 2]
 ```
-2. 上面的代码可简写
+**2.** 上面的代码可简写
 ``` swift
 // 如果闭包只有一行代码，可放在同一行
 arr.sort(by: { (a: Int, b: Int) -> Bool in return a > b })
@@ -1130,7 +1130,7 @@ arr.sort(by: { $0 > $1 })
 // 由于“>”本身就是一个函数
 arr.sort(by: >)
 ```
-3. 结尾闭包的使用
+**3.** 结尾闭包的使用
 ``` swift
 var arr = [3, 2, 4, 5, 8]
 
@@ -1158,7 +1158,7 @@ arr.map{ number -> String in
     return res
 }
 ```
-4. 尾闭包在IOS动画中的运用
+**4.** 尾闭包在IOS动画中的运用
 ``` swift
 let showView = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
 let rectangle = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
@@ -1174,7 +1174,7 @@ UIView.animate(withDuration: 2.0) {
 import PlaygroundSupport
 PlaygroundPage.current.liveView = showView
 ```
-5. 闭包，内容捕获
+**5.** 闭包，内容捕获
 ``` swift
 // 数值捕获
 // 申明变量
@@ -1183,7 +1183,7 @@ arr.sort{ a , b in
     abs(a-num) < abs(b-num)
 }
 ```
-6. 闭包和函数是引用类型
+**6.** 闭包和函数是引用类型
 ``` swift
 func runningMetersWithMetersPerDay(_ metersPerDay: Int) -> () -> Int {
     var totalMeters = 0
@@ -1200,7 +1200,7 @@ planA() //4000
 planA() //6000
 ```
 ## enum
-1. 枚举的基本使用
+**1.** 枚举的基本使用
 ``` swift
 // 定义枚举类型
 enum Month {
@@ -1239,7 +1239,7 @@ func season(month: Month) -> Season {
 
 season(month: Month.April) //Spring
 ```
-2. 枚举的原始值
+**2.** 枚举的原始值
 ``` swift
 // enum Month: Int 表名Month的原始值是int类型的，并且原始值会自动递增
 enum Month: Int{
@@ -1283,7 +1283,7 @@ enum ProgrammingLanguage2: String{
 let myFavoriteLanguage2: ProgrammingLanguage2 = .Swift
 print( "\(myFavoriteLanguage2.rawValue) is my favorite language.") //Swift is my favorite language.
 ```
-3. 并联值
+**3.** 并联值
 ``` swift
 
 // Associate Value 和 Raw value 只能存在一个
@@ -1317,7 +1317,7 @@ case .Waiting:
     print("Waiting for processing")
 }
 ```
-4. 有多个并联值的情况
+**4.** 有多个并联值的情况
 ``` swift
 // Associate value其实只有一个，其实下面表示的是一个元组，并且为元组类型取了个名字
 enum Shape {
@@ -1383,7 +1383,7 @@ let square = Shape.Square(side: 10)
 square.area()
 
 ```
-5. 可选型实际上是枚举类型
+**5.** 可选型实际上是枚举类型
 ``` swift
 var age: Int? = 17
 print(age!)
@@ -1410,7 +1410,7 @@ else {
     print("No website")
 }
 ```
-6. 枚举的递归调用
+**6.** 枚举的递归调用
 ``` swift
 // 枚举递归，使用indirect关键字。也可以直接加在enum关键字后面（如：enum indirect ArithmeticExpression），此时case关键字前面就不必加了
 enum ArithmeticExpression {
@@ -1440,10 +1440,10 @@ func evaluate(_ expression: ArithmeticExpression) -> Int {
 // 计算结果
 evaluate(prouct)
 ```
-7. 枚举是值类型
+**7.** 枚举是值类型
 
 ## struct
-1. 结构体的基本使用
+**1.** 结构体的基本使用
 ``` swift
 
 // 声明一个结构体
@@ -1470,7 +1470,7 @@ var googleHeadQuarter = Place(location: googleHeadQuarterLocation, name: "Google
 // 因为声明的是var，所以可修改
 googleHeadQuarter.name = "G"
 ```
-2. 结构体的初始化
+**2.** 结构体的初始化
 结构体重定义的常量或变量都必须初始化。可选型可以不用初始化，因为默认初始值为`nil`，试了下可选型需要是var，如果是let，则必须直接赋值。
 ``` swift
 struct Location {
@@ -1510,9 +1510,10 @@ let location = Location(coordinateString: "111.1234,222.3333")
 location.latitude // 111.1234
 location.placeName // nil
 ```
-3. 失败的构造函数
+**3.** 失败的构造函数
  - 就是说构造函数可以是失败的，当我们`return nil`时候。也就是说我们初始化结构体的时候得到的是可选型
  - 用guard可以轻松简化if else嵌套的判断代码
+
 ``` swift
 struct Location {
     let latitude: Double
@@ -1535,6 +1536,7 @@ struct Location {
 }
 ```
  - guard还可以将上面的代码优化
+
 ``` swift
 struct Location {
     let latitude: Double
@@ -1553,7 +1555,7 @@ struct Location {
     }
 }
 ```
-4. 结构体中可定义方法， 这里直接在上面代码中添加方法
+**4.** 结构体中可定义方法， 这里直接在上面代码中添加方法
 ``` swift
 struct Location {
     ...
@@ -1574,11 +1576,11 @@ struct Location {
     }
 }
 ```
-5. 结构体是值类型的，就是当做值来出来，赋值即是拷贝
-6. Int, Float, Double, Bool, String, Array, Dictionary, Set 等都是结构体
+**5.** 结构体是值类型的，就是当做值来出来，赋值即是拷贝
+**6.** Int, Float, Double, Bool, String, Array, Dictionary, Set 等都是结构体
 
 ## class
-1. 类的基本使用方式
+**1.** 类的基本使用方式
 类不像结构体一样，类不能自动初始化，因此我们需要自己为变量赋值
 ``` swift
 class Person {
@@ -1610,7 +1612,7 @@ person1.fullName() // "Alexander Hamilton"
 let person2 = Person(fullName: "Jiaji Xu")
 person2?.firstName //"Jiaji"
 ```
-2. 类是引用类型
+**2.** 类是引用类型
 ``` swift
 class Person {
     var name: String
@@ -1627,8 +1629,9 @@ person2.name = "Bob"
 person2.name // Bob
 person1.name // Bob
 ```
-3. 方法的可变和不可变
+**3.** 方法的可变和不可变
  - 类的方法中可改变变量的值
+
 ``` swift
 class Person {
     var name: String
@@ -1647,6 +1650,7 @@ let person = Person(name: "Bob", career: "Developer")
 person.change(career: "Teacher")
 ```
  - 结构体由于是值传递，所以不可改变变量的值，像上面写会报错，提示immutable（不可变）。但是可以为方法加上关键字`mutating`，每次改变都会创建一个新的副本覆盖旧的值
+
 ``` swift
 enum Switch{
     case On
@@ -1669,7 +1673,7 @@ var button2 = Switch.On
 
 button == button2
 ```
-4. 类与类之间的等价，比较两个变量是否指向的同一个东西
+**4.** 类与类之间的等价，比较两个变量是否指向的同一个东西
 ``` swift
 class Person {
     var name: String
@@ -1689,7 +1693,7 @@ let person3 = Person(name: "Bob")
 person1 === person3 // false
 person1 !== person3 // true
 ```
-5. 什么时候用类什么时候用结构体
+**5.** 什么时候用类什么时候用结构体
  - 把结构体看作是值
     - 位置 （经纬度）
     - 坐标 （二维，三维坐标）
@@ -1705,7 +1709,7 @@ person1 !== person3 // true
  - 结构体比类更加“轻量级”
 
 ## 属性和方法
-1. 计算型属性：自动更具其他信息计算出值
+**1.** 计算型属性：自动更具其他信息计算出值
 ``` swift
 struct Point {
     var x = 0.0
@@ -1767,7 +1771,7 @@ rect.center
 rect.center = Point(x: 10, y: 10)
 rect
 ```
-2. 类型属性（Type Property），静态变量
+**2.** 类型属性（Type Property），静态变量
 就和java中的静态变量差不多，写法也一样，不过必须通过类型名获取
 ``` swift
 class Player {
@@ -1776,7 +1780,7 @@ class Player {
     static var highestScore = 0
 }
 ```
-3. 类型方法（Type Method），静态方法，这里举了一个创建单位矩阵的类型方法
+**3.** 类型方法（Type Method），静态方法，这里举了一个创建单位矩阵的类型方法
 ``` swift
 
 struct Matrix {
@@ -1842,9 +1846,10 @@ e?.printMatrix()
 //0    0    0    0    1    0
 //0    0    0    0    0    1
 ```
-4. 属性观察器
+**4.** 属性观察器
  - 注意willSet和didSet不会在变量直接初始化和构造方法中被调用
  - 一个电灯的案例
+
 ```
 class LightBulb {
     static let maxCurrent = 30
@@ -1889,6 +1894,7 @@ bulb.current = 40
 //The current is 30
 ```
  - 一个主题切换的案例
+
 ``` swift
 enum Theme {
     case DayMode
@@ -1932,7 +1938,7 @@ ui.themeMode = .NightMode
 ui.fontColor // 白
 ui.backgroundColor // 黑
 ```
-5. 延迟属性（Lazy Property）
+**5.** 延迟属性（Lazy Property）
 ``` swift
 class ClosedRange {
     let start: Int
@@ -1968,12 +1974,12 @@ if let range = ClosedRange(start: 0, end: 10_000) {
     range.sum
 }
 ```
-6. 访问控制
+**6.** 访问控制
  - `private` 私有访问控制，标识了的变量和方法只能在同一个文件中才能访问
  - `internal` 默认访问控制，同一个目录下可访问
  - `public` 公有访问控制，标识后任何地方都可访问
 
-7. 单例模式
+**7.** 单例模式
 ``` swift
 // Sources文件夹中 GameManager.swift
 public class GameManager {
@@ -2002,7 +2008,7 @@ gm.score // 20
 ```
 
 ## 继承和构造函数
-1. 继承基本使用方式
+**1.** 继承基本使用方式
 继承某个类使用冒号":"跟上继承的类
 继承可以使用父类中非私有的属性（不在一个文件的情况下）
 `final`关键字可以让该类不再有子类
@@ -2041,7 +2047,7 @@ final class Magician: User {
     var magic = 100
 }
 ```
-2. 多态
+**2.** 多态
 ``` swift
 // 简化大量代码
 
@@ -2077,7 +2083,7 @@ printName(avatar: mons)
 //name is Tom
 //name is no1
 ```
-3. 重载， 通过关键字`override`即可复写父类中的成员
+**3.** 重载， 通过关键字`override`即可复写父类中的成员
 私有成员无法覆写；
 final成员无法覆写；
 ``` swift
@@ -2124,11 +2130,11 @@ for c in arr {
 //SubClass fun1()
 //SuperClass fun2()
 ```
-4. 子类构造中调用父类构造
+**4.** 子类构造中调用父类构造
  - 必须将子类初始化完成，才能调用父类构造初始化父类
  - 通过`super.init`调用父类构造
 
-5. 两段式构造
+**5.** 两段式构造
  - 第一段：构造初值
     - 在所有变量没有初始化完成之前，不能调用其他方法
     - 父类的成员变量，即使有初始值，也不能使用
@@ -2137,7 +2143,7 @@ for c in arr {
  - 调用super构造(如果需要的话)
  - 第二段：所有成员变量初始化完成以后，进行成员变量相关的逻辑调整
 
-6. 方便的构造函数和指定的构造函数
+**6.** 方便的构造函数和指定的构造函数
 一般的构造就是指定的构造函数；
 加了convenience的构造就是方便的构造函数，方便的构造函数只能self调用该类的指定构造函数；
 ``` swift
@@ -2163,7 +2169,7 @@ class User: Avatar {
     }
 }
 ```
-7. 子类构造函数的继承
+**7.** 子类构造函数的继承
 如果子类没有实现任何父类的指定构造函数，则自动继承父类的所有指定构造函数；
 如果子类实现了父类所有的指定构造函数，则自动继承父类的所有便利构造函数；
 ``` swift
@@ -2224,7 +2230,7 @@ let zombie = Monster(type: "Zombie")
 let zombie2 = Monster(name: "Zombie")
 let zombie3 = Monster(firstName: "Mr.", lastName: "Zombie")
 ```
-8. required构造
+**8.** required构造
 ```
 class Avatar {
     var name: String
@@ -2254,7 +2260,7 @@ class User: Avatar {
     }
 }
 ```
-9. 结构体中的构造
+**9.** 结构体中的构造
 由于结构体中没有继承的关系，所以不用申明是方便的构造表示要调用自己的构造。
 ``` swift
 struct TestInit {
@@ -2266,32 +2272,32 @@ struct TestInit {
 ```
 
 ## 文档注释
-1. 多行文档注释
+**1.** 多行文档注释
 ```
 /**
 多行文档注释
 多行文档注释
 */
 ```
-2. 单行文档注释，多个单行合在一起和多行效果一样
+**2.** 单行文档注释，多个单行合在一起和多行效果一样
 ```
 /// 单行文档注释
 ```
-3. 使用的是Markdown格式书写
-4. 参数注释1
+**3.** 使用的是Markdown格式书写
+**4.** 参数注释1
 ```
 /// - Parameter item1: This is item1
 /// - Parameter item2: This is item2
 func show2(item1: String, item2: String) {}
 ```
-5. 参数注释2
+**5.** 参数注释2
 ```
 /// - Parameters:
 ///   - item1: This is item1
 ///   - item2: This is item2
 func show2(item1: String, item2: String) {}
 ```
-6. 返回信息、异常信息注释
+**6.** 返回信息、异常信息注释
 ```
 /// - Returns: the result String.
 /// - Throws: nil error
@@ -2299,7 +2305,7 @@ func show1() throws -> String {
     return ""
 }
 ```
-7. 一些对于算法或其他用途的一些关键字
+**7.** 一些对于算法或其他用途的一些关键字
 ```
 /// 对于算法或其他用途的一些关键字 `Precondition`, `Postcondition`, `Requires`, `Invariant`, `Complexity`, `Important` and `Warning`.
 ///
@@ -2323,7 +2329,7 @@ func mysteriousAlgorithm(object: AnyObject) {
     return
 }
 ```
-8. 一些元信息
+**8.** 一些元信息
 ```
 /// - Author: 作者
 /// - Author: 几个人一起完成...
@@ -2335,28 +2341,30 @@ func show() {
 
 }
 ```
-9. MARK
+**9.** MARK
  - 分割类视图
+
 ```
 // MARK: -
 ```
  - 添加分割类视图并添加该区域标题
+
 ```
 // MARK: - Methods
 ```
-10. TODO
+**10.** TODO
 在类视图中建立任务提醒
 ```
 // TODO: 以后在这里要干嘛干嘛
 ```
-11. FIXME
+**11.** FIXME
 需要修复，但占时无关紧要，在类视图中会有提醒
 ```
 // FIXME: Support Swift 2.2
 ```
 
 ## 下标
-1. 基本使用方式
+**1.** 基本使用方式
 可以自己定义下标的类型，如同数组和字典一样访问方式；
 需要关键字`subscript`；
 ``` swift
@@ -2407,7 +2415,7 @@ v[0] // 1
 v[0] = 100.0 // 100
 v["x"] // 100
 ```
-2. 多维下标
+**2.** 多维下标
 可定义多个下标；
 ``` swift
 struct Matrix {
@@ -2467,7 +2475,7 @@ m[0] = [1.5,4.5]
 
 ## 运算符重载
 运算符本身就是一个函数
-1. 重载运算符基本操作
+**1.** 重载运算符基本操作
 ``` swift
 // 重载运算符
 func + (left: Vector3, right: Vector3) -> Vector3 {
@@ -2490,7 +2498,7 @@ let vb = Vector3(x: 3.0, y: 4.0, z: 5.0)
 let vc = vb + va
 vc.x
 ```
-2. 重载比较运算符
+**2.** 重载比较运算符
 ``` swift
 // 重载比较运算符
 func == (left: Vector3, right: Vector3) -> Bool {
@@ -2507,7 +2515,7 @@ let vb = Vector3(x: 3.0, y: 4.0, z: 5.0)
 va == vb
 va != vb
 ```
-3. 自定义运算符
+**3.** 自定义运算符
 如果是ASCII字符，只能是：`/ = - + ! * % < > & | ^ ~`之开头 。或者是Unicode的字符
 ``` swift
 struct Vector3 {
@@ -2580,7 +2588,7 @@ va ^ vb
 ```
 
 ## Extension
-1. 基本使用方式
+**1.** 基本使用方式
 扩展；
 扩展属性时，只能扩展计算型属性；
 只能创建方便的构造函数`convenience`；
@@ -2620,7 +2628,7 @@ extension Test {
 
 let test2 = Test(firstName: "Jiaji", lastName: "Xu")
 ```
-2. 嵌套类型
+**2.** 嵌套类型
 如果某类型只有在一个类型里面起作用，那么可以将该类型放到里面，如String的Index类型；
 扩展，可扩展嵌套类型；
 扩展可扩展下标；
@@ -2661,7 +2669,7 @@ let rect = Rectangle(origin: (0.0, 0.0), width: 4, height: 3)
 rect[0]
 rect[1]
 ```
-3. 扩展标准库
+**3.** 扩展标准库
 // Int还有很多可以做enxtension的地方
 // 如 12345[2]
 // 如 toBinary, toHex
@@ -2713,7 +2721,7 @@ num.repetitions { index in
 ```
 ## Generic
 泛型： 只关心具体操作，不关心具体类型
-1. 用在方法上
+**1.** 用在方法上
 ``` swift
 func swapTwoThings<T>(a: inout T, b: inout T) {
     (a, b) = (b, a)
@@ -2725,7 +2733,7 @@ swapTwoThings(a: &hello, b: &bye)
 hello // "Bye"
 bye // "Hello"
 ```
-2. 用在类型上
+**2.** 用在类型上
 ``` swift
 struct Stack<T> {
     var items = [T]()
@@ -2763,7 +2771,7 @@ s.pop()
 ```
 
 ## protocol
-1. 协议的基本使用
+**1.** 协议的基本使用
 协议；
 只定义，不实现；
 不能为协议设置默认的参数值，变量也不能有默认值；
@@ -2836,7 +2844,7 @@ var aPet: Pet = myDog
 // 当作为Pet来操作的时候，是无法为birthPlace赋值的
 // aPet.birthPlace = "shanghai"
 ```
-2. 协议和构造函数
+**2.** 协议和构造函数
 ``` swift
 protocol Pet {
     var name: String { get set }
@@ -2882,7 +2890,7 @@ class Parrot: Bird {
     }
 }
 ```
-3. 为什么使用协议
+**3.** 为什么使用协议
 协议描述的是某种特性；
 如下面的例子，通过协议，我们可以将继承自不同父类不同类型的东西，由于某种一样的特性，我们可以依这特性把它们归为一类。
 ``` swift
@@ -2956,7 +2964,7 @@ for flyer in flyers {
     print("Fly speed: \(flyer.flySpeed), Fly Height: \(flyer.flyHeight)")
 }
 ```
-3. 类型别名(typealias)
+**3.** 类型别名(typealias)
 ``` swift
 typealias Length = Double
 
@@ -2973,7 +2981,7 @@ runningDistance
 // 使用的时候直接使用AudioSample，如果需要改为UInt32或其它时直接改这里，而不必每个地方都去改
 typealias AudioSample = UInt64
 ```
-4. 并联类型(associatedtype)，在协议中使用别名
+**4.** 并联类型(associatedtype)，在协议中使用别名
 ``` swift
 protocol WeightCalculable {
     // 协议中声明实现类需要使用别名，用associatedtype
@@ -3004,7 +3012,7 @@ extension Int {
 
 let titanic = Ship(weight: 46_328_000)
 ```
-5. Swfit标准库中的常用协议
+**5.** Swfit标准库中的常用协议
 ``` swift
 struct Record: Equatable, Comparable, CustomStringConvertible {
     var wins: Int
@@ -3043,7 +3051,7 @@ records.sort()
 ```
 
 ## 面向协议编程
-1. 扩展协议和默认实现
+**1.** 扩展协议和默认实现
 ``` swift
 protocol Record: CustomStringConvertible {
     var wins: Int { get }
@@ -3097,7 +3105,7 @@ print(teamRecord.descriptionWithDate)
 // WE WIN 2 TIMES!!!
 // <> WINS: 2, LOSSES: 10
 ```
-2. 根据条件扩展协议
+**2.** 根据条件扩展协议
 ``` swift
 protocol Record {
     var wins: Int {get}
@@ -3136,7 +3144,7 @@ let footballTeam = FootballRecord(wins: 1, losses: 1, ties: 1)
 footballTeam.gamePlayed
 footballTeam.winningPercent()
 ```
-3. 协议聚合
+**3.** 协议聚合
 在方法的参数中聚合多个协议为传入条件
 ``` swift
 protocol Prizable {
@@ -3174,7 +3182,7 @@ struct Student: CustomStringConvertible, Prizable {
 
 award(one: Student(score: 80))
 ```
-4. 泛型约束
+**4.** 泛型约束
 ``` swift
 // 传入数组，找出最大值
 func topOne<T: Comparable>(seq:[T]) -> T {
@@ -3184,7 +3192,7 @@ func topOne<T: Comparable>(seq:[T]) -> T {
 
 topOne(seq: [1, 4, 7, 2, 3])
 ```
-5. 创建自己的委托模式
+**5.** 创建自己的委托模式
 ``` swift
 protocol TurnBaseGameDelegate {
     func gameStart()
@@ -3249,7 +3257,7 @@ class RollNumberGame: SinglePlayerTurnBasedGame, TurnBaseGameDelegate {
 let rollingNumber = RollNumberGame()
 rollingNumber.play()
 ```
-6. 可选的协议方法
+**6.** 可选的协议方法
 可选方法需要用@objc标记，实现的实体可实现，可不实现，用的时候当做可选类型来用
 ``` swift
 @objc protocol TurnBaseGameDelegate {
@@ -3264,7 +3272,7 @@ rollingNumber.play()
 ```
 
 ## 错误处理
-1. 强制退出程序
+**1.** 强制退出程序
 ``` swift
 assert(1<0, "Error msg") // 只在测试阶段才有效
 // 输出：
@@ -3286,7 +3294,7 @@ precondition(1>0, "Error")
 
 fatalError("Error") // 严重的错误
 ```
-2. 错误处理
+**2.** 错误处理
 ``` swift
 class VendingMachine {
     struct Item {
@@ -3386,7 +3394,7 @@ catch{
     print("Error occured during vending.")
 }
 ```
-3. defer
+**3.** defer
 相当于java中的fanally，用于抛出异常或没有抛出异常都需要执行的语句；
 使用方式：
 ``` swift
@@ -3414,7 +3422,7 @@ func vend(itemName itemName: String, money: Int) throws -> Int{
 ```
 
 ## 内存管理
-1. 析构函数，实例销毁前在这里做一些处理。由于内存自动销毁实例用的情况比较少
+**1.** 析构函数，实例销毁前在这里做一些处理。由于内存自动销毁实例用的情况比较少
 ``` swift
 class Person {
     init() {
@@ -3453,10 +3461,10 @@ inTheShop()
 //doing something
 //person is leaving!!!
 ```
-2. 引用计数
+**2.** 引用计数
 当引用实例的变量为0的时候，那么就会被释放；
 ARC：Automatic Reference Count
-3. 强引用循环和weak
+**3.** 强引用循环和weak
 weak必须是一个可选型的变量
 ``` swift
 class Person{
@@ -3497,10 +3505,10 @@ imoocApartment?.tenant //nil
 imoocApartment = nil
 // 两种顺序内存都能够正确释放
 ```
-4. unowned
+**4.** unowned
 和上面一样也是弱引用，区别在于它只能修饰常量let，不能是可选的；
 添加了unowned的实例最好在unowned引用的对象之前销毁，因为如果不这样访问unowned常量时会抛出异常
-5. 强引用循环
+**5.** 强引用循环
 ``` swift
 class Country{
 
@@ -3539,7 +3547,7 @@ class City{
 var china: Country? = Country(countryName: "China", capitalName: "Beijing")
 china = nil
 ```
-6. 闭包中的强引用循环
+**6.** 闭包中的强引用循环
 ``` swift
 class SmartAirConditioner{
     var temperature: Int = 26
@@ -3572,7 +3580,7 @@ airCon = nil
 ```
 
 ## 类型检查和类型转换
-1. 类型检查`is`
+**1.** 类型检查`is`
 ``` swift
 class Person {}
 
@@ -3582,15 +3590,15 @@ var person: Person = Student()
 
 person is Student // true
 ```
-2. 类型转换`as`
+**2.** 类型转换`as`
 ``` swift
 // 确定类型（失败有风险）
 let stu1 = person as! Student
 // 可选类型（失败为nil）
 let stu2 = person as? Student
 ```
-3. 可以用在协议上
-4. NSObject,AnyObject和Any
+**3.** 可以用在协议上
+**4.** NSObject,AnyObject和Any
 ``` swift
 class Person{
     var name: String
@@ -3651,7 +3659,7 @@ objects.append( { (a:Int) -> Int in
 
 
 ## 一些注意事项
-1. 变量可以用中文，支持Unicode字符，并且可以用表情
-2. swift没有 `++` `--` 运算
-3. 类型都需要显示的自己去转换
-4. Array、Set、Dictionary、String等结构体都是值类型的
+**1.** 变量可以用中文，支持Unicode字符，并且可以用表情
+**2.** swift没有 `++` `--` 运算
+**3.** 类型都需要显示的自己去转换
+**4.** Array、Set、Dictionary、String等结构体都是值类型的
