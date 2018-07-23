@@ -102,3 +102,34 @@ ViewController重写方法：prepare，该方法在页面跳转时会被调用�
     print("closed")
 }
 ```
+
+## TableView下移一个状态栏的高度解决
+``` swift
+if #available(iOS 11.0, *) {
+    tableView.contentInsetAdjustmentBehavior = .never
+}
+```
+
+## TableView 添加刷新
+``` swift
+let refreshControl = UIRefreshControl()
+
+// 初始化刷新
+refreshControl.backgroundColor = UIColor.blue //设置刷新的背景颜色
+refreshControl.attributedTitle = NSAttributedString(string: "刷新一下：\(Data())", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white]) // 设置字体颜色
+refreshControl.tintColor = UIColor.green // 加载菊花颜色
+refreshControl.tintAdjustmentMode = .dimmed // 色彩调整模式
+refreshControl.addTarget(self, action: #selector(addcount), for: .valueChanged) //添加方法目标
+
+// 添加该刷新
+tableView.refreshControl = refreshControl
+```
+
+刷新方法
+``` swift
+@objc func addcount() {
+    dataArrary.append(contentsOf: dataArrary)
+    tableView.reloadData()
+    refreshControl.endRefreshing()
+}
+```
