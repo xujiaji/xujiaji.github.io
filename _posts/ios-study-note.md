@@ -133,3 +133,28 @@ tableView.refreshControl = refreshControl
     refreshControl.endRefreshing()
 }
 ```
+## 向项目添加字体
+https://developer.apple.com/documentation/uikit/text_display_and_fonts/adding_a_custom_font_to_your_app
+
+由于iOS的用的字体名称并不是文件名称，而是字体本身名称。
+下面代码搜索所有字体，然后我们在控制台，找到多出来的名称。
+
+``` swift
+for family: String in UIFont.familyNames
+{
+    print("\(family)")
+    for names: String in UIFont.fontNames(forFamilyName: family)
+    {
+        print("== \(names)")
+    }
+}
+```
+
+## 设置tabbar 字体和字体大小
+``` swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    let appearance = UITabBarItem.appearance()
+    appearance.setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Ubuntu-Light", size: 9)!], for: .normal)
+}
+```
