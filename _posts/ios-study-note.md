@@ -158,3 +158,8 @@ override func viewDidLoad() {
     appearance.setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Ubuntu-Light", size: 9)!], for: .normal)
 }
 ```
+
+## UIButton`.isEnabled = false`后图片按钮的背景图片被改变
+```
+UIButton.adjustsImageWhenDisabled = false
+```
