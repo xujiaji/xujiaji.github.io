@@ -415,3 +415,349 @@ int main(int argc, const char * argv[]) {
 ```
 
 ## 函数
+1. 调用方法是用中括号
+2.  `-`、`+` 方法的类型（减号代表对象方法，加号代表类方法）
+3. 加号方法和减号方法之间的相互调用逻辑和java一样
+4. 方法名：去掉方法类型和参数类型就是方法名
+5. `(int)` 返回值类型`int`
+6. `:(int) x`     代表方法有参数，参数类型`int`，参数名`x`
+
+> People.h
+
+``` objc
+#import <Foundation/Foundation.h>
+
+@interface People : NSObject
+/*
+ 申明方法
+ -、+ 方法的类型（减号代表对象方法，加号代表类方法）
+ 加号方法和减号方法之间的相互调用逻辑和java一样
+ 
+(int) 返回值类型
+ 
+ :(int) x     代表方法有参数，参数类型int，参数名x
+ 
+ 方法名：去掉方法类型和参数类型就是方法名
+ */
+- (int) report;
++ (void) report1;
+- (int) showWithA:(int) a;
+- (int) showWithA:(int) a andB:(int) b;
+@end
+
+```
+> People.m
+
+``` objc
+#import "People.h"
+
+@implementation People
+{
+    NSString *_name;
+}
+static NSString *_name1;
+- (int)report
+{
+    _name = @"abc";
+    NSLog(@"-号方法:report");
+    return 22;
+}
++ (void)report1
+{
+//     _name = @"abc"; 编译错误，+号方法相当于java中的静态方法
+    _name1 = @"abc";//静态方法可调用静态变量
+    NSLog(@"+号方法：report1");
+}
+
+- (int) showWithA:(int) a
+{
+    return a;
+}
+
+- (int) showWithA:(int) a andB:(int) b{
+    return a + b;
+}
+@end
+```
+> main.m
+
+``` objc
+#import <Foundation/Foundation.h>
+#import "People.h"
+
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        // [] 调用方法
+        People *p1 = [[People alloc] init];
+//        NSLog(@"return value %d", [p1 report]);
+//        [People report1];
+        int a1 = [p1 showWithA:10];
+        NSLog(@"a1 = %d", a1);
+        int a2 = [p1 showWithA:10 andB:20];
+        NSLog(@"a2 = %d", a2);
+    }
+    return 0;
+}
+```
+
+## 初始化函数
+> People.h
+
+``` objc
+#import <Foundation/Foundation.h>
+
+@interface People : NSObject
+// 初始化方法
+//- (id) init;//任意类型
+//虽然上面的也可以但是推荐下面
+- (instancetype) init; // 当前类型，当前是People类型
+
+// 自定义初始化方法
+- (instancetype) initPeople:(NSString *) name age:(int) age;
+@end
+```
+> People.m
+
+``` objc
+#import "People.h"
+
+@implementation People
+{
+    int _age;
+    int _name;
+}
+// 重写初始化方法
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _age = 23;
+        NSLog(@"age = %d", _age);
+    }
+    return self;
+}
+
+- (instancetype)initPeople:(NSString *)name age:(int)age
+{
+    self = [super init];
+    if (self) {
+        _age = age;
+        _name = name;
+        NSLog(@"age = %d, name = %@", _age, name);
+    }
+    return self;
+}
+@end
+```
+
+> main.m
+
+``` objc
+#import <Foundation/Foundation.h>
+#import "People.h"
+
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        People *p1 = [[People alloc] init];
+        People * p2 = [[People alloc] initPeople:@"xu" age:24];
+    }
+    return 0;
+}
+```
+> 输出
+
+```
+age = 23
+age = 24, name = xu
+```
+
+## 封装
+> 访问修饰符
+
+|声明|作用|
+|-|-|
+|`@public`|公有的， 在类中和类外都可以使用并且可以被继承|
+|`@private`|私有的，在类中可以使用，类外无法调用，不可以被继承|
+|`@protected`|受保护的（默认），在类中可以使用，类外无法调用，但是可以被继承|
+|`@package`|框架权限，在框架内相当于受保护，在框架外相当于私有|
+
+> 方法是没有访问修饰符的同c语言一样，如果不想让外部访问，去掉`.h`中的方法定义就可以了。
+
+
+> MyClass.h
+
+``` objc
+#import <Foundation/Foundation.h>
+
+@interface MyClass : NSObject
+{
+    @public
+    int _classInt;
+}
+@property(nonatomic, strong) NSString * className;
+-(void) report;
+@end
+```
+> MyClass.m
+
+``` objc
+#import "MyClass.h"
+
+@implementation MyClass
+- (void)report
+{
+    NSLog(@"class name = %@", _className);
+    NSLog(@"class name = %d", _classInt);
+}
+@end
+```
+> main.m
+
+``` objc
+#import <Foundation/Foundation.h>
+#import "MyClass.h"
+
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        MyClass *c = [[MyClass alloc] init];
+        c.className = @"My Class";
+        // 使用指向来调用类中的公有成员变量
+        c->_classInt = 22;
+        [c report];
+    }ß
+    return 0;
+}
+```
+
+## 继承
+> interface 时候 冒号 代表继承
+
+> 父类
+
+``` objc
+#import <Foundation/Foundation.h>
+@interface MyClass : NSObject
+{
+    int _claseInt;
+}
+@property(nonatomic, strong) NSString * name;
+- (void) report;
+@end
+
+
+#import "MyClass.h"
+@implementation MyClass
+- (void)report
+{
+    _claseInt = 23;
+    NSLog(@"name = %@, value = %d", _name, _claseInt);
+}
+@end
+```
+> 子类
+
+``` objc
+#import "MyClass.h"
+// interface 时候 冒号 代表继承
+@interface MySubClass : MyClass
+-(void) show;
+@end
+
+
+#import "MySubClass.h"
+@implementation MySubClass
+- (void)show
+{
+    _claseInt = 100;
+    [self report];
+}
+@end
+```
+> main.m
+
+``` objc
+#import <Foundation/Foundation.h>
+#import "MyClass.h"
+#import "MySubClass.h"
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        MyClass *c = [[MyClass alloc] init];
+        c.name = @"xu";
+        [c report];
+        
+        MySubClass *sc = [[MySubClass alloc] init];
+        sc.name = @"xu";
+//        [sc report];
+        [sc show];
+    }
+    return 0;
+}
+```
+> 输出
+
+``` objc
+name = xu, value = 23
+name = xu, value = 23
+```
+
+## 多态
+> 父类`Printer.h`  `Printer.m`
+
+``` objc
+#import <Foundation/Foundation.h>
+@interface Printer : NSObject
+- (void) print;
+@end
+
+
+#import "Printer.h"
+@implementation Printer
+- (void)print
+{
+    NSLog(@"我是一个打印机");
+}
+@end
+```
+> 子类`ColorPrinter.h`  `ColorPrinter.m`
+
+``` objc
+#import "Printer.h"
+@interface ColorPrinter : Printer
+@end
+
+
+#import "ColorPrinter.h"
+@implementation ColorPrinter
+- (void)print
+{
+    [super print]; // 子类中调用父类的方法
+    NSLog(@"我是一个彩色打印机");
+}
+@end
+```
+> main.m
+
+``` objc
+#import <Foundation/Foundation.h>
+#import "ColorPrinter.h"
+
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        ColorPrinter *cp = [[ColorPrinter alloc] init];
+        [cp print];
+        
+        // 父类可以引用子类型
+        Printer * p = [[ColorPrinter alloc] init];
+        [p print];
+    }
+    return 0;
+}
+```
+> 输出
+
+``` objc
+我是一个打印机
+我是一个彩色打印机
+我是一个打印机
+我是一个彩色打印机
+```
