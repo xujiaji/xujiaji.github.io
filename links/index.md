@@ -2,23 +2,24 @@
 title: 珍藏链接
 date: 2018-03-16 23:20:10
 ---
-## 🔗友情链接
-
-|**🔗网页**|**🔗Android**|
-|-|-||
-|*hexo inside主题*|*玩Android*|
-|[![inside theme](https://www.gravatar.com/avatar/d2e25f51b78fbc6bed7db389f38631bc?s=40)](https://github.com/elmorec/hexo-theme-inside)|[![wan android](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/links/wanandroid.png)](http://www.wanandroid.com/)|
+## 友情链接
 
 
+&nbsp; | &nbsp;
+:-:|:-:
+*hexo inside主题*|*玩Android*
+[![inside theme](https://www.gravatar.com/avatar/d2e25f51b78fbc6bed7db389f38631bc?s=40)](https://github.com/elmorec/hexo-theme-inside)|[![wan android](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/links/wanandroid.png)](http://www.wanandroid.com/)
 
-## 🔗Android开源项目
+
+
+## Android开源项目
 |名称|分类|链接|作用|
 |-|-|-|:-|
 |HappyBubble|UI Library|[![HappyBubble](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/links/happybubble.png)](https://github.com/xujiaji/HappyBubble)|随意变化的气泡布局，Dialog根据点击View的位置<br>定位它的位置，Dialog可定制方向等！|
 |XMVP|Library|[XMVP](https://github.com/xujiaji/XMVP)|一个简洁的，只需要简单配置即可构架MVP模式的MVP框架|
 |MVPManager|插件|[![MVPManager](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/links/xmvpmanager.png)](https://github.com/xujiaji/MVPManager)|可配合上面的XMVP，快速生成相关代码并配置的AS插件|
 
-## 🔗工具
+## 工具
 |名称|链接|作用|
 |-|-|:-|
 |cubic bezier|[![cubic-bezier](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/links/cubic-bezier.png)](http://cubic-bezier.com/)|贝塞尔曲线动画，可通过该工具调节出合适的数值|
