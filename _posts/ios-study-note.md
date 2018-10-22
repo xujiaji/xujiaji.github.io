@@ -163,3 +163,5 @@ override func viewDidLoad() {
 ```
 UIButton.adjustsImageWhenDisabled = false
 ```
+## UITableView或UICollectionView被TabBar遮盖
+![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog%5Cios-note%5Cnote-screen1.png)
