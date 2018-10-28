@@ -60,3 +60,13 @@ restarting in TCP mode port: 5555
 $ adb connect 192.168.2.207:5555
 connected to 192.168.2.207:5555
 ```
+
+## 空包签名
+```
+jarsigner -verbose -keystore [keystore签名秘钥路径] -signedjar [apk输出路径] [apk输入路径（需要签名的空包）] [签名秘钥别名]
+```
+
+## 获取签名sha1
+```
+keytool -list -v -keystore [签名路径]
+```
