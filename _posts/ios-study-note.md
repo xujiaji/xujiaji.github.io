@@ -104,10 +104,15 @@ ViewController重写方法：prepare，该方法在页面跳转时会被调用�
 ```
 
 ## TableView下移一个状态栏的高度解决
+1. 方法一
 ``` swift
 if #available(iOS 11.0, *) {
     tableView.contentInsetAdjustmentBehavior = .never
 }
+```
+2. 方法二，内容上部分区域向上偏移一个状态栏的高度
+``` swift
+collectionView?.contentInset.top = -UIApplication.shared.statusBarFrame.height
 ```
 
 ## TableView 添加刷新
