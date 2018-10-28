@@ -104,10 +104,15 @@ ViewController重写方法：prepare，该方法在页面跳转时会被调用�
 ```
 
 ## TableView下移一个状态栏的高度解决
+1. 方法一
 ``` swift
 if #available(iOS 11.0, *) {
     tableView.contentInsetAdjustmentBehavior = .never
 }
+```
+2. 方法二，内容上部分区域向上偏移一个状态栏的高度
+``` swift
+collectionView?.contentInset.top = -UIApplication.shared.statusBarFrame.height
 ```
 
 ## TableView 添加刷新
@@ -160,6 +165,22 @@ override func viewDidLoad() {
 ```
 
 ## UIButton`.isEnabled = false`后图片按钮的背景图片被改变
-```
+``` swift
 UIButton.adjustsImageWhenDisabled = false
+```
+## UITableView或UICollectionView被TabBar遮盖
+![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog%5Cios-note%5Cnote-screen1.png)
+
+## UITableView调用`reloadData`导致移动到列表顶部失效
+``` swift
+UIView.animate(withDuration: 0, animations: {
+    self.tableView.contentOffset = CGPoint.zero
+}, completion: { _ in
+    self.tableView.reloadData()
+})
+```
+
+## NavigationBar导致CollectionViewCell或TableViewCell偏移
+``` swift
+self.collectionView?.contentInsetAdjustmentBehavior = .automatic
 ```
