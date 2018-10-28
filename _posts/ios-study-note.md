@@ -160,8 +160,17 @@ override func viewDidLoad() {
 ```
 
 ## UIButton`.isEnabled = false`后图片按钮的背景图片被改变
-```
+``` swift
 UIButton.adjustsImageWhenDisabled = false
 ```
 ## UITableView或UICollectionView被TabBar遮盖
 ![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog%5Cios-note%5Cnote-screen1.png)
+
+## UITableView调用`reloadData`导致移动到列表顶部失效
+``` swift
+UIView.animate(withDuration: 0, animations: {
+    self.tableView.contentOffset = CGPoint.zero
+}, completion: { _ in
+    self.tableView.reloadData()
+})
+```
