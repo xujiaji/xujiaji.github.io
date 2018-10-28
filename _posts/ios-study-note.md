@@ -174,3 +174,8 @@ UIView.animate(withDuration: 0, animations: {
     self.tableView.reloadData()
 })
 ```
+
+## NavigationBar导致CollectionViewCell或TableViewCell偏移
+``` swift
+self.collectionView?.contentInsetAdjustmentBehavior = .automatic
+```
