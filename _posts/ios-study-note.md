@@ -169,7 +169,7 @@ override func viewDidLoad() {
 UIButton.adjustsImageWhenDisabled = false
 ```
 ## UITableView或UICollectionView被TabBar遮盖
-![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog%5Cios-note%5Cnote-screen1.png)
+![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ios-note/note-screen1.png)
 
 ## UITableView调用`reloadData`导致移动到列表顶部失效
 ``` swift
