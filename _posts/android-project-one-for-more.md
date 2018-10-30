@@ -37,7 +37,7 @@ productFlavors {
   xemh {}
 }
 ```
-2. 如果我们选择了某一个渠道，那么打包的时候会根据渠道名选择资源文件（可结合第6点一起看）
+2. 如果我们选择了某一个渠道，那么运行打包的时候会根据渠道名选择资源文件（可结合第6点一起看）
 ![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/one-for-more/20181029171053.png)
 3. 签名可在`signingConfigs`中配置多个（我将所有签名文件放在了项目跟目录的key文件夹中），这样我们就可以通过`signingConfigs`指定预制好的签名配置。
 ``` groovy
@@ -71,7 +71,7 @@ signingConfigs {
     }
 }
 ```
-4. 可在build.gradle中配置动态配置java代码调用的常量数据（该方式我们可根据不同渠道动态配置第三方appid，或其他需要改变的数据）
+4. 可在build.gradle中配置动态配置java代码调用的常量数据（如：通过该方式我们可根据不同渠道动态配置第三方appid，或其他需要根据渠道而改变的数据）
  - 比如：我们在`defaultConfig {}` 中定义了:
   ```
   buildConfigField "String", "SERVER_URL", '"http://xx.xxxx.com/"'
@@ -90,12 +90,11 @@ signingConfigs {
   ```
   它的值就是上边配置的字符串：`http://xx.xxxx.com/`。
  - 您可以进入`BuildConfig`看一看，里面还包含了一些当前的包名版本号等信息。
+ ![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/one-for-more/20181030234102.png)
 5. 在渠道配置那里可以配置对应的包名版本名签名等等
 如下所示：
  ``` groovy
-import com.android.builder.model.SigningConfig
 // 省略其他配置...
-SigningConfig signingConfigUsed
 android {
   // 省略其他配置...
   productFlavors {
@@ -103,7 +102,7 @@ android {
           applicationId "com.xxx.xx"
           versionCode 1
           versionName "1.0.0"
-          signingConfigUsed = signingConfigs.xemhRelease
+          signingConfig signingConfigs.userquhuaRelease // 配置签名
 
           String qq_id = '"xxxxxxxxx"' //配置qq appid
           buildConfigField "String",           "QQ_ID", qq_id
@@ -120,12 +119,12 @@ android {
   buildTypes {
     release {
       // 省略其他配置...
-        signingConfig signingConfigUsed  // 配置签名
+        signingConfig null  // 置空
     }
 
     debug {
       // 省略其他配置...
-        signingConfig signingConfigUsed // 配置签名
+        signingConfig null // 置空
     }
   }
 }
@@ -136,8 +135,7 @@ android {
  - 该app的包名就是`com.xxx.xx`，版本号为`1`，版本名为`1.0.0`。
  - 通过`BuildConfig`调用`QQ_ID`静态常量，就是该渠道里配置的值，`WX_ID`同理。
  - `manifestPlaceholders`配置也可以这样配置。
- - `signingConfigUsed` 是定义在最外面用来引用签名的配置
- - 签名通过`signingConfigUsed`在渠道的`{}`中配置就 可以了
+ - 签名问题经过个人反复尝试（然后半天就过去了￣へ￣），最终签名如上配置。**需要注意**`buildTypes`中的签名配置`signingConfig`如果不设置为`null`，那么打包的是有还是以内置的签名打包。
 6. 资源文件替换
 再看到第2点的介绍，我们选择运行渠道后，会默认匹配对应渠道下的资源。下面我将`xemh`渠道的资源目录全部展开一下。
 ![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/one-for-more/20181029233306.png)
@@ -157,37 +155,76 @@ static def releaseTime() {
 > 打包的时候，修改文件名，以方便区别渠道和版本打包时间
 
 ``` groovy
-buildTypes {
-    release {
-        // 不显示Log
-        buildConfigField "boolean", "LOG_DEBUG", "false"
-        signingConfig signingConfigUsed
-        minifyEnabled true
-        zipAlignEnabled true
-        // 移除无用的resource文件
-        shrinkResources true
-        proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        // 修改打包后的apk文件名
-        applicationVariants.all {
-            variant ->
-                variant.outputs.all {
-                    outputFileName = "${variant.productFlavors[0].name}-v${variant.productFlavors[0].versionName}-${releaseTime()}.apk"
-                }
+applicationVariants.all {
+    variant ->
+        variant.outputs.all {
+            outputFileName = "${variant.productFlavors[0].name}-v${variant.productFlavors[0].versionName}-${releaseTime()}.apk"
         }
-    }
-
-    debug {
-        // 显示Log
-        buildConfigField "boolean", "LOG_DEBUG", "true"
-        signingConfig signingConfigUsed
-        minifyEnabled false
-        zipAlignEnabled false
-        shrinkResources false
-    }
+}
 ```
 - `${variant.productFlavors[0].name}`当前渠道名
 - `${variant.productFlavors[0].versionName}`当前版本名
 - `${releaseTime()}`当前时间
+
+## 其他需要注意事项
+如果您在清单文件`AndroidManifest.xml`中，有那种以包名开头命名的那种。因为如果包名都改了，有些也需要动态的改变。可以用`${applicationId}`代替。在打包的时候，会自动替换成当前包名。
+
+> 比如，类似下配置：
+
+``` xml
+<permission
+    android:name="com.xxx.xx.permission.JPUSH_MESSAGE"
+    android:protectionLevel="signature" />
+<uses-permission android:name="com.xxx.xx.permission.JPUSH_MESSAGE" />
+<receiver
+    android:name=".push.MyJPushMessageReceiver"
+    android:enabled="true"
+    android:exported="false" >
+    <intent-filter>
+        <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+        <category android:name="com.xxx.xx" />
+    </intent-filter>
+</receiver>
+<provider
+    android:name="android.support.v4.content.FileProvider"
+    android:authorities="com.xxx.xx.provider"
+    android:exported="false"
+    tools:replace="android:authorities"
+    android:grantUriPermissions="true">
+    <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/file_paths" />
+</provider>
+```
+
+> 可改为：
+
+``` xml
+<permission
+    android:name="${applicationId}.permission.JPUSH_MESSAGE"
+    android:protectionLevel="signature" />
+<uses-permission android:name="${applicationId}.permission.JPUSH_MESSAGE" />
+<receiver
+    android:name=".push.MyJPushMessageReceiver"
+    android:enabled="true"
+    android:exported="false" >
+    <intent-filter>
+        <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+        <category android:name="${applicationId}" />
+    </intent-filter>
+</receiver>
+<provider
+    android:name="android.support.v4.content.FileProvider"
+    android:authorities="${applicationId}.provider"
+    android:exported="false"
+    tools:replace="android:authorities"
+    android:grantUriPermissions="true">
+    <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/file_paths" />
+</provider>
+```
+> 当然值得注意的是，在代码中我们也不能把包名写死了，可通过`BuildConfig`得到当前包名
 
 ## 我的完整配置，供参考
 > 有关隐私信息的都用xxx替换了
@@ -255,16 +292,12 @@ ext{
 ```
 2. app目录下的`build.gradle`
 ``` groovy
-import com.android.builder.model.SigningConfig
-
 apply plugin: 'com.android.application'
 apply plugin: 'save.state'
 
 static def releaseTime() {
     return new Date().format("yyyy-MM-dd-HH.mm", TimeZone.getTimeZone("GMT+8"))
 }
-
-SigningConfig signingConfigUsed
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -324,7 +357,7 @@ android {
             applicationId "com.xxx.xx"
             versionCode 22
             versionName "1.7.5"
-            signingConfigUsed = signingConfigs.userquhuaRelease
+            signingConfig = signingConfigs.userquhuaRelease
 
             String qq_id = '"xxxxxx"'
             buildConfigField "String",           "QQ_ID", qq_id // qq appId
@@ -353,7 +386,7 @@ android {
             applicationId "com.xxx.xx"
             versionCode 1
             versionName "1.0.0"
-            signingConfigUsed = signingConfigs.quhuaRelease
+            signingConfig = signingConfigs.quhuaRelease
 
             String qq_id = '"xxxxxx"'
             buildConfigField "String",           "QQ_ID", qq_id
@@ -382,7 +415,7 @@ android {
             applicationId "com.xxx.xx"
             versionCode 1
             versionName "1.0.0"
-            signingConfigUsed = signingConfigs.cuntubaRelease
+            signingConfig = signingConfigs.cuntubaRelease
 
             String qq_id = '"xxxxxx"'
             buildConfigField "String",           "QQ_ID", qq_id
@@ -411,7 +444,7 @@ android {
             applicationId "com.xxx.xx"
             versionCode 1
             versionName "1.0.0"
-            signingConfigUsed = signingConfigs.xemhRelease
+            signingConfig = signingConfigs.xemhRelease
 
             String qq_id = '"xxxxxx"'
             buildConfigField "String",           "QQ_ID", qq_id
@@ -436,28 +469,30 @@ android {
             ]
         }
     }
+
+    applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                outputFileName = "${variant.productFlavors[0].name}-v${variant.productFlavors[0].versionName}-${releaseTime()}.apk"
+            }
+    }
+
     buildTypes {
         release {
             // 不显示Log
             buildConfigField "boolean", "LOG_DEBUG", "false"
-            signingConfig signingConfigUsed
+            signingConfig null
             minifyEnabled true
             zipAlignEnabled true
             // 移除无用的resource文件
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            applicationVariants.all {
-                variant ->
-                    variant.outputs.all {
-                        outputFileName = "${variant.productFlavors[0].name}-v${variant.productFlavors[0].versionName}-${releaseTime()}.apk"
-                    }
-            }
         }
 
         debug {
             // 显示Log
             buildConfigField "boolean", "LOG_DEBUG", "true"
-            signingConfig signingConfigUsed
+            signingConfig null
             minifyEnabled false
             zipAlignEnabled false
             shrinkResources false
@@ -553,6 +588,6 @@ dependencies {
 ```
 
 ## 结束
-就这样就可以解放多余的劳动力啦！每次项目打包各种软件，选一下就ojbk，哈哈哈~
-如果有些配置在其他渠道没有的，也可通过BuildConfig在java中判断
+就这样就可以解放大量劳动力啦！每次项目打包各种软件，选一下就ojbk，哈哈哈~
+如果有些配置在其他渠道没有的，也可通过BuildConfig在java中判断如果是某某渠道那么屏蔽。
 over
