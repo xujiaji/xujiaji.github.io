@@ -1,6 +1,7 @@
 ---
-title: iOS学习笔记
+title: iOS开发-零碎笔记
 date: 2018-07-16 08:08:16
+author: xujiaji
 categories:
  - iOS
 tags:

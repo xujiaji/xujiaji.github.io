@@ -1,6 +1,7 @@
 ---
 title: iOS Objective-C Learn Note
 date: 2018-09-05 18:11:24
+author: xujiaji
 categories:
  - iOS
 tags:
@@ -432,11 +433,11 @@ int main(int argc, const char * argv[]) {
  申明方法
  -、+ 方法的类型（减号代表对象方法，加号代表类方法）
  加号方法和减号方法之间的相互调用逻辑和java一样
- 
+
 (int) 返回值类型
- 
+
  :(int) x     代表方法有参数，参数类型int，参数名x
- 
+
  方法名：去掉方法类型和参数类型就是方法名
  */
 - (int) report;
@@ -684,7 +685,7 @@ int main(int argc, const char * argv[]) {
         MyClass *c = [[MyClass alloc] init];
         c.name = @"xu";
         [c report];
-        
+
         MySubClass *sc = [[MySubClass alloc] init];
         sc.name = @"xu";
 //        [sc report];
@@ -745,7 +746,7 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         ColorPrinter *cp = [[ColorPrinter alloc] init];
         [cp print];
-        
+
         // 父类可以引用子类型
         Printer * p = [[ColorPrinter alloc] init];
         [p print];

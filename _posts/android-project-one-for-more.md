@@ -1,6 +1,7 @@
 ---
 title: 一个项目如何编译多个不同签名、包名、资源等，的apk？
 date: 2018-10-29 16:15:20
+author: xujiaji
 categories:
  - Android
 tags:

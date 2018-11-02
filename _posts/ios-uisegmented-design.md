@@ -1,6 +1,7 @@
 ---
 title: iOS用UISegmentedControl设计一个顶部分页导航-Swift（翻译文）
 date: 2018-07-23 14:36:32
+author: xujiaji
 thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ios-uisegmented-design/display.gif
 categories:
  - iOS
