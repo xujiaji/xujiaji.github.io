@@ -184,3 +184,56 @@ UIView.animate(withDuration: 0, animations: {
 ``` swift
 self.collectionView?.contentInsetAdjustmentBehavior = .automatic
 ```
+## 获取app版本
+``` swift
+/// 获取版本名
+let appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String
+
+/// 获取版本号
+let versionNumber = Bundle.main.infoDictionary!["CFBundleVersion"] as? String
+```
+
+## 清理缓存
+``` swift
+ func clearCache() {
+
+     // 取出cache文件夹目录 缓存文件都在这个目录下
+     let cachePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
+
+     // 取出文件夹下所有文件数组
+     let fileArr = FileManager.default.subpaths(atPath: cachePath!)
+
+     // 遍历删除
+     for file in fileArr! {
+
+         let path = cachePath?.appendingFormat("/\(file)")
+         if FileManager.default.fileExists(atPath: path!) {
+
+             do {
+                 try FileManager.default.removeItem(atPath: path!)
+             } catch {
+
+             }
+         }
+     }
+ }
+```
+## 打开网页本软件的appstore
+``` swift
+// App Store URL.
+let appStoreLink = "https://itunes.apple.com/cn/app/id1144351773?mt=8"
+
+/* First create a URL, then check whether there is an installed app that can
+ open it on the device. */
+if let url = URL(string: appStoreLink), UIApplication.shared.canOpenURL(url) {
+    // Attempt to open the URL.
+    UIApplication.shared.open(url, options: [:], completionHandler: {(success: Bool) in
+        if success {
+            print("Launching \(url) was successful")
+        }})
+}
+```
+## 设置圆形展示图像
+1. 设置`UIImageView`宽度和高度，假如设置为60*60
+2. 设置运行时属性，设置圆弧为30（正方形边长度一半）![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ios-note/20181102144521.png)
+3. 勾选`Clip to Bounds`，![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ios-note/20181102145029.png)
