@@ -588,6 +588,9 @@ dependencies {
 
 ```
 
+## Demo 地址
+https://github.com/xujiaji/OneForAllApk
+
 ## 结束
 就这样就可以解放大量劳动力啦！每次项目打包各种软件，选一下就ojbk，哈哈哈~
 如果有些配置在其他渠道没有的，也可通过BuildConfig在java中判断如果是某某渠道那么屏蔽。
