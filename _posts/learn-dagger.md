@@ -6,9 +6,9 @@ thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/
 categories:
  - Android
 tags:
-    - android
+    - Android
     - 分析框架
-    - dagger
+    - Dagger
 ---
 
 ![脑图](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-dagger/main-mind.png)

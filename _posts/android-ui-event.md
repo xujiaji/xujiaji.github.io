@@ -5,8 +5,8 @@ author: xujiaji
 categories:
  - Android
 tags:
-    - android
-    - view
+    - Android
+    - View
 ---
 > 我们寻找的，也只不过是内心世界的片刻安宁，
 以及，那样一场盛大的清欢。

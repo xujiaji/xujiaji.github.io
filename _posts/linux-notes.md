@@ -6,7 +6,7 @@ thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/
 categories:
  - Linux
 tags:
-    - linux
+    - Linux
     - 笔记
 ---
 

@@ -5,7 +5,7 @@ author: xujiaji
 categories:
  - Android
 tags:
-    - android
+    - Android
     - 项目配置
 thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/one-for-more/banner.png
 ---

@@ -8,7 +8,7 @@ categories:
 tags:
   - iOS
   - UI
-  - swift
+  - Swift
   - 翻译
 ---
 

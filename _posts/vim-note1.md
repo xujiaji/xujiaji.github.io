@@ -6,8 +6,8 @@ thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/
 categories:
  - Linux
 tags:
-    - linux
-    - vim
+    - Linux
+    - Vim
     - 笔记
 ---
 ![banner](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/vim-1/banner.png)

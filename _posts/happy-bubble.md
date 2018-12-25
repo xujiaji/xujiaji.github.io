@@ -6,8 +6,8 @@ thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/
 categories:
  - Android
 tags:
-    - android
-    - library
+    - Android
+    - Library
 ---
 
 |||

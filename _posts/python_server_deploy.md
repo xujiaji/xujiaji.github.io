@@ -6,8 +6,8 @@ thumbnail:
 categories:
  - Python
 tags:
-    - linux
-    - python
+    - Linux
+    - Python
     - 笔记
 dropcap: true
 ---

@@ -6,7 +6,7 @@ thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/
 categories:
  - 工具
 tags:
-    - git
+    - Git
     - 笔记
 ---
 

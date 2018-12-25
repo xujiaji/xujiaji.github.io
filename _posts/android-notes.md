@@ -6,7 +6,7 @@ thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/
 categories:
  - Android
 tags:
-    - android
+    - Android
     - 笔记
 ---
 ## 垂直RecyclerView嵌套垂直RecyclerView滑动时出现的卡顿

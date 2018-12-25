@@ -5,7 +5,7 @@ author: xujiaji
 categories:
  - iOS
 tags:
- - swift
+ - Swift
  - 学习
  - 笔记
  - iOS
@@ -238,3 +238,25 @@ if let url = URL(string: appStoreLink), UIApplication.shared.canOpenURL(url) {
 1. 设置`UIImageView`宽度和高度，假如设置为60*60
 2. 设置运行时属性，设置圆弧为30（正方形边长度一半）![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ios-note/20181102144521.png)
 3. 勾选`Clip to Bounds`，![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ios-note/20181102145029.png)
+
+## UIScrollView填充到顶部（去掉状态栏到空白间距）
+1. `Content Insets` 选择`Never`
+2. 去掉选中的`Safe Area Relative Margins`
+![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ios-note/20181225153159.png)
+
+## UIImage 高斯模糊扩展
+``` swift
+extension UIImage {
+    func blurred(radius: CGFloat) -> UIImage {
+        let ciContext = CIContext(options: nil)
+        guard let cgImage = cgImage else { return self }
+        let inputImage = CIImage(cgImage: cgImage)
+        guard let ciFilter = CIFilter(name: "CIGaussianBlur") else { return self }
+        ciFilter.setValue(inputImage, forKey: kCIInputImageKey)
+        ciFilter.setValue(radius, forKey: "inputRadius")
+        guard let resultImage = ciFilter.value(forKey: kCIOutputImageKey) as? CIImage else { return self }
+        guard let cgImage2 = ciContext.createCGImage(resultImage, from: inputImage.extent) else { return self }
+        return UIImage(cgImage: cgImage2)
+    }
+}
+```

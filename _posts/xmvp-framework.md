@@ -6,8 +6,8 @@ thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/
 categories:
  - Android
 tags:
-    - android
-    - library
+    - Android
+    - Library
 ---
 
 > XMVP框架是我的第一个框架，刚从Android起步第一次了解MVP模式时决心写一个自己的东西框架，到现在已运用在我写的多个项目中。虽然两年了，但核心的思路没有改变，到现在变换也不是太多，精简了一些代码，添加了一些功能。
