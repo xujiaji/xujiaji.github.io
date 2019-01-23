@@ -260,3 +260,65 @@ extension UIImage {
     }
 }
 ```
+
+## 两个UIImage 合并扩展
+``` swift
+extension UIImage {
+
+  func overlayWith(image: UIImage, posX: CGFloat, posY: CGFloat) -> UIImage {
+    let newWidth = size.width < posX + image.size.width ? posX + image.size.width : size.width
+    let newHeight = size.height < posY + image.size.height ? posY + image.size.height : size.height
+    let newSize = CGSize(width: newWidth, height: newHeight)
+
+    UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
+    draw(in: CGRect(origin: CGPoint.zero, size: size))
+    image.draw(in: CGRect(origin: CGPoint(x: posX, y: posY), size: image.size))
+    let newImage = UIGraphicsGetImageFromCurrentImageContext()!
+    UIGraphicsEndImageContext()
+
+    return newImage
+  }
+
+}
+```
+
+## SDWebImageView 下载图片
+1. 方式一
+``` swift
+img.sd_setImage(with: URL(string: "http://url"),
+  placeholderImage: #imageLiteral(resourceName: "default_square")) { image, error, cacheType, url in
+
+}
+```
+2. 方式二
+``` Swift
+SDWebImageDownloader
+  .shared()
+  .downloadImage(with: URL(string: "http://url"),
+    options: SDWebImageDownloaderOptions.init(rawValue: 0),
+    progress: nil,
+    completed: { image, data, error, finished in
+    if finished {
+
+    }
+})
+```
+
+## AVPlayerViewController 视频播放
+``` Swift
+import AVKit
+func playVideoByUrl(string: String) {
+    let videoURL = URL(string: string)
+    let player = AVPlayer(url: videoURL!)
+    let playerViewController = AVPlayerViewController()
+    playerViewController.player = player
+    self.present(playerViewController, animated: true) {
+        playerViewController.player!.play()
+    }
+}
+```
+
+## 为UIImageView添加的点击手势无效
+1. 勾选上`User Interaction Enabled`
+![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ios-note/20181226174028.png)
+2. 代码中设置`uiimageview.userInteractionEnabled = true`
