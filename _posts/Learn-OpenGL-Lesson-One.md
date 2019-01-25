@@ -2,6 +2,7 @@
 title: OpenGL Android课程一：入门
 date: 2019-01-21 16:10:46
 author: xujiaji
+thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/6093CCF8-F7C1-4F4E-A668-C9E76783063F.png
 categories:
  - OpenGL
 tags:
@@ -501,6 +502,10 @@ OpenGL ES 2需要更多的设置才能开始，但是一旦您完成了这个过
 可以在Github下载本课程源代码：[下载项目][8]
 本课的编译版本也可以再Android市场下：[google play 下载apk][9]
 
+## 教程目录
+- [OpenGL Android课程一：入门][10]
+- [OpenGL Android课程二：环境光和漫射光][11]
+
 [1]: http://developer.android.com/reference/android/opengl/GLSurfaceView.html
 [2]: https://en.wikipedia.org/wiki/EGL_(API)
 [3]: http://developer.android.com/reference/android/opengl/GLSurfaceView.Renderer.html
@@ -510,3 +515,5 @@ OpenGL ES 2需要更多的设置才能开始，但是一旦您完成了这个过
 [7]: https://en.wikipedia.org/wiki/Noclip_mode#.22Hall_of_mirrors.22_effect
 [8]: https://github.com/learnopengles/Learn-OpenGLES-Tutorials
 [9]: https://market.android.com/details?id=com.learnopengles.android
+[10]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-One
+[11]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Two
