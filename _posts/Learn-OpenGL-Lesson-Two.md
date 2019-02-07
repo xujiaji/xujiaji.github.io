@@ -372,6 +372,7 @@ final String pointFragmentShader =
 ## 教程目录
 - [OpenGL Android课程一：入门][20]
 - [OpenGL Android课程二：环境光和漫射光][29]
+- [OpenGL Android课程三：使用每片段照明][30]
 
 ## 打包教材
 可以在Github下载本课程源代码：[下载项目][27]
@@ -406,3 +407,4 @@ final String pointFragmentShader =
 [27]: https://github.com/learnopengles/Learn-OpenGLES-Tutorials
 [28]: https://market.android.com/details?id=com.learnopengles.android
 [29]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Two
+[30]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Three
