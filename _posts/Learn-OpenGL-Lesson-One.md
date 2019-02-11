@@ -506,6 +506,7 @@ OpenGL ES 2需要更多的设置才能开始，但是一旦您完成了这个过
 - [OpenGL Android课程一：入门][10]
 - [OpenGL Android课程二：环境光和漫射光][11]
 - [OpenGL Android课程三：使用每片段照明][12]
+- [OpenGL Android课程四：介绍纹理基础][13]
 
 [1]: http://developer.android.com/reference/android/opengl/GLSurfaceView.html
 [2]: https://en.wikipedia.org/wiki/EGL_(API)
@@ -519,3 +520,4 @@ OpenGL ES 2需要更多的设置才能开始，但是一旦您完成了这个过
 [10]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-One
 [11]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Two
 [12]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Three
+[13]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Four

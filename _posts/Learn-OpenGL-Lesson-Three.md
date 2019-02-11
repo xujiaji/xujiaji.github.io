@@ -2,6 +2,7 @@
 title: OpenGL Android课程三：使用每片段照明
 date: 2019-01-26 17:55:49
 author: xujiaji
+thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/Screenshot_2019-02-07-13-45-15-213_com.xujiaji.le.png
 categories:
  - OpenGL
 tags:
@@ -24,7 +25,7 @@ tags:
 
 
 
-## 假设和前提条件
+## 前提条件
 本系列的每节课都以前面的课程为基础，本节课是[第二课][2]的补充，因此请务在阅读了之前的课程后再来回顾。
 
 > 下面是本系列课程的前几课：
@@ -164,6 +165,7 @@ void main()              // 片段着色器入口
 - [OpenGL Android课程一：入门][3]
 - [OpenGL Android课程二：环境光和漫射光][2]
 - [OpenGL Android课程三：使用每片段照明][14]
+- [OpenGL Android课程四：介绍纹理基础][15]
 
 ## 打包教材
 可以在Github下载本课程源代码：[下载项目][12]
@@ -188,3 +190,4 @@ void main()              // 片段着色器入口
 [12]: https://github.com/learnopengles/Learn-OpenGLES-Tutorials
 [13]: https://market.android.com/details?id=com.learnopengles.android
 [14]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Three
+[15]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Four
