@@ -178,6 +178,7 @@ void main()              // 片段着色器入口
 - [OpenGL Android课程三：使用每片段照明][14]
 - [OpenGL Android课程四：介绍纹理基础][15]
 - [OpenGL Android课程五：介绍混合（Blending）][16]
+- [OpenGL Android课程六：介绍纹理过滤][18]
 
 ## 打包教材
 
@@ -202,3 +203,4 @@ void main()              // 片段着色器入口
 [15]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Four
 [16]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Five
 [17]: https://github.com/xujiaji/LearnOpenGL/releases
+[18]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Six

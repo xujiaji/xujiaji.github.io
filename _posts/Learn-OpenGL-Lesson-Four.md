@@ -424,6 +424,7 @@ public class RawResourceReader {
 - [OpenGL Android课程三：使用每片段照明][4]
 - [OpenGL Android课程四：介绍纹理基础][10]
 - [OpenGL Android课程五：介绍混合（Blending）][13]
+- [OpenGL Android课程六：介绍纹理过滤][15]
 
 ## 打包教材
 
@@ -445,3 +446,4 @@ public class RawResourceReader {
 [12]: https://market.android.com/details?id=com.learnopengles.android
 [13]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Five
 [14]: https://github.com/xujiaji/LearnOpenGL/releases
+[15]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Six
