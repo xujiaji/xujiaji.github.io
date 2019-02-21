@@ -427,8 +427,9 @@ final String pointFragmentShader =
 
 ## 打包教材
 
-可以在Github下载本课程源代码：[下载项目][27]
-本课的编译版本也可以再Android市场下：[google play 下载apk][28]
+可以在Github下载本课程源代码：[下载项目][27]  
+本课的编译版本也可以再Android市场下：[google play 下载apk][28]  
+“我”也编译了个apk，方便大家下载：[github download][33]
 
 [1]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190123163828.png
 [2]: https://en.wikipedia.org/wiki/Lambertian_reflectance
@@ -462,3 +463,4 @@ final String pointFragmentShader =
 [30]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Three
 [31]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Four
 [32]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Five
+[33]: https://github.com/xujiaji/LearnOpenGL/releases

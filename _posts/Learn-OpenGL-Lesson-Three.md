@@ -181,8 +181,9 @@ void main()              // 片段着色器入口
 
 ## 打包教材
 
-可以在Github下载本课程源代码：[下载项目][12]
-本课的编译版本也可以再Android市场下：[google play 下载apk][13]
+可以在Github下载本课程源代码：[下载项目][12]  
+本课的编译版本也可以再Android市场下：[google play 下载apk][13]  
+“我”也编译了个apk，方便大家下载：[github download][17]
 
 [1]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190126183929.png
 [2]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Two
@@ -200,3 +201,4 @@ void main()              // 片段着色器入口
 [14]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Three
 [15]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Four
 [16]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Five
+[17]: https://github.com/xujiaji/LearnOpenGL/releases

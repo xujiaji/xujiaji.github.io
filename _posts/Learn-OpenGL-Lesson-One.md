@@ -537,8 +537,9 @@ OpenGL ES 2需要更多的设置才能开始，但是一旦您完成了这个过
 ## 进一步探索
 
 尝试更改动画速度，顶点或颜色，看看会发生什么！
-可以在Github下载本课程源代码：[下载项目][8]
-本课的编译版本也可以再Android市场下：[google play 下载apk][9]
+可以在Github下载本课程源代码：[下载项目][8]  
+本课的编译版本也可以再Android市场下：[google play 下载apk][9]  
+“我”也编译了个apk，方便大家下载：[github download][15]
 
 ## 教程目录
 
@@ -562,3 +563,4 @@ OpenGL ES 2需要更多的设置才能开始，但是一旦您完成了这个过
 [12]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Three
 [13]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Four
 [14]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Five
+[15]: https://github.com/xujiaji/LearnOpenGL/releases

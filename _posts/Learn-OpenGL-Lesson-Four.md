@@ -427,8 +427,9 @@ public class RawResourceReader {
 
 ## 打包教材
 
-可以在Github下载本课程源代码：[下载项目][11]
-本课的编译版本也可以再Android市场下：[google play 下载apk][12]
+可以在Github下载本课程源代码：[下载项目][11]  
+本课的编译版本也可以再Android市场下：[google play 下载apk][12]  
+“我”也编译了个apk，方便大家下载：[github download][14]
 
 [1]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190208193740.png
 [2]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-One
@@ -443,3 +444,4 @@ public class RawResourceReader {
 [11]: https://github.com/learnopengles/Learn-OpenGLES-Tutorials
 [12]: https://market.android.com/details?id=com.learnopengles.android
 [13]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Five
+[14]: https://github.com/xujiaji/LearnOpenGL/releases
