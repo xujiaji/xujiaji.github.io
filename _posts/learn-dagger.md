@@ -13,11 +13,14 @@ tags:
 
 ![脑图](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-dagger/main-mind.png)
 
+# Dagger2 的深入分析与使用
+
 听闻Dagger大名很久，但一直没有去学，直到不得不学 〒▽〒。<br>这个框架开始的时不是很好理解，看了一些文章还是没有理解到精髓，似懂非懂，于是自己做了些简单的测试代码观察Dagger注解的作用。将学习和理解的过程分享出来，希望能帮到一些学些Dagger的朋友，同时我也巩固总结一下。
 
 本篇文章不讲，Dagger哪里好哪里好！只讲怎么用的和一些原理！
 
 ## Dagger是什么？
+
 - Dagger是一个依赖注入框架（Dependency injection），简称DI。假如有A和B两个对象（B相当于是DI），A中并没有对自己内部的成员进行初始化，它的成员初始化全部是B类注入进来。
 
 - 大部分注入框架是基于反射实现的，Dagger旨在解决许多困扰基于反射的解决方案的开发和性能问题，Dagger的依赖注入是通过java代码来实现的。相当于你自己可以用java手写依赖注入代码，但这样的话就会更大的工作量，于是Dagger通过注解等帮我们自动生成相关的依赖注入逻辑代码。
@@ -27,9 +30,10 @@ tags:
 - 在下面所讲的都是以实际的代码操作为主，来去观察结果，代码本篇不会涉及Android 页面，只想通过简单的代码来理清楚Dagger生成DI的逻辑。
 
 ## 需要添加的依赖
-官方Dagger2项目地址：https://github.com/google/dagger
 
-```
+官方Dagger2项目地址：<https://github.com/google/dagger>
+
+``` groovy
 dependencies {
     implementation 'com.google.dagger:dagger:2.15'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.15'
@@ -37,6 +41,7 @@ dependencies {
 ```
 
 ## 注解使用
+
 欢迎来到本篇最精彩的地方！参考自[官方的使用指南](https://google.github.io/dagger/users-guide)
 
 > 符号含义参考表：
@@ -58,6 +63,7 @@ dependencies {
 |`...`|省略代码|`class A {...}`|
 
 ### 咖啡机
+
 用咖啡机的例子来演示，首先我们来看一下主要的几个类，下面是简单咖啡机UML关系图！（查考自Dagger2项目example）
 
 ![咖啡机UML](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-dagger/20180611141527.png)
@@ -66,7 +72,7 @@ dependencies {
 
 ``` java
 /**
- * 定义汞接口
+ * 定义泵接口
  */
 interface Pump {
     void pump();
@@ -141,13 +147,15 @@ public class CoffeeMaker {
 public class CoffeeApp {
     public static void main(String[] args) {
         Heater heater = new ElectricHeater();//实例化加热器
-        Pump pump = new Thermosiphon(heater);//实例化汞
+        Pump pump = new Thermosiphon(heater);//实例化泵
         CoffeeMaker coffeeMaker = new CoffeeMaker(heater, pump);//实例化咖啡机
         coffeeMaker.brew();//出咖啡
     }
 }
 ```
+
 ### @Inject
+
 **[测试文件位置](https://github.com/xujiaji/learn-android/tree/master/LearnDagger/app/src/main/java/com/example/jiaji/daggertest/coffee2_test_inject)**
 
 1. 其名：注入，@Inject的用法是标记成员变量、构造方法或成员方法。
@@ -178,6 +186,7 @@ public interface PumpComponent {
     Thermosiphon getPump();
 }
 ```
+
 > `@Inject`标记在成员变量上，表示其他地方需要提供`ElectricHeater`对象，也就是上上面代码中`@Inject`标记在构造方法的作用。`@Inject`标记在构造方法上，可以看做`new Thermosiphon()`，也就是上面接口中需要的对象。
 
 ``` java
@@ -200,6 +209,7 @@ public class Thermosiphon implements Pump {
     }
 }
 ```
+
 > 我们直接创建一个CoffeeApp类中进行测试，`DaggerPumpComponent`是通过apt自动生成的类（需要在Android studio中点击：Build -> Make Module）。
 
 ``` java
@@ -213,12 +223,14 @@ public class CoffeeApp {
     }
 }
 ```
+
 > `CoffeeApp`运行结果
 
-```
+``` c
 ~~~~heating~~~~
 =>=> 抽水 =>=>
 ```
+
 > 测试一下将`@Inject`标记在方法上，修改`Thermosiphon`类，如下所示：
 
 ``` java
@@ -245,14 +257,13 @@ public class Thermosiphon implements Pump {
 
 > `CoffeeApp`运行结果
 
-```
+``` c
 funTest()
 heater: 692404036
 funTest(): 1554874502
 ~~~~heating~~~~
 =>=> 抽水 =>=>
 ```
-
 
 > 一些结论
 
@@ -266,7 +277,7 @@ funTest(): 1554874502
 8. 如果我们将`@Inject`标记在方法上，如果有参，Dagger提供该实例，然后自动调用该方法；如果无参则直接调用；如果有参没有对应的实例提供，则报错。
 
 > *接下来将从Dagger生成的注入代码上进行分析（这部分跳过也可以滴！(｀・ω・´)）*
-
+>
 > 这是上面整体的UML关系图，“绿色”的是Dagger自动生成的代码。
 
 ![inject uml](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-dagger/inject-uml.png)
@@ -280,6 +291,7 @@ funTest(): 1554874502
 |@Inject public Thermosiphon() { }|----->|Thermosiphon_Factory|
 |@Inject ElectricHeater heater;|----->|Thermosiphon_MembersInjector|
 通过观察我们可以得出这些结论：
+
 - ①`PumpComponent`接口生成的类的名字以：`Dagger` + `接口名`。*（我们需要使用生成的这个类，进行Dagger初始化的操作）*
 - ②`@Inject`标记了构造方法生成类名以：`构造名` + `_Factory`，的命名生一个工厂类。*（该工厂类将用来创建对应的实例）*
 - ③类中有`@Inject`标记成员变量或方法的类，会生成一个以：`该类名` + `_MembersInjector`，的命名生成一个注入类。*（该类实现了将实例传递到用`@Inject`标记的成员变量或方法）*
@@ -287,18 +299,21 @@ funTest(): 1554874502
 **3.** 来看看`ElectricHeater`的工厂类`ElectricHeater_Factory`（这是一个工厂设计模式中的一种实现方式），实现一个工厂接口`Factory<T>`(`Factory<T>`又继承`Provider<T>`接口)。通过`get()`获取一个ElectricHeater实例，通过`create()`获取`ElectricHeater_Factory`实例（这个类并未被使用，当你看到下面介绍`DaggerPumpComponent`就明白了）![ElectricHeater_Factory](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-dagger/ElectricHeater_Factory.png)
 **4.** 接下来看看`Thermosiphon_MembersInjector`，这个类实现了为`@Inject`泛型标记的成员变量或方法传递值的操作。大家看`injectHeater`方法，这里就是为`Thermosiphon`的成员变`heater`添加依赖的地方!![Thermosiphon_MembersInjector.java](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-dagger/Thermosiphon_MembersInjector.png)
 **5.** 再看看`Thermosiphon_Factory`，这个类比上一个`ElectricHeater_Factory`复杂一点。因为它在实例化`Thermosiphon`时，需要注入`ElectricHeater`对象。这比`ElectricHeater_Factory`多了个方法并且实例该工厂类时必须传入`ElectricHeater`的工厂类实例。
+
 - 构造参数是`ElectricHeater`的工厂，是为了通过工厂类获得`ElectricHeater`对象；
 - 工厂方法`get()`中创建实例的同时，通过`Thermosiphon_MembersInjector`的静态方法(`injectHeater`)向`Thermosiphon`注入`ElectricHeater`对象，然后得到最终的`Thermosiphon`实例；
 - 最后一个静态方法`newThermosiphon()`返回一个没有注入`ElectricHeater`实例的`Thermosiphon`对象。
 ![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-dagger/20180611142100.png)
 
 **6.** 最后看`DaggerPumpComponent`这个类，主要看`getPump()`、`injectThermosiphon`和`Builder`类
+
 - `getPump()`是我们在接口中定义的方法，在这里实现接口方法，通过调用`injectThermosiphon`方法并传入一个没有注入`ElectricHeater`实例的`Thermosiphon`，得到最终的`Thermosiphon`
 - `injectThermosiphon`方法中得到上面传进来的`Thermosiphon`，然后通过`Thermosiphon_MembersInjector`注入`ElectricHeater`实例。看到这里我们会发现第“3.”中介绍的`ElectricHeater_Factory`居然没有用到，这里直接就new了（这也是上面提到的并没有使用`ElectricHeater_Factory`）。
 - `Builder`就是用来创建`DaggerPumpComponent`的类，学到后面，这个类会根据需求变得复杂！
 ![DaggerPumpComponent.java](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-dagger/20180611142127.png)
 
 ### @Provides丶@Module丶@Binds
+
 **[测试文件位置](https://github.com/xujiaji/learn-android/blob/master/LearnDagger/app/src/main/java/com/example/jiaji/daggertest/coffee3_test_provides_module)**
 
 > 由于`@Inject`注解无法做到以下几点：
@@ -335,18 +350,20 @@ public class DripCoffeeModule
     }
 }
 ```
+
 > 在`@Component`注解中添加`DripCoffeeModule.class`，如果有多个可写为：`@Component(modules = {DripCoffeeModule.class, ....class,....class})`
 
-```
+``` java
 @Component(modules = DripCoffeeModule.class)
 public interface CoffeeShop
 {
     Pump getPump();
 }
 ```
+
 > 其他类
 
-```
+``` java
 /**
  * 电子加热器
  */
@@ -375,6 +392,7 @@ public class Thermosiphon implements Pump
 }
 
 ```
+
 > 测试类：
 
 ``` java
@@ -390,6 +408,7 @@ public class CoffeeApp
     }
 }
 ```
+
 > CoffeeApp的输出结果：
 
 ``` java
@@ -399,6 +418,7 @@ Thermosiphon() heater = com.example.jiaji.daggertest.coffee3.ElectricHeater@2945
 providePump
 pump = com.example.jiaji.daggertest.coffee3.Thermosiphon@5cad8086
 ```
+
 - 首先，我们调用`DaggerCoffeeShop.create().getPump()`想要得到一个Pump对象，于是`DripCoffeeModule`中的`providePump`方法为我们提供一个Pump实例。
 - 然后，我们看到`providePump`方法有参数`Thermosiphon`那么这个这个实例从哪来呢？我们在`Thermosiphon`的构造方法上标记`@Inject`就表示提供该对象了。
 - 接下来，我们深入到`Thermosiphon`类又会发现，`Thermosiphon`类的构造方法要求提供`Heater`对象，那么问题来了Heater实例从哪来？您能想到！我们可以看到在`DripCoffeeModule`的`provideHeater`方法提供了该实例。
@@ -438,6 +458,7 @@ public interface CoffeeShop
     Pump getPump();
 }
 ```
+
 > 其实还有种写法，意思是表示某一个Module包含另一个Module。最终效果一样的。如下所示：
 
 ``` java
@@ -487,7 +508,7 @@ public interface CoffeeShop
 ```
 
 > *接下来是对Dagger生成的代码进行分析（这部分可以选择性跳过！(｀・ω・´)）*
-
+>
 > 这是整体的UML关系图，“绿色”是自动生成的代码。(由于生成的`Thermosiphon_Factory`并没有被使用，于是就不放进来了。)
 
 ![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-dagger/20180611142208.png)
@@ -503,12 +524,14 @@ public interface CoffeeShop
 从名字上我们可以看出：`@Provides`标记的提供实例的方法对应生成了一个类名以：`所在类名` + `_` + `方法名(首字大写)` + `Factory`，命名生成一个对应的工厂类。
 
 **3.** 我们先来看看`Thermosiphon_Factory`这个没有被使用的类，如果您是从上面挨着看下来的，就一定明白，其他地方是直接`new Thermosiphon`，接着往下看您就会看到！
+
 - 这个类和上面生成的`Thermosiphon_Factory`有些不一样，因为之前`Thermosiphon`是无参构造，现在添加了`Heater`作为构造的参数（该实例在DripCoffeeModule提供）。
 - 可以看到要实例化这个工厂类，必须要传入`Heater`的工厂类。然后在创建`Thermosiphon`实例时通过`Heater`工厂类创建一个`Heater`对象传入构造方法中。
 - 并且它还添加了`一个newThermosiphon`的静态方法，允许传入`heater`对象来创建`Thermosiphon`。
 
 ![Thermosiphon_Factory](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-dagger/20180611142247.png)
 **4.** 我们在来看`Heater`工厂类`DripCoffeeModule_ProvideHeaterFactory`，它相对比较简单点。
+
 - 可以看到在创建`Heater`实例时，直接通过`DripCoffeeModule.provideHeater()`调用我们定义的相对应的静态方法。
 - 通过`Preconditions.checkNotNull`又检测了是否提供得有实例，没有将会报第二参数传入的错误信息。
 - 工厂实例化是通过静态方法`create()`实例；静态方法`newThermosiphon`，可不创建工厂类的情况下，直接创建`Heater`实例。
@@ -522,16 +545,19 @@ public interface CoffeeShop
     ![DripCoffeeModule_ProvideHeaterFactory](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-dagger/20180611142330.png)
 
 **5.** 我们来看看`Pump`对应生成的工厂类：`DripCoffeeModule_ProvidePumpFactory`
+
 - 在Module中这样定义：`@Provides static Pump providePump(Thermosiphon pump) { return pump; }`
 - 这个方法又必须提供`Thermosiphon`实例，因此`DripCoffeeModule_ProvidePumpFactory`的构造参数是`Thermosiphon`的工厂对象来提供该实例（`get()`方法中通过调用静态方法`providePump`得到Pump实例的时候需要该工厂类提供）
 - 我们看到`proxyProvidePump`方法，也是可在不创建工厂类实例的情况下调用。
-![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-dagger/20180611142349.png)
+ ![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-dagger/20180611142349.png)
+
 - 如果我们也把Module中的static修饰去掉又会发生什么样的变化呢？我猜您也应该能想到了！看下图：
-    - 比4中去掉static多了划线的地方
-    - 也就是说当我们定义的方法是普通方法时，我们就必须要提供`Module`的实例
-    ![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-dagger/20180611142412.png)
+  - 比4中去掉static多了划线的地方
+  - 也就是说当我们定义的方法是普通方法时，我们就必须要提供`Module`的实例
+  ![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-dagger/20180611142412.png)
 
 **6.** 最后，我们来看`DaggerCoffeeShop`是如何将这些东东组合在一起的。
+
 - 我们看到`getPump()`方法，它在接口`CoffeeShop`中定义，里面如何实现的呢？
 - 它直接调用了上面`5`所讲到的静态方法`proxyProvidePump`来创建`Pump`实例，但是需要提供`Thermosiphon`实例作为参数。（如果是用的@Binds方式，则getPump()的实现为：  `public Pump getPump() { return getThermosiphon(); }`）
 - 于是，它定义了方法`getThermosiphon()`来创建该实例。看到该方法了吗？里面是直接`new Thermosiphon`，这就是`Thermosiphon_Factory`没有用到的原因。创建`Thermosiphon`的构造参数`Heater`由`DripCoffeeModule_ProvideHeaterFactory`类名直接调用静态方法`proxyProvideHeater()`它又调用`DripCoffeeModule.provideHeater()`来提供。
@@ -780,7 +806,7 @@ public class CoffeeMaker {
     @Inject
     Heater heater;//当我们要使用它时才创建一个加热器
     @Inject
-    Pump pump;//汞
+    Pump pump;//泵
 
     @Inject
     CoffeeMaker() { }
@@ -1787,7 +1813,7 @@ public class SubComponent
 
 - `@Subcomponent`实例是通过父Component创建。`Component dependencies`可以依赖多个Component，并且各个Component单独创建且分离。
 - `Component dependencies`只运行您访问接口中公开定义提供的实例，`@Subcomponent`可访问其`Modules`中声明的所有对象
-- `Component dependencies`存在生命周期的不同，`@Subcomponent`却是同一个周期。
+- `Component dependencies`存在生命周期的不同，`@Subcomponent`是比当前父`Component` “更小”的周期。
 
 > 来看一下生成的代码`DaggerSubComponent_WComponent`，我们将其分成三部分来看
 

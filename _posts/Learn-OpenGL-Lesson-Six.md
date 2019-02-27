@@ -2,7 +2,7 @@
 title: OpenGL Android课程六：介绍纹理过滤
 date: 2019-02-19 16:24:18
 author: xujiaji
-thumbnail:
+thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190224214007.jpg
 categories:
  - OpenGL
 tags:
