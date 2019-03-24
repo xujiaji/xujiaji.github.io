@@ -245,6 +245,7 @@ public void switchMode() {
 - [OpenGL Android课程四：介绍纹理基础][4]
 - [OpenGL Android课程五：介绍混合（Blending）][5]
 - [OpenGL Android课程六：介绍纹理过滤][17]
+- [OpenGL Android课程七：介绍Vertex Buffer Objects（顶点缓冲区对象，简称：VBOs）][18]
 
 ## 打包教材
 
@@ -269,3 +270,4 @@ public void switchMode() {
 [15]: https://github.com/learnopengles/Learn-OpenGLES-Tutorials
 [16]: https://market.android.com/details?id=com.learnopengles.android
 [17]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Six
+[18]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Seven

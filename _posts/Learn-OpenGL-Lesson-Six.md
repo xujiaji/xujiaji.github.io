@@ -201,6 +201,7 @@ GL_TEXTURE_MAG_FILTER = GL_LINEAR
 - [OpenGL Android课程四：介绍纹理基础][4]
 - [OpenGL Android课程五：介绍混合（Blending）][5]
 - [OpenGL Android课程六：介绍纹理过滤][6]
+- [OpenGL Android课程七：介绍Vertex Buffer Objects（顶点缓冲区对象，简称：VBOs）][26]
 
 ## 打包教材
 
@@ -233,3 +234,4 @@ GL_TEXTURE_MAG_FILTER = GL_LINEAR
 [23]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190221164349.png
 [24]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190221165703.png
 [25]: https://en.wikipedia.org/wiki/Anisotropic_filtering
+[26]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Seven

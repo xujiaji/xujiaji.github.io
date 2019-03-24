@@ -549,6 +549,7 @@ OpenGL ES 2需要更多的设置才能开始，但是一旦您完成了这个过
 - [OpenGL Android课程四：介绍纹理基础][13]
 - [OpenGL Android课程五：介绍混合（Blending）][14]
 - [OpenGL Android课程六：介绍纹理过滤][16]
+- [OpenGL Android课程七：介绍Vertex Buffer Objects（顶点缓冲区对象，简称：VBOs）][17]
 
 [1]: http://developer.android.com/reference/android/opengl/GLSurfaceView.html
 [2]: https://en.wikipedia.org/wiki/EGL_(API)
@@ -566,3 +567,4 @@ OpenGL ES 2需要更多的设置才能开始，但是一旦您完成了这个过
 [14]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Five
 [15]: https://github.com/xujiaji/LearnOpenGL/releases
 [16]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Six
+[17]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Seven
