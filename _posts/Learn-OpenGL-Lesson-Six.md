@@ -201,7 +201,7 @@ GL_TEXTURE_MAG_FILTER = GL_LINEAR
 - [OpenGL Android课程四：介绍纹理基础][4]
 - [OpenGL Android课程五：介绍混合（Blending）][5]
 - [OpenGL Android课程六：介绍纹理过滤][6]
-- [OpenGL Android课程七：介绍Vertex Buffer Objects（顶点缓冲区对象，简称：VBOs）][26]
+- [OpenGL Android课程七：介绍Vertex Buffer Objects（顶点缓冲区对象，简称：VOB）][26]
 
 ## 打包教材
 

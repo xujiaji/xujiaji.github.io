@@ -425,7 +425,7 @@ final String pointFragmentShader =
 - [OpenGL Android课程四：介绍纹理基础][31]
 - [OpenGL Android课程五：介绍混合（Blending）][32]
 - [OpenGL Android课程六：介绍纹理过滤][34]
-- [OpenGL Android课程七：介绍Vertex Buffer Objects（顶点缓冲区对象，简称：VBOs）][35]
+- [OpenGL Android课程七：介绍Vertex Buffer Objects（顶点缓冲区对象，简称：VOB）][35]
 
 ## 打包教材
 

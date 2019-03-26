@@ -1,5 +1,5 @@
 ---
-title: OpenGL Android课程七：介绍Vertex Buffer Objects（顶点缓冲区对象，简称：VBOs）
+title: OpenGL Android课程七：介绍Vertex Buffer Objects（顶点缓冲区对象，简称：VBO）
 date: 2019-03-09 16:49:10
 author: xujiaji
 thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190324170029.png
@@ -20,11 +20,11 @@ tags:
 
 ---
 
-# 介绍Vertex Buffer Objects（顶点缓冲区对象，简称：VBOs）
+# 介绍Vertex Buffer Objects（顶点缓冲区对象，简称：VBO）
 
 |||
 |-|:-:|
-|在这节课中，我们将介绍如何定义和如何去使用<br>顶点缓冲对象（VBOs）。下面是我们要讲到的几点：<br><br>1.怎样用顶点缓冲对象定义和渲染<br>2.单个缓冲区、所有数据打包进去、多个缓冲区之间的区别<br>3.问题和陷阱我们如何取处理它们|![screenshot][8]|
+|在这节课中，我们将介绍如何定义和如何去使用<br>顶点缓冲对象（VBO）。下面是我们要讲到的几点：<br><br>1.怎样用顶点缓冲对象定义和渲染<br>2.单个缓冲区、所有数据打包进去、多个缓冲区之间的区别<br>3.问题和陷阱我们如何取处理它们|![screenshot][8]|
 
 ## 什么是顶点缓冲区对象？为什么使用它们？
 
@@ -38,7 +38,7 @@ tags:
 
 ## 更详细的了解客户端缓冲区
 
-一但了解了如何使用客户端内存进行渲染，切换到使用VBOs实际上并不太难。其主要的不同在于添加了一个上传数据到图形内存的额外步骤，以及渲染时添加了绑定这个缓冲区的额外调用。
+一但了解了如何使用客户端内存进行渲染，切换到使用VBO实际上并不太难。其主要的不同在于添加了一个上传数据到图形内存的额外步骤，以及渲染时添加了绑定这个缓冲区的额外调用。
 
 本节课将使用四种不同的模式：
 
@@ -282,7 +282,7 @@ mGlEs20.glVertexAttribPointer(mNormalHandle, NORMAL_DATA_SIZE,
 - [OpenGL Android课程四：介绍纹理基础][4]
 - [OpenGL Android课程五：介绍混合（Blending）][5]
 - [OpenGL Android课程六：介绍纹理过滤][6]
-- [OpenGL Android课程七：介绍Vertex Buffer Objects（顶点缓冲区对象，简称：VBOs）][7]
+- [OpenGL Android课程七：介绍Vertex Buffer Objects（顶点缓冲区对象，简称：VBO）][7]
 
 ## 打包教材
 

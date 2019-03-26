@@ -179,7 +179,7 @@ void main()              // 片段着色器入口
 - [OpenGL Android课程四：介绍纹理基础][15]
 - [OpenGL Android课程五：介绍混合（Blending）][16]
 - [OpenGL Android课程六：介绍纹理过滤][18]
-- [OpenGL Android课程七：介绍Vertex Buffer Objects（顶点缓冲区对象，简称：VBOs）][19]
+- [OpenGL Android课程七：介绍Vertex Buffer Objects（顶点缓冲区对象，简称：VOB）][19]
 
 ## 打包教材
 
