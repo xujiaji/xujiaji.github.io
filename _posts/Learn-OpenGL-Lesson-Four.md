@@ -2,7 +2,7 @@
 title:  OpenGL Android课程四：介绍纹理基础
 date: 2019-02-08 19:26:29
 author: xujiaji
-thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190211205340.jpg
+thumbnail: blog/learn-opengl/20190211205340.jpg
 categories:
  - OpenGL
 tags:
@@ -433,15 +433,15 @@ public class RawResourceReader {
 本课的编译版本也可以再Android市场下：[google play 下载apk][12]  
 “我”也编译了个apk，方便大家下载：[github download][14]
 
-[1]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190208193740.png
+[1]: blog/learn-opengl/20190208193740.png
 [2]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-One
 [3]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Two
 [4]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Three
-[5]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190208215006.png
-[6]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190208215108.png
+[5]: blog/learn-opengl/20190208215006.png
+[6]: blog/learn-opengl/20190208215108.png
 [7]: http://pdtextures.blogspot.com/2008/03/first-set.html
-[8]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190208225905.png
-[9]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190211153435.jpg
+[8]: blog/learn-opengl/20190208225905.png
+[9]: blog/learn-opengl/20190211153435.jpg
 [10]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Four
 [11]: https://github.com/learnopengles/Learn-OpenGLES-Tutorials
 [12]: https://market.android.com/details?id=com.learnopengles.android

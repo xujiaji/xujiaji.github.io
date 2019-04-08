@@ -2,7 +2,7 @@
 title: OpenGL Android课程三：使用每片段照明
 date: 2019-01-26 17:55:49
 author: xujiaji
-thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/Screenshot_2019-02-07-13-45-15-213_com.xujiaji.le.png
+thumbnail: blog/learn-opengl/Screenshot_2019-02-07-13-45-15-213_com.xujiaji.le.png
 categories:
  - OpenGL
 tags:
@@ -187,16 +187,16 @@ void main()              // 片段着色器入口
 本课的编译版本也可以再Android市场下：[google play 下载apk][13]  
 “我”也编译了个apk，方便大家下载：[github download][17]
 
-[1]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190126183929.png
+[1]: blog/learn-opengl/20190126183929.png
 [2]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Two
 [3]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-One
 [4]: https://en.wikipedia.org/wiki/Half-Life_(video_game)
 [5]: http://en.wikipedia.org/wiki/Gouraud_shading
 [6]: https://en.wikipedia.org/wiki/Lightmap
-[7]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190127004415.png
-[8]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190127004455.png
-[9]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190127004542.png
-[10]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190127004615.png
+[7]: blog/learn-opengl/20190127004415.png
+[8]: blog/learn-opengl/20190127004455.png
+[9]: blog/learn-opengl/20190127004542.png
+[10]: blog/learn-opengl/20190127004615.png
 [11]: https://en.wikipedia.org/wiki/Lambert%27s_cosine_law
 [12]: https://github.com/learnopengles/Learn-OpenGLES-Tutorials
 [13]: https://market.android.com/details?id=com.learnopengles.android

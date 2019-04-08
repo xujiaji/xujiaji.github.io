@@ -2,7 +2,7 @@
 title: iOS开发-零碎笔记
 date: 2018-07-16 08:08:16
 author: xujiaji
-thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ios-note/20190319220203.jpg
+thumbnail: blog/ios-note/20190319220203.jpg
 categories:
  - iOS
 tags:
@@ -254,7 +254,7 @@ extension UIButton {
 
 ## UITableView或UICollectionView被TabBar遮盖
 
-![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ios-note/note-screen1.png)
+![](blog/ios-note/note-screen1.png)
 
 ## UITableView调用`reloadData`导致移动到列表顶部失效
 
@@ -329,13 +329,13 @@ if let url = URL(string: appStoreLink), UIApplication.shared.canOpenURL(url) {
 ## 设置圆形展示图像
 
 1. 设置`UIImageView`宽度和高度，假如设置为60*60
-2. 设置运行时属性，设置圆弧为30（正方形边长度一半）![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ios-note/20181102144521.png)
-3. 勾选`Clip to Bounds`，![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ios-note/20181102145029.png)
+2. 设置运行时属性，设置圆弧为30（正方形边长度一半）![](blog/ios-note/20181102144521.png)
+3. 勾选`Clip to Bounds`，![](blog/ios-note/20181102145029.png)
 
 ## UIScrollView填充到顶部（去掉状态栏到空白间距）
 1. `Content Insets` 选择`Never`
 2. 去掉选中的`Safe Area Relative Margins`
-![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ios-note/20181225153159.png)
+![](blog/ios-note/20181225153159.png)
 
 ## UIImage 高斯模糊扩展
 
@@ -418,7 +418,7 @@ func playVideoByUrl(string: String) {
 ## 为UIImageView添加的点击手势无效
 
 1. 勾选上`User Interaction Enabled`
-![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ios-note/20181226174028.png)
+![](blog/ios-note/20181226174028.png)
 2. 代码中设置`uiimageview.userInteractionEnabled = true`
 
 ## PHAsset获取文件路径

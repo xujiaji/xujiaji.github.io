@@ -2,7 +2,7 @@
 title: Git Commit Standard
 date: 2018-09-05 10:21:44
 author: xujiaji
-thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/git/git_commit.jpg
+thumbnail: blog/git/git_commit.jpg
 categories:
  - 工具
 tags:

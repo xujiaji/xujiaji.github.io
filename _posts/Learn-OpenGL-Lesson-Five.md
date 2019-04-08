@@ -2,7 +2,7 @@
 title: OpenGL Android课程五：介绍混合（Blending）
 date: 2019-02-12 16:37:00
 author: xujiaji
-thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190219114206.jpg
+thumbnail: blog/learn-opengl/20190219114206.jpg
 categories:
  - OpenGL
 tags:
@@ -258,13 +258,13 @@ public void switchMode() {
 [3]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Three
 [4]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Four
 [5]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Five
-[6]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190212163914.png
+[6]: blog/learn-opengl/20190212163914.png
 [7]: http://www.khronos.org/opengles/sdk/docs/man/
 [8]: https://www.khronos.org/registry/OpenGL-Refpages/es2.0/xhtml/glBlendFunc.xml
 [9]: https://www.khronos.org/registry/OpenGL-Refpages/es2.0/xhtml/glBlendEquation.xml
-[10]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190213200752.png
-[11]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190213202603.png
-[12]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190213205158.png
+[10]: blog/learn-opengl/20190213200752.png
+[11]: blog/learn-opengl/20190213202603.png
+[12]: blog/learn-opengl/20190213205158.png
 [13]: http://pdtextures.blogspot.com/
 [14]: https://github.com/xujiaji/LearnOpenGL/releases
 [15]: https://github.com/learnopengles/Learn-OpenGLES-Tutorials

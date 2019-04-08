@@ -2,7 +2,7 @@
 title: Android 无缝换肤深入了解与使用
 date: 2018-4-21 09:03:41
 author: xujiaji
-thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-skin/skin_home.jpg
+thumbnail: blog/android-skin/skin_home.jpg
 categories:
  - Android
 tags:
@@ -431,15 +431,15 @@ private Map<View, SkinItem> mSkinItemMap = new HashMap<>();
 4. 如何不打包之前可以直接预览？
     - 想要能在打包前提前预览效果，而不每次想看一看效果就要打一个apk包
     - 首先，大家都应该知道分渠道的概念。通过分渠道打包，因为我们能把资源也分成不同渠道的，运行不同渠道，所得到的资源是不一样的。
-    - 然后，我们在:`项目目录\app\src`，创建一个和渠道相同名字的目录。比如说有个`red`渠道。![渠道定义](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-skin/qudao.png) ![red渠道png](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-skin/red.png)
-    - 最后，我们选编译的渠道为red，然后直接运行就可以看到效果了。如果可以直接把res拷贝到皮肤项目打包就行了。![选择编译渠道](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-skin/choose_build.png)
+    - 然后，我们在:`项目目录\app\src`，创建一个和渠道相同名字的目录。比如说有个`red`渠道。![渠道定义](blog/android-skin/qudao.png) ![red渠道png](blog/android-skin/red.png)
+    - 最后，我们选编译的渠道为red，然后直接运行就可以看到效果了。如果可以直接把res拷贝到皮肤项目打包就行了。![选择编译渠道](blog/android-skin/choose_build.png)
 5. 换肤对应的属性需要是View提供了set方法的的属性！
     - 如果没有提供则不能在java代码中设置值
     - 如果是自定义View那么就添加对应方法
     - 如果是系统或类库View，额(⊙o⊙)…
 6. 换肤的属性值需要是@开头的数据引用，如：@color/red
-    - 原因是因为固定的值一般不可能是需要换肤的属性，在`SkinInfaterFactory`的方法`parseSkinAttr`中有这样一句来进行过滤没有带@的属性值：![过滤没带@的属性值](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-skin/guo_lv_@.png)
-    - 但此时，正好有一个自定义View没有按照常路出牌，它的值就是图片名字没有类型没有引用，通过java代码`context.getResources().getIdentifier(name, "mipmap", context.getPackageName())`来获取图片资源（[参考这奇葩方式的库](https://github.com/xujiaji/FlycoTabLayout)）。但由于这个属性是需要换肤更换的属性，于是没办法，专门为这两个属性在`SkinInfaterFactory`的`parseSkinAttr`方法中写了个判断![单独判断这两属性](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-skin/dan_du_get_attr.png)。[参考这代码](https://github.com/xujiaji/ThemeSkinning/blob/master/skinlibrary/src/main/java/solid/ren/skinlibrary/loader/SkinInflaterFactory.java)
+    - 原因是因为固定的值一般不可能是需要换肤的属性，在`SkinInfaterFactory`的方法`parseSkinAttr`中有这样一句来进行过滤没有带@的属性值：![过滤没带@的属性值](blog/android-skin/guo_lv_@.png)
+    - 但此时，正好有一个自定义View没有按照常路出牌，它的值就是图片名字没有类型没有引用，通过java代码`context.getResources().getIdentifier(name, "mipmap", context.getPackageName())`来获取图片资源（[参考这奇葩方式的库](https://github.com/xujiaji/FlycoTabLayout)）。但由于这个属性是需要换肤更换的属性，于是没办法，专门为这两个属性在`SkinInfaterFactory`的`parseSkinAttr`方法中写了个判断![单独判断这两属性](blog/android-skin/dan_du_get_attr.png)。[参考这代码](https://github.com/xujiaji/ThemeSkinning/blob/master/skinlibrary/src/main/java/solid/ren/skinlibrary/loader/SkinInflaterFactory.java)
 
 ## 其他参考
 1. [Android主题换肤 无缝切换](https://www.jianshu.com/p/af7c0585dd5b) *(主要参考对象，用的也是他修改`Android-Skin-Loader`后的框架`ThemeSkinning`）*
@@ -462,4 +462,4 @@ private Map<View, SkinItem> mSkinItemMap = new HashMap<>();
 测试项目中的首页底部导航测试和修改位置：https://github.com/xujiaji/FlycoTabLayout
 
 下面这张Gif图片是测试项目运行的效果图：
-![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-skin/skin_run.gif)
+![](blog/android-skin/skin_run.gif)

@@ -2,7 +2,7 @@
 title: OpenGL Android课程二：环境光和漫射光
 date: 2019-01-23 15:50:51
 author: xujiaji
-thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/5C1BB79E-9092-4559-B6A6-D3288D0FA000.png
+thumbnail: blog/learn-opengl/5C1BB79E-9092-4559-B6A6-D3288D0FA000.png
 categories:
  - OpenGL
 tags:
@@ -433,20 +433,20 @@ final String pointFragmentShader =
 本课的编译版本也可以再Android市场下：[google play 下载apk][28]  
 “我”也编译了个apk，方便大家下载：[github download][33]
 
-[1]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190123163828.png
+[1]: blog/learn-opengl/20190123163828.png
 [2]: https://en.wikipedia.org/wiki/Lambertian_reflectance
 [3]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-One
 [4]: https://en.wikipedia.org/wiki/Light
 [5]: http://en.wikipedia.org/wiki/Ray_tracing_(graphics)
 [6]: http://en.wikipedia.org/wiki/Rasterisation
-[7]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190123234400.png
-[8]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190124093759.png
+[7]: blog/learn-opengl/20190123234400.png
+[8]: blog/learn-opengl/20190124093759.png
 [9]: https://en.wikipedia.org/wiki/Lambert%27s_cosine_law
-[10]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190124105013.png
-[11]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190124112017.png
-[12]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190124112915.png
+[10]: blog/learn-opengl/20190124105013.png
+[11]: blog/learn-opengl/20190124112017.png
+[12]: blog/learn-opengl/20190124112915.png
 [13]: https://en.wikipedia.org/wiki/Inverse-square_law
-[14]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190124113930.png
+[14]: blog/learn-opengl/20190124113930.png
 [15]: https://en.wikipedia.org/wiki/Radiosity_(computer_graphics)
 [16]: https://en.wikipedia.org/wiki/RGB_color_model
 [17]: https://en.wikipedia.org/wiki/Normal_(geometry)

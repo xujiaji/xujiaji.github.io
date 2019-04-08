@@ -2,7 +2,7 @@
 title: iOS用UISegmentedControl设计一个顶部分页导航-Swift（翻译文）
 date: 2018-07-23 14:36:32
 author: xujiaji
-thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ios-uisegmented-design/display.gif
+thumbnail: blog/ios-uisegmented-design/display.gif
 categories:
  - iOS
 tags:
@@ -53,7 +53,7 @@ segmentedControl.heightAnchor.constraint(equalToConstant: 40).isActive = true
 PlaygroundPage.current.liveView = view
 ```
 此时实时窗口已经为我们展示了基本的`UISegmentedControl`。不要忘记将`isActive`属性附加到每个自动布局约束，其值为true，否则他们将不起作用。
-![Basic UISegmentedControl](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ios-uisegmented-design/basic-uisegmentedcontrol.png)
+![Basic UISegmentedControl](blog/ios-uisegmented-design/basic-uisegmentedcontrol.png)
 
 ## 颜色、字体和边框Oh My！
 接下来，让我们删除掉`backgroundColor`和`tintColor`，删除后边框和已选择的片段背景颜色将会消失。
@@ -76,7 +76,7 @@ segmentedControl.setTitleTextAttributes([
     NSAttributedStringKey.foregroundColor: UIColor.orange
     ], for: .selected)
 ```
-![change-color-font](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ios-uisegmented-design/change-color-font.png)
+![change-color-font](blog/ios-uisegmented-design/change-color-font.png)
 到这儿差不多了！现在我们必须在所选段下方添加一个长条栏。
 
 ## 为选定片段底部添加长条
@@ -107,7 +107,7 @@ buttonBar.widthAnchor.constraint(equalTo: segmentedControl.widthAnchor, multipli
 ```
 
 正如最后那条注释所说，我们需要长条的宽度为`segmentedControl`的宽度除以片段个个数。这保证了长条宽度将与单个片段的宽度完全匹配，同样这里是假设所有的段都是想等的宽度。
-![added-bar](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ios-uisegmented-design/added-bar.png)
+![added-bar](blog/ios-uisegmented-design/added-bar.png)
 初始视图现在已完成！最后一步，我们需要让长条随所选的片段移动。
 
 ## 长条栏动画
@@ -137,7 +137,7 @@ segmentedControl.addTarget(responder, action: #selector(responder.segmentedContr
 长条因该去的x轴位置 = (`segmentedControl`的宽度 / 片段个数) * 当前片段的下标
 
 瞧瞧！我们的动画按钮栏出来了
-![finished](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ios-uisegmented-design/display.gif)
+![finished](blog/ios-uisegmented-design/display.gif)
 
 ## 结论
 我希望这篇文章所提供的信息，能作为你在看了许多类库或iOS应用后的一个DIY解决方案。你可以将这里的`UISegmentedControl`连接到`UIPageViewController`或`UIScrollView`作为分段内容直接移动的方式。你这可以在[这里](https://gist.github.com/kfarst/9f8a1eb59cce2004b15f0b682c92eeed)找到playgroud代码在Github Gist，祝您iOS开发顺利！

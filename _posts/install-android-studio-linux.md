@@ -2,7 +2,7 @@
 title: Ubuntu安装Android studio
 date: 2016-03-27 07:13
 author: xujiaji
-thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-studio.jpg
+thumbnail: blog/android-studio.jpg
 categories:
  - Android
 tags:

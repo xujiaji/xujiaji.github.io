@@ -2,7 +2,7 @@
 title: XMVP：一个通过泛型实现的MVP框架2年的演化路
 date: 2018-09-21 18:22:15
 author: xujiaji
-thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/xmvp/banner.png
+thumbnail: blog/xmvp/banner.png
 categories:
  - Android
 tags:

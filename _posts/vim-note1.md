@@ -2,7 +2,7 @@
 title: VIM爬坡到半山腰的总结
 date: 2016-11-30 09:43
 author: xujiaji
-thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/vim-1/home.png
+thumbnail: blog/vim-1/home.png
 categories:
  - Linux
 tags:
@@ -10,7 +10,7 @@ tags:
     - Vim
     - 笔记
 ---
-![banner](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/vim-1/banner.png)
+![banner](blog/vim-1/banner.png)
 
 ## 简介
 将Linux Mint做为我的主系统后，来来回回到处撞墙。慢慢的到现在不仅习惯了Linux下的娱乐和开发，居然还渐渐的顺手顺眼起来，对于Linux生存有了保障的我现在对Linux下的`VIM`开始好奇了。
@@ -22,7 +22,7 @@ tags:
 就这样我走上了撩VIM之路（我有Java精神我不怕，万物皆对象），到现在我已经将上面看到的目录结构弄出来、代码行号、代码高亮主题更换、状态栏显示、VIM中使用GIT等加入到我的VIM之中。从中我了解到了VIM的插件放哪、怎么配置插件，学习了一波基本命令助我前行。我认为写代码最主要的就是要先有个安心、悦目的环境，然后是快捷的操作，这样写代码会感觉很舒服。当然，还有就是提升了一个格调，集齐技术、快捷、装逼、高效与一身。
 
 下图是我当前的VIM界面截图，是不是有鼻子有眼了。
-![This is my vim.](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/vim-1/my-vim.png)
+![This is my vim.](blog/vim-1/my-vim.png)
 
 ## 有想要到达的方向，一切的困难不过是个过程
 
@@ -52,11 +52,11 @@ tags:
 这里简单说一下我装了的里面提及的几个：
 [fugitive](https://github.com/tpope/vim-fugitive)：可以在Vim中对项目进行Git命令操作。
 [gundo](https://github.com/sjl/gundo.vim)：查看提交以树行结构展示（请看下图）
-![gundo](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/vim-1/gundo.jpg)
+![gundo](blog/vim-1/gundo.jpg)
 [nerdtree](https://github.com/scrooloose/nerdtree)：展示目录结构，看起比使用`:Ve`展示的目录爽多了。（请看下图）
-![nerdtree](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/vim-1/nerdtree.png)
+![nerdtree](blog/vim-1/nerdtree.png)
 [powerline](https://github.com/Lokaltog/powerline)：底部状态栏，这个可是把我给折腾够了，不过弄完之后，瞬间展示效果杠杠的。
-![powerline](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/vim-1/powerline.png)
+![powerline](blog/vim-1/powerline.png)
 
 >还是简单记录一下我的历程吧！
 
@@ -65,7 +65,7 @@ tags:
 通过这篇文章：[为Bash和VIM配置一个美观奢华的状态提示栏](http://www.hi-linux.com/2016/04/22/%E4%B8%BABash%E5%92%8CVIM%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AA%E7%BE%8E%E8%A7%82%E5%A5%A2%E5%8D%8E%E7%9A%84%E7%8A%B6%E6%80%81%E6%8F%90%E7%A4%BA%E6%A0%8F/)
 我不仅仅将Vim给加上了状态栏，命令界面的用户状态也变了，我把默认的字体改成powerline的字体，更加美观。先欣赏一下：
 
-![My termina](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/vim-1/termina.png)
+![My termina](blog/vim-1/termina.png)
 
 我的步骤：
 1. 安装python-pip 与 git 套件
@@ -94,11 +94,11 @@ POWERLINE_BASH_SELECT=1
 . ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 ```
 第二行是加入powerline的命令位置，下图是查看位置。
-![查看powerline命令位置](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/vim-1/powerline-position.png)
+![查看powerline命令位置](blog/vim-1/powerline-position.png)
 最下面的一行是安装powerline后的路径`. ~/.local/lib/python2.7/site-packages/powerline`可能大家会有所不同。（再执行第二步你会看到安装位置哦，如下图）
-![查看powerline的安装位置](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/vim-1/powerline-position2.png)
+![查看powerline的安装位置](blog/vim-1/powerline-position2.png)
 5. 选择字体，此时您应该已经可以在命令中中显示如上图的状态了，只是默字体可能无法显示其真正效果。`Edit > Preferences`看下图：我直接搜索选择了`powerline semi`
-![选择字体操作](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/vim-1/choose-font.png)
+![选择字体操作](blog/vim-1/choose-font.png)
 6. 最终目的不要忘了，是配置Vim啊！
 此时只需要在`.vimrc`中添加如下信息即可：（第一行为powerline目录）
 ```

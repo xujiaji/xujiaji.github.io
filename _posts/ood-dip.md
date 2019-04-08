@@ -10,7 +10,7 @@ tags:
 ---
 
 # 简介
-![DIP.png](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ood/dip.png)
+![DIP.png](blog/ood/dip.png)
 
 > 引入：
 高层的决定不能因为某一个低层次模块的变动而影响全局，导致整个系统的变动。
@@ -30,7 +30,7 @@ tags:
 
  > 结构如下：没有遵循依赖倒置
 
- ![没有遵循依赖倒置](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ood/dip-err.png)
+ ![没有遵循依赖倒置](blog/ood/dip-err.png)
 
  > 代码如下：
 

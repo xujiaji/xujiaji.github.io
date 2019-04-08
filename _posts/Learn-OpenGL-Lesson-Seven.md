@@ -2,7 +2,7 @@
 title: OpenGL Android课程七：介绍Vertex Buffer Objects（顶点缓冲区对象，简称：VBO）
 date: 2019-03-09 16:49:10
 author: xujiaji
-thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190324170029.png
+thumbnail: blog/learn-opengl/20190324170029.png
 categories:
  - OpenGL
 tags:
@@ -297,7 +297,7 @@ mGlEs20.glVertexAttribPointer(mNormalHandle, NORMAL_DATA_SIZE,
 [5]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Five
 [6]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Six
 [7]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Seven
-[8]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190309170313.png
+[8]: blog/learn-opengl/20190309170313.png
 [9]: https://github.com/xujiaji/LearnOpenGL/releases
 [10]: https://github.com/learnopengles/Learn-OpenGLES-Tutorials
 [11]: https://market.android.com/details?id=com.learnopengles.android

@@ -2,7 +2,7 @@
 title: Git笔记
 date: 2017-12-12 11:02:34
 author: xujiaji
-thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/git-notes.png
+thumbnail: blog/git-notes.png
 categories:
  - 工具
 tags:

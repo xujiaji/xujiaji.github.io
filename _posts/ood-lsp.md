@@ -23,7 +23,7 @@ tags:
 ----
 > LSP
 
-![LSP.png](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ood/lsp.png)
+![LSP.png](blog/ood/lsp.png)
 
 ## 1. 何为LSP？
 - 全称：里氏替换原则（Liskov Substitution principle）
@@ -36,7 +36,7 @@ tags:
 
 ![LSP定义理解dsf
 在类P中将T的对象q2，换成S的对象q1行为功能不变
-则S继承T，得如图所示的关系](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ood/lsp1.png)
+则S继承T，得如图所示的关系](blog/ood/lsp1.png)
 
 
 ## 2. 何为L？何为S？
@@ -50,7 +50,7 @@ tags:
 
 - 来张违反LSP的类图
 
-![违反LSP.png](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ood/lsp-no.png)
+![违反LSP.png](blog/ood/lsp-no.png)
 
 - 分析
  - 现在我说天上飞着一只鸟。。。

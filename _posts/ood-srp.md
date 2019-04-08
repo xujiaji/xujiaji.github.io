@@ -11,7 +11,7 @@ tags:
 
 >SRP
 
-![SRP.png](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ood/srp.png)
+![SRP.png](blog/ood/srp.png)
 ## 何为SRP？
 - 全称：单一职责原则(Single Responsibility Principle)
 - 定义:该原则规定每个类都应该只有一个单一的功能，并且该功能应该由这个类完全封装起来
@@ -25,7 +25,7 @@ tags:
 
 >农活责任
 
-![农活责任](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ood/srp-nong-huo.png)
+![农活责任](blog/ood/srp-nong-huo.png)
 
 ## 为何要提倡SRP？
 > 其思想简单，但却难以掌握。就是一个模块，一个类只能干一件事情。
@@ -40,7 +40,7 @@ tags:
 - 例子一
 >农活责任(改)
 
-![农活责任(改).png](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ood/srp-nong-huo-gai.png)
+![农活责任(改).png](blog/ood/srp-nong-huo-gai.png)
 
 如上图将两个责任分离，牛实现耕水田的时候，不会知道也不会去在意耕菜地，分离了责任，该做的才做，不做的不用管。
 
@@ -59,7 +59,7 @@ interface Modem {
 这两个责任应该被分开吗？这决定于应用程序以何种方式变化。如果应用程序的变化会影响连接函数的部署，那么这个设计就具有僵化性的臭味。因为调用send和recv的类必须要重新编译连接处理函数，部署的次数常常会超过我们希望的次数。在这种情况下，这两个职责应该被分离。如图下图所示，这样避免了客户应用程序和这两个职责耦合在一起。
 > 分离的Modem接口
 
-![分离的Modem接口](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/ood/srp-fen-li.png)
+![分离的Modem接口](blog/ood/srp-fen-li.png)
 
 |注意|
 |:-:|

@@ -7,7 +7,7 @@ categories:
 tags:
     - Android
     - 项目配置
-thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/one-for-more/banner.png
+thumbnail: blog/one-for-more/banner.png
 ---
 ## 简介
 如题所示！本篇文章就是为了解决这种问题。方便打包和运行的时候能做到无需手动替换配置，即可打包想要的apk。打包的时候，只需选一下想打哪种配置的apk就OK啦。 \(^o^)/~
@@ -39,7 +39,7 @@ productFlavors {
 }
 ```
 2. 如果我们选择了某一个渠道，那么运行打包的时候会根据渠道名选择资源文件（可结合第6点一起看）
-![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/one-for-more/20181029171053.png)
+![](blog/one-for-more/20181029171053.png)
 3. 签名可在`signingConfigs`中配置多个（我将所有签名文件放在了项目跟目录的key文件夹中），这样我们就可以通过`signingConfigs`指定预制好的签名配置。
 ``` groovy
 signingConfigs {
@@ -91,7 +91,7 @@ signingConfigs {
   ```
   它的值就是上边配置的字符串：`http://xx.xxxx.com/`。
  - 您可以进入`BuildConfig`看一看，里面还包含了一些当前的包名版本号等信息。
- ![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/one-for-more/20181030234102.png)
+ ![](blog/one-for-more/20181030234102.png)
 5. 在渠道配置那里可以配置对应的包名版本名签名等等
 如下所示：
  ``` groovy
@@ -139,11 +139,11 @@ android {
  - 签名问题经过个人反复尝试（然后半天就过去了￣へ￣），最终签名如上配置。**需要注意**`buildTypes`中的签名配置`signingConfig`如果不设置为`null`，那么打包的是有还是以内置的签名打包。
 6. 资源文件替换
 再看到第2点的介绍，我们选择运行渠道后，会默认匹配对应渠道下的资源。下面我将`xemh`渠道的资源目录全部展开一下。
-![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/one-for-more/20181029233306.png)
+![](blog/one-for-more/20181029233306.png)
  - 如上图这样，只需要资源名字和app目录对应的文件名字一样即可替换。
  - strings.xml里的应用名，只需要将对应`app_name`修改既可替换app下strings的`app_name`，其他不用替换的不用写就行。
 7. 打正式包的时候选好渠道，就可以打包不同配置的apk，当然您也可以使用命令的方式。
-![](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/one-for-more/20181029234235.png)
+![](blog/one-for-more/20181029234235.png)
 
 ## 其他配置记录
 > 获取当前时间

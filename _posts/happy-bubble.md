@@ -2,7 +2,7 @@
 title: HappyBubble-气泡对话框（根据被点击View位置显示、可定制）
 date: 2017-12-16 14:08:50
 author: xujiaji
-thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/happy-bubble/img5.png
+thumbnail: blog/happy-bubble/img5.png
 categories:
  - Android
 tags:
@@ -32,13 +32,13 @@ tags:
 - 1.1.4：<br>①新增方法`setLayout(int width, int height, int margin)`，width（设置气泡的宽）、height（设置气泡的高）、margin（设置距离屏幕边缘的间距,只有当设置width或height为MATCH_PARENT才有效）。<br>②`autoPosition(true)`方法准备弃用（现在还可以用），使用新方法`autoPosition(Auto)`,如果两个都使用了会直接用`autoPosition(Auto)`。请参考下方“方法参考表”。<br>③感谢[@wolf8088521](https://github.com/wolf8088521)提供建议[#4](https://github.com/xujiaji/HappyBubble/issues/4)
 - 1.1.3：<br>①通过重新调用setClickedView可以直接更新当前dialog的所在位置。<br>②新添加setRelativeOffset(int)方法，设置dialog相对与被点击View的偏移（负值：向被点击view的中心偏移；正值：向被点击view的外侧偏移）<br>③[测试页面SetClickedViewTestActivity.java](app/src/main/java/com/xujiaji/happybubbletest/SetClickedViewTestActivity.java)
 
-![1.1.3.gif](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/github/HappyBubble/1.1.3.gif)
+![1.1.3.gif](github/HappyBubble/1.1.3.gif)
 
 - 1.1.2：修复默认值没有适配屏幕
 
 - 1.1.1：修复大小变化后，没有对应变化位置的问题；修复接触顶部偏位问题；
 
-- 1.1.0：<br>①Dialog交互事件传递到Activity达到不在不关闭Dialog的情况下做其他Activity的操作。<br>②添加自动根据被点击View距离屏幕边缘的距离确定Dialog的位置。<br>③新增“autoPosition”和“setThroughEvent”方法，请参考“BubbleDialog方法参考表”<br>![1.1.0.gif](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/github/HappyBubble/1.1.0.gif)
+- 1.1.0：<br>①Dialog交互事件传递到Activity达到不在不关闭Dialog的情况下做其他Activity的操作。<br>②添加自动根据被点击View距离屏幕边缘的距离确定Dialog的位置。<br>③新增“autoPosition”和“setThroughEvent”方法，请参考“BubbleDialog方法参考表”<br>![1.1.0.gif](github/HappyBubble/1.1.0.gif)
 
 - 1.0.3:继续优化了点击在气泡之外才会被dismiss；修复了Dialog周围会有部分点击无法dismiss；
 
@@ -82,7 +82,7 @@ implementation 'com.github.xujiaji:happy-bubble:1.1.7'
 
 |||
 |-|-|
-|![exampel1](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/github/HappyBubble/img_example1.png)|![exampel2](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/github/HappyBubble/img_example2.png)|
+|![exampel1](github/HappyBubble/img_example1.png)|![exampel2](github/HappyBubble/img_example2.png)|
 
 ``` java
 new BubbleDialog(this)
@@ -93,7 +93,7 @@ new BubbleDialog(this)
 
 ### 向下偏移8dp
 
-![exampel3](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/github/HappyBubble/img_example3.png)
+![exampel3](github/HappyBubble/img_example3.png)
 
 ``` java
 new BubbleDialog(this)
@@ -106,7 +106,7 @@ new BubbleDialog(this)
 
 ### 当想要输入框随软键盘上移时
 
-![exampel4](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/github/HappyBubble/gif_example4.gif)
+![exampel4](github/HappyBubble/gif_example4.gif)
 
 ``` java
 new BubbleDialog(this)
@@ -119,7 +119,7 @@ new BubbleDialog(this)
 
 ### 自定义 BubbleLayout
 
-![exampel5](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/github/HappyBubble/20190407164328.png)
+![exampel5](github/HappyBubble/20190407164328.png)
 
 ``` java
 BubbleLayout bl = new BubbleLayout(this);
@@ -138,7 +138,7 @@ new BubbleDialog(this)
 
 ### 自定义 BubbleDialog，可交互的 BubbleDialog
 
-![exampel6](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/github/HappyBubble/gif_example6.gif)
+![exampel6](github/HappyBubble/gif_example6.gif)
 > 1、布局
 
 ``` xml
@@ -315,7 +315,7 @@ mBubbleLayout.setLook(BubbleLayout.Look.LEFT);
 
 [MainActivity 代码](app/src/main/java/com/xujiaji/happybubbletest/MainActivity.java)
 
-![GIF](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/github/HappyBubble/gif1.gif)
+![GIF](github/HappyBubble/gif1.gif)
 
 ### demo 下载
 

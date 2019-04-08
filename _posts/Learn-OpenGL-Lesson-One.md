@@ -2,7 +2,7 @@
 title: OpenGL Android课程一：入门
 date: 2019-01-21 16:10:46
 author: xujiaji
-thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/6093CCF8-F7C1-4F4E-A668-C9E76783063F.png
+thumbnail: blog/learn-opengl/6093CCF8-F7C1-4F4E-A668-C9E76783063F.png
 categories:
  - OpenGL
 tags:
@@ -516,7 +516,7 @@ GLES20.glEnableVertexAttribArray(mPositionHandle);
 呼呼！这是重要的一课，如果您完成了本课，感谢您！
 我们学习了怎样创建OpenGL上下文，传入形状数据，加载顶点和片段着色器，设置我们的转换矩阵，最终放在一起。
 如果一切顺利，您因该看到了类似下面的截屏。
-![screenshot](https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190122233309.png)
+![screenshot](blog/learn-opengl/20190122233309.png)
 
 这一课有很多需要消化的内容，您可能需要多次阅读这些步骤才能理解它。
 OpenGL ES 2需要更多的设置才能开始，但是一旦您完成了这个过程几次，您就会记住这个流程。

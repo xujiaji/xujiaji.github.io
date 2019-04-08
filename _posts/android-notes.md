@@ -2,7 +2,7 @@
 title: Android开发-零碎笔记
 date: 2018-1-24 17:03:41
 author: xujiaji
-thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/android-notes/banner.png
+thumbnail: blog/android-notes/banner.png
 categories:
  - Android
 tags:

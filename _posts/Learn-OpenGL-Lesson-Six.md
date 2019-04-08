@@ -2,7 +2,7 @@
 title: OpenGL Android课程六：介绍纹理过滤
 date: 2019-02-19 16:24:18
 author: xujiaji
-thumbnail: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190224214007.jpg
+thumbnail: blog/learn-opengl/20190224214007.jpg
 categories:
  - OpenGL
 tags:
@@ -218,20 +218,20 @@ GL_TEXTURE_MAG_FILTER = GL_LINEAR
 [7]: https://en.wikipedia.org/wiki/Bilinear_filtering
 [8]: https://en.wikipedia.org/wiki/Trilinear_filtering
 [9]: http://www.learnopengles.com/rotating-an-object-with-touch-events/
-[10]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190219164050.png
-[11]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190221100843.png
-[12]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190221100936.png
-[13]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190221101211.png
-[14]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190221103115.png
-[15]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190221104453.png
-[16]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190221143838.png
-[17]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190221145134.png
-[18]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190221145249.png
+[10]: blog/learn-opengl/20190219164050.png
+[11]: blog/learn-opengl/20190221100843.png
+[12]: blog/learn-opengl/20190221100936.png
+[13]: blog/learn-opengl/20190221101211.png
+[14]: blog/learn-opengl/20190221103115.png
+[15]: blog/learn-opengl/20190221104453.png
+[16]: blog/learn-opengl/20190221143838.png
+[17]: blog/learn-opengl/20190221145134.png
+[18]: blog/learn-opengl/20190221145249.png
 [19]: https://github.com/xujiaji/LearnOpenGL/releases
 [20]: https://github.com/learnopengles/Learn-OpenGLES-Tutorials
 [21]: https://market.android.com/details?id=com.learnopengles.android
-[22]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190221163746.png
-[23]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190221164349.png
-[24]: https://raw.githubusercontent.com/xujiaji/xujiaji.github.io/pictures/blog/learn-opengl/20190221165703.png
+[22]: blog/learn-opengl/20190221163746.png
+[23]: blog/learn-opengl/20190221164349.png
+[24]: blog/learn-opengl/20190221165703.png
 [25]: https://en.wikipedia.org/wiki/Anisotropic_filtering
 [26]: https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Seven
