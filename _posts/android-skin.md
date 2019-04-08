@@ -12,7 +12,7 @@ tags:
 
 > 思路整体结构
 
-![Android 换肤](image/android-skin/android-skin.svg)
+![Android 换肤](blog/android-skin/android-skin.svg)
 ## 方案及轮子
 1. 内部资源加载方案
     - 通过在BaseActivity中setTheme
@@ -46,7 +46,7 @@ tags:
     - 改变字体
 
 ## 采用方案的实现过程
-![实现过程](image/android-skin/换肤框架流程.svg)
+![实现过程](blog/android-skin/换肤框架流程.svg)
 
 ## 加载皮肤apk获取里面的资源（为了得到皮肤apk  Resources对象）
 > 下面所有的代码位置，包括处理一些特殊问题的方案等等！
