@@ -6,7 +6,7 @@
 <base href="/">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 <link rel="canonical" href="https://blog.xujiaji.com/post/android-skin/">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/x-icon" href="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/favicon.ico">
 <link rel="manifest" href="/manifest.json">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="translucent">
@@ -19,7 +19,7 @@
 <meta property="og:description" content="思路整体结构   方案及轮子 内部资源加载方案 通过在BaseActivity中setTheme 不好实时的刷新，需要重新创建页面 存在需要解决哪些Vew需要刷新的问题   自定义View MultipleTheme 通过自定义View配合setTheme后立即刷新资源。 需要替换所有需要换肤的view   自定义xml属性，Java中绑定view Colorful 首先通过在java代码中添加">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/android-skin/skin_home.jpg">
-<meta property="og:updated_time" content="2019-04-08T06:55:07.832Z">
+<meta property="og:updated_time" content="2019-04-08T15:57:46.648Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 无缝换肤深入了解与使用">
 <meta name="twitter:description" content="思路整体结构   方案及轮子 内部资源加载方案 通过在BaseActivity中setTheme 不好实时的刷新，需要重新创建页面 存在需要解决哪些Vew需要刷新的问题   自定义View MultipleTheme 通过自定义View配合setTheme后立即刷新资源。 需要替换所有需要换肤的view   自定义xml属性，Java中绑定view Colorful 首先通过在java代码中添加">
@@ -28,8 +28,8 @@
 <link rel="stylesheet" href="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/fonts.b9b22ef890c930ac7a13.css">
 <link rel="stylesheet" href="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/styles.942c2aa7be6bc74cfb59.css">
 <link rel="stylesheet" href="/theme.56cceef6d58d34ba8d9d.css">
-<script src="/config.8e5bb477a70326d9870d.js"></script>
-<script type="application/ld+json">[{"@context":"http://schema.org","@type":"WebSite","publisher":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"url":"https://blog.xujiaji.com","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg","description":null,"author":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"}},{"@context":"http://schema.org","@type":"Article","articleSection":"Android","url":"https://blog.xujiaji.com/post/android-skin/index.html","headline":"Android 无缝换肤深入了解与使用","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/android-skin/skin_home.jpg","datePublished":"2018-04-21T01:03:41.000Z","dateModified":"2019-04-08T06:55:07.832Z","keywords":"Android,分析框架","description":null,"publisher":{"@type":"Organization","name":"徐佳吉的博客","logo":{"@type":"ImageObject","url":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"}},"author":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xujiaji.com/post/android-skin/index.html"},"thumbnailUrl":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/android-skin/skin_home.jpg"}]</script><script async src="//www.googletagmanager.com/gtag/js?id=UA-117088783-1"></script>
+<script src="/config.950a81579b05c14e7436.js"></script>
+<script type="application/ld+json">[{"@context":"http://schema.org","@type":"WebSite","publisher":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"url":"https://blog.xujiaji.com","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg","description":null,"author":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"}},{"@context":"http://schema.org","@type":"Article","articleSection":"Android","url":"https://blog.xujiaji.com/post/android-skin/index.html","headline":"Android 无缝换肤深入了解与使用","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/android-skin/skin_home.jpg","datePublished":"2018-04-21T01:03:41.000Z","dateModified":"2019-04-08T15:57:46.648Z","keywords":"Android,分析框架","description":null,"publisher":{"@type":"Organization","name":"徐佳吉的博客","logo":{"@type":"ImageObject","url":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"}},"author":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xujiaji.com/post/android-skin/index.html"},"thumbnailUrl":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/android-skin/skin_home.jpg"}]</script><script async src="//www.googletagmanager.com/gtag/js?id=UA-117088783-1"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag('js', new Date());gtag('config', 'UA-117088783-1');</script></head>
 <body>
 <is-d2a57d></is-d2a57d>
