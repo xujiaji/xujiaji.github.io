@@ -1,7 +1,7 @@
 {
   "default": true,
   "MD033": {
-    "allowed_elements": [ "br", "hr" ]
+    "allowed_elements": [ "br", "hr", "code" ]
   },
   "MD013": { "code_blocks": false }
 

@@ -923,3 +923,19 @@ extension IAPHelper: SKProductsRequestDelegate, SKPaymentTransactionObserver{
     }
 }
 ```
+
+## 判断退格符"\b"
+
+<https://stackoverflow.com/a/29505548/9724892>
+
+``` swift
+func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    if let char = string.cString(using: String.Encoding.utf8) {
+        let isBackSpace = strcmp(char, "\\b")
+        if (isBackSpace == -92) {
+            print("Backspace was pressed")
+        }
+    }
+    return true
+}
+```
