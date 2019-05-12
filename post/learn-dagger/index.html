@@ -9,7 +9,7 @@
 <link rel="icon" type="image/x-icon" href="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/favicon.ico">
 <link rel="manifest" href="/manifest.json">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="description" content="Dagger2 的深入分析与使用听闻Dagger大名很久，但一直没有去学，直到不得不学 〒▽〒。这个框架开始的时不是很好理解，看了一些文章还是没有理解到精髓，似懂非懂，于是自己做了些简单的测试代码观察Dagger注解的作用。将学习和理解的过程分享出来，希望能帮到一些学些Dagger的朋友，同时我也巩固总结一下。 本篇文章不讲，Dagger哪里好哪里好！只讲怎么用的和一些原理！ Dagger是什么">
 <meta name="keywords" content="Android,分析框架,Dagger">
 <meta property="og:type" content="website">
@@ -25,15 +25,15 @@
 <meta name="twitter:description" content="Dagger2 的深入分析与使用听闻Dagger大名很久，但一直没有去学，直到不得不学 〒▽〒。这个框架开始的时不是很好理解，看了一些文章还是没有理解到精髓，似懂非懂，于是自己做了些简单的测试代码观察Dagger注解的作用。将学习和理解的过程分享出来，希望能帮到一些学些Dagger的朋友，同时我也巩固总结一下。 本篇文章不讲，Dagger哪里好哪里好！只讲怎么用的和一些原理！ Dagger是什么">
 <meta name="twitter:image" content="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/learn-dagger/home.jpg">
 <link rel="alternate" type="application/atom+xml" title="徐佳吉的博客" href="/atom.xml">
-<link rel="stylesheet" href="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/fonts.b9b22ef890c930ac7a13.css">
-<link rel="stylesheet" href="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/styles.942c2aa7be6bc74cfb59.css">
-<link rel="stylesheet" href="/theme.56cceef6d58d34ba8d9d.css">
-<script src="/config.950a81579b05c14e7436.js"></script>
+<link rel="stylesheet" href="//unpkg.com/hexo-theme-inside@2.1.0-beta.2/source/fonts.b9b22ef890c930ac7a13.css">
+<link rel="stylesheet" href="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/styles.ac0eb7cd96673d86e3f8.css">
+<link rel="stylesheet" href="/theme.20926c010d3abe2006c8.css">
+<script src="/config.1c9d5808126aa828f6d2.js"></script>
 <script type="application/ld+json">[{"@context":"http://schema.org","@type":"WebSite","publisher":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"url":"https://blog.xujiaji.com","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg","description":null,"author":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"}},{"@context":"http://schema.org","@type":"Article","articleSection":"Android","url":"https://blog.xujiaji.com/post/learn-dagger/index.html","headline":"Dagger2 的深入分析与使用","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/learn-dagger/home.jpg","datePublished":"2018-06-26T16:00:00.000Z","dateModified":"2019-04-08T06:55:53.838Z","keywords":"Android,分析框架,Dagger","description":null,"publisher":{"@type":"Organization","name":"徐佳吉的博客","logo":{"@type":"ImageObject","url":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"}},"author":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xujiaji.com/post/learn-dagger/index.html"},"thumbnailUrl":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/learn-dagger/home.jpg"}]</script><script async src="//www.googletagmanager.com/gtag/js?id=UA-117088783-1"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag('js', new Date());gtag('config', 'UA-117088783-1');</script></head>
-<body>
+<body lang="zh-Hans">
 <is-d2a57d></is-d2a57d>
-<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/runtime.a5dd35324ddfd942bef1.js"></script>
-<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/polyfills.bd3fb034406e30e3b5dc.js"></script>
-<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/main.35db329abe274f9abe5f.zh-Hans.js"></script></body>
+<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/runtime.26209474bfa8dc87a77c.js"></script>
+<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/polyfills.47b5536a22914d260ba5.js"></script>
+<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/main.999184ecf9a70a7277d7.zh-Hans.js"></script></body>
 </html>

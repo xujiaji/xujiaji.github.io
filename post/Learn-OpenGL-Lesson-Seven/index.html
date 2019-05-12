@@ -9,7 +9,7 @@
 <link rel="icon" type="image/x-icon" href="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/favicon.ico">
 <link rel="manifest" href="/manifest.json">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="description" content="翻译文  原文标题：Android Lesson Seven: An Introduction to Vertex Buffer Objects (VBOs)原文链接：http://www.learnopengles.com/android-lesson-seven-an-introduction-to-vertex-buffer-objects-vbos/">
 <meta name="keywords" content="Android,OpenGL,学习,翻译">
 <meta property="og:type" content="website">
@@ -19,21 +19,21 @@
 <meta property="og:description" content="翻译文  原文标题：Android Lesson Seven: An Introduction to Vertex Buffer Objects (VBOs)原文链接：http://www.learnopengles.com/android-lesson-seven-an-introduction-to-vertex-buffer-objects-vbos/">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/learn-opengl/20190324170029.png">
-<meta property="og:updated_time" content="2019-04-08T06:56:12.369Z">
+<meta property="og:updated_time" content="2019-04-12T17:44:07.238Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenGL Android课程七：介绍Vertex Buffer Objects（顶点缓冲区对象，简称：VBO）">
 <meta name="twitter:description" content="翻译文  原文标题：Android Lesson Seven: An Introduction to Vertex Buffer Objects (VBOs)原文链接：http://www.learnopengles.com/android-lesson-seven-an-introduction-to-vertex-buffer-objects-vbos/">
 <meta name="twitter:image" content="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/learn-opengl/20190324170029.png">
 <link rel="alternate" type="application/atom+xml" title="徐佳吉的博客" href="/atom.xml">
-<link rel="stylesheet" href="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/fonts.b9b22ef890c930ac7a13.css">
-<link rel="stylesheet" href="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/styles.942c2aa7be6bc74cfb59.css">
-<link rel="stylesheet" href="/theme.56cceef6d58d34ba8d9d.css">
-<script src="/config.950a81579b05c14e7436.js"></script>
-<script type="application/ld+json">[{"@context":"http://schema.org","@type":"WebSite","publisher":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"url":"https://blog.xujiaji.com","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg","description":null,"author":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"}},{"@context":"http://schema.org","@type":"Article","articleSection":"OpenGL","url":"https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Seven/index.html","headline":"OpenGL Android课程七：介绍Vertex Buffer Objects（顶点缓冲区对象，简称：VBO）","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/learn-opengl/20190324170029.png","datePublished":"2019-03-09T08:49:10.000Z","dateModified":"2019-04-08T06:56:12.369Z","keywords":"Android,OpenGL,学习,翻译","description":"\n翻译文\n\n原文标题：Android Lesson Seven: An Introduction to Vertex Buffer Objects (VBOs)原文链接：http://www.learnopengles.com/android-lesson-seven-an-introduction-to-vertex-buffer-objects-vbos/","publisher":{"@type":"Organization","name":"徐佳吉的博客","logo":{"@type":"ImageObject","url":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"}},"author":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Seven/index.html"},"thumbnailUrl":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/learn-opengl/20190324170029.png"}]</script><script async src="//www.googletagmanager.com/gtag/js?id=UA-117088783-1"></script>
+<link rel="stylesheet" href="//unpkg.com/hexo-theme-inside@2.1.0-beta.2/source/fonts.b9b22ef890c930ac7a13.css">
+<link rel="stylesheet" href="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/styles.ac0eb7cd96673d86e3f8.css">
+<link rel="stylesheet" href="/theme.20926c010d3abe2006c8.css">
+<script src="/config.1c9d5808126aa828f6d2.js"></script>
+<script type="application/ld+json">[{"@context":"http://schema.org","@type":"WebSite","publisher":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"url":"https://blog.xujiaji.com","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg","description":null,"author":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"}},{"@context":"http://schema.org","@type":"Article","articleSection":"OpenGL","url":"https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Seven/index.html","headline":"OpenGL Android课程七：介绍Vertex Buffer Objects（顶点缓冲区对象，简称：VBO）","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/learn-opengl/20190324170029.png","datePublished":"2019-03-09T08:49:10.000Z","dateModified":"2019-04-12T17:44:07.238Z","keywords":"Android,OpenGL,学习,翻译","description":"\n翻译文\n\n原文标题：Android Lesson Seven: An Introduction to Vertex Buffer Objects (VBOs)原文链接：http://www.learnopengles.com/android-lesson-seven-an-introduction-to-vertex-buffer-objects-vbos/","publisher":{"@type":"Organization","name":"徐佳吉的博客","logo":{"@type":"ImageObject","url":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"}},"author":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Seven/index.html"},"thumbnailUrl":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/learn-opengl/20190324170029.png"}]</script><script async src="//www.googletagmanager.com/gtag/js?id=UA-117088783-1"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag('js', new Date());gtag('config', 'UA-117088783-1');</script></head>
-<body>
+<body lang="zh-Hans">
 <is-d2a57d></is-d2a57d>
-<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/runtime.a5dd35324ddfd942bef1.js"></script>
-<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/polyfills.bd3fb034406e30e3b5dc.js"></script>
-<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/main.35db329abe274f9abe5f.zh-Hans.js"></script></body>
+<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/runtime.26209474bfa8dc87a77c.js"></script>
+<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/polyfills.47b5536a22914d260ba5.js"></script>
+<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/main.999184ecf9a70a7277d7.zh-Hans.js"></script></body>
 </html>
