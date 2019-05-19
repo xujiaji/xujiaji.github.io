@@ -14,6 +14,13 @@ tags:
 
 <!-- more -->
 
+## 编译
+
+```
+gcc -o foo.exe foo.c -lregex
+gcc foo.c -o foo.exe -lregex
+```
+
 ## 字符串和格式化输入/输出
 1. 字符串以`char`数组来存储
 2. 常量用 `#define` 定义
