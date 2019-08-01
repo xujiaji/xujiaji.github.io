@@ -202,3 +202,23 @@ vim /etc/ssh/sshd_config
 ``` shell
 systemctl restart sshd
 ```
+
+## Docker
+
+### 基本命令
+
+``` shell
+docker ps
+docker rm 8fa2f9c16a3b
+docker stop 8fa2f9c16a3b
+docker restart 8fa2f9c16a3b
+```
+
+### 安装gitlab
+
+``` shell
+docker images
+docker search gitlab-ce
+docker pull twang2218/gitlab-ce-zh
+docker run -d --hostname gitlab.xxx.com:3000 -p 10443:10443 -p 3000:3000 -p 10222:10222 --name gitlab --restart always -v /home/gitlab/config:/etc/gitlab -v /home/gitlab/logs:/var/log/gitlab -v /home/gitlab/data:/var/opt/gitlab twang2218/gitlab-ce-zh
+```
