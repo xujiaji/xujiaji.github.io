@@ -24,16 +24,19 @@
 <meta name="twitter:title" content="Android-UI事件传递就是这么个事儿">
 <meta name="twitter:description" content="我们寻找的，也只不过是内心世界的片刻安宁，以及，那样一场盛大的清欢。  聊聊UI事件传递 什么是UI事件？ 触摸屏幕中UI控件的那一刻即为事件发生 MotionEvent对象包含了所有的触摸事件，如触摸的位置、多指触摸等 MotionEvent描述了当前的操作类型，以下为常见类型(数字代表对应的值)： ACTION_DOWN = 0 按下 ACTION_UP = 1 抬起 ACTION_MOVE">
 <meta name="twitter:image" content="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg">
+<script type="application/ld+json">[{"@context":"http://schema.org","@type":"WebSite","publisher":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"url":"https://blog.xujiaji.com","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg","description":null,"author":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"}},{"@context":"http://schema.org","@type":"Article","articleSection":"Android","url":"https://blog.xujiaji.com/post/android-ui-event/","headline":"Android-UI事件传递就是这么个事儿","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg","datePublished":"2016-04-16T07:31:00.000Z","dateModified":"2019-04-08T06:55:13.177Z","keywords":"Android,View","description":null,"publisher":{"@type":"Organization","name":"徐佳吉的博客","logo":{"@type":"ImageObject","url":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"}},"author":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xujiaji.com/post/android-ui-event/"}}]</script>
 <link rel="alternate" type="application/atom+xml" title="徐佳吉的博客" href="/atom.xml">
-<link rel="stylesheet" href="//unpkg.com/hexo-theme-inside@2.0.0/source/fonts.b9b22ef890c930ac7a13.css">
-<link rel="stylesheet" href="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/styles.a2d344c41a1bc6202509.css">
-<link rel="stylesheet" href="/theme.20926c010d3abe2006c8.css">
-<script src="/config.62938b54b8eeec85f943.js"></script>
-<script type="application/ld+json">[{"@context":"http://schema.org","@type":"WebSite","publisher":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"url":"https://blog.xujiaji.com","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg","description":null,"author":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"}},{"@context":"http://schema.org","@type":"Article","articleSection":"Android","url":"https://blog.xujiaji.com/post/android-ui-event/index.html","headline":"Android-UI事件传递就是这么个事儿","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg","datePublished":"2016-04-16T07:31:00.000Z","dateModified":"2019-04-08T06:55:13.177Z","keywords":"Android,View","description":null,"publisher":{"@type":"Organization","name":"徐佳吉的博客","logo":{"@type":"ImageObject","url":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"}},"author":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xujiaji.com/post/android-ui-event/index.html"}}]</script><script async src="//www.googletagmanager.com/gtag/js?id=UA-117088783-1"></script>
-<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag('js', new Date());gtag('config', 'UA-117088783-1');</script></head>
+<link href="//fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat" rel="stylesheet">
+<link href="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/styles.27f292de72d9e7a2cdaf.css" rel="stylesheet">
+<link rel="stylesheet" href="/theme.a6424d72cb6be3a2cbd8.css">
+<script src="/config.c4fe256f3f4c151e6a2e.js"></script>
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-117088783-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','UA-117088783-1');</script></head>
 <body lang="zh-Hans">
 <is-d2a57d></is-d2a57d>
-<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/runtime.26209474bfa8dc87a77c.js"></script>
-<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/polyfills.30f16c55deb40b06e14d.js"></script>
-<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/main.cb65816757bc3c87eabe.zh-Hans.js"></script></body>
+<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/runtime.9c308a63d02029c20228.js"></script>
+<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/polyfills-es5.613d1909ec381c0aefb7.js"></script>
+<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/polyfills.23aa31104b29f3163090.js"></script>
+<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/main.e8fb83af303ddf146491.zh-Hans.js"></script>
+</body>
 </html>
