@@ -12,7 +12,7 @@ tags:
 
 |||
 |-|-|
-|[![apk](https://img.shields.io/badge/Download-demo--apk-brightgreen.svg)](https://github.com/xujiaji/HappyBubble/releases/tag/demoApk)|[![maven](https://img.shields.io/badge/bintray-1.1.7-brightgreen.svg)](https://bintray.com/xujiaji/maven/happy-bubble/1.1.7)|
+|[![apk](https://img.shields.io/badge/Download-demo--apk-brightgreen.svg)](https://github.com/xujiaji/HappyBubble/releases/tag/demoApk)|[![maven](https://img.shields.io/badge/bintray-1.1.8-brightgreen.svg)](https://bintray.com/xujiaji/maven/happy-bubble/1.1.8)|
 
 # HappyBubble
 
@@ -26,6 +26,7 @@ tags:
 
 ## 更新
 
+- 1.1.8: 修复当设置透明背景时，状态栏文字颜色可能变白色问题
 - 1.1.7: 修复位置问题，修复`autoPosition`无效问题，修复横屏模式问题。[#13](https://github.com/xujiaji/HappyBubble/issues/13)[#11](https://github.com/xujiaji/HappyBubble/issues/11)[#10](https://github.com/xujiaji/HappyBubble/issues/10)
 - 1.1.6:<br>[新增方向优先级:issues/9](https://github.com/xujiaji/HappyBubble/issues/9)
 - 1.1.5:<br>[修复:issues/8](https://github.com/xujiaji/HappyBubble/issues/8)

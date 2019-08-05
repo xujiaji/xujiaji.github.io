@@ -1,5 +1,5 @@
 ---
-title: server-note
+title: Linux（CentOS）相关笔记
 tags:
 ---
 
@@ -45,7 +45,6 @@ mvn idea:module
 ## docker安装
 
 <https://www.cnblogs.com/yu-hailong/p/7629120.html/>
-
 
 ## 安装python3.7
 
