@@ -225,7 +225,7 @@ public void onSurfaceCreated(GL10 gl, EGLConfig config) {
     final float upY = 1.0F;
     final float upZ = 0.0F;
 
-    // 可以这样想象：我们在桥上拿着相机90°弯腰拍摄水平面下5米处的美人鱼
+    // 具体场景：把手机正放桌面上，然后我们去看屏幕里面的东西
 
     // 设置view矩阵，可以说这个矩阵代表相机的位置
     // 注意：在OpenGL 1中使用ModelView matrix，这是一个model和view矩阵的组合。
