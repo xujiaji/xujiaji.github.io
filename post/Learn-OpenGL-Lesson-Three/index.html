@@ -11,7 +11,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="description" content="翻译文  原文标题：Android Lesson Three: Moving to Per-Fragment Lighting原文链接：http://www.learnopengles.com/android-lesson-three-moving-to-per-fragment-lighting/">
-<meta name="keywords" content="Android,翻译,学习,OpenGL">
+<meta name="keywords" content="Android,OpenGL,学习,翻译">
 <meta property="og:type" content="website">
 <meta property="og:title" content="OpenGL Android课程三：使用每片段照明">
 <meta property="og:url" content="https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Three/index.html">
@@ -24,19 +24,18 @@
 <meta name="twitter:title" content="OpenGL Android课程三：使用每片段照明">
 <meta name="twitter:description" content="翻译文  原文标题：Android Lesson Three: Moving to Per-Fragment Lighting原文链接：http://www.learnopengles.com/android-lesson-three-moving-to-per-fragment-lighting/">
 <meta name="twitter:image" content="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/learn-opengl/Screenshot_2019-02-07-13-45-15-213_com.xujiaji.le.png">
-<script type="application/ld+json">[{"@context":"http://schema.org","@type":"WebSite","publisher":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"url":"https://blog.xujiaji.com","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg","description":null,"author":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"}},{"@context":"http://schema.org","@type":"Article","articleSection":"OpenGL","url":"https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Three/","headline":"OpenGL Android课程三：使用每片段照明","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/learn-opengl/Screenshot_2019-02-07-13-45-15-213_com.xujiaji.le.png","datePublished":"2019-01-26T09:55:49.000Z","dateModified":"2019-04-08T08:32:50.360Z","keywords":"Android,翻译,学习,OpenGL","description":"\n翻译文\n\n原文标题：Android Lesson Three: Moving to Per-Fragment Lighting原文链接：http://www.learnopengles.com/android-lesson-three-moving-to-per-fragment-lighting/","publisher":{"@type":"Organization","name":"徐佳吉的博客","logo":{"@type":"ImageObject","url":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"}},"author":{"@type":"Person","name":"xujiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Three/"},"thumbnailUrl":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/learn-opengl/Screenshot_2019-02-07-13-45-15-213_com.xujiaji.le.png"}]</script>
+<script type="application/ld+json">[{"@context":"http://schema.org","@type":"WebSite","publisher":{"@type":"Person","name":"XuJiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"url":"https://blog.xujiaji.com","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg","description":null,"author":{"@type":"Person","name":"XuJiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"}},{"@context":"http://schema.org","@type":"Article","articleSection":"OpenGL","url":"https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Three/","headline":"OpenGL Android课程三：使用每片段照明","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/learn-opengl/Screenshot_2019-02-07-13-45-15-213_com.xujiaji.le.png","datePublished":"2019-01-26T09:55:49.000Z","dateModified":"2019-04-08T08:32:50.360Z","keywords":"Android,OpenGL,学习,翻译","description":"\n翻译文\n\n原文标题：Android Lesson Three: Moving to Per-Fragment Lighting原文链接：http://www.learnopengles.com/android-lesson-three-moving-to-per-fragment-lighting/","publisher":{"@type":"Organization","name":"徐佳吉的博客","logo":{"@type":"ImageObject","url":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"}},"author":{"@type":"Person","name":"XuJiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xujiaji.com/post/Learn-OpenGL-Lesson-Three/"},"thumbnailUrl":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/learn-opengl/Screenshot_2019-02-07-13-45-15-213_com.xujiaji.le.png"}]</script>
 <link rel="alternate" type="application/atom+xml" title="徐佳吉的博客" href="/atom.xml">
-<link href="//fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat" rel="stylesheet">
-<link href="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/styles.27f292de72d9e7a2cdaf.css" rel="stylesheet">
-<link rel="stylesheet" href="/theme.a6424d72cb6be3a2cbd8.css">
-<script src="/config.c4fe256f3f4c151e6a2e.js"></script>
+<link href="//fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat|Lobster" rel="stylesheet">
+<link href="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/styles.d169c1b60a113f324ae2.css" rel="stylesheet">
+<link rel="stylesheet" href="/theme.66d6c1f00a1a39fe92a1.css">
+<script src="/config.407c3fa08479430afe19.js"></script>
 <script async src="//www.googletagmanager.com/gtag/js?id=UA-117088783-1"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','UA-117088783-1');</script></head>
 <body lang="zh-Hans">
-<is-d2a57d></is-d2a57d>
-<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/runtime.9c308a63d02029c20228.js"></script>
-<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/polyfills-es5.613d1909ec381c0aefb7.js"></script>
-<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/polyfills.23aa31104b29f3163090.js"></script>
-<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/main.e8fb83af303ddf146491.zh-Hans.js"></script>
+<is-a></is-a>
+<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/runtime.caef73fae70e33459c5a.js"></script>
+<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/polyfills.28555e618578fe61f50a.js"></script>
+<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/main.fb11742bdde2cb05f553.zh-Hans.js"></script>
 </body>
 </html>
