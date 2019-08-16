@@ -939,3 +939,20 @@ func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRa
     return true
 }
 ```
+
+## CocoaPods单独为一些库设置版本
+
+在Podfile末尾加入
+
+``` swift
+swift_versions_of_pods = { 'swiftScan' => '4.0', 'CWActionSheet' => '4.0' }
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    defined_swift_version = swift_versions_of_pods[target.name]
+    next if defined_swift_version.blank?
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = defined_swift_version
+    end
+  end
+end
+```
