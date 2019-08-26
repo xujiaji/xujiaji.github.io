@@ -9,3 +9,9 @@ title: 关于我
 
 QQ：26323405（请大侠注明一下来路😄）
 Email：jiajixu@qq.com
+
+# 资助栏
+
+|DATE|NAME|MONEY|PLATFORM|WHERE|REMARK|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|2019-8-15 0:25|f*t|￥6.66|微信|-|-|
