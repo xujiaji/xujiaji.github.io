@@ -8,7 +8,7 @@ title: 关于我
 # 联系我
 
 QQ：26323405（请大侠注明一下来路😄）
-Email：jiajixu@qq.com
+Email：blog@xujiaji.com
 
 # 资助栏
 
