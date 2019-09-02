@@ -956,3 +956,42 @@ post_install do |installer|
   end
 end
 ```
+
+## 代码中为label添加点击事件
+
+``` swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    let tap = UITapGestureRecognizer(target: self, action: #selector(tapFunction))
+    label.isUserInteractionEnabled = true
+    label.addGestureRecognizer(tap)
+}
+
+@objc func tapFunction(sender: UITapGestureRecognizer) {
+    print("tap working")
+}
+```
+
+## 需要给手势传入额外的数据
+
+1. 创建一个tap手势子类
+``` swift
+class TopicUITapGestureRecognizer : UITapGestureRecognizer {
+    var id = Int()
+    var title = String()
+}
+```
+2. 处理数据
+``` swift
+@objc func tapFunction(sender: TopicUITapGestureRecognizer) {
+    print("点击了: \(sender.id), \(sender.title)")
+}
+```
+3. 添加事件设置数据
+``` swift
+let tap = TopicUITapGestureRecognizer(target: self, action: #selector(tapFunction))
+tap.id = topic.id ?? 0
+tap.title = topic.topic ?? ""
+label.isUserInteractionEnabled = true
+label.addGestureRecognizer(tap)
+```
