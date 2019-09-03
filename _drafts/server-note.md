@@ -221,3 +221,29 @@ docker search gitlab-ce
 docker pull twang2218/gitlab-ce-zh
 docker run -d --hostname gitlab.xxx.com:3000 -p 10443:10443 -p 3000:3000 -p 10222:10222 --name gitlab --restart always -v /home/gitlab/config:/etc/gitlab -v /home/gitlab/logs:/var/log/gitlab -v /home/gitlab/data:/var/opt/gitlab twang2218/gitlab-ce-zh
 ```
+
+## Redis
+
+### 安装
+
+官网
+
+<https://redis.io/download/>
+
+安装
+
+<https://segmentfault.com/a/1190000016012597/>
+
+### 命令
+
+启动Redis
+
+``` shell
+redis-server
+```
+
+终端连接Redis
+
+``` shell
+redis-cli
+```
