@@ -242,8 +242,30 @@ docker run -d --hostname gitlab.xxx.com:3000 -p 10443:10443 -p 3000:3000 -p 1022
 redis-server
 ```
 
+设置后台运行
+
+``` shell
+# 编辑配置文件，修改 daemonize no 为 daemonize yes，这样就可以默认启动就后台运行
+vim /etc/redis/redis.conf
+
+# 启动redis
+redis-server /etc/redis/redis.conf
+```
+
 终端连接Redis
 
 ``` shell
 redis-cli
+```
+
+关闭服务
+
+``` shell
+redis-cli shutdown
+```
+
+测试启动(返回PONG则启动成功)
+
+``` shell
+redis-cli ping
 ```
