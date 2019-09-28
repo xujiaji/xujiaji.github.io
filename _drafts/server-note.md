@@ -269,3 +269,8 @@ redis-cli shutdown
 ``` shell
 redis-cli ping
 ```
+
+## Gitlab CI
+
+https://scarletsky.github.io/2016/07/29/use-gitlab-ci-for-continuous-integration/
+https://www.jianshu.com/p/3c0cbb6c2936
