@@ -149,6 +149,12 @@ supervisord
 supervisorctl -c /etc/supervisord.conf
 ```
 
+> 非root用户启动时的权限问题
+
+``` shell
+https://github.com/Supervisor/supervisor/issues/173
+```
+
 ## 通过PID关闭进程
 
 > 查询这里查询supervisord pid
