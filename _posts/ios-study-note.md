@@ -252,6 +252,15 @@ extension UIButton {
 }
 ```
 
+### 给UIButton图片染色
+
+``` swift
+let button = UIButton(type: .custom)
+let image = UIImage(named: "image_name")?.withRenderingMode(.alwaysTemplate)
+button.setImage(image, for: .normal)
+button.tintColor = UIColor.red
+```
+
 ## UITableView或UICollectionView被TabBar遮盖
 
 ![](blog/ios-note/note-screen1.png)
