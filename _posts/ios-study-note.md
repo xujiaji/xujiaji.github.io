@@ -291,33 +291,6 @@ let appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? S
 let versionNumber = Bundle.main.infoDictionary!["CFBundleVersion"] as? String
 ```
 
-## 清理缓存
-
-``` swift
- func clearCache() {
-
-     // 取出cache文件夹目录 缓存文件都在这个目录下
-     let cachePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
-
-     // 取出文件夹下所有文件数组
-     let fileArr = FileManager.default.subpaths(atPath: cachePath!)
-
-     // 遍历删除
-     for file in fileArr! {
-
-         let path = cachePath?.appendingFormat("/\(file)")
-         if FileManager.default.fileExists(atPath: path!) {
-
-             do {
-                 try FileManager.default.removeItem(atPath: path!)
-             } catch {
-
-             }
-         }
-     }
- }
-```
-
 ## 打开网页本软件的appstore
 
 ``` swift
