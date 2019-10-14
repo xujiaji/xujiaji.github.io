@@ -1004,3 +1004,15 @@ tap.title = topic.topic ?? ""
 label.isUserInteractionEnabled = true
 label.addGestureRecognizer(tap)
 ```
+
+## 当Swift的枚举类型传入数组到OC中时报错
+
+异常信息
+
+``` swift
+'NSInvalidArgumentException', reason: '-[__SwiftValue iconNormal]: unrecognized
+```
+
+解决: 传入枚举类型`.rawValue`
+
+<https://stackoverflow.com/questions/39643394/swift-3-error-swiftvalue-unsignedintegervalue-unrecognized-selector/>
