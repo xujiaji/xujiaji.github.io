@@ -1016,3 +1016,62 @@ label.addGestureRecognizer(tap)
 解决: 传入枚举类型`.rawValue`
 
 <https://stackoverflow.com/questions/39643394/swift-3-error-swiftvalue-unsignedintegervalue-unrecognized-selector/>
+
+## 获取App缓存大小、清理App缓存
+
+``` swift
+class AppCacheCleanUtil {
+
+    /// 获取app缓存大小
+    static func getCacheSize() -> String {
+        // 取出cache文件夹目录
+        let cachePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first
+
+        // 取出文件夹下所有文件数组
+        let fileArr = FileManager.default.subpaths(atPath: cachePath!)
+
+        //快速枚举出所有文件名 计算文件大小
+        var size = 0
+        for file in fileArr! {
+
+            // 把文件名拼接到路径中
+            let path = cachePath! + ("/\(file)")
+            // 取出文件属性
+            let floder = try! FileManager.default.attributesOfItem(atPath: path)
+            // 用元组取出文件大小属性
+            for (key, fileSize) in floder {
+                // 累加文件大小
+                if key == FileAttributeKey.size {
+                    size += (fileSize as AnyObject).integerValue
+                }
+            }
+        }
+
+        let totalCache = Double(size) / 1024.00 / 1024.00
+        return String(format: "%.2f", totalCache)
+    }
+
+
+    /// 清理app缓存文件
+    static func clearCache() {
+        let cachePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first
+
+        // 取出文件夹下所有文件数组
+        let fileArr = FileManager.default.subpaths(atPath: cachePath!)
+
+        // 遍历删除
+        for file in fileArr! {
+
+            let path = cachePath?.appendingFormat("/\(file)")
+            if FileManager.default.fileExists(atPath: path!) {
+
+                do {
+                    try FileManager.default.removeItem(atPath: path!)
+                } catch {
+
+                }
+            }
+        }
+    }
+}
+```
