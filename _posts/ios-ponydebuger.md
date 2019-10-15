@@ -1,6 +1,7 @@
 ---
 title: 好用的iOS调试工具PonyDebugger
 date: 2019-10-15 23:38:02
+thumbnail: blog/ponydebugger.jpeg
 categories:
  - iOS
 tags:
@@ -61,7 +62,6 @@ cat ./bootstrap-ponyd.py | python - --never-download --ponyd-symlink=/usr/local/
 
 ``` shell
 ~/Library/PonyDebugger/bin/easy_install --find-links https://pypi.python.org/simple/singledispatch/ -U singledispatch
-  480  ponyd update-devtools
 ~/Library/PonyDebugger/bin/easy_install --find-links https://pypi.python.org/simple/backports-abc/ -U backports_abc
 ~/Library/PonyDebugger/bin/easy_install --find-links https://pypi.python.org/simple/certifi -U certifi
 ~/Library/PonyDebugger/bin/easy_install --find-links https://pypi.python.org/simple/six/ -U six
