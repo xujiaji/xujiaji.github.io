@@ -61,7 +61,7 @@ const double atm = 1.01325 * bar;
 
 ``` dart
 var foo = const [];
-final bar = const [];
+final bar = [];
 const baz = [];
 ```
 
