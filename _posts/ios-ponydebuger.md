@@ -10,6 +10,12 @@ tags:
 
 # 好用的iOS调试工具PonyDebugger
 
+PonyDebugger：<https://github.com/square/PonyDebugger/>
+
+## 视频演示
+
+{% iframe //player.bilibili.com/player.html?aid=71370834&cid=123663162&page=1 100% 480 %}
+
 ## 创建一个目录`ponyd`，并进去该目录
 
 ``` shell
