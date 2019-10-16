@@ -14,7 +14,11 @@ PonyDebugger：<https://github.com/square/PonyDebugger/>
 
 ## 视频演示
 
-{% iframe //player.bilibili.com/player.html?aid=71370834&cid=123663162&page=1 100% 480 %}
+<div style="width: 100%; display: inline-block; position: relative; padding-top: 70%; display: block; content: '';">
+    <div style="position: absolute; top: 0; bottom: 0; right: 0; left: 0;">
+    {%iframe //player.bilibili.com/player.html?aid=71370834&cid=123663162&page=1 100% 100% %}
+    </div>
+</div>
 
 ## 创建一个目录`ponyd`，并进去该目录
 
