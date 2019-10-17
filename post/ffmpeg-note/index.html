@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+<meta charset="utf-8">
+<title>ffmpeg 使用小记 - 徐佳吉的博客</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link rel="canonical" href="https://blog.xujiaji.com/post/ffmpeg-note/">
+<link rel="icon" type="image/x-icon" href="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/favicon.ico">
+<link rel="manifest" href="/manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="ffmpeg 使用小记合并两个视屏文件合并1.mp4和2.mp4  将mp4转化为同样编码形式的ts溜，因为ts是可以concate的然后concate ts流最后再把ts流转为mp4  123ffmpeg -i 1.mp4 -vcodec copy -acodec copy -vbsf h264_mp4toannexb 1.tsffmpeg -i 2.mp4 -vcodec copy -acod">
+<meta name="keywords" content="笔记,FFMPEG">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ffmpeg 使用小记">
+<meta property="og:url" content="https://blog.xujiaji.com/post/ffmpeg-note/index.html">
+<meta property="og:site_name" content="徐佳吉的博客">
+<meta property="og:description" content="ffmpeg 使用小记合并两个视屏文件合并1.mp4和2.mp4  将mp4转化为同样编码形式的ts溜，因为ts是可以concate的然后concate ts流最后再把ts流转为mp4  123ffmpeg -i 1.mp4 -vcodec copy -acodec copy -vbsf h264_mp4toannexb 1.tsffmpeg -i 2.mp4 -vcodec copy -acod">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg">
+<meta property="og:updated_time" content="2019-10-16T14:59:18.640Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ffmpeg 使用小记">
+<meta name="twitter:description" content="ffmpeg 使用小记合并两个视屏文件合并1.mp4和2.mp4  将mp4转化为同样编码形式的ts溜，因为ts是可以concate的然后concate ts流最后再把ts流转为mp4  123ffmpeg -i 1.mp4 -vcodec copy -acodec copy -vbsf h264_mp4toannexb 1.tsffmpeg -i 2.mp4 -vcodec copy -acod">
+<meta name="twitter:image" content="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg">
+<script type="application/ld+json">[{"@context":"http://schema.org","@type":"WebSite","publisher":{"@type":"Person","name":"XuJiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"url":"https://blog.xujiaji.com","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg","description":null,"author":{"@type":"Person","name":"XuJiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"}},{"@context":"http://schema.org","@type":"Article","articleSection":"工具","url":"https://blog.xujiaji.com/post/ffmpeg-note/index.html","headline":"ffmpeg 使用小记","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg","datePublished":"2019-10-16T14:54:28.000Z","dateModified":"2019-10-16T14:59:18.640Z","keywords":"笔记,FFMPEG","description":null,"publisher":{"@type":"Organization","name":"徐佳吉的博客","logo":{"@type":"ImageObject","url":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"}},"author":{"@type":"Person","name":"XuJiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xujiaji.com/post/ffmpeg-note/index.html"}}]</script>
+<link rel="alternate" type="application/atom+xml" title="徐佳吉的博客" href="/atom.xml">
+<link href="//xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/font/css.css" rel="stylesheet">
+<link href="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/styles.9477318680c7e6b720a2.css" rel="stylesheet">
+<link rel="stylesheet" href="/theme.830d90a1a025a32c3072.css">
+<script src="/config.bcb99dcb7ebc054a6520.js"></script>
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-117088783-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','UA-117088783-1');</script></head>
+<body lang="zh-Hans">
+<is-a></is-a>
+<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/runtime.caef73fae70e33459c5a.js"></script>
+<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/polyfills.28555e618578fe61f50a.js"></script>
+<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/main.5f57ed8aacba80770b83.zh-Hans.js"></script>
+</body>
+</html>
