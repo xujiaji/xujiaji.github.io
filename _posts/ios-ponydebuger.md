@@ -12,7 +12,41 @@ tags:
 
 PonyDebugger：<https://github.com/square/PonyDebugger/>
 
-## 视频演示
+## 简介
+
+PoneyDebugger是一个很给力的调试工具，它能通过浏览器调试App。
+
+需要电脑上配置服务环境，在iOS项目添加sdk的配置。便可以对App进行网络请求监控、Core Data数据查看、查看当前界面UI层级等。
+
+### 网络请求调试
+
+我们的请求会通过PonyDebugger的代理服务[ponyd](https://github.com/square/PonyDebugger/tree/master/ponyd)，可以直观的像在浏览器上调试网页请求一样，调试App的请求。
+
+> 我就直接把官方的图搬运过来用了`^_^`
+
+![NetworkDebugging](https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/poneydebugger/NetworkDebugging.png)
+
+### Core Data 浏览
+
+Core Data浏览，只需要通过在应用程序的代码中启用就可以了`ponyDebugger?.enableCoreDataDebugging()`
+
+![CoreDataBrowser](https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/poneydebugger/CoreDataBrowser.png)
+
+### 视图层次调试
+
+PonyDebugger会在浏览器中以XML的方式展示应用视图层次结构，并且可以在其中看到视图元素的属性。在面板中选中一个元素时，对应手机上也会被选中。当删除一个时也对应删除，可调整视图大小。
+
+![ViewHierarchyDebugging](https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/poneydebugger/ViewHierarchyDebugging.png)
+
+## 远程日志
+
+PonyDebuggert通过PDLog和PDLogObjects函数远程记录日志查看对象数据
+
+![RemoteLogging](https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/poneydebugger/RemoteLogging.png)
+
+
+
+## 安装视频演示
 
 <div style="width: 100%; display: inline-block; position: relative; padding-top: 70%; display: block; content: '';">
     <div style="position: absolute; top: 0; bottom: 0; right: 0; left: 0;">
@@ -90,3 +124,30 @@ ponyd update-devtools
 ``` shell
 ponyd serve --listen-interface=127.0.0.1
 ```
+
+## 配置iOS sdk
+
+> 下面演示的是通过pod安装的
+
+1. 在项目Podfile中引入`pod 'PonyDebugger'`
+2. 打开一个在项目目录的命令窗口，运行`pod install`
+3. swift项目，需要在连接桥文件中导入头文件，`#import <PonyDebugger/PonyDebugger.h>`
+4. 添加sdk配置：
+``` swift
+let ponyDebugger = PDDebugger.defaultInstance()
+ponyDebugger?.enableNetworkTrafficDebugging()
+ponyDebugger?.enableViewHierarchyDebugging()
+ponyDebugger?.setDisplayedViewAttributeKeyPaths(["frame", "hidden", "alpha"])
+ponyDebugger?.forwardAllNetworkTraffic()
+ponyDebugger?.enableCoreDataDebugging()
+ponyDebugger?.enableRemoteLogging()
+ponyDebugger?.connect(to: URL(string: "ws://localhost:9000/device"))
+```
+
+## 打开调试网页
+
+<http://localhost:9000/>
+
+## 结束
+
+这里主要还是演示了一些怎么安装配置的PonyDebugger，因为在这里遇到些问题所以在此记录一波。谢谢观看！
