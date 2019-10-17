@@ -1048,3 +1048,13 @@ class AppCacheCleanUtil {
     }
 }
 ```
+
+## 使用UIVebView展示本地html
+
+1. 创建并添加一个UIVebView到ViewController
+2. 将html文件拖入项目中（对话框选择“Copy items if needed”）
+3. 加载
+``` swift
+let url = Bundle.main.url(forResource: "privacy", withExtension: "html")
+webView.loadRequest(URLRequest(url: url!))
+```
