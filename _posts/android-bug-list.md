@@ -58,3 +58,21 @@ build.gradle中添加如下：
 ```
 compile 'com.android.support:multidex:1.0.1'
 ```
+
+## 安装报错 INSTALL_FAILED_NO_MATCHING_ABIS
+
+由于没有对应当前设备的ndk模块导致命令安装报错
+
+遇到这个的原因是腾讯x5内核只有`armeabi`，于是在手机上命令安装会遇到这个问题（小米测试不能上架），于是我把`armeabi`里的x5内核动态库拷贝到`armeabi-v7a`
+
+`build.gradle`添加下面配置（其实`armeabi-v7a`大多数设备就够了）
+
+``` groovy
+android {
+    defaultConfig {
+        ndk {
+            abiFilters "armeabi", "x86", "armeabi-v7a"
+        }
+    }
+}
+```
