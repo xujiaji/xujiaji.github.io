@@ -1058,3 +1058,46 @@ class AppCacheCleanUtil {
 let url = Bundle.main.url(forResource: "privacy", withExtension: "html")
 webView.loadRequest(URLRequest(url: url!))
 ```
+
+## NavigationBar透明情况下，挡住了底部按钮点击事件
+
+> 就是说NavigationBar的下面有个按钮，你去点击这个按钮没有反应
+
+1. 继承`UINavigationBar`覆写`point`方法
+``` swift
+import UIKit
+
+class NavigationEvent: UINavigationBar {
+
+    var viewsToIgnoreTouchesFor:[UIView] = []
+
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        var pointInside = super.point(inside: point, with: event)
+
+        for each in viewsToIgnoreTouchesFor {
+            let convertedPoint = each.convert(point, from: self)
+            if each.point(inside: convertedPoint, with: event) {
+                pointInside = false
+                break
+            }
+        }
+        return pointInside
+    }
+}
+```
+
+2. 在navigationController设置上面的自定义`UINavigationBar`
+
+``` swift
+navigationController.setValue(NavigationEvent(), forKey: "navigationBar")
+```
+
+3. 在你的UIControllerView中添加被挡住了的按钮(在这里有个顶部有个注册按钮`registerBtn`被NavigationBar挡住了点击无效)
+
+在`viewDidLoad()`中添加就可以了
+
+``` swift
+if let navBar = self.navigationController?.navigationBar as? NavigationEvent {
+    navBar.viewsToIgnoreTouchesFor = [registerBtn]
+}
+```
