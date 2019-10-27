@@ -1,6 +1,7 @@
 ---
 title: 好用的iOS网络请求调试工具Bagel
 date: 2019-10-24 23:24:42
+thumbnail: blog/screenshot_bagel.png
 tags:
   - iOS
   - 工具
