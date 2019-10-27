@@ -1,6 +1,7 @@
 ---
 title: 安装Gitlab小记
 date: 2019-09-24 20:49:42
+author: xujiaji
 thumbnail: blog/gitlab/gitlab-logo-gray-rgb.jpg
 tags:
  - Linux
