@@ -20,3 +20,11 @@ echo "alias la='ls -AFh'" >>.bash_profile
 echo "alias ll='ls -lhAF'" >>.bash_profile
 source ~/.bash_profile
 ```
+
+## 启动一个网页服务
+
+对应项目目录下执行：
+
+```
+python3 -m http.server
+```
