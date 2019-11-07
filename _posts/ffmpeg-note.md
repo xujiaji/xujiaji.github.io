@@ -1,6 +1,7 @@
 ---
 title: ffmpeg 使用小记
 date: 2019-10-16 22:54:28
+author: xujiaji
 categories:
  - 工具
 tags:

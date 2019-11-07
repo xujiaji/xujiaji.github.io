@@ -1,8 +1,12 @@
 ---
 title: Dart学习笔记
 date: 2019-03-29 16:45:28
+author: xujiaji
+categories:
+ - Dart
 tags:
  - Dart
+ - 笔记
 ---
 
 # Dart笔记
