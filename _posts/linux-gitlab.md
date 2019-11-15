@@ -291,9 +291,8 @@ gitlab-rails console
 
 ``` shell
 Project.find_by_full_path('root/my-project').update(runners_token: nil, runners_token_encrypted:nil)
+ApplicationSetting.current.reset_runners_registration_token!
 ```
-
-> 如果上面步骤不行，查看下面问题
 
 DB Console
 

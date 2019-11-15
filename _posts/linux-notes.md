@@ -231,3 +231,9 @@ $ sudo apt-get install shutter
 |命令：|shutter -s|
 
 点击新添加条目的右侧新建快捷键，然后同时按住Ctrl+Alt+A，结束。
+
+## 文件查询
+
+``` sh
+sudo find / | grep "fab"
+```
