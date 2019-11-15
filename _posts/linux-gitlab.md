@@ -260,3 +260,55 @@ gitlab-ctl start
 |-|-|
 |`/etc/gitlab/gitlab.rb`|gitlab配置文件|
 |`/var/log/gitlab/gitlab-rails/production.log`|gitlab-rails日志文件|
+
+## 备份
+
+备份命令
+
+``` shell
+gitlab-rake gitlab:backup:create
+```
+
+安装同版本gitlab
+
+从其他服务器拷贝到当前服务器
+
+``` shell
+scp root@172.28.17.155:/var/opt/gitlab/backups/1502357536_2017_08_10_9.4.3_gitlab_backup.tar /var/opt/gitlab/backups/
+```
+
+余下步骤参阅：https://blog.csdn.net/ouyang_peng/article/details/77070977
+
+### 恢复备份后ci 500错误问题
+
+Rails console
+
+``` shell
+gitlab-rails console
+```
+
+重置token
+
+``` shell
+Project.find_by_full_path('root/my-project').update(runners_token: nil, runners_token_encrypted:nil)
+```
+
+> 如果上面步骤不行，查看下面问题
+
+DB Console
+
+``` shell
+gitlab-psql -d gitlabhq_production
+```
+
+查看数据库信息
+
+``` sql
+select id,runners_token,runners_token_encrypted from projects;
+```
+
+重置数据token
+
+``` sql
+UPDATE projects SET runners_token = null, runners_token_encrypted = null WHERE id = 28;
+```

@@ -70,3 +70,9 @@ jarsigner -verbose -keystore [keystore签名秘钥路径] -signedjar [apk输出�
 ```
 keytool -list -v -keystore [签名路径]
 ```
+
+## jadx反编译
+
+``` shell
+jadx -d out -j 1 classes.dex
+```
