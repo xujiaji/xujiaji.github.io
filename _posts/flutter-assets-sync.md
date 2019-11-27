@@ -2,7 +2,7 @@
 title: Flutter资源自动生成配置脚本
 date: 2019-11-27 17:36:09
 author: xujiaji
-thumbnail:
+thumbnail: blog/flutter_pubspec/banner.jpg
 categories:
  - Flutter
 tags:
@@ -25,7 +25,13 @@ tags:
 
 由于大佬插件代码不是开源的，于是想了想还是自己用python快速搞一个一样功能的出来吧，可以自己自定义，并且可以全方位满足自己需求！
 
-## 视频介绍
+## 视频演示
+
+<div style="width: 100%; display: inline-block; position: relative; padding-top: 70%; display: block; content: '';">
+    <div style="position: absolute; top: 0; bottom: 0; right: 0; left: 0;">
+    {%iframe //player.bilibili.com/player.html?aid=77259024&cid=132151550&page=1 100% 100% %}
+    </div>
+</div>
 
 ## 环境
 
@@ -34,6 +40,7 @@ tags:
 ## 配置
 
 1. 在`pubspec.yaml`的`assets`处添加自动自动构建的位置区间
+
 > 这个区间内不可添加其他资源，因为每次构建都会替换`# assets-generator-begin`和`# assets-generator-end`之间的内容
 
 ```yaml
@@ -43,6 +50,7 @@ tags:
 ```
 
 2. 接下了就是配置资源的目录了
+
 首先，在项目中假如说你的资源目录就如下所示是`assets`
 ![](blog/flutter_pubspec/55813610-18E1-478F-BBFD-C24D4307F949.png)
 那么，你需要在`assets_generator.py`（顶部进入项目地址下载哦）中配置对应的位置，如下所示：
