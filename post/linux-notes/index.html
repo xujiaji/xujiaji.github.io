@@ -6,7 +6,7 @@
 <base href="/">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 <link rel="canonical" href="https://blog.xujiaji.com/post/linux-notes/">
-<link rel="icon" type="image/x-icon" href="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/xujiaji.oss-accelerate.aliyuncs.com/blog/favicon.ico">
 <link rel="manifest" href="/manifest.json">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -24,18 +24,18 @@
 <meta name="twitter:title" content="linux(Ubuntu)笔记">
 <meta name="twitter:description" content="每次开机弹出软件崩溃反馈 解决：删除崩溃日志  1$ sudo rm /var/crash/* 更新软件源的索引1$ sudo apt-get update 升级软件1$ sudo apt-get upgrade 修复依赖关系 假如用户的系统上有某个package不满足依赖条件，这个命令就会自动修复，安装程序包所依赖的包  1$ sudo apt-get -f install 创建启动器 安装软件">
 <meta name="twitter:image" content="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/linux-notes.jpg">
-<script type="application/ld+json">[{"@context":"http://schema.org","@type":"WebSite","publisher":{"@type":"Person","name":"XuJiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"url":"https://blog.xujiaji.com","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg","description":null,"author":{"@type":"Person","name":"XuJiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"}},{"@context":"http://schema.org","@type":"Article","articleSection":"Linux","url":"https://blog.xujiaji.com/post/linux-notes/index.html","headline":"linux(Ubuntu)笔记","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/linux-notes.jpg","datePublished":"2017-12-12T04:25:29.000Z","dateModified":"2019-11-27T13:40:17.575Z","keywords":"笔记,Linux","description":null,"publisher":{"@type":"Organization","name":"徐佳吉的博客","logo":{"@type":"ImageObject","url":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"}},"author":{"@type":"Person","name":"XuJiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xujiaji.com/post/linux-notes/index.html"},"thumbnailUrl":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/linux-notes.jpg"}]</script>
+<script type="application/ld+json">[{"@context":"http://schema.org","@type":"WebSite","publisher":{"@type":"Person","name":"XuJiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-accelerate.aliyuncs.com/blog/avatar.jpeg"},"url":"https://blog.xujiaji.com","image":"https://xujiaji.oss-accelerate.aliyuncs.com/blog/avatar.jpeg","description":null,"author":{"@type":"Person","name":"XuJiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-accelerate.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"}},{"@context":"http://schema.org","@type":"Article","articleSection":"Linux","url":"https://blog.xujiaji.com/post/linux-notes/index.html","headline":"linux(Ubuntu)笔记","image":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/linux-notes.jpg","datePublished":"2017-12-12T04:25:29.000Z","dateModified":"2019-11-27T13:40:17.575Z","keywords":"笔记,Linux","description":null,"publisher":{"@type":"Organization","name":"徐佳吉的博客","logo":{"@type":"ImageObject","url":"https://xujiaji.oss-accelerate.aliyuncs.com/blog/avatar.jpeg"}},"author":{"@type":"Person","name":"XuJiaji","description":"your future starts right here, right now, not tomorrow","image":"https://xujiaji.oss-accelerate.aliyuncs.com/blog/avatar.jpeg"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xujiaji.com/post/linux-notes/index.html"},"thumbnailUrl":"https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/linux-notes.jpg"}]</script>
 <link rel="alternate" type="application/atom+xml" title="徐佳吉的博客" href="/atom.xml">
 <link href="//xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/font/css.css" rel="stylesheet">
-<link href="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/styles.9477318680c7e6b720a2.css" rel="stylesheet">
+<link href="https://xujiaji.oss-accelerate.aliyuncs.com/blog/statics/styles.9477318680c7e6b720a2.css" rel="stylesheet">
 <link rel="stylesheet" href="/theme.830d90a1a025a32c3072.css">
-<script src="/config.a79dd643469472909359.js"></script>
+<script src="/config.f4a7dfb812186390cdcb.js"></script>
 <script async src="//www.googletagmanager.com/gtag/js?id=UA-117088783-1"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','UA-117088783-1');</script></head>
 <body lang="zh-Hans">
 <is-a></is-a>
-<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/runtime.caef73fae70e33459c5a.js"></script>
-<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/polyfills.28555e618578fe61f50a.js"></script>
-<script src="https://xujiaji.oss-cn-beijing.aliyuncs.com/blog/statics/main.5f57ed8aacba80770b83.zh-Hans.js"></script>
+<script src="https://xujiaji.oss-accelerate.aliyuncs.com/blog/statics/runtime.caef73fae70e33459c5a.js"></script>
+<script src="https://xujiaji.oss-accelerate.aliyuncs.com/blog/statics/polyfills.28555e618578fe61f50a.js"></script>
+<script src="https://xujiaji.oss-accelerate.aliyuncs.com/blog/statics/main.5f57ed8aacba80770b83.zh-Hans.js"></script>
 </body>
 </html>
