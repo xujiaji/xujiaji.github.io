@@ -15,3 +15,4 @@ Email：blog@xujiaji.com
 |DATE|NAME|MONEY|PLATFORM|WHERE|REMARK|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |2019-8-15 0:25|f*t|￥6.66|微信|-|-|
+|2019-12-15 0:25|*🐒|￥10.00|微信|BLOG|感谢共享|
