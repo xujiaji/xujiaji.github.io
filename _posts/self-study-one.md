@@ -21,7 +21,7 @@ tags:
 |互联网及其应用|[浏览文件>>](https://xujiaji.oss-accelerate.aliyuncs.com/blog/self-study/%E4%BA%92%E8%81%94%E7%BD%91%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A82016-2019%20%E7%9C%9F%E9%A2%98.pdf)|✔️|✔️|✖️|✔️|
 |软件工程|[浏览文件>>](https://xujiaji.oss-accelerate.aliyuncs.com/blog/self-study/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B2016-2019%20%E7%9C%9F%E9%A2%98.pdf)|✔️|✔️|✔️|✔️|
 |网页设计与制作|[浏览文件>>](https://xujiaji.oss-accelerate.aliyuncs.com/blog/self-study/%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%B6%E4%BD%9C2016-2019%E7%9C%9F%E9%A2%98.pdf)|✔️|✔️|✔️|✔️|
-|C++程序设计|[浏览文件>>](https://xujiaji.oss-accelerate.aliyuncs.com/blog/self-study/C%2B%2B%E7%A8%8B%E5%BA%8F2016-2019%E7%9C%9F%E9%A2%98.pdf)|✔️|✔️|✖️|✔️|
+|C++程序设计|[浏览文件>>](https://xujiaji.oss-accelerate.aliyuncs.com/blog/self-study/C%2B%2B%E7%A8%8B%E5%BA%8F2016-2019%E7%9C%9F%E9%A2%98.pdf)|✔️|✔️|✔️|✔️|
 
 > 日志
 
@@ -32,6 +32,7 @@ tags:
 |2019-12-20|软件工程2018（2019）、下方的软件工程复习资料|王超|
 |2019-12-22|C++程序设计2017（2019）、C++一些资料|徐佳吉|
 |2019-12-24|互联网及其应用2019|Mr.D|
+|2019-12-24|C++程序设计2018|徐佳吉|
 
 > 资料
 
