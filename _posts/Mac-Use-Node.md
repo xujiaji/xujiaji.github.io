@@ -1,6 +1,7 @@
 ---
 title: Mac Use Node
 date: 2019-05-06 11:11:53
+updated: 2020-04-17 12:03:06
 tags:
 ---
 
@@ -25,6 +26,6 @@ source ~/.bash_profile
 
 对应项目目录下执行：
 
-```
+``` shell
 python3 -m http.server
 ```
