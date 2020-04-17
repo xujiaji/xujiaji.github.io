@@ -2,7 +2,9 @@
 title: MySQL相关笔记
 date: 2020-04-17 12:03:06
 updated: 2020-04-17 12:03:06
+thumbnail: blog/mysql/mysql-logo.jpg
 tags:
+ - MySQL
 ---
 
 # MySQL笔记

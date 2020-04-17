@@ -10,7 +10,7 @@ date: 2018-03-16 23:20:10
 *hexo inside主题*|*玩Android*
 [![inside theme](https://www.gravatar.com/avatar/d2e25f51b78fbc6bed7db389f38631bc?s=40)](https://github.com/elmorec/hexo-theme-inside)|[![wanandroid](blog/links/wanandroid.png)](http://www.wanandroid.com/)
 *hexo inside主题*|**
-[![inside theme]()](http://www.留下的光.com/)|-
+[![留下的光](blog/links/huijin.jpg)](http://www.留下的光.com/)|-
 
 ## Android开源项目
 

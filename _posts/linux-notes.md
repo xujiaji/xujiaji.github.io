@@ -6,8 +6,8 @@ thumbnail: blog/linux-notes.jpg
 categories:
  - Linux
 tags:
-    - Linux
-    - 笔记
+ - Linux
+ - 笔记
 ---
 
 ## 每次开机弹出软件崩溃反馈
