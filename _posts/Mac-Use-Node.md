@@ -29,3 +29,17 @@ source ~/.bash_profile
 ``` shell
 python3 -m http.server
 ```
+
+## 查看端口占用和杀死进程
+
+> 查看`8080`端口的进程占用
+
+``` sh
+lsof -i tcp:8080
+```
+
+> 杀死进程
+
+``` sh
+kill pid
+```

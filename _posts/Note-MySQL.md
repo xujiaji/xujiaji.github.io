@@ -35,3 +35,20 @@ ON bz_connection.cidnumber=t1.i where t1.i IS NULL
 ``` mysql
 SELECT * FROM bz_connection WHERE id IN (102, 125, 139, 154)
 ```
+
+## mac上的mysql连接错误
+
+> 2059 - Authentication plugin 'caching_sha2_password' cannot be loaded:
+> dlopen(../Frameworks/caching_sha2_password.so, 2): image not found
+
+解决：
+
+> 方法一
+
+``` sql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'yourpassword';
+```
+
+> 方法二
+
+<https://www.jianshu.com/p/0be40c133926/>

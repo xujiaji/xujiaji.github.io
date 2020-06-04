@@ -112,3 +112,15 @@ $ docker pull redis
 > 启动Redis
 
 $ docker run --name redis -d -p 6379:6379 redis
+
+## MySQL笔记
+
+> 获取镜像
+
+$ docker pull mysql
+
+> 运行MySQL镜像
+
+``` sh
+docker run --name mysql -d -p 3306:3306 -v ~/docker-data/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root_password mysql
+```
