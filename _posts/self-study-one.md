@@ -1,5 +1,5 @@
 ---
-title: 电大自考真题练习
+title: 电子科技大学自考真题练习
 date: 2019-12-15 00:51:08
 author: xujiaji
 thumbnail: blog/self-study/banner.jpg
@@ -18,23 +18,30 @@ tags:
 |试卷名|跳转浏览|2016|2017|2018|2019|
 |-|-|:-:|:-:|:-:|:-:|
 |Java语言程序设计|[浏览文件>>](https://xujiaji.oss-accelerate.aliyuncs.com/blog/self-study/JAVA%E8%AF%AD%E8%A8%802016-2019%E7%9C%9F%E9%A2%98.pdf)|✔️|✔️|✔️|✔️|
-|互联网及其应用|[浏览文件>>](https://xujiaji.oss-accelerate.aliyuncs.com/blog/self-study/%E4%BA%92%E8%81%94%E7%BD%91%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A82016-2019%20%E7%9C%9F%E9%A2%98.pdf)|✔️|✔️|✖️|✖️|
+|互联网及其应用|[浏览文件>>](https://xujiaji.oss-accelerate.aliyuncs.com/blog/self-study/%E4%BA%92%E8%81%94%E7%BD%91%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A82016-2019%20%E7%9C%9F%E9%A2%98.pdf)|✔️|✔️|✔️|✔️|
 |软件工程|[浏览文件>>](https://xujiaji.oss-accelerate.aliyuncs.com/blog/self-study/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B2016-2019%20%E7%9C%9F%E9%A2%98.pdf)|✔️|✔️|✔️|✔️|
 |网页设计与制作|[浏览文件>>](https://xujiaji.oss-accelerate.aliyuncs.com/blog/self-study/%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%B6%E4%BD%9C2016-2019%E7%9C%9F%E9%A2%98.pdf)|✔️|✔️|✔️|✔️|
-|C++程序设计|[浏览文件>>](https://xujiaji.oss-accelerate.aliyuncs.com/blog/self-study/C%2B%2B%E7%A8%8B%E5%BA%8F2016-2019%E7%9C%9F%E9%A2%98.pdf)|✔️|✖️|✖️|✖️|
+|C++程序设计|[浏览文件>>](https://xujiaji.oss-accelerate.aliyuncs.com/blog/self-study/C%2B%2B%E7%A8%8B%E5%BA%8F2016-2019%E7%9C%9F%E9%A2%98.pdf)|✔️|✔️|✔️|✔️|
 
 > 日志
 
 |时间|资料|提供者|
 |-|-|:-:|
-|2019-12-18|网页设计与制作2017（2018）|董宏杨|
-|2019-12-19|网页设计与制作2019|董宏杨|
-|2019-12-20|软件工程2018（2019）下方的软件工程复习资料|王超|
+|2019-12-18|网页设计与制作2017（2018）|Mr.D|
+|2019-12-19|网页设计与制作2019|Mr.D|
+|2019-12-20|软件工程2018（2019）、下方的软件工程复习资料|王超|
+|2019-12-22|C++程序设计2017（2019）、C++一些资料|徐佳吉|
+|2019-12-24|互联网及其应用2019|Mr.D|
+|2019-12-24|C++程序设计2018|徐佳吉|
+|2019-12-25|互联网及其应用2018|徐佳吉|
+|2019-12-25|[纠错]<br>Java 2016第10题改为A<br>Java 2017第7题改为B||
+|2019-12-28|[纠错]<br>C++ 2017年37、38<br>C++ 2018年12、14、26||
+|2019-12-29|[纠错]<br>C++ 所有引入iostream.h的都不需要`using namespace std;`||
 
 > 资料
 
 |软件工程复习资料|
-|:-:|
+|-|
 ||
 |[软件工程自考复习资料-全](https://wenku.baidu.com/view/bb96f598f08583d049649b6648d7c1c709a10b7b.html?from=search)|
 |[软件工程常考简答题](https://wenku.baidu.com/view/d2606deff78a6529657d537a.html?from=search)|
@@ -48,3 +55,8 @@ tags:
 |[201404高等教育自学考试软件工程试题及答案](https://wenku.baidu.com/view/b20c8546fc0a79563c1ec5da50e2524de418d09d.html?from=search)|
 |[全国2012年10月高等教育自学考试《软件工程》试题及答案](https://wenku.baidu.com/view/7270fa85dd3383c4bb4cd23b.html?rec_flag=default&sxts=1575088068192)|
 |[全国高等教育自学考试2010年10月软件工程试题及答案](https://wenku.baidu.com/view/c3a5f236c5da50e2534d7f19.html?rec_flag=default&sxts=1575088129696)|
+
+|C++资料|
+|-|
+|[引用和指针有什么区别](http://www.tilaile.com/question/12047)|
+|[名称解释](https://wenku.baidu.com/view/8a40cede50e79b89680203d8ce2f0066f533642c.html)|
