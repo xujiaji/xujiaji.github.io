@@ -52,3 +52,33 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'yourpass
 > 方法二
 
 <https://www.jianshu.com/p/0be40c133926/>
+
+## 设置表中值唯一
+
+``` sql
+ALTER TABLE `sec_user` ADD unique(`user_id`);
+```
+
+## mysql8添加账户
+
+> 1.创建新用户
+
+``` sql
+create user 'username'@'host' identified by 'password';
+```
+
+其中username为自定义的用户名；host为登录域名，host为’%'时表示为 任意IP，为localhost时表示本机，或者填写指定的IP地址；paasword为密码
+
+> 2.为用户授权
+
+``` sql
+grant all privileges on *.* to 'username'@'%' with grant option;
+```
+
+其中*.第一个表示所有数据库，第二个表示所有数据表，如果不想授权全部那就把对应的写成相应数据库或者数据表；username为指定的用户；%为该用户登录的域名
+
+> 3.授权之后刷新权限
+
+``` sql
+flush privileges;
+```
