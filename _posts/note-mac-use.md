@@ -7,6 +7,12 @@ tags:
 
 # Mac 使用笔记
 
+## 删除所有以`.iml`结尾的文件
+
+``` sh
+find ./ -name "*.iml" -exec rm -rf {} \;
+```
+
 ## 创建替身（快捷方式）
 
 按住`option`+`command`，鼠标拖出对应的目标就可以了
