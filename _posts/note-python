@@ -1,0 +1,21 @@
+---
+title: Python相关笔记
+date: 2020-11-12 12:03:06
+updated: 2020-11-12 12:03:06
+categories:
+ - Python
+thumbnail:
+tags:
+ - 笔记
+ - Python
+---
+
+# Python 笔记
+
+## 执行命令，自动填入
+
+``` python
+import subprocess
+p=subprocess.Popen(['[命令]', '[命令]'],stdin=subprocess.PIPE)
+a=p.stdin.write(b'[自动填入的数据]')
+```
