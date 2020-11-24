@@ -2,10 +2,9 @@
 title: Maven 使用笔记
 date: 2020-05-20 16:37:07
 categories:
- - 工具
+ - 笔记
 tags:
  - Maven
- - 笔记
 ---
 
 # Maven

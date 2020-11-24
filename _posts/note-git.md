@@ -4,6 +4,7 @@ date: 2017-12-12 11:02:34
 author: xujiaji
 thumbnail: blog/git-notes.png
 categories:
+ - 笔记
  - 工具
 tags:
     - Git

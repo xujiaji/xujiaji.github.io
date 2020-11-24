@@ -3,11 +3,10 @@ title: Swift学习笔记
 date: 2018-07-09 21:21:34
 author: xujiaji
 categories:
- - Swift
+ - 笔记
 tags:
  - Swift
  - 学习
- - 笔记
 ---
 
 记录一些swift的基本特性，以便使用的时候方便查阅。

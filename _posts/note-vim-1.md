@@ -4,11 +4,10 @@ date: 2016-11-30 09:43
 author: xujiaji
 thumbnail: blog/vim-1/home.png
 categories:
- - Linux
+ - 笔记
 tags:
     - Linux
     - Vim
-    - 笔记
 ---
 ![banner](blog/vim-1/banner.png)
 

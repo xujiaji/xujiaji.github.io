@@ -3,8 +3,11 @@ title: Linux CentOS 笔记
 date: 2020-04-17 12:03:06
 updated: 2020-04-17 12:03:06
 thumbnail: blog/linux/banner.png
+categories:
+ - 笔记
 tags:
  - Linux
+ - CentOS
 ---
 
 # 服务器学习笔记

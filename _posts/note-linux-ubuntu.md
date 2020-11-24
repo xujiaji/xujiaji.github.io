@@ -4,10 +4,10 @@ date: 2017-12-12 12:25:29
 author: xujiaji
 thumbnail: blog/linux-notes.jpg
 categories:
- - Linux
+ - 笔记
 tags:
  - Linux
- - 笔记
+ - Ubuntu
 ---
 
 # Linux 笔记 - Ubuntu使用记录

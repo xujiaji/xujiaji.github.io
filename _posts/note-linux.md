@@ -4,10 +4,9 @@ date: 2017-12-12 12:25:29
 author: xujiaji
 thumbnail: blog/linux-notes.jpg
 categories:
- - Linux
+ - 笔记
 tags:
  - Linux
- - 笔记
 ---
 
 # Linux 笔记 - 一些命令和使用的记录

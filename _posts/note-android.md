@@ -4,10 +4,9 @@ date: 2018-1-24 17:03:41
 author: xujiaji
 thumbnail: blog/android-notes/banner.png
 categories:
- - Android
+ - 笔记
 tags:
     - Android
-    - 笔记
 ---
 ## 垂直RecyclerView嵌套垂直RecyclerView滑动时出现的卡顿
 原因：内部RecyclerView重复设置适配器导致的卡顿

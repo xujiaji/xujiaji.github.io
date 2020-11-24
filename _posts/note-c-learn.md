@@ -3,9 +3,8 @@ title: C 学习笔记
 date: 2018-12-25 23:18:45
 author: xujiaji
 categories:
- - C
+ - 笔记
 tags:
- - C
  - 笔记
  - 学习
 ---
