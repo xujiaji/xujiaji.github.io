@@ -4,10 +4,11 @@ date: 2018-09-05 10:21:44
 author: xujiaji
 thumbnail: blog/git/git_commit.jpg
 categories:
- - 工具
+  - Git
 tags:
-    - Git
-    - 笔记
+  - Git
+  - 工具
+  - 笔记
 ---
 
 记录一下Git的提交规范，方便以后查阅

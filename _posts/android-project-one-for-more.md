@@ -3,10 +3,11 @@ title: 一个项目如何编译多个不同签名、包名、资源等，的apk�
 date: 2018-10-29 16:15:20
 author: xujiaji
 categories:
- - Android
+  - Android
 tags:
-    - Android
-    - 项目配置
+  - Android
+  - 项目配置
+  - Gradle
 thumbnail: blog/one-for-more/banner.png
 ---
 ## 简介

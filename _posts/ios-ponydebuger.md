@@ -3,10 +3,11 @@ title: 好用的iOS调试工具PonyDebugger
 date: 2019-10-15 23:38:02
 thumbnail: blog/ponydebugger.jpeg
 categories:
- - 工具
+  - iOS
 tags:
- - Debug
- - iOS
+  - 工具
+  - 调试
+  - iOS
 ---
 
 # 好用的iOS调试工具PonyDebugger

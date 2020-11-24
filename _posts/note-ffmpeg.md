@@ -3,9 +3,9 @@ title: ffmpeg 使用小记
 date: 2019-10-16 22:54:28
 author: xujiaji
 categories:
- - 笔记
- - 工具
+  - 笔记
 tags:
+  - 工具
   - FFMPEG
 ---
 

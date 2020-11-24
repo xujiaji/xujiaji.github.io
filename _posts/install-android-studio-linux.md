@@ -4,11 +4,13 @@ date: 2016-03-27 07:13
 author: xujiaji
 thumbnail: blog/android-studio.jpg
 categories:
- - Android
+  - Android
 tags:
-    - Android
-    - 工具
-    - Linux
+  - Android
+  - 工具
+  - Linux
+  - Ubuntu
+  - AS
 ---
 
 ## 1.安装jdk

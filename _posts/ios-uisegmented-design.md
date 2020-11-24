@@ -4,7 +4,7 @@ date: 2018-07-23 14:36:32
 author: xujiaji
 thumbnail: blog/ios-uisegmented-design/display.gif
 categories:
- - iOS
+  - iOS
 tags:
   - iOS
   - UI

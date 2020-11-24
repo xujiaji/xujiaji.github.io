@@ -3,10 +3,10 @@ title: Android-UI事件传递就是这么个事儿
 date: 2016-04-16 15:31
 author: xujiaji
 categories:
- - Android
+  - Android
 tags:
-    - Android
-    - View
+  - Android
+  - 代码分析
 ---
 > 我们寻找的，也只不过是内心世界的片刻安宁，
 以及，那样一场盛大的清欢。

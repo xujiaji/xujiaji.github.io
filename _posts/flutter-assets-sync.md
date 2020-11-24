@@ -4,11 +4,11 @@ date: 2019-11-27 17:36:09
 author: xujiaji
 thumbnail: blog/flutter_pubspec/banner.jpg
 categories:
- - Flutter
+  - Flutter
 tags:
- - Flutter
- - 工具
- - Python
+  - Flutter
+  - Python
+  - 工具
 ---
 
 # Flutter资源自动生成配置

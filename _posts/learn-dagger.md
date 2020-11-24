@@ -4,11 +4,11 @@ date: 2018-06-27
 author: xujiaji
 thumbnail: blog/learn-dagger/home.jpg
 categories:
- - Android
+  - Android
 tags:
-    - Android
-    - 分析框架
-    - Dagger
+  - Android
+  - 代码分析
+  - Dagger
 ---
 
 ![脑图](blog/learn-dagger/main-mind.png)

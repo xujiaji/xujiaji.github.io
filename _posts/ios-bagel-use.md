@@ -4,11 +4,12 @@ date: 2019-10-24 23:24:42
 author: xujiaji
 thumbnail: blog/screenshot_bagel.png
 categories:
- - 工具
+  - iOS
 tags:
- - iOS
- - 工具
- - Debug
+  - 工具
+  - 框架
+  - iOS
+  - 调试
 ---
 
 # iOS网络请求调试神器使用

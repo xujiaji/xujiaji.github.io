@@ -4,10 +4,11 @@ date: 2018-4-21 09:03:41
 author: xujiaji
 thumbnail: blog/android-skin/skin_home.jpg
 categories:
- - Android
+  - Android
 tags:
-    - Android
-    - 分析框架
+  - Android
+  - 框架
+  - 代码分析
 ---
 
 > 思路整体结构

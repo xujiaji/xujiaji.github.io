@@ -4,11 +4,10 @@ date: 2017-12-12 11:02:34
 author: xujiaji
 thumbnail: blog/git-notes.png
 categories:
- - 笔记
- - 工具
+  - 笔记
 tags:
-    - Git
-    - 笔记
+  - 工具
+  - Git
 ---
 
 记录在Git的使用过程中遇到的操作

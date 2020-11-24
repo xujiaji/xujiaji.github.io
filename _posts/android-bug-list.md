@@ -4,10 +4,10 @@ date: 2017-12-12 15:34:41
 author: xujiaji
 thumbnail: blog/android-bug-list.png
 categories:
- - Android
+  - Android
 tags:
-    - Android
-    - Bug
+  - Android
+  - Bug
 ---
 ## Android Gradle plugin 3.0.0-alpha5 must not be applied to project
 - 解决地址：https://stackoverflow.com/questions/44857191/failed-to-apply-plugin-android-gradle-plugin-3-0-0-alpha5-must-not-be-applied-to
