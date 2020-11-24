@@ -7,12 +7,16 @@ tags:
 
 # Mac 使用笔记
 
+## [mac中接入移动硬盘后自动备份数据](http://www.xiaocai.name/2017/07/07/mac%E4%B8%AD%E6%8E%A5%E5%85%A5%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE(launchctl)/)
+
+> 注意在隐私设置中添加`/bin/sh`文件夹访问权限，不然无法同步文件
+
 ## rsync备份文件到硬盘
 
 > [参考文章](https://www.ruanyifeng.com/blog/2020/08/rsync.html)
 
 ``` sh
-rsync -anv --exclude-from='exclude-file.txt' /Users/jiajixu/ /Volumes/cc/MacBak
+rsync -av --exclude-from='exclude-file.txt' /Users/jiajixu/ /Volumes/cc/MacBak
 ```
 
 ## 删除所有以`.iml`结尾的文件
