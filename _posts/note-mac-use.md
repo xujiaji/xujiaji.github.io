@@ -7,6 +7,14 @@ tags:
 
 # Mac 使用笔记
 
+## rsync备份文件到硬盘
+
+> [参考文章](https://www.ruanyifeng.com/blog/2020/08/rsync.html)
+
+``` sh
+rsync -anv --exclude-from='exclude-file.txt' /Users/jiajixu/ /Volumes/cc/MacBak
+```
+
 ## 删除所有以`.iml`结尾的文件
 
 ``` sh
