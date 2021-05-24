@@ -54,6 +54,12 @@ python3 -m http.server
 
 ## 查看端口占用和杀死进程
 
+> 找到对应进程(这里找到gradle的进程)
+
+``` sh
+ps -A | grep gradle
+```
+
 > 查看`8080`端口的进程占用
 
 ``` sh
@@ -64,4 +70,12 @@ lsof -i tcp:8080
 
 ``` sh
 kill pid
+```
+
+## mysql
+
+> 启动mysql
+
+``` sh
+sudo mysql.server start
 ```

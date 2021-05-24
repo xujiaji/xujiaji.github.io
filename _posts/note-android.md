@@ -75,3 +75,47 @@ keytool -list -v -keystore [签名路径]
 ``` shell
 jadx -d out -j 1 classes.dex
 ```
+
+## 本地创建maven
+
+> 在模块`build.gralde`中添加以下代码
+
+``` grovvy
+apply plugin: 'maven'
+
+uploadArchives {
+    repositories.mavenDeployer {
+        def mavenDirPath = file('../xujiajilocalmaven') // 打包在哪个目录，这里是项目根目录下的xujiajilocalmaven
+        repository(url: "file://${mavenDirPath.absolutePath}")
+        pom.project {
+            groupId "com.github.xujiaji" // gradle依赖的goupid
+            artifactId "xiangmu" // gradle依赖的artifactId，模块名
+            version "1.0.0" // 模块版本号
+        }
+    }
+}
+```
+
+> 打包：通过点击Android studio的Gradle命令中对应模块的
+
+`clean`、`assemble`、`uploadArchives`
+
+> 启动文件浏览服务，这里通过python在xujiajilocalmaven启动一个服务
+
+``` shell
+python3 -m http.server 5555
+```
+
+通过以上命令，启动服务后，可通过访问`http://localhost:5555/`来访问`xujiajilocalmaven`目录中的内容
+
+> 依赖：
+
+``` grovvy
+repositories {
+    maven { url "http://localhost:5555/" }
+}
+
+dependencies {
+    implementation 'com.github.xujiaji:xiangmu:1.0.0' // 这里是根据上面的groupId、artifactId、version的配置来的
+}
+```
