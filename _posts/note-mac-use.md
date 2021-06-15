@@ -79,3 +79,9 @@ kill pid
 ``` sh
 sudo mysql.server start
 ```
+
+## mac下dos2unix文件转换
+
+``` sh
+find . -type f -exec fromdos {} \;
+```
