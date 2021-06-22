@@ -70,6 +70,30 @@ find . -type f -name "*.apk" | xargs rm -rf
 find . -name "xxx" -type f | xargs rm -rf
 ```
 
+## tar 打包压缩解压
+
+> .tar打包解包
+
+``` sh
+解包：tar xvf FileName.tar
+打包：tar cvf FileName.tar DirName
+```
+
+> .gz
+
+``` sh
+解压1：gunzip FileName.gz
+解压2：gzip -d FileName.gz
+压缩：gzip FileName
+```
+
+> .tar.gz 和 .tgz
+
+``` sh
+解压：tar zxvf FileName.tar.gz
+压缩：tar zcvf FileName.tar.gz DirName
+```
+
 ## zip分卷压缩和解压
 
 ``` sh
