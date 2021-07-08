@@ -85,3 +85,19 @@ sudo mysql.server start
 ``` sh
 find . -type f -exec fromdos {} \;
 ```
+
+## 软件没有访问路径的权限导致报错 Operation not permitted
+
+解决参考地址：<https://blog.csdn.net/WangJiankun_ls/article/details/103110241/>
+
+``` sh
+1.左上角点击选择‘System Preferences’
+
+2.选择“Security & Privacy”
+
+3.选择 “Privacy”-->“Full Disk Access”
+
+4.点击左下角按钮获得管理员操作权限
+
+5.把出问题的应用程序加到“Full Disk Access”列表中
+```
