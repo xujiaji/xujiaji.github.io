@@ -101,3 +101,40 @@ find . -type f -exec fromdos {} \;
 
 5.把出问题的应用程序加到“Full Disk Access”列表中
 ```
+
+## VirtualBox linux创建共享目录
+<https://www.shuzhiduo.com/A/kjdw0RLrzN//>
+> 准备环境
+
+```
+yum install -y gcc gcc-devel gcc-c++ gcc-c++-devel make kernel kernel-devel
+```
+
+> 安装增强工具（在菜单栏设备里面点击一下安装增强）
+
+```
+# 然后查看当前虚拟机中所有连接的虚拟设备
+lsscsi
+
+# [0:0:0:0]    disk    ATA      VBOX HARDDISK    1.0   /dev/sda 
+# [1:0:0:0]    cd/dvd  VBOX     CD-ROM           1.0   /dev/sr0 
+
+# 创建挂载目录:
+mkdir /mnt/cdrom
+
+# 挂载 VBOX 盘符　　
+sudo mount /dev/sr0 /mnt/cdrom
+
+# 安装增加工具
+cd /mnt/cdrom
+./VBoxLinuxAdditions.run
+```
+
+> 在VirtualBox中创建共享目录，这里目录取名为`gopath`
+
+```
+mkdir /mnt/gopath
+
+# 运行挂载命令, 这里的 gopath 就是上面共享文件夹名称
+mount -t vboxsf gopath /mnt/gopath
+```
