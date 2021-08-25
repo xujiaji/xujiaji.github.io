@@ -119,3 +119,29 @@ dependencies {
     implementation 'com.github.xujiaji:xiangmu:1.0.0' // 这里是根据上面的groupId、artifactId、version的配置来的
 }
 ```
+
+## linux安装Android SDK
+```
+# mkdir /usr/android/android_sdk      // 创建sdk 
+# cd /usr/android/android_sdk   
+# wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip    //下载android sdk
+# unzip sdk-tools-linux-4333796.zip   //解压
+# vim /etc/profile      // 配置环境变量
+// 增加内容
+export ANDROID_HOME=/usr/android/android_sdk
+export PATH=$PATH:${ANDROID_HOME}/tools/bin
+# source /etc/profile   // 使配置生效
+# sdkmanager --list // 查看已安装信息
+# sdkmanager "build-tools;29.0.3"
+# sdkmanager "platform-tools"
+# sdkmanager "platform-tools"   // sdk里面的工具
+# sdkmanager "build-tools;29.0.3" // 这个上面已经安装了，编译工具
+# sdkmanager "platforms;android-28"    // android版本对应的sdk版本
+# sdkmanager "platforms;android-29"   // android版本对应的sdk版本
+接下来把android 的sdk的环境变量去完善
+# vim /etc/profile      // 配置环境变量，在前面android配置的基础上修改，结果如下
+export ANDROID_HOME=/usr/android/android_sdk
+export PATH=$PATH:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
+# source /etc/profile    // 环境变量生效
+# adb version
+```
