@@ -237,6 +237,8 @@ tags:
 
   ``` shell
   git push origin :1.1.2
+  或
+  git push --delete origin 1.1.2
   ```
 
 - 合并work分支到当前分支
@@ -434,3 +436,16 @@ git lg
 - 配置文件位置：当前项目`.git/config`
 
 - 当前用户的Git配置文件，在用户主目录的`.gitconfig`，配置别名可修改这个文件，也可删除用命令重新配置。
+
+## 撤销pull命令
+> 如果要查看master分支的历史变动
+
+```
+git reflog master
+```
+
+> 找到pull之前的commit，通过`git reset --hard <COMMIT_ID>`
+
+```
+git reset --hard master@{数字} 
+```
