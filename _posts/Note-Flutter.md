@@ -40,3 +40,44 @@ class  $result {
 
 }
 ```
+
+## 升级flutter后的项目
+1. 查看项目中所有的有修复
+``` shell
+dart fix --dry-run
+```
+2. 批量应用上面查出修改
+``` shell
+dart fix --apply
+```
+
+## 在当前项目重新创建ios、android等模块
+
+> -i iOS 用swift或objc
+> -a android 用kotlin或java
+> 下方创建iOS为swift语言，android为kotlin语言
+
+```
+flutter create -i swift -a kotlin .
+```
+
+## iOS虚拟机运行报错：Could not build the application for the simulator.
+> 清理 `~/Library/Developer/Xcode/DerivedData`
+
+```
+flutter clean
+flutter run
+```
+
+## 空安全迁移
+> 查看依赖包的迁移空安全状态
+
+```
+flutter pub outdated --mode=null-safety
+```
+
+> 通过迁移工具命令（迁移前迁移后`dart sdk: ">=2.10.0 <3.0.0"`，迁移后`dart sdk: ">=2.12.0 <3.0.0"`）
+
+```
+dart migrate
+```
