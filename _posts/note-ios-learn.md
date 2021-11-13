@@ -1101,3 +1101,35 @@ if let navBar = self.navigationController?.navigationBar as? NavigationEvent {
     navBar.viewsToIgnoreTouchesFor = [registerBtn]
 }
 ```
+
+## CocoaPods公有库上传相关记录
+> 创建Pod库
+```
+pod lib create 库名
+```
+
+> 注册CocoaPods账号，运行下发命令写入信息后，会收到一封邮件点击验证
+
+```
+$ pod trunk register 邮箱地址 '用户名' --description='当前设备描述'
+```
+
+> 查看当前账号信息
+
+```
+$ pod trunk me
+```
+
+> 发布，在pod项目中执行
+
+```
+1. Pod验证
+pod repo lint --allow-warnings
+
+2. 项目打版本tag
+git tag "0.1.0"
+git push --tags
+
+3. 推送到公有仓库
+pod repo push Specs SPEC_NAME.podspec --allow-warnings
+```
