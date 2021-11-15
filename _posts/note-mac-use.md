@@ -138,3 +138,17 @@ mkdir /mnt/gopath
 # 运行挂载命令, 这里的 gopath 就是上面共享文件夹名称
 mount -t vboxsf gopath /mnt/gopath
 ```
+
+## Xcode模拟器文件被误删除后，打不开问题
+
+> 列出设备
+
+```
+xcrun simctl list
+```
+
+> 通过设备对应的序列号抹除数据（iPhone 13 Pro Max (DEBB9852-5E5F-4BE9-B4C1-8B32E0FFE861) (Shutdown)）
+
+```
+xcrun simctl erase DEBB9852-5E5F-4BE9-B4C1-8B32E0FFE861
+```
