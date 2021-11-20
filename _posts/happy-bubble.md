@@ -11,9 +11,9 @@ tags:
   - 文档
 ---
 
-|||
-|-|-|
-|[![apk](https://img.shields.io/badge/Download-demo--apk-brightgreen.svg)](https://github.com/xujiaji/HappyBubble/releases/tag/demoApk)|[![maven](https://img.shields.io/badge/bintray-1.1.9-brightgreen.svg)](https://bintray.com/xujiaji/maven/happy-bubble/1.1.9)|
+&nbsp;|&nbsp;
+:-:|-
+[![apk](https://img.shields.io/badge/Download-demo--apk-brightgreen.svg)](https://github.com/xujiaji/HappyBubble/releases/tag/demoApk)|[![maven](https://img.shields.io/badge/bintray-1.1.9-brightgreen.svg)](https://bintray.com/xujiaji/maven/happy-bubble/1.1.9)
 
 # HappyBubble
 
@@ -83,9 +83,9 @@ implementation 'com.github.xujiaji:happy-bubble:1.1.9'
 
 ### 最简单的实现
 
-|||
-|-|-|
-|![exampel1](github/HappyBubble/img_example1.png)|![exampel2](github/HappyBubble/img_example2.png)|
+&nbsp;|&nbsp;
+-|-
+![exampel1](github/HappyBubble/img_example1.png)|![exampel2](github/HappyBubble/img_example2.png)
 
 ``` java
 new BubbleDialog(this)

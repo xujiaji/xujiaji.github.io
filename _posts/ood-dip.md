@@ -10,7 +10,8 @@ tags:
 ---
 
 # 简介
-![DIP.png](blog/ood/dip.png)
+
+![DIP](blog/ood/dip.png)
 
 > 引入：
 高层的决定不能因为某一个低层次模块的变动而影响全局，导致整个系统的变动。
@@ -63,7 +64,7 @@ class DiCeng{
 
  > 结构如下：
 
- ![遵循依赖倒置.png](http://upload-images.jianshu.io/upload_images/1552955-33a2d00c5821ea72.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+ ![遵循依赖倒置](http://upload-images.jianshu.io/upload_images/1552955-33a2d00c5821ea72.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
  > 代码如下：
 
  ``` java

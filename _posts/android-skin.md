@@ -463,4 +463,4 @@ private Map<View, SkinItem> mSkinItemMap = new HashMap<>();
 测试项目中的首页底部导航测试和修改位置：https://github.com/xujiaji/FlycoTabLayout
 
 下面这张Gif图片是测试项目运行的效果图：
-![](blog/android-skin/skin_run.gif)
+![图片](blog/android-skin/skin_run.gif)

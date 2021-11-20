@@ -21,33 +21,33 @@ dropcap: true
 2. 找到EC2启动实例，创建一个ubuntu的实例，默认创建就OK了。
 3. 创建结束会让你输入一个ssh密钥的名称，你输入一个邮箱之类的就行了，随后会帮你生成一个`.pem`的私密，下载下来放好咯！这玩意儿就相当于登录密码了。
 4. 编辑安全组，添加22端口和80端口的访问权限
-    - 在EC2管理界面将你创建的实例拉拉到最右边有个叫安全组的栏目，点进去![](blog/python-web-deploy//an_quan_zu1.png)
-    - 进去后点击入站-编辑<br>![](blog/python-web-deploy//an_quan_zu2.png)
-    - 创建SSH入站规则，绑定自己的IP地址，第3步选了后会自动获取你的ip地址。如下图![](blog/python-web-deploy//an_quan_zu3.png)
-    - 您还需要添加http 80端口，并且设置为任何位置都可访问，如下：![](blog/python-web-deploy//20180530103931.png)
+    - 在EC2管理界面将你创建的实例拉拉到最右边有个叫安全组的栏目，点进去![图片](blog/python-web-deploy//an_quan_zu1.png)
+    - 进去后点击入站-编辑<br>![图片](blog/python-web-deploy//an_quan_zu2.png)
+    - 创建SSH入站规则，绑定自己的IP地址，第3步选了后会自动获取你的ip地址。如下图![图片](blog/python-web-deploy//an_quan_zu3.png)
+    - 您还需要添加http 80端口，并且设置为任何位置都可访问，如下：![图片](blog/python-web-deploy//20180530103931.png)
 
 ## 连接到服务器
 ### 使用 PuTTY 连接到服务器
 1. [下载并安装PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 2. 找到PuTTY安装目录，双击打开`puttygen.exe`
-3. 加载之前您下载的`.pem`文件，需要转换一下私密格式![](blog/python-web-deploy//load_pem.png)
-4. 点击save进行保存<br>![](blog/python-web-deploy//save_key.png)![](blog/python-web-deploy//server_key2.png)
+3. 加载之前您下载的`.pem`文件，需要转换一下私密格式![图片](blog/python-web-deploy//load_pem.png)
+4. 点击save进行保存<br>![图片](blog/python-web-deploy//save_key.png)![图片](blog/python-web-deploy//server_key2.png)
 5. 打开PuTTY进行配置
-    1. 配置SSH![](blog/python-web-deploy//load_ppk.png)
-    2. 配置主机地址(ubuntu服务器地址前需要加上`ubuntu@`)，并保存配置。主机地址![](blog/python-web-deploy//server_address.png)
-    3. 最后输入配置名称点击保存，下次就可以直接双击已配置好的选项直接进入。![](blog/python-web-deploy//server_config_save.png)
-    4. 打开后也许也许你会发现进不去！这时你需要检查服务器`安全组`里是否添加SSH（如果最后也无法连接可把ssh来源改为任何位置试试），还有检查window防火墙是否开放22端口（可关闭防火墙试试，或在防火墙高级规则里面添加22端口访问）<br>![](blog/python-web-deploy//cannot_in_server.png)
+    1. 配置SSH![图片](blog/python-web-deploy//load_ppk.png)
+    2. 配置主机地址(ubuntu服务器地址前需要加上`ubuntu@`)，并保存配置。主机地址![图片](blog/python-web-deploy//server_address.png)
+    3. 最后输入配置名称点击保存，下次就可以直接双击已配置好的选项直接进入。![图片](blog/python-web-deploy//server_config_save.png)
+    4. 打开后也许也许你会发现进不去！这时你需要检查服务器`安全组`里是否添加SSH（如果最后也无法连接可把ssh来源改为任何位置试试），还有检查window防火墙是否开放22端口（可关闭防火墙试试，或在防火墙高级规则里面添加22端口访问）<br>![图片](blog/python-web-deploy//cannot_in_server.png)
 
 ### WinSCP 管理服务器文件资源
 1. [下载地址](https://winscp.net/eng/download.php)
-2. 安装时会自动检测到PuTTY的配置，选择导入<br>![](blog/python-web-deploy//install_winSCP.png)![](blog/python-web-deploy//install_winSCP2.png)
+2. 安装时会自动检测到PuTTY的配置，选择导入<br>![图片](blog/python-web-deploy//install_winSCP.png)![图片](blog/python-web-deploy//install_winSCP2.png)
 3. 直接选中你的站点登录就OK了。
 4. 也许你会遇到没有权限无法创建文件的情况[winscp普通用户上传文件没有权限解决](https://blog.csdn.net/xuejinliang/article/details/52301349)
 
 ## 配置python web环境
 > 接下来可以直接到这里去看部署过程了 [廖雪峰 Python Day 15 - 部署Web App](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014323392805925d5b69ddad514511bf0391fe2a0df2b0000)
 
-1. 此时我们通过PuTTY登录服务器，我们输入python，会发现进入的是python2的版本![](blog/python-web-deploy//python_version1.png)
+1. 此时我们通过PuTTY登录服务器，我们输入python，会发现进入的是python2的版本![图片](blog/python-web-deploy//python_version1.png)
 2. 我们需要安装python 3.6的版本，注意我们不要直接`apt-get install python3`，这样会直接安装成3.5的版本，然而aiomysql这个库不支持，折腾了许久。pip3也需要自己手动去安装的。
 3. [Ubuntu16.04安装Python3.6 和pip](https://www.cnblogs.com/weiyiming007/p/9075986.html)
 4. 安装`Nginx`丶`Supervisor`丶`MySQL`命令：`$ sudo apt-get install nginx supervisor mysql-server`
@@ -65,13 +65,13 @@ character-set-server = utf8
 collation-server = utf8_general_ci
 ```
 5.将sql建数据库和表的配置文件传到服务器运行：`$ mysql -u root -p < schema.sql`<br>
-6.通过Navicat连接服务器数据库，这里的配置就跟本地的配置一样的，密码就是数据库的密码。然后我们去配置SSH<br>![](blog/python-web-deploy//navicat_config1.png)<br>ip地址就是之前我们在网页后台看到的地址，端口号默认的22，选择公钥验证，私密选择我们之前用`puttygen.exe`导出的`.ppk`文件，密码短语就是创建服务器后创建的密钥名称（可以在EC2网页后台看到密钥名称这一栏）<br>![](blog/python-web-deploy//navicat_config2.png)<br>这下就爽了<br>![](blog/python-web-deploy//navicat_config3.png)<br>
+6.通过Navicat连接服务器数据库，这里的配置就跟本地的配置一样的，密码就是数据库的密码。然后我们去配置SSH<br>![图片](blog/python-web-deploy//navicat_config1.png)<br>ip地址就是之前我们在网页后台看到的地址，端口号默认的22，选择公钥验证，私密选择我们之前用`puttygen.exe`导出的`.ppk`文件，密码短语就是创建服务器后创建的密钥名称（可以在EC2网页后台看到密钥名称这一栏）<br>![图片](blog/python-web-deploy//navicat_config2.png)<br>这下就爽了<br>![图片](blog/python-web-deploy//navicat_config3.png)<br>
 7.安装Web App用到的python库，命令：`$ sudo pip3 install jinja2 aiomysql aiohttp`
 
 ## 部署
 1. 安装自动化部署工具Fabric，命令：`pip3 install fabric3`
 2. 此处都可以去看[廖老师所讲的部署](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014323392805925d5b69ddad514511bf0391fe2a0df2b0000)，因为教程是安装的python2环境下的fabric所以在这里绕了很久。
-3. 配置的时候我们配置验证的时候我们可以直接用ssh来进行验证，`env.hosts`就是之前我们配置PuTTY是的主机地址，`env.key_filename `就是我们下载的ssh私密`.pem`<br>![](blog/python-web-deploy//fabric_config.png)
+3. 配置的时候我们配置验证的时候我们可以直接用ssh来进行验证，`env.hosts`就是之前我们配置PuTTY是的主机地址，`env.key_filename `就是我们下载的ssh私密`.pem`<br>![图片](blog/python-web-deploy//fabric_config.png)
 4. 我的`fabric`配置：`fabfile.py`
 ``` py
 # fabfile.py
@@ -148,12 +148,12 @@ def build():
 
 ## 添加https
 添加这个的原因嘛！就不加多少的啦！来看如何如何做吧！
-1. 我是在阿里云上面找的一个免费版，可以在这里找到，进去后点击立即购买![](blog/python-web-deploy/aliyun_ac1.png)
-2. 选择免费类型，如下操作![](blog/python-web-deploy/aliyun_ac2.png)
+1. 我是在阿里云上面找的一个免费版，可以在这里找到，进去后点击立即购买![图片](blog/python-web-deploy/aliyun_ac1.png)
+2. 选择免费类型，如下操作![图片](blog/python-web-deploy/aliyun_ac2.png)
 3. 然后就是需要填写一些您的个人信息和需要绑定的域名，比如我绑定：`www.xujiaji.com`，提交审核。（此时可能需要等个半个来小时审核）
-4. 点击下载![](blog/python-web-deploy/aliyun_ac_3.png)
-5. 点击下载证书for Nginx，然后将压缩包解压得到两个文件。我们将这两个文件放到如下位置，`/ect/nginx/`是服务器nginx的安装目录，`cert`是新建的目录，就放这里面![](blog/python-web-deploy/config_https1.png)
-6. 然后我们编辑`/etc/nginx/sites-available/awesome`，我们将这些东西直接拷贝过来![](blog/python-web-deploy/config_https2.png)
+4. 点击下载![图片](blog/python-web-deploy/aliyun_ac_3.png)
+5. 点击下载证书for Nginx，然后将压缩包解压得到两个文件。我们将这两个文件放到如下位置，`/ect/nginx/`是服务器nginx的安装目录，`cert`是新建的目录，就放这里面![图片](blog/python-web-deploy/config_https1.png)
+6. 然后我们编辑`/etc/nginx/sites-available/awesome`，我们将这些东西直接拷贝过来![图片](blog/python-web-deploy/config_https2.png)
 7. 重启nginx：`sudo /etc/init.d/nginx reload`
 8. 配置完成后您可能还是无法访问https（我就在这纠结了半天），注意需要在服务器安全组添加所有用户对`443`端口的访问权限。
 9. 下面是我的nginx整体配置代码，含义请看注释

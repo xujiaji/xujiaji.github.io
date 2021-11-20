@@ -77,7 +77,7 @@ public class HomeActivity
 > 就这样，第一阶段宣告完毕，然后就是优化和修复一些bug，当然上面的`getGenericClass`这个方法也是后期优化过的结果。
 
 ## 想偷懒了就开发了`MVPManager`插件，快速生成`XMVP`代码
-![](https://raw.githubusercontent.com/xujiaji/MVPManager/master/display/banner.png)
+![图片](https://raw.githubusercontent.com/xujiaji/MVPManager/master/display/banner.png)
 也就是`XMVP`框架开发出来也就1个月之内的事情吧！这时感觉写契约（Contract），写`XMVP`各个实现类，都是重复的劳动力，每一个新的界面就得去创建这么些文件太过辛苦。结果虽然变得有条理有模块，但是工作量有些重复和增加，有些时候配置泛型忘了还需要看之前是怎么配置的。
 
 当时其实也有创建MVP文件的插件之类的东西，但是不符合`XMVP`的实情，泛型还是得自己动手，于是决心自己写一个`intellij`插件，当然在`AS`中也能使用。
@@ -85,15 +85,15 @@ public class HomeActivity
 #### 创建MVP代码截图，这是最新的创建代码界面的截图
 > 在1.0的基础上，增加了可将同一个模块放一个包中或将MVP分在对应的包中的选项；增加了可以不是XMVP框架的情况下使用
 
-![](https://github.com/xujiaji/MVPManager/raw/master/display/update_2_0_0.png)
+![图片](https://github.com/xujiaji/MVPManager/raw/master/display/update_2_0_0.png)
 
 #### 这是一张动态图，是一张旧版本的演示图。只需要和上面的截图结合来看一下哦
-![](https://github.com/xujiaji/MVPManager/raw/master/display/edit_MVPManager.gif)
+![图片](https://github.com/xujiaji/MVPManager/raw/master/display/edit_MVPManager.gif)
 
 #### 最后还有个逆向增加或删除XMVP契约中定义方法的功能
 > 会同时更新实现类的方法，本人是写出这个功能，但几乎不用的啦
 
-![](https://github.com/xujiaji/MVPManager/raw/master/display/open_change_MVPManager.gif)
+![图片](https://github.com/xujiaji/MVPManager/raw/master/display/open_change_MVPManager.gif)
 
 #### 刚刚开发出来MVPManager的时候，我也写了篇文章介绍 [这个AS插件能帮你快速管理MVP](https://www.jianshu.com/p/5d528019a76b)
 

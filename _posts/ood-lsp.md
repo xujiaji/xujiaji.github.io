@@ -23,7 +23,7 @@ tags:
 ----
 > LSP
 
-![LSP.png](blog/ood/lsp.png)
+![LSP](blog/ood/lsp.png)
 
 ## 1. 何为LSP？
 - 全称：里氏替换原则（Liskov Substitution principle）
@@ -50,7 +50,7 @@ tags:
 
 - 来张违反LSP的类图
 
-![违反LSP.png](blog/ood/lsp-no.png)
+![违反LSP](blog/ood/lsp-no.png)
 
 - 分析
  - 现在我说天上飞着一只鸟。。。

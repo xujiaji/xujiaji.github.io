@@ -11,7 +11,7 @@ tags:
 
 >SRP
 
-![SRP.png](blog/ood/srp.png)
+![SRP](blog/ood/srp.png)
 ## 何为SRP？
 - 全称：单一职责原则(Single Responsibility Principle)
 - 定义:该原则规定每个类都应该只有一个单一的功能，并且该功能应该由这个类完全封装起来
@@ -40,7 +40,7 @@ tags:
 - 例子一
 >农活责任(改)
 
-![农活责任(改).png](blog/ood/srp-nong-huo-gai.png)
+![农活责任(改)](blog/ood/srp-nong-huo-gai.png)
 
 如上图将两个责任分离，牛实现耕水田的时候，不会知道也不会去在意耕菜地，分离了责任，该做的才做，不做的不用管。
 

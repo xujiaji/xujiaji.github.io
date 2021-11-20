@@ -21,7 +21,7 @@ tags:
 
 > ISP
 
-![ISP.png](blog/ood/isp.png)
+![ISP](blog/ood/isp.png)
 
 ## 1.何为ISP？
  - 全称：接口隔离原则（Interface Segregation Principle）
@@ -33,7 +33,7 @@ tags:
 
 - 现在将`2-1.满足ISP`的例子中的`接口鸟`进行拆分，能飞的`鸟类麻雀`实现`接口飞鸟`，不能飞的`鸟类鸵鸟`实现`接口鸟`，如下`图2-2`所示。
 
-![2-2.满足ISP.png](blog/ood/isp-yes.png)
+![2-2.满足ISP](blog/ood/isp-yes.png)
 
 - 可能到这里大家有个疑惑：接口变多了！对！就是接口变多了。不是上面还举例了手机的例子吗？阐明了减少接口的好处。
  - 其实我们减少并不是接口，而是接口中的抽象方法。

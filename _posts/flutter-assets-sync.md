@@ -52,30 +52,30 @@ tags:
 2. 接下了就是配置资源的目录了
 
 首先，在项目中假如说你的资源目录就如下所示是`assets`
-![](blog/flutter_pubspec/55813610-18E1-478F-BBFD-C24D4307F949.png)
+![图片](blog/flutter_pubspec/55813610-18E1-478F-BBFD-C24D4307F949.png)
 那么，你需要在`assets_generator.py`（顶部进入项目地址下载哦）中配置对应的位置，如下所示：
-![](blog/flutter_pubspec/B8358DF2-32C5-4D24-B7DC-D6062B42AA31.png)
+![图片](blog/flutter_pubspec/B8358DF2-32C5-4D24-B7DC-D6062B42AA31.png)
 
 3. 把脚本`assets_generator.py`拷贝到您的项目根目录
 
 ## 使用
 
 在项目目录下打开命令行，运行`./assets_generator.py`
-![](blog/flutter_pubspec/1F3A4EDA-47F3-4236-9ED6-39076479FF7F.png)
+![图片](blog/flutter_pubspec/1F3A4EDA-47F3-4236-9ED6-39076479FF7F.png)
 
 此时会在`pubspec.yaml`配置的区域添加上路径
-![](blog/flutter_pubspec/21218262-4206-424D-A578-DE1A968BAE4B.png)
+![图片](blog/flutter_pubspec/21218262-4206-424D-A578-DE1A968BAE4B.png)
 
 同时会生成一个`r.dart`的文件，内容如下：（篇幅原因就粘贴部分了）
 ```dart
 class R {
-  /// ![](http://127.0.0.1:3333/assets/fonts/fzxz300.ttf)
+  /// ![图片](http://127.0.0.1:3333/assets/fonts/fzxz300.ttf)
   static final String assetsFontsFzxz300 = 'assets/fonts/fzxz300.ttf';
-  /// ![](http://127.0.0.1:3333/assets/h5/index.html)
+  /// ![图片](http://127.0.0.1:3333/assets/h5/index.html)
   static final String assetsH5Index = 'assets/h5/index.html';
-  /// ![](http://127.0.0.1:3333/assets/h5/relationship.js)
+  /// ![图片](http://127.0.0.1:3333/assets/h5/relationship.js)
   static final String assetsH5Relationship = 'assets/h5/relationship.js';
-  /// ![](http://127.0.0.1:3333/assets/image/add_ico.png)
+  /// ![图片](http://127.0.0.1:3333/assets/image/add_ico.png)
   static final String assetsImageAddIco = 'assets/image/add_ico.png';
 }
 ```
@@ -88,7 +88,7 @@ class R {
 
 同时在选对应的图片时，也可以进行图片预览（如果你把那个python脚本终止了那就不能预览了）
 
-![](blog/flutter_pubspec/241D6239-21E2-4651-9840-576E094997C8.png)
+![演示图片](blog/flutter_pubspec/241D6239-21E2-4651-9840-576E094997C8.png)
 
 > 如果添加了新的图片，重新运行一下这个脚本就可以了
 

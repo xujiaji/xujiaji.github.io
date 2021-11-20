@@ -46,20 +46,20 @@ dependencies {
 
 > 符号含义参考表：
 
-|符号══▶|![](blog/learn-dagger/v-private.png)|![](blog/learn-dagger/v-m-private.png)|![](blog/learn-dagger/v-protected.png)|![](blog/learn-dagger/v-m-protected.png)|![](blog/learn-dagger/20180611140949.png)|![](blog/learn-dagger/20180611141014.png)|![](blog/learn-dagger/20180611141038.png)|![](blog/learn-dagger/20180611141100.png)|
+|符号══▶|![图片](blog/learn-dagger/v-private.png)|![图片](blog/learn-dagger/v-m-private.png)|![图片](blog/learn-dagger/v-protected.png)|![图片](blog/learn-dagger/v-m-protected.png)|![图片](blog/learn-dagger/20180611140949.png)|![图片](blog/learn-dagger/20180611141014.png)|![图片](blog/learn-dagger/20180611141038.png)|![图片](blog/learn-dagger/20180611141100.png)|
 |-|-|-|-|-|-|-|-|-|
 |**含义**══▶|private变量|private方法|protected变量|protected方法|包私有 变量|包私有方法|public 变量|public 方法|
 
 |符号|含义|简单例子|
 |-|-|-|
-|![](blog/learn-dagger/20180611141212.png)|继承|`class A{}`<br><br>`class B extend A{}` |
-|![](blog/learn-dagger/20180611141236.png)|实现接口|`interface I{}`<br><br>`class A implements I{}`|
-|![](blog/learn-dagger/20180611141305.png)|依赖|`class A{}`<br><br>`class B{`<br>　　`void fun(A c) {}`<br><br>`}`|
-|![](blog/learn-dagger/20180611141339.png)|并联|`class A{}`<br><br>`class B{`<br><br>　　`A a;`<br><br>`}`|
-|![](blog/learn-dagger/20180611141403.png)|class|`class A{}`|
-|![](blog/learn-dagger/20180611141425.png)|abstract|`abstract class A{}`|
-|![](blog/learn-dagger/20180611141449.png)|interface|`interface A{}`|
-|![](blog/learn-dagger/20180611141508.png)|enum|`enum A{}`|
+|![图片](blog/learn-dagger/20180611141212.png)|继承|`class A{}`<br><br>`class B extend A{}` |
+|![图片](blog/learn-dagger/20180611141236.png)|实现接口|`interface I{}`<br><br>`class A implements I{}`|
+|![图片](blog/learn-dagger/20180611141305.png)|依赖|`class A{}`<br><br>`class B{`<br>　　`void fun(A c) {}`<br><br>`}`|
+|![图片](blog/learn-dagger/20180611141339.png)|并联|`class A{}`<br><br>`class B{`<br><br>　　`A a;`<br><br>`}`|
+|![图片](blog/learn-dagger/20180611141403.png)|class|`class A{}`|
+|![图片](blog/learn-dagger/20180611141425.png)|abstract|`abstract class A{}`|
+|![图片](blog/learn-dagger/20180611141449.png)|interface|`interface A{}`|
+|![图片](blog/learn-dagger/20180611141508.png)|enum|`enum A{}`|
 |`...`|省略代码|`class A {...}`|
 
 ### 咖啡机
@@ -284,12 +284,13 @@ funTest(): 1554874502
 **1.** 通过我们对Dagger的使用，它为我们生成了4个类。![生成的类](blog/learn-dagger/build-class.png)
 **2.** 他们这样对应：
 
-||||
-|-|-|-|
-|PumpComponent|----->|DaggerPumpComponent|
-|@Inject public ElectricHeater() { }|----->|ElectricHeater_Factory|
-|@Inject public Thermosiphon() { }|----->|Thermosiphon_Factory|
-|@Inject ElectricHeater heater;|----->|Thermosiphon_MembersInjector|
+&nbsp;|&nbsp;|&nbsp;
+-|-|-
+PumpComponent|----->|DaggerPumpComponent
+@Inject public ElectricHeater() { }|----->|ElectricHeater_Factory
+@Inject public Thermosiphon() { }|----->|Thermosiphon_Factory
+@Inject ElectricHeater heater;|----->|Thermosiphon_MembersInjector
+
 通过观察我们可以得出这些结论：
 
 - ①`PumpComponent`接口生成的类的名字以：`Dagger` + `接口名`。*（我们需要使用生成的这个类，进行Dagger初始化的操作）*
@@ -303,7 +304,7 @@ funTest(): 1554874502
 - 构造参数是`ElectricHeater`的工厂，是为了通过工厂类获得`ElectricHeater`对象；
 - 工厂方法`get()`中创建实例的同时，通过`Thermosiphon_MembersInjector`的静态方法(`injectHeater`)向`Thermosiphon`注入`ElectricHeater`对象，然后得到最终的`Thermosiphon`实例；
 - 最后一个静态方法`newThermosiphon()`返回一个没有注入`ElectricHeater`实例的`Thermosiphon`对象。
-![](blog/learn-dagger/20180611142100.png)
+![图片](blog/learn-dagger/20180611142100.png)
 
 **6.** 最后看`DaggerPumpComponent`这个类，主要看`getPump()`、`injectThermosiphon`和`Builder`类
 
@@ -422,7 +423,7 @@ pump = com.example.jiaji.daggertest.coffee3.Thermosiphon@5cad8086
 - 首先，我们调用`DaggerCoffeeShop.create().getPump()`想要得到一个Pump对象，于是`DripCoffeeModule`中的`providePump`方法为我们提供一个Pump实例。
 - 然后，我们看到`providePump`方法有参数`Thermosiphon`那么这个这个实例从哪来呢？我们在`Thermosiphon`的构造方法上标记`@Inject`就表示提供该对象了。
 - 接下来，我们深入到`Thermosiphon`类又会发现，`Thermosiphon`类的构造方法要求提供`Heater`对象，那么问题来了Heater实例从哪来？您能想到！我们可以看到在`DripCoffeeModule`的`provideHeater`方法提供了该实例。
-- 最后，我们可以得出来个容易理解的大概流程：![](blog/learn-dagger/20180611143230.png)
+- 最后，我们可以得出来个容易理解的大概流程：![图片](blog/learn-dagger/20180611143230.png)
 
 **我们需要注意，当`@Inject`提供了实例并且`Module`中也提供该实例的情况下，Dagger会优先`Module`中提供的实例。**
 
@@ -511,16 +512,17 @@ public interface CoffeeShop
 >
 > 这是整体的UML关系图，“绿色”是自动生成的代码。(由于生成的`Thermosiphon_Factory`并没有被使用，于是就不放进来了。)
 
-![](blog/learn-dagger/20180611142208.png)
+![图片](blog/learn-dagger/20180611142208.png)
 **1.** 通过上面的三部分代码，Dagger也为我们生成了4个类。![dagger生成的四个类](blog/learn-dagger/20180611142229.png)
 **2.** 他们这样对应：
 
-||||
-|-|-|-|
-|CoffeeShop|----->|DaggerCoffeeShop|
-|@Provides static Heater provideHeater()|----->|DripCoffeeModule_ProvideHeaterFactory|
-|@Provides static Pump providePump(Thermosiphon pump)|----->|DripCoffeeModule_ProvidePumpFactory|
-|@Inject public Thermosiphon() { }|----->|Thermosiphon_Factory|
+&nbsp;|&nbsp;|&nbsp;
+-|-|-
+CoffeeShop|----->|DaggerCoffeeShop
+@Provides static Heater provideHeater()|----->|DripCoffeeModule_ProvideHeaterFactory
+@Provides static Pump providePump(Thermosiphon pump)|----->|DripCoffeeModule_ProvidePumpFactory
+@Inject public Thermosiphon() { }|----->|Thermosiphon_Factory
+
 从名字上我们可以看出：`@Provides`标记的提供实例的方法对应生成了一个类名以：`所在类名` + `_` + `方法名(首字大写)` + `Factory`，命名生成一个对应的工厂类。
 
 **3.** 我们先来看看`Thermosiphon_Factory`这个没有被使用的类，如果您是从上面挨着看下来的，就一定明白，其他地方是直接`new Thermosiphon`，接着往下看您就会看到！
@@ -549,25 +551,25 @@ public interface CoffeeShop
 - 在Module中这样定义：`@Provides static Pump providePump(Thermosiphon pump) { return pump; }`
 - 这个方法又必须提供`Thermosiphon`实例，因此`DripCoffeeModule_ProvidePumpFactory`的构造参数是`Thermosiphon`的工厂对象来提供该实例（`get()`方法中通过调用静态方法`providePump`得到Pump实例的时候需要该工厂类提供）
 - 我们看到`proxyProvidePump`方法，也是可在不创建工厂类实例的情况下调用。
- ![](blog/learn-dagger/20180611142349.png)
+ ![图片](blog/learn-dagger/20180611142349.png)
 
 - 如果我们也把Module中的static修饰去掉又会发生什么样的变化呢？我猜您也应该能想到了！看下图：
   - 比4中去掉static多了划线的地方
   - 也就是说当我们定义的方法是普通方法时，我们就必须要提供`Module`的实例
-  ![](blog/learn-dagger/20180611142412.png)
+  ![图片](blog/learn-dagger/20180611142412.png)
 
 **6.** 最后，我们来看`DaggerCoffeeShop`是如何将这些东东组合在一起的。
 
 - 我们看到`getPump()`方法，它在接口`CoffeeShop`中定义，里面如何实现的呢？
 - 它直接调用了上面`5`所讲到的静态方法`proxyProvidePump`来创建`Pump`实例，但是需要提供`Thermosiphon`实例作为参数。（如果是用的@Binds方式，则getPump()的实现为：  `public Pump getPump() { return getThermosiphon(); }`）
 - 于是，它定义了方法`getThermosiphon()`来创建该实例。看到该方法了吗？里面是直接`new Thermosiphon`，这就是`Thermosiphon_Factory`没有用到的原因。创建`Thermosiphon`的构造参数`Heater`由`DripCoffeeModule_ProvideHeaterFactory`类名直接调用静态方法`proxyProvideHeater()`它又调用`DripCoffeeModule.provideHeater()`来提供。
-![](blog/learn-dagger/20180611142434.png)
+![图片](blog/learn-dagger/20180611142434.png)
 
 - 接下来看到创建`DaggerCoffeeShop`的`Builder`静态内部类，这里面可要比我们上次生成的`DaggerPumpComponent`要多了一个方法，它出现的原因就是因为我们定义了Module类。
     - 这个方法的命名方式是将我们定义的Module类的类名开头小写来作为名字。
     - 它的作用是我们可以自己创建Module，如果不自己创建，将会自动创建。
     - 但为什么这里标记为弃用呢？那是因为我们Module中全是静态方法，完全不需要实例化，实例化也白搭！那我们来看看，如果将`DripCoffeeModule`中的方法改为普通方法是什么样的呢？
-    ![](blog/learn-dagger/20180611142457.png)
+    ![图片](blog/learn-dagger/20180611142457.png)
     - 看到了吧！如果build()方法中判断了我们已经调用`dripCoffeeModule`方法传进来Module实例，那么就不去实例化了。
     - 还记得上面Module中我们去掉提供方法static后需要的Module实例吗？实例就是开始于这里的。
     - `dripCoffeeModule`的调用方式就是：`DaggerCoffeeShop.builder().dripCoffeeModule(new DripCoffeeModule()).build();`（如果我们的`@Component`连接了多个`Module`那么就可以这样传入这么多个`Module`实例）
@@ -614,7 +616,7 @@ public interface CoffeeShop
     ```
     - 输入结果：`TestModuleAttr{str='Hello world'}`
     - 当我们想向提供的对象传递一些动态的东西时，就可以通过这种方式，当然你也不用向我这样绕了个圈子，这里只想说`Module`里面可以相互提供实例。这里可以直接`@Provides TestModuleAttr provideTestModuleAttr() { return new TestModuleAttr(str); }`搞定。
-    - 需要注意的是，如果`Module`实例是有参构造创建，我们必须自己实例化`Module`。否则则会抛出异常。原因，如下：![](blog/learn-dagger/20180611142517.png)
+    - 需要注意的是，如果`Module`实例是有参构造创建，我们必须自己实例化`Module`。否则则会抛出异常。原因，如下：![图片](blog/learn-dagger/20180611142517.png)
 
 ### @Component
 **[测试文件位置](https://github.com/xujiaji/learn-android/blob/master/LearnDagger/app/src/main/java/com/example/jiaji/daggertest/coffee4_test_component)**
@@ -1078,7 +1080,7 @@ public class DripCoffeeModule {
 
 1. 我们改用`@Reusable`后，`DaggerCoffeeShop`有什么变化？
     - 唯一发生变化了地方就是这个方法里面的实现由`DoubleCheck.provider`变成了`SingleCheck.provider`
-![](blog/learn-dagger/20180611142648.png)
+![图片](blog/learn-dagger/20180611142648.png)
 2. 那我们来到`SingleCheck`这个类，它和`DoubleCheck`不同点就在于`get()`方法的实现上，请看下面`SingleCheck`的`get()`源代码：
     - 可以看到它省去了`DoubleCheck`中一堆关于线程同步的代码
     - 也就是说我们在单线程中是可以放心使用`@Reusable`而不用担心重复实例化。
@@ -1201,10 +1203,10 @@ LazyEntity()
 > 来吧！生成代码分析阶段(｡･ω･｡)
 
 1. 我们看`DaggerMyComponent`中是怎么注入的！看到划线部分传入的参数是`LazyEntity`的工厂类，意思说我们定义的成员变量指向的就是一个工厂类
-![](blog/learn-dagger/20180611142728.png)
+![图片](blog/learn-dagger/20180611142728.png)
 
 2. 我们来看看这个工厂类吧！相信大家也相当熟悉了！(于是就不做说明了！！！)
-![](blog/learn-dagger/20180611142745.png)
+![图片](blog/learn-dagger/20180611142745.png)
 
 ### @Named丶@Qualifier
 **[测试文件位置](https://github.com/xujiaji/learn-android/blob/master/LearnDagger/app/src/main/java/com/example/jiaji/daggertest/coffee7_test_named_qualifier)**
@@ -1467,7 +1469,7 @@ Optional.empty
 
 > 这就是可选绑定的作用，`Optional`这个类在java 8中，并且最低Android Api 24。或者你可以选择导入`guava`这个类库，不过我去喵了一眼，它呀的太大了！！
 
-![](blog/learn-dagger/20180611142833.png)
+![图片](blog/learn-dagger/20180611142833.png)
 
 > Optional还可以这样用！
 
@@ -1484,7 +1486,7 @@ Optional.empty
     ![DaggerCComponent](blog/learn-dagger/20180611142852.png)
 - 来看提供了`Coffee`实例的情况
     - 我们需要知道`Optional.of()`是向`Optional`里面添加实例的意思，它将返回一个包含有该实例的`Optional`类
-    ![](blog/learn-dagger/20180611142915.png)
+    ![图片](blog/learn-dagger/20180611142915.png)
 
 ### @BindsInstance
 **[测试文件位置](https://github.com/xujiaji/learn-android/blob/master/LearnDagger/app/src/main/java/com/example/jiaji/daggertest/coffee9_test_bindsinstance)**
@@ -1748,11 +1750,11 @@ coffee:1580066828; water:1625635731
 3. 当我们用了Scope的时候，`DaggerComponentDependency_CComponent`还会生成一个静态类内部类
     - 可以看出它实现了`Provider<T>`因该就是为了通过`Provider`的`get()`方法来提供`Water`实例。
     - 并且这里它将依赖的Component放这里面了
-![](blog/learn-dagger/20180611143105.png)
+![图片](blog/learn-dagger/20180611143105.png)
 4. 我们再来看此时的`DaggerComponentDependency_CComponent`
     - 它依赖的则是上面的静态内部类。
     - 并且通过我们熟悉的`DoubleCheck.provider`来对`get()`内逻辑进行的转变，使我们只获取一个实例。
-![](blog/learn-dagger/20180611143123.png)
+![图片](blog/learn-dagger/20180611143123.png)
 
 ### @Subcomponent
 **[测试文件位置](https://github.com/xujiaji/learn-android/blob/master/LearnDagger/app/src/main/java/com/example/jiaji/daggertest/coffee10_test_subcomponent_dependencies)**
@@ -1820,9 +1822,9 @@ public class SubComponent
 1. 首先我们看到`DaggerSubComponent_WComponent`内部类：子Component的定义
     - 它实现了我们定义的接口，并且和我们之前所生成的Component是类似的，只不过内部没有Builder静态类了。
     - 由于是内部类，所以它能访问所有父`Component`成员。
-![](blog/learn-dagger/20180611143142.png)
+![图片](blog/learn-dagger/20180611143142.png)
 2. 我们来看Builder，Builder好说的，跳过！
-![](blog/learn-dagger/20180611143155.png)
+![图片](blog/learn-dagger/20180611143155.png)
 3. 我们来看`DaggerSubComponent_WComponent`的方法
     - 可以看到，当我们调用`cComponent`时就会创建一个子Component现在类实例
     - 这是由于子Component是没有Builder去创建的也没有默认创建`Module`的功能。当然子Component也是需要他的`Module`的，于是要创建它需要的`Module`给它。

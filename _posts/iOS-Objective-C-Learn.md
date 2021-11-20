@@ -93,10 +93,10 @@ int main(int argc, const char * argv[]) {
 |char|8位|char c = 'A';|
 
 ## 其他类型
-|||
-|-|-|
-|NSString|@"hello world"|
-|"hello world"|C语言字符串类型|
+&nbsp;|&nbsp;
+-|-
+NSString|@"hello world"
+"hello world"|C语言字符串类型
 
 ## 限定词
 |限定词|例子|描述|

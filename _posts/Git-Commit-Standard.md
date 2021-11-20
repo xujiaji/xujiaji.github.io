@@ -46,6 +46,7 @@ tags:
 
 
 ## `<type>`
+
 |Value|Description|
 |:-|:-|
 |feat|feature新功能|
@@ -59,6 +60,7 @@ tags:
 |revert|回滚到上一个版本|
 
 ## `<scope>`
+
 |Value|Description|
 |:-|:-|
 |all|表示影响面大 ，如修改了网络框架  会对真个程序产生影响|
@@ -66,15 +68,18 @@ tags:
 |module|表示会影响某个模块 如登录模块、首页模块 、用户管理模块等等|
 
 ## `<subject>`
+
 1. subject是 commit 目的的简短描述，不超过50个字符。
 2. 以动词开头，第一个字母小写，使用第一人称现在时，比如change，而不是changed或changes
 第一个字母小写
 3. 结尾不加句号"."
 
 ## `<body>`
+
 对本次 commit 的详细描述，可以分成多行。
 
 ## `<footer>`
+
 1. 并联Issue，本次提交如果和摸个issue有关系则需要写上这个，格式如下：
 ```
 Issue #1, #2, #3

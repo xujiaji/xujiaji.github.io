@@ -254,7 +254,7 @@ $ sudo apt-get install shutter
 
 系统设置 > 键盘 > 快捷键 > 自定义快捷键 > +
 
-|自定义快捷键||
+|自定义快捷键|&nbsp;|
 |-|-|
 |名称：|Shutter Select|
 |命令：|shutter -s|

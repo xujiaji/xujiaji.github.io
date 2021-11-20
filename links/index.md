@@ -5,7 +5,7 @@ date: 2018-03-16 23:20:10
 
 ## 友情链接
 
-&nbsp; | &nbsp;
+&nbsp;|&nbsp;
 :-:|:-:
 *hexo inside主题*|*玩Android*
 [![inside theme](https://www.gravatar.com/avatar/d2e25f51b78fbc6bed7db389f38631bc?s=40)](https://github.com/elmorec/hexo-theme-inside)|[![wanandroid](blog/links/wanandroid.png)](http://www.wanandroid.com/)
