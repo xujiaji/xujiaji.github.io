@@ -1124,12 +1124,12 @@ $ pod trunk me
 
 ```
 1. Pod验证
-pod repo lint --allow-warnings
+pod lib lint [SPEC_NAME].podspec --allow-warnings
 
 2. 项目打版本tag
 git tag "0.1.0"
 git push --tags
 
 3. 推送到公有仓库
-pod repo push Specs SPEC_NAME.podspec --allow-warnings
+pod trunk push [SPEC_NAME].podspec --allow-warnings
 ```
