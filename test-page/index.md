@@ -98,6 +98,10 @@ Here is an inline note.^[Inlines notes are easier to write, since
 you don't have to pick an identifier and move down to type the
 note.]
 
+# MathJax
+
+https://blog.oniuo.com/post/math-jax-ssr-example
+
 When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
 
 \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
