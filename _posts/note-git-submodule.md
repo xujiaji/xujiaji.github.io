@@ -28,3 +28,12 @@ $ git submodule
 ``` shell
 git submodule update --remote
 ```
+
+4. `.gitmodules`文件，添加`branch`指定分支
+
+```
+[submodule "plugins/flutter_together_ad"]
+	path = plugins/flutter_together_ad
+	url = https://github.com/xujiaji/flutter_together_ad.git
+	branch = main
+```
