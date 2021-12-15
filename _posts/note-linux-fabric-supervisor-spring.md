@@ -212,8 +212,64 @@ server_password = "123456"
 
 > `fabfile.py`配置自动化打包部署，把该文件直接放到自己项目的根目录就行，比如说这里用的项目是`mk-example`，那就放在`mk-example/fabfile.py`。里面的内容需要根据自己的实际情况做修改和跳转
 
-{% gist 9fa27893c536bd49a69ac93153054e87 [fabfile.py] %}
-<script src="https://gist.github.com/xujiaji/9fa27893c536bd49a69ac93153054e87.js"></script>
+{% codeblock fabfile.py lang:Python %}
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import os, re
+# 导入Fabric API:
+from fabric.api import *
+from datetime import datetime
+import local_property
+
+
+# 服务器登录用户名:
+env.user = local_property.server_user
+# sudo用户为root:
+# env.sudo_user = 'root'
+# 服务器端口号
+env.port = 22
+# 服务器地址，可以有多个，依次部署:
+#env.hosts = ['root@48.120.129.84']
+env.hosts = ['%s@139.9.4.22' % local_property.server_user]
+env.password = local_property.server_password
+#env.key_filename = '~/.ssh/id_rsa_zs'
+#env.key_filename = 'C:/Users/lgiht/.ssh/id_rsa'
+
+def _now():
+    return datetime.now().strftime('%y-%m-%d_%H.%M.%S')
+
+# 部署
+def deploy():
+    print('########开始部署########')
+    local("mvn clean package -Dmaven.test.skip=true")
+    print('打包结束....')
+    with cd('/home/mk'):
+        new_todo = 'package-mk/mk-admin-%s.jar' % _now()
+        put('security-example/security-admin-example/target/security-admin-example-0.0.1-SNAPSHOT.jar', new_todo)
+        run('rm -f mk-admin.jar')
+        run('ln -s %s mk-admin.jar' % new_todo)
+        run('supervisorctl restart mk-admin')
+        run("echo 成功啦~~~")
+
+
+def rollback():
+    print('########版本回滚########')
+    with cd('/home/mk'):
+        ls = run('ls package-mk')
+        packages = sorted(ls.split('  '))
+        print('历史版本：')
+        for index, package in enumerate(packages):
+            print("| %s | %s |" % (index, package))
+        no = int(input("\n请选择要回滚的编号："))
+        run('rm -f mk-admin.jar')
+        run('ln -s package-mk/%s mk-admin.jar' % packages[no])
+        run('supervisorctl restart mk-admin')
+        run("echo 回滚成功啦~~~")
+        
+def stop():
+    run('supervisorctl stop mk-admin')
+{% endcodeblock %}
 
 3、运行自动化部署
 
