@@ -103,6 +103,19 @@ chmod g+w mk
 ``` shell
 yum install supervisor
 ```
+1.1 或pip安装
+``` shell
+pip install supervisor
+# 测试安装是否成功
+echo_supervisord_conf
+# 创建配置文件
+mkdir -p /etc/supervisor
+mkdir -m 755 -p /etc/supervisor/
+# 生成默认配置文件
+echo_supervisord_conf > /etc/supervisord.conf
+sed -i "s/\;\[include\]/\[include\]/" /etc/supervisord.conf 
+echo "files = /etc/supervisor/*.conf" >> /etc/supervisord.conf
+```
 2、指定用户组权限
 ``` shell
 # 修改所有组

@@ -247,6 +247,19 @@ docker run -d --hostname gitlab.xxx.com:3000 -p 10443:10443 -p 3000:3000 -p 1022
 
 <https://segmentfault.com/a/1190000016012597/>
 
+### 安装方式二
+
+``` shell
+yum install redis
+```
+
+``` shell
+# 配置开机启动redis
+systemctl enable redis
+# 查看所有开启启动项
+systemctl list-unit-files |grep enabled
+```
+
 ### 命令
 
 启动Redis
