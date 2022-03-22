@@ -126,3 +126,17 @@ Notice that we have chmod’ded the file to 0770 (writeable by owner and group),
 
 supervisorctl reload
 ```
+
+## 读取文件里的键值对信息
+
+> `local.properties`
+
+```
+sdk.dir=/Users/xxx/Library/Android/sdk
+```
+
+> 读取`sdk.dir`
+
+```
+grep "sdk.dir" local.properties | cut -d'=' -f2 | sed 's/\r//'
+```
