@@ -4,7 +4,7 @@ date: 2022-04-20 11:01:44
 categories:
  - 笔记
 tags:
-	- ssh
+	- SSH
 ---
 
 ## 创建秘钥对文件
