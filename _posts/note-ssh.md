@@ -32,10 +32,12 @@ $ ssh alias
 ```
 
 ## 问题处理
-> linux Permission 0644 for are too open
+### linux Permission 0644 for are too open
 
 原因本地私钥权限问题，需要设置为不能被其他人访问，通过`ls -l ~/.ssh`看到对应私钥权限
-处理：
+
+> 处理：
+
 ```
 chmod 600 ~/.ssh/你的私钥
 ```
