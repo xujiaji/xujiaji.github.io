@@ -26,7 +26,7 @@ if(rvItem.getAdapter() == null)
 }
 ```
 
-##  ScrollView嵌套RecyclerView滑动滑动起来很吃力
+## ScrollView嵌套RecyclerView滑动滑动起来很吃力
 ``` java
 recyclerView.setNestedScrollingEnabled(false);
 ```
@@ -145,3 +145,6 @@ export PATH=$PATH:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
 # source /etc/profile    // 环境变量生效
 # adb version
 ```
+
+sdk下载地址
+https://developer.android.com/studio#cmdline-tools
