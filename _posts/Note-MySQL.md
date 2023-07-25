@@ -84,3 +84,26 @@ grant all privileges on *.* to 'username'@'%' with grant option;
 ``` sql
 flush privileges;
 ```
+
+## 查重复数据
+> 所有重复数据
+
+``` sql
+SELECT * FROM users u WHERE ((SELECT COUNT(*) FROM users WHERE wechat_id = u.wechat_id) > 1) ORDER BY wechat_id DESC
+```
+
+``` sql
+SELECT * FROM users WHERE wechat_id IN (SELECT wechat_id FROM users GROUP BY wechat_id HAVING COUNT(*) > 1)
+```
+
+> 保留一条
+
+``` sql
+DELETE HZT WHERE ID Not In (SELECT Max(ID) FROM HZT GROUP BY Title)
+```
+
+## 错误处理
+> 添加外建报错
+执行：`alter table daily add constraint FKrv3whxwkta47nyg9ju12om1eo foreign key (user_id) references users (id)`
+报错：`1452 - Cannot add or update a child row: a foreign key constraint fails`
+处理：daily表中的user_id数据有没有在users表中id的情况

@@ -148,3 +148,10 @@ export PATH=$PATH:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
 
 sdk下载地址
 https://developer.android.com/studio#cmdline-tools
+
+--sdk_root 指定sdk路径
+同意隐私协议
+yes | cmdline-tools/bin/sdkmanager --licenses --sdk_root=/var/jenkins_home/AndroidSdk
+
+## Plugin 断点
+https://juejin.cn/post/6948626628637360135
