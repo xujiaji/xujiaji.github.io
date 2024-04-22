@@ -25,10 +25,15 @@ pipeline {
                 }
             }
         }
-        // stage('构建') {
-        //     steps {
-        //     }
-        // }
+        stage('构建') {
+            steps {
+                dir('./blog') {
+                    sh "hexo clean && hexo g"
+                    sh 'ossutil cp -r public/api oss://xujiaji/blog/api/ -f -c "~/.ossutilconfig"'
+                    sh 'ossutil cp -r public oss://xujiaji/blog/statics/ -f --include "*.js" --include "*.css" -c "~/.ossutilconfig"'
+                }
+            }
+        }
         // stage('部署') {
         //     steps {
         //     }
