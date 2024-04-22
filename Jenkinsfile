@@ -13,14 +13,14 @@ pipeline {
                 trySh "rm -rf source"
             }
         }
-        stage('构建') {
-            steps {
-            }
-        }
-        stage('部署') {
-            steps {
-            }
-        }
+        // stage('构建') {
+        //     steps {
+        //     }
+        // }
+        // stage('部署') {
+        //     steps {
+        //     }
+        // }
     }
 }
 
