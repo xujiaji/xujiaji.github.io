@@ -155,3 +155,12 @@ yes | cmdline-tools/bin/sdkmanager --licenses --sdk_root=/var/jenkins_home/Andro
 
 ## Plugin 断点
 https://juejin.cn/post/6948626628637360135
+
+## 给apk包签名
+java -jar apksigner.jar sign \
+-verbose \
+--ks sign.jks \
+--ks-pass pass:sdfjDJk3jS \
+--ks-key-alias hlld \
+--key-pass pass:sdfjDJk3jS \
+--out ./app-release/dist/app-release-sign.apk ./app-release/dist/app-release.apk
