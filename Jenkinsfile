@@ -33,7 +33,15 @@ pipeline {
                 }
             }
         }
-        stage('部署') {
+        stage('部署静态') {
+            steps {
+                dir('./blog') {
+                    sh 'ossutil cp -r public/api oss://xujiaji/blog/api/ -f -c "~/.ossutilconfig"'
+                    sh 'ossutil cp -r public oss://xujiaji/blog/statics/ -f --include "*.js" --include "*.css" -c "~/.ossutilconfig"'
+                }
+            }
+        }
+        stage('部署到服务器') {
             agent {
                 docker {
                     image 'python:3.12.1-alpine3.19'
@@ -43,10 +51,7 @@ pipeline {
             }
             steps {
                 dir('./blog') {
-                    sh "python -V"
                     sh "pip install Fabric3"
-                    sh 'ossutil cp -r public/api oss://xujiaji/blog/api/ -f -c "~/.ossutilconfig"'
-                    sh 'ossutil cp -r public oss://xujiaji/blog/statics/ -f --include "*.js" --include "*.css" -c "~/.ossutilconfig"'
                     sh "fab deploy"
                 }
             }
