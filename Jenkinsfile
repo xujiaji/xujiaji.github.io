@@ -20,6 +20,7 @@ pipeline {
                 sh "cp -rf _config.inside.yml blog"
                 sh "cp -rf _config.yml blog"
                 sh "cp -rf fabfile.py blog"
+                sh "cp -rf ../../tools/ssh/id_rsa.xu blog"
                 dir('./blog') {
                     sh "npm install hexo-theme-inside"
                     sh "npm install babel-core babel-preset-env html-minifier terser cheerio jasmine hexo-deployer-git hexo-filter-mathjax-ssr hexo-generator-feed hexo-renderer-markdown-it html-to-text markdown-it markdown-it-container markdown-it-footnote --save"
