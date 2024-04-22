@@ -11,7 +11,7 @@ pipeline {
                 trySh "npm install hexo-cli -g"
                 trySh "hexo init blog"
                 trySh "rm -rf blog/source"
-                trySh "find * -type f -not -name '.gitignore' -not -name 'JenkinsFile' -exec cp {} 'blog/source' \\;"
+                trySh "cp -r !(blog) blog/source"
             }
         }
         // stage('构建') {
