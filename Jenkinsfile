@@ -15,7 +15,8 @@ pipeline {
                 script {
                     path = sh(returnStdout: true, script: 'pwd').trim()
                 }
-                trySh "find ${path} -type f -not -name 'Jenkinsfile' -not -name '.gitignore' -not -path '${path}/blog/*' -not -path '${path}/node_modules/*' -not -path '${path}/.git/*' -exec sh -c 'cp --parents \"{}\" \"${path}/blog/source/{}\"' \\;"
+                //trySh "find ${path} -type f -not -name 'Jenkinsfile' -not -name '.gitignore' -not -path '${path}/blog/*' -not -path '${path}/node_modules/*' -not -path '${path}/.git/*' -exec sh -c 'cp --parents \"{}\" \"${path}/blog/source/{}\"' \\;"
+                trySh "ls ${path} | grep -v Jenkinsfile | grep -v .gitignore | grep -v blog | grep -v node_modules | grep -v .git | xargs -i cp -r ${path}/{} ${path}/blog/source/"
             }
         }
         // stage('构建') {
