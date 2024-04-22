@@ -12,7 +12,9 @@ pipeline {
                 trySh "rm -rf blog"
                 trySh "hexo init blog"
                 trySh "rm -rf blog/source && mkdir blog/source"
-                String path = sh(returnStdout: true, script: 'pwd').trim()
+                script {
+                    path = sh(returnStdout: true, script: 'pwd').trim()
+                }
                 trySh "find ${path} -type f -not -name 'Jenkinsfile' -not -name '.gitignore' -not -path '${path}/blog/*' -not -path '${path}/node_modules/*' -exec cp -r {} ${path}/blog/source \\;"
             }
         }
