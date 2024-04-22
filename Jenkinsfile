@@ -11,7 +11,7 @@ pipeline {
                 trySh "npm install hexo-cli -g"
                 trySh "rm -rf blog"
                 trySh "hexo init blog"
-                trySh "rm -rf blog/source"
+                trySh "rm -rf blog/source && mkdir blog/source"
                 trySh "find * -type f -not -name 'Jenkinsfile' -not -name '.gitignore' -not -path './blog/*' -exec cp -r {} blog/source \\;"
             }
         }
