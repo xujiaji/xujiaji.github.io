@@ -52,7 +52,7 @@ pipeline {
             steps {
                 dir('./blog') {
                     sh "pip install Fabric3"
-                    replaceAllInFile("from collections import Mapping", "from collections.abc import Mapping", "/usr/local/lib/python3.12/site-packages/fabric/main.pyfrom collections import Mapping")
+                    replaceAllInFile("from collections import Mapping", "from collections.abc import Mapping", "/usr/local/lib/python3.12/site-packages/fabric/main.py")
                     sh "fab deploy"
                 }
             }
