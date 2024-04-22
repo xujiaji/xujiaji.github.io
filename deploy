@@ -1,0 +1,7 @@
+#!/bin/bash
+BASEDIR=`dirname $0`
+cd $BASEDIR
+hexo clean && hexo g
+ossutil cp -r public/api oss://xujiaji/blog/api/ -f -c "/Users/jiajixu/.ossutilconfig"
+ossutil cp -r public oss://xujiaji/blog/statics/ -f --include "*.js" --include "*.css" -c "/Users/jiajixu/.ossutilconfig"
+fab deploy

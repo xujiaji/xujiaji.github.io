@@ -1,0 +1,475 @@
+# ---------------------------------------------------------------
+# Basic
+# ---------------------------------------------------------------
+
+# Appearance
+appearance:
+  # Accent color, default '#2a2b33'
+  accent_color:
+  # Font color, default '#363636'
+  foreground_color:
+  # Border color, default '#e0e0e0'
+  border_color:
+  # body background, default '#f5f7fa'
+  background:
+  # Sidebar background (when opened), default to accent_color
+  sidebar_background:
+  # Card background, default '#fff'
+  card_background:
+
+  # All background settings above support image, e.g.,
+  # '//www.toptal.com/designers/subtlepatterns/patterns/confectionary.png #f5f7fa' or
+  # 'url(//www.toptal.com/designers/subtlepatterns/patterns/confectionary.png) #f5f7fa'
+
+  # Maximum width of content
+  content_width: 860
+
+  # Fonts
+  font:
+    # Url of font css file
+    # Below is a font set containing Baloo Bhaijaan, Josefin Sans, Montserrat and Inconsolata from Google Fonts.
+    url: //xujiaji.oss-accelerate.aliyuncs.com/blog/statics/font/css.css
+
+    # Base font which applied to body
+    base: "'Josefin Sans', 'PingFang SC'"
+    # Sidebar author font, fallback to `base`
+    logo: 'Lobster'
+    # Sidebar menu font, fallback to `base`
+    menu: 'Baloo Bhaijaan'
+    # Font for:
+    # - percentage on the fab button
+    # - month text on archives page
+    # - count
+    # - pager
+    # - toc index
+    # - category pill
+    # fallback to `base`
+    label: Montserrat
+    # Headline(h1, h2, h3, h4, h5, h6) font, fallback to `base`
+    heading:
+    # Code and code block
+    code: Inconsolata, monospace
+    # Base font for printing which applied to body
+    print:
+
+  # Code Syntax Highlighting
+  # Uses an architecture called "base16" (https://github.com/chriskempson/base16),
+  # the default theme is a customized Atelier Dune Light theme,
+  # please feel free to explore more.
+  # highlight:
+
+  # Default Light by Chris Kempson (http://chriskempson.com)
+  # highlight: [
+  #   '#f8f8f8', '#e8e8e8', '#d8d8d8', '#b8b8b8',
+  #   '#585858', '#383838', '#282828', '#181818',
+  #   '#ab4642', '#dc9656', '#f7ca88', '#a1b56c',
+  #   '#86c1b9', '#7cafc2', '#ba8baf', '#a16946'
+  # ]
+
+  # Harmonic16 Light by Jannik Siebert (https://github.com/janniks)
+  highlight: [
+    '#f7f9fb', '#e5ebf1', '#cbd6e2', '#aabcce',
+    '#627e99', '#405c79', '#223b54', '#0b1c2c',
+    '#bf8b56', '#bfbf56', '#8bbf56', '#56bf8b',
+    '#568bbf', '#8b56bf', '#bf568b', '#bf5656'
+  ]
+
+  # Tomorrow Night by Chris Kempson (http://chriskempson.com)
+  # highlight: [
+  #   '#1d1f21', '#282a2e', '#373b41', '#969896',
+  #   '#b4b7b4', '#c5c8c6', '#e0e0e0', '#ffffff',
+  #   '#cc6666', '#de935f', '#f0c674', '#b5bd68',
+  #   '#8abeb7', '#81a2be', '#b294bb', '#a3685a'
+  # ]
+
+  darkmode:
+    accent_color: '#539bf5'
+    foreground_color: '#adbac7'
+    border_color: '#373e47'
+    background: '#22272e'
+    sidebar_background: '#22272e'
+    card_background: '#2d333b'
+    highlight: [
+      '#2d333b', '#444c56', '#3e4451', '#545862',
+      '#565c64', '#abb2bf', '#b6bdca', '#c8ccd4',
+      '#e06c75', '#d19a66', '#e5c07b', '#98c379',
+      '#56b6c2', '#61afef', '#c678dd', '#be5046'
+    ]
+
+# Sidebar profile
+profile:
+  # `email` is used for gravatar(https://en.gravatar.com),
+  # fallback to `hexo.config.email` if not specified
+  email: blog@xujiaji.com
+
+  # You can set Avatar URL directly
+  avatar: https://xujiaji.oss-accelerate.aliyuncs.com/blog/avatar.jpeg
+
+  bio: 尽人事，听天命
+
+# Sidebar navigation links
+menu:
+  🏠 Home: /
+  🔗 Links: /links
+  💨 About: /about
+  🔍 Search: /search
+  # Github: https://github.com/username
+
+# Social media URL
+sns:
+  # Built-in icons
+  # `email`, `feed`, `github`, `twitter`, `facebook`, `instagram`, `tumblr`, `dribbble`, `telegram`
+  # `youtube`, `hangouts`, `linkedin`, `pinterest`, `soundcloud`, `myspace`, `weibo`, `qq
+  - icon: email
+    title: Email
+    url: # default to `profile.email`
+  - icon: feed
+    title: Feed
+    url: # default to `hexo.config.feed.path`
+  - icon: github
+    title: Github
+    url: https://github.com/xujiaji
+  - icon: qq
+    title: QQ
+    url: https://wpa.qq.com/msgrd?v=3&uin=26323405&site=qq&menu=yes
+
+  # custom icon
+  # - title: Email me
+  #   url: # default to `profile.email`
+  #   template: <i class="fa fa-github"></i>
+  # - title: Love you
+  #   url:
+  #   template: |
+  #     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+
+# Sidebar footer copyright info
+footer:
+  # Set to false to hide.
+  copyright: '&copy; 2020 👀 <a href="">xujiaji</a>'
+
+  # Set to false to hide Hexo link.
+  powered: true
+
+  # Set to false to hide theme link.
+  theme: true
+
+  # Custom text.
+  # custom: Hosted by <a target="_blank" rel="external nofollow"
+  #   href="https://pages.github.com/"><b>Github Pages</b></a>
+  custom:
+    <span><b><img src="https://xujiaji.oss-accelerate.aliyuncs.com/blog/beian-icon.png" width="15px">&nbsp;<a href="https://beian.miit.gov.cn/">蜀ICP备2022008816号-5</a></b></span><br>
+    <div style="display:flex;align-items:center;justify-content:center;"><svg t="1637413147939" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7405" width="16" height="16"><path d="M798.7 618c-11.4-17-24.2-33-38.2-47.7-31.9-33.6-69.1-60-110.6-78.5-10.2-4.5-20.6-8.6-31.1-12 45.4-33.2 74.9-86.9 74.9-147.3 0-100.6-81.8-182.4-182.4-182.4-100.6 0-182.4 81.8-182.4 182.4 0 61.2 30.3 115.4 76.6 148.5-9.2 3.2-18.4 6.8-27.4 10.8-41.5 18.5-78.7 44.9-110.6 78.5-15.1 15.9-28.9 33.3-40.9 51.8-15.2 23.4-17.4 52.5-5.7 77.8 11.6 25.3 35 42.5 62.6 46.2l1.7 0.2h1.7c14.7 0 30.5 0.1 47.2 0.1 124.7 0 295.6-1.3 405.4-3.1h1.5l1.4-0.2c27.9-3.6 51.5-21 63.1-46.6 11.4-25.8 9-55.1-6.8-78.5zM380.9 332.5c0-71.9 58.5-130.4 130.4-130.4s130.4 58.5 130.4 130.4-58.5 130.4-130.4 130.4-130.4-58.5-130.4-130.4z m377 342.4c-4 8.8-11.7 14.7-21.2 16.4-123.6 2.1-323.5 3.4-447.9 3-9.2-1.7-16.7-7.5-20.7-16.1-4.2-9.2-3.5-19.3 2-27.7 10.3-15.9 22.1-30.8 35.1-44.4 27.2-28.6 58.8-51.1 94.1-66.8 36.3-16.2 74.9-24.4 114.7-24.4s78.4 8.2 114.7 24.4c35.2 15.7 66.8 38.1 94.1 66.8 12 12.6 23 26.3 32.7 40.9 5.8 8.5 6.6 18.7 2.4 27.9z" fill="#000002" p-id="7406"></path></svg><span id="busuanzi_container_site_uv"> <span id="busuanzi_value_site_uv"></span></span> &nbsp;| <svg t="1637413037711" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5230" width="16" height="16"><path d="M511.837 704c-184.451 0-288.003-191.997-288.003-191.997S329.357 320 511.837 320c182.474 0 287.997 192.003 287.997 192.003S696.285 704 511.837 704zM511.833 384c-131.99 0-208.32 128.003-208.32 128.003S378.416 640 511.833 640s208.32-127.997 208.32-127.997S643.824 384 511.833 384zM511.833 576c-35.347 0-64-28.656-64-64.003 0-35.344 28.653-64 64-64s64 28.656 64 64C575.833 547.344 547.181 576 511.833 576z" p-id="5231" fill="#000002"></path></svg> <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span></span></div>
+
+# ---------------------------------------------------------------
+# Content
+# ---------------------------------------------------------------
+
+# Page
+page:
+  # Display Table of content, default to `true`
+  toc: true
+
+  # Display reward, default to `false`
+  reward: true
+
+  # Display copyright notice, default to `false`
+  copyright: true
+
+
+# Post
+post:
+  per_page: 10
+  # reading_time: false
+  reading_time:
+    wpm: 150
+    text: ":words 字，阅读 :minutes 分钟"
+
+  # The following settings are the same as the page
+  # toc: false
+  reward: true
+  copyright: true
+
+# Archive
+archive:
+  per_page: 10
+
+# Tag
+tag:
+  per_page: 10
+
+# Category
+category:
+  per_page: 10
+
+# Search
+search:
+  # Display a quick search button in fab
+  fab: true
+
+  # Render a standalone searh page which can be configured in sidebar menu such as `Search: /search`
+  page: true
+
+  # Local search
+  adapter:
+    range:
+      - post
+      - page
+    per_page: 20
+    limit: 10000
+
+  # Custom search
+  # adapter:
+  #   # Used for pagination
+  #   per_page: 10
+  #   # Optional
+  #   logo: //cdn.worldvectorlogo.com/logos/algolia.svg
+  #   request:
+  #     url: https://{APPLICATION_ID}-dsn.algolia.net/1/indexes/{INDEX}/query
+  #     method: post
+  #     # Available variables: :query, :per_page, :current
+  #     body: '{"query":":query","hitsPerPage":":per_page","page":":current"}'
+  #     headers:
+  #       X-Algolia-API-Key: {API_KEY}
+  #       X-Algolia-Application-Id: {APPLICATION_ID}
+  #       Content-Type: application/json; charset=UTF-8
+  #   keys:
+  #     # Used to retrieve result list
+  #     data: hits
+  #     # Used to retrieve current page number
+  #     current: page
+  #     # Used to retrieve total page number
+  #     total: nbPage
+  #     # Used to retrieve total hits number
+  #     hits: nbHits
+  #     # Used to retrieve cost time
+  #     time: processingTimeMS
+  #     # Used to retrieve title from per hit
+  #     title: _snippetResult.title.value
+  #     # Used to retrieve content from per hit
+  #     content: _snippetResult.content.value
+
+
+# ---------------------------------------------------------------
+# Content addons
+# ---------------------------------------------------------------
+
+# Prefix/Suffix of image URL, useful for CDN, for example,
+# `![cat](images/cat.gif)` will convert to
+# <img src="https://cdn.example.com/images/cat.gif?m=webp&q=80" alt="cat">
+assets:
+  prefix: 'https://xujiaji.oss-accelerate.aliyuncs.com'
+  suffix: ''
+
+# Table of content, enabled by default, set to `false` to disable.
+toc:
+  # The depth of toc, default to `3`, maximum to `4`.
+  # depth: 3
+
+  # Showing index before title, eg. 1.1 title, default to `true`
+  # index: true
+
+# Reward
+reward:
+  # Text which shows at the top.
+  text: 赏一包辣条
+
+  # Payment Methods
+  # qrcode, url and text must be set at least one
+  # wechat, alipay, paypal and bitcoin has a built-in icon,
+  # use `name` to apply
+  methods:
+    - name: wechat
+      qrcode: https://xujiaji.oss-accelerate.aliyuncs.com/blog/pay/payme_by_weixin.png
+      text: 这是一个微信收款二维码
+      color: '#09bb07'
+    - name: alipay
+      qrcode: https://xujiaji.oss-accelerate.aliyuncs.com/blog/pay/payme_by_alipay.png
+      url: https://qr.alipay.com/fkx06348pd0xuzagubxd91e
+      text: 点我可以跳转到支付宝支付
+      color: '#4dade9'
+
+# Copyright notice
+# It is possible to use front matter `copyright` to override this setting.
+copyright:
+  # Display author, default to `true`
+  author: true
+
+  # Display link, default to `true`
+  # link: false
+
+  license: Attribution-NonCommercial-NoDerivatives 4.0 International
+    (<a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\"
+    rel=\"external nofollow\" target=\"_blank\">CC BY-NC-ND 4.0</a>)
+
+  # Display published date, default to `false`
+  # published: false
+
+  # Display updated date, default to `false`
+  # updated: false
+
+  # Custom text, override above settings
+  # custom: my copyright
+
+# Comments
+# Built-in support Disqus (https://disqus.com) and LiveRe (https://livere.com),
+# for other comment system, see plugins
+comments:
+  disqus:
+    # shortname: xujiaji
+    # # # Or you can set disqus script URL directly
+    # script: //xujiaji.disqus.com/embed.js
+    # # Autoload, default to `true`, set to `false` to display a button
+    # autoload: false
+  livere:
+    uid: MTAyMC80MTc5MS8xODMzNw
+  #   # LiveRe script, default to `https://cdn-city.livere.com/js/embed.dist.js`
+    script: https://cdn-city.livere.com/js/embed.dist.js
+  #   # Autoload, default to `true`, set to `false` to display a button
+    autoload: false
+
+# ---------------------------------------------------------------
+# Misc
+# ---------------------------------------------------------------
+
+# URL prefix for theme statics
+static_prefix: 
+
+# URL prefix for json data
+# If your json file is put in a cdn server,
+# set data_prefix as '//cdn.com/path/to/path/your_json_dir' and data_dir as 'your_json_dir'
+data_prefix: 
+
+# Folder where json file will be generated to, default to 'api'
+data_dir:
+
+# Favicon, default to `favicon.ico`
+favicon: //xujiaji.oss-accelerate.aliyuncs.com/blog/favicon.ico
+
+# Google analytics
+ga: UA-117088783-1
+
+# SEO
+seo:
+  # Render structured-data in <head>, default to `false`
+  structured_data: true
+  # Server-side rendering (SSR), default to `false`
+  # ssr: true
+
+# PWA
+pwa:
+  # Workbox (https://developers.google.com/web/tools/workbox/) is a JavaScript
+  # libraries for adding offline support to web apps,
+  # disabled by default, remove the hash to enable
+  # workbox:
+  #   # Workbox cdn, uses google by default, below is an example of using alicdn
+  #   cdn: https://g.alicdn.com/kg/workbox/3.3.0/workbox-sw.js
+  #   module_path_prefix: https://g.alicdn.com/kg/workbox/3.3.0/
+  #   # Expire time in hour, 4 by default, set to 0 to be permanent,
+  #   # caches will be forcibly deleted the next time the site is updated.
+  #   expire: 4
+  #   # The worker script name, `sw.js` by default
+  #   name: sw.js
+  #   # Custom rules
+  #   rules:
+  #     - name: jsdelivr
+  #       strategy: staleWhileRevalidate
+  #       regex: https://cdn\\.jsdelivr\\.net
+  #     - name: gtm
+  #       strategy: staleWhileRevalidate
+  #       regex: https://www\\.googletagmanager\\.com\?id=.*
+  #     - name: gravatar
+  #       strategy: staleWhileRevalidate
+  #       regex: https://www\\.gravatar\\.com
+  #     - name: theme
+  #       strategy: staleWhileRevalidate
+  #       regex: /.*\\.(?:js|css|woff2|png|jpg|gif)$
+  #     - name: cdn
+  #       strategy: staleWhileRevalidate
+  #       regex: https://cdn\\.yourdomain\\.com
+  #     - name: json
+  #       strategy: cacheFirst
+  #       regex: your_data_prefix/.*\\.json
+
+  # manifest.json
+  manifest:
+    short_name: XBlog
+    name: 徐佳吉的博客
+    start_url: /
+    theme_color: '#ffffcc'
+    background_color: '#ffffcc'
+    icons:
+      - src: https://xujiaji.oss-accelerate.aliyuncs.com/blog/icon-194x194.png
+        sizes: 194x194 512x512
+        type: image/png
+        purpose: any
+      - src: https://xujiaji.oss-accelerate.aliyuncs.com/blog/icon-144x144.png
+        sizes: 144x144
+        type: image/png
+        purpose: any
+
+# Plugins
+plugins:
+  # Built-in plugins
+  - //busuanzi.ibruce.info//busuanzi/2.3/busuanzi.pure.mini.js
+  - cipher:
+      placeholder: Password?
+      excerpt: 该内容加密了。
+  - palette:
+      col: 5
+      theme: [
+        '#673ab7',
+        '#3f51b5',
+        '#2196f3',
+        '#009688',
+        '#4caf50',
+        '#ff9800',
+        '#ff5722',
+        '#795548',
+        '#607D8B',
+        '#2a2b33'
+      ]
+  - position: [post, page, sidebar]
+    template: |
+      <script>
+        (function(){
+          var bp = document.createElement('script');
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(bp, s);
+        })();
+
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?2176a9ec1c62ab7ec39e4b50a5590fda";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+
+      </script>
+  # 评论
+  - //cdn1.lncld.net/static/js/3.0.4/av-min.js
+  - //unpkg.com/valine/dist/Valine.min.js
+  - position: comments
+    template: |
+      <div id="vcomment"></div>
+      <script>
+        new Valine({
+          el: '#vcomment',
+          appId: 'rubrpMt5mfSy852om9sEoic7-gzGzoHsz',
+          appKey: 'ob6wPwDpqiibnhnj2LIDxLbx',
+          path: location.pathname
+        })
+      </script>
+  # Global Inject script/style
+  # By default script will be injected into <body>, and style will be injected into <head>
+  # In general, script or style depends on their ext name.
+  # - xxx.css
+  # - xxx.jss
+
+  # Dynamic inject html snippet
+  # - position: # sidebar | post | page | comments | avatar | head_begin | head_end | body_begin | body_end
+    # HTML code
+    # template: <script>...</script>
+    # Or a path relative to `hexo.base_dir`
+    # template: snippets/snippet-1.html
