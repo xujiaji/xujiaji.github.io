@@ -12,7 +12,7 @@ pipeline {
                 trySh "rm -rf blog"
                 trySh "hexo init blog"
                 trySh "rm -rf blog/source"
-                trySh "find * -type f -not -name 'Jenkinsfile' -not -name '.gitignore' -not -path './blog/*' -exec cp {} blog/source \\;"
+                trySh "find * -type f -not -name 'Jenkinsfile' -not -name '.gitignore' -not -path './blog/*' -exec cp -r {} blog/source \\;"
             }
         }
         // stage('构建') {
