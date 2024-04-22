@@ -56,6 +56,7 @@ pipeline {
                     replaceAllInFile("from collections import Mapping", "from collections.abc import Mapping", "/usr/local/lib/python3.12/site-packages/fabric/main.py")
                     replaceAllInFile("from collections import Mapping", "from collections.abc import Mapping", "/usr/local/lib/python3.12/collections/__init__.py")
                     sh "fab deploy"
+                    sh "rm -rf __pycache__"
                 }
             }
         }
