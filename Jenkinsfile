@@ -12,7 +12,6 @@ pipeline {
                 trySh "hexo init blog"
                 trySh "rm -rf blog/source"
                 trySh "find * -type f -not -name '.gitignore' -not -name 'JenkinsFile' -exec cp {} 'blog/source' \\;"
-                trySh "cp -r `ls * | grep -v .gitignore | xargs` /blog/source"
             }
         }
         // stage('构建') {
