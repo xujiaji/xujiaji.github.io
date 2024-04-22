@@ -29,15 +29,25 @@ pipeline {
             steps {
                 dir('./blog') {
                     sh "hexo clean && hexo g"
-                    sh 'ossutil cp -r public/api oss://xujiaji/blog/api/ -f -c "~/.ossutilconfig"'
-                    sh 'ossutil cp -r public oss://xujiaji/blog/statics/ -f --include "*.js" --include "*.css" -c "~/.ossutilconfig"'
                 }
             }
         }
-        // stage('部署') {
-        //     steps {
-        //     }
-        // }
+        stage('部署') {
+            agent {
+                docker {
+                    image 'python:3.12.1-alpine3.19'
+                }
+            }
+            steps {
+                dir('./blog') {
+                    sh "python -V"
+                    sh "pip install Fabric3"
+                    sh 'ossutil cp -r public/api oss://xujiaji/blog/api/ -f -c "~/.ossutilconfig"'
+                    sh 'ossutil cp -r public oss://xujiaji/blog/statics/ -f --include "*.js" --include "*.css" -c "~/.ossutilconfig"'
+                    sh "fab deploy"
+                }
+            }
+        }
     }
 }
 
