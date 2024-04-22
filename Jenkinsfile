@@ -21,7 +21,7 @@ pipeline {
                 sh "cp -rf fabfile.py blog"
                 dir('./blog') {
                     sh "npm install hexo-theme-inside"
-                    sh "npm install babel-core babel-preset-env html-minifier terser cheerio jasmine --save"
+                    sh "npm install babel-core babel-preset-env html-minifier terser cheerio jasmine hexo-deployer-git hexo-filter-mathjax-ssr hexo-generator-feed hexo-renderer-markdown-it html-to-text markdown-it markdown-it-container markdown-it-footnote --save"
                 }
             }
         }
