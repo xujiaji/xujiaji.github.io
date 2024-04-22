@@ -13,7 +13,7 @@ pipeline {
                 trySh "hexo init blog"
                 trySh "rm -rf blog/source && mkdir blog/source"
                 def path = sh(returnStdout: true, script: 'pwd').trim()
-                trySh "find ${path}/* -type f -not -name 'Jenkinsfile' -not -name '.gitignore' -not -path '${path}/blog/*' -not -path '${path}/node_modules/*' -exec cp -r {} ${path}/blog/source \\;"
+                trySh "find ${path} -type f -not -name 'Jenkinsfile' -not -name '.gitignore' -not -path '${path}/blog/*' -not -path '${path}/node_modules/*' -exec cp -r {} ${path}/blog/source \\;"
             }
         }
         // stage('构建') {
