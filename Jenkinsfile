@@ -33,7 +33,7 @@ pipeline {
                 }
             }
         }
-        stage('部署静态') {
+        stage('部署静态资源') {
             steps {
                 dir('./blog') {
                     sh 'ossutil cp -r public/api oss://xujiaji/blog/api/ -f -c "~/.ossutilconfig"'
@@ -51,6 +51,7 @@ pipeline {
             }
             steps {
                 dir('./blog') {
+                    replaceAllInFile("from collections import Mapping", "from collections.abc import Mapping", "/usr/local/lib/python3.12/site-packages/fabric/main.pyfrom collections import Mapping")
                     sh "pip install Fabric3"
                     sh "fab deploy"
                 }
@@ -65,4 +66,15 @@ def trySh(shtext) {
     } catch(e) {
        throw e
     }
+}
+
+// 替换文件中的字符串
+def replaceAllInFile(String oldStr, String newStr, String file) {
+    if (!fileExists(file)) {
+        echo "不存在文件： ${file}"
+        return
+    }
+    sh """
+    sed -i "s/${oldStr}/${newStr}/g" ${file}
+    """
 }
