@@ -157,6 +157,7 @@ yes | cmdline-tools/bin/sdkmanager --licenses --sdk_root=/var/jenkins_home/Andro
 https://juejin.cn/post/6948626628637360135
 
 ## 给apk包签名
+``` shell
 java -jar apksigner.jar sign \
 -verbose \
 --ks sign.jks \
@@ -164,3 +165,4 @@ java -jar apksigner.jar sign \
 --ks-key-alias hlld \
 --key-pass pass:sdfjDJk3jS \
 --out ./app-release/dist/app-release-sign.apk ./app-release/dist/app-release.apk
+```
