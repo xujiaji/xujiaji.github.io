@@ -70,10 +70,6 @@ def trySh(shtext) {
 
 // 替换文件中的字符串
 def replaceAllInFile(String oldStr, String newStr, String file) {
-    if (!fileExists(file)) {
-        echo "不存在文件： ${file}"
-        return
-    }
     sh """
     sed -i "s/${oldStr}/${newStr}/g" ${file}
     """
