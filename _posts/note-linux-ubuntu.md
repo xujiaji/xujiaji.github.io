@@ -260,3 +260,31 @@ $ sudo apt-get install shutter
 |命令：|shutter -s|
 
 点击新添加条目的右侧新建快捷键，然后同时按住Ctrl+Alt+A，结束。
+
+## 配置代理
+> 命令行代理
+
+``` sh
+export http_proxy=http://127.0.0.1:8000
+export https_proxy=http://127.0.0.1:8000
+```
+
+> apt-get代理
+
+``` sh
+vim /etc/apt/apt.conf
+# 增加代理配置
+Acquire::http::proxy "http://127.0.0.1:8000/";
+Acquire::ftp::proxy "ftp://127.0.0.1:8000/";
+Acquire::https::proxy "https://127.0.0.1:8000/";
+```
+
+> apt 临时代理
+
+``` sh
+sudo apt-get -o Acquire::http::proxy="http://127.0.0.1:8000/" update
+```
+
+## 虚拟机Ubuntu使用gparted工具扩容
+1. 安装 `sudo apt install gparted -y`
+2. 扩容 https://blog.csdn.net/weixin_45730522/article/details/128661183
