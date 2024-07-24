@@ -140,3 +140,23 @@ sdk.dir=/Users/xxx/Library/Android/sdk
 ```
 grep "sdk.dir" local.properties | cut -d'=' -f2 | sed 's/\r//'
 ```
+
+## 通过cpu或内存占用排序查进程
+
+> 查使用内存最多的10个进程
+
+```
+ps -aux | sort -k4nr | head -10
+```
+
+> 查询系统内存占用并排序打印出所有的进程
+
+```
+ps aux --sort -rss
+```
+
+> 查使用CPU最多的3个进程
+
+```
+ps -aux | sort -k3nr | head -3
+```
