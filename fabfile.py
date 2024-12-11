@@ -14,7 +14,7 @@ import shutil
 # env.sudo_user = 'ubuntu'
 # 服务器地址，可以有多个，依次部署:
 env.port = 1229
-env.hosts = ['root@47.243.173.103']
+env.hosts = ['root@47.238.162.58']
 env.key_filename = './id_rsa.xu'
 # env.ssh_config_path = '~/.ssh/config'
 # env.use_ssh_config = True
