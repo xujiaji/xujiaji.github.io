@@ -9,7 +9,7 @@ pipeline {
         stage('准备环境') {
             steps {
                 sh "npm install hexo-cli@4.3.2 -g"
-                sh "npm install hexo@6.3.0"
+                sh "npm install hexo@5.2.0"
                 trySh "rm -rf blog"
                 trySh "hexo init blog"
                 trySh "rm -rf blog/source && mkdir blog/source"
