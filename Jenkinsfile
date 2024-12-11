@@ -23,7 +23,7 @@ pipeline {
                 sh "cp -rf ../../tools/ssh/id_rsa.xu blog"
                 dir('./blog') {
                     sh "npm install hexo-theme-inside"
-                    sh "npm install babel-core babel-preset-env html-minifier terser cheerio jasmine hexo-deployer-git hexo-filter-mathjax-ssr hexo-generator-feed hexo-renderer-markdown-it html-to-text markdown-it markdown-it-container markdown-it-footnote --save"
+                    sh "npm install babel-core@6.26.3 babel-preset-env@1.7.0 html-minifier terser@5.3.5 cheerio@1.0.0-rc.3 jasmine@3.6.1 hexo-deployer-git@2.1.0 hexo-filter-mathjax-ssr@0.1.1 hexo-generator-feed@3.0.0 hexo-renderer-markdown-it@5.0.0 html-to-text@5.1.1 markdown-it@11.0.1 markdown-it-container@3.0.0 markdown-it-footnote@3.0.3 --save"
                 }
             }
         }
