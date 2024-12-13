@@ -160,3 +160,19 @@ ps aux --sort -rss
 ```
 ps -aux | sort -k3nr | head -3
 ```
+
+## SSH远程的时候，没有使用到这个远程用户的环境变量
+
+> 创建`~/.ssh/environment`
+
+> 在里面添加环境配置如：
+
+```
+PATH=/usr/local/opt/openjdk@11/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin
+```
+
+> 编辑sshd配置`sudo vim /private/etc/ssh/sshd_config`
+
+```
+PermitUserEnvironment=yes
+```
