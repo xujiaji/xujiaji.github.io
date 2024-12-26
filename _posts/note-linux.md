@@ -176,3 +176,7 @@ PATH=/usr/local/opt/openjdk@11/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:
 ```
 PermitUserEnvironment=yes
 ```
+
+## 配置apt仓库源
+编辑 `/etc/apt/sources.list`
+将其中的地址替换成新的源地址
