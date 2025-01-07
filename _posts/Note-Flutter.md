@@ -81,3 +81,22 @@ flutter pub outdated --mode=null-safety
 ```
 dart migrate
 ```
+
+## 编译windows exe文件，在非开发环境中安装后无法打开
+
+原因是因为缺少环境库文件：`msvcp140.dll`、`vcruntime140.dll`、`vcruntime140_1.dll`
+
+这几个文件可以在开发换成的VC的目录中找到（可能不同版本有区别），本电脑在目录：`C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Redist\MSVC\14.40.33807\x64\Microsoft.VC143.CRT`
+
+在该目录中可以看到上面三个文件
+
+1、临时解决问题：我们可以将上面三个文件拷贝到安装后的目录即可运行
+
+2、一劳永逸处理：我们可以将这三个文件拷贝到项目中。这里我们可以拷贝到项目目录下的：`[FlutterProject]/windows/libs`(只是为了方便后面不用再去找)
+
+修改`inno_setup.iss`中的`[Files]`配置，在打包exe安装包时，将这几个库放进去
+
+```
+[Files]
+Source: "windows\libs\*.dll"; DestDir: "{app}"; Flags: ignoreversion
+```
