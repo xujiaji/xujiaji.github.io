@@ -86,11 +86,11 @@ dart migrate
 
 原因是因为缺少环境库文件：`msvcp140.dll`、`vcruntime140.dll`、`vcruntime140_1.dll`
 
-这几个文件可以在开发换成的VC的目录中找到（可能不同版本有区别），本电脑在目录：`C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Redist\MSVC\14.40.33807\x64\Microsoft.VC143.CRT`
+这几个文件可以在有开发环境电脑（flutter能运行windows程序的环境）的VC的目录中找到（可能不同版本有区别），本电脑在目录：`C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Redist\MSVC\14.40.33807\x64\Microsoft.VC143.CRT`
 
 在该目录中可以看到上面三个文件
 
-1、临时解决问题：我们可以将上面三个文件拷贝到安装后的目录即可运行
+1、临时处理问题：我们可以将上面三个文件拷贝到安装后的目录即可运行
 
 2、一劳永逸处理：我们可以将这三个文件拷贝到项目中。这里我们可以拷贝到项目目录下的：`[FlutterProject]/windows/libs`(只是为了方便后面不用再去找)
 
