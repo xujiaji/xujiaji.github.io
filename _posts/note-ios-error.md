@@ -17,3 +17,19 @@ tags:
 bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_armv7/Flutter.framework/Info.plist
 bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_x86_64-simulator/Flutter.framework/Info.plist
 ```
+
+## 库中的.h文件中，导入方式为`#import`，编译的时候报错：`xxx.h` file not found
+原因：OC和SWIFT混编的项目Swift模块需要支持LLVM Module规范，导入的方式不符合规范
+
+但是库中的文件我们不方便去修改，于是可以在PodFile中添加如下配置：
+
+``` ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      # 设置Framework Module允许导入非modular的头文件
+      config.build_settings['CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES'] = 'YES'
+    end
+  end
+end
+```
