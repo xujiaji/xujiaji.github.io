@@ -100,3 +100,21 @@ dart migrate
 [Files]
 Source: "windows\libs\*.dll"; DestDir: "{app}"; Flags: ignoreversion
 ```
+
+## flutter更新到最新版本`3.27.1`，android的gradle插件库更新到8.1.0后运行失败，要求库必须配置`namespace`
+原因：这是安卓上的gradle的要求，需要在`安卓项目/app/build.gradle`中`android { }`模块中配置`namespace`。主模块中当然我们可以自己配置，但是flutter依赖的库中android部分有的没有实时更新库修复问题。
+
+处理：在`安卓项目/build.gradle`中最外层添加以下配置，来动态去设置所有库的`namespace`
+
+``` groovy
+subprojects {
+    afterEvaluate { project ->
+        if (project.plugins.hasPlugin('com.android.library')) {
+            project.android.namespace = project.android.namespace
+                    ?: project.android.defaultConfig.applicationId
+                    ?: project.android.sourceSets.main.manifest.srcFile.text.find(/package="([^"]*)"/)?.replaceAll("package=", "")?.replaceAll("\"", "")
+                    ?: project.group
+        }
+    }
+}
+```
