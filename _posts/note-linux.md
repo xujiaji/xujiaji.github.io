@@ -196,3 +196,26 @@ export LANG=zh_CN.UTF-8
 export LC_ALL=zh_CN.UTF-8
 export LANGUAGE=zh_CN:en_US
 ```
+
+## debain没有安装ssh服务，客户端无法通过ssh连接到debian
+1、检查是否安装
+```
+ps -e|grep ssh
+```
+2、检查端口是否打开
+```
+netstat -ntlp|grep 22
+```
+3、安装sshd
+```
+apt install openssh-server
+```
+4、安装uwf
+```
+apt install ufw
+```
+5、开放22端口
+```
+ufw enable
+ufw allow 22
+```
