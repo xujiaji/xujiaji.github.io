@@ -10,13 +10,13 @@ pipeline {
             steps {
                 sh "npm install hexo-cli@4.3.2 -g"
                 sh "npm install hexo@5.2.0"
-                trySh "rm -rf blog"
-                trySh "hexo init blog"
-                trySh "rm -rf blog/source && mkdir blog/source"
+                sh "rm -rf blog"
+                sh "hexo init blog"
+                sh "rm -rf blog/source && mkdir blog/source"
                 script {
                     path = sh(returnStdout: true, script: 'pwd').trim()
                 }
-                trySh "ls ${path} | grep -v Jenkinsfile | grep -v .gitignore | grep -v blog | grep -v node_modules | grep -v .git | grep -v package.json | grep -v package-lock.json | xargs -i cp -r ${path}/{} ${path}/blog/source/"
+                sh "ls ${path} | grep -v Jenkinsfile | grep -v .gitignore | grep -v blog | grep -v node_modules | grep -v .git | grep -v package.json | grep -v package-lock.json | xargs -i cp -r ${path}/{} ${path}/blog/source/"
                 sh "cp -rf _config.inside.yml blog"
                 sh "cp -rf _config.yml blog"
                 sh "cp -rf fabfile.py blog"
@@ -60,14 +60,6 @@ pipeline {
                 }
             }
         }
-    }
-}
-
-def trySh(shtext) {
-    try {
-        sh shtext
-    } catch(e) {
-       throw e
     }
 }
 
